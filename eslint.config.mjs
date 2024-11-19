@@ -11,14 +11,6 @@ import pluginTypeScript from "eslint-plugin-typescript"
 export default [
     { languageOptions: { globals: globals.browser } },
     {
-        files: ["**/*.{ts,mts,tsx}", "eslint.config.mjs"],
-        languageOptions: {
-            parser: pluginTypeScript.parser,
-            sourceType: "module",
-            parserOptions: {
-                extraFileExtensions: [".svelte"]
-            }
-        },
         plugins: {
             "@typescript-eslint": pluginTypeScript.plugin
         },
@@ -27,6 +19,16 @@ export default [
                 .recommended
                 .find(c => c.name === "typescript-eslint/recommended")
                 ?.rules
+        }
+    },
+    {
+        files: ["**/*.{js,mjs,ts,mts,tsx}", "eslint.config.mjs"],
+        languageOptions: {
+            parser: pluginTypeScript.parser,
+            sourceType: "module",
+            parserOptions: {
+                extraFileExtensions: [".svelte"]
+            }
         }
     },
     {
