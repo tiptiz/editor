@@ -1,4 +1,6 @@
 <script lang="ts">
-    let count = 0
+    import Playground from "./components/Playground.svelte"
 </script>
-<div>1 {count}</div>
+<div class="w-[860px] h-full mx-auto border">
+    <Playground />
+</div>

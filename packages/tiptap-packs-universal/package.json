@@ -7,6 +7,11 @@
     "scripts": {
         "": ""
     },
+    "exports": {
+        ".": {
+            "import": "./src/index.ts"
+        }
+    },
     "dependencies": {
         "@tiptap/extension-blockquote": "^2.9.1",
         "@tiptap/extension-document": "^2.9.1",
