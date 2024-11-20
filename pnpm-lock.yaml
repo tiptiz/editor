@@ -161,21 +161,6 @@ importers:
         specifier: ^2.8.0
         version: 2.8.1
 
-  packages/tiptap-packs-universal:
-    dependencies:
-      '@tiptap/extension-blockquote':
-        specifier: ^2.9.1
-        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
-      '@tiptap/extension-document':
-        specifier: ^2.9.1
-        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
-      '@tiptap/extension-paragraph':
-        specifier: ^2.9.1
-        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
-      '@tiptap/extension-text':
-        specifier: ^2.9.1
-        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
-
 packages:
 
   '@alloc/quick-lru@5.2.0':

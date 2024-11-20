@@ -1,6 +1,6 @@
 import type { Extensions } from "@tiptap/core"
 
-import textHTMLContent from "@/assets/test-article.html?raw"
+import html from "@/assets/features.html?raw"
 
 import { Editor } from "@tiptap/core"
 import CodeBlock from "@tiptap/extension-code-block"
@@ -69,7 +69,7 @@ export const createEditor = () => {
         editor: new Editor({
             element: container,
             extensions,
-            content: textHTMLContent
+            content: html
         })
     }
 }
