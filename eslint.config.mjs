@@ -9,17 +9,8 @@ import pluginTypeScript from "eslint-plugin-typescript"
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-    { languageOptions: { globals: globals.browser } },
     {
-        plugins: {
-            "@typescript-eslint": pluginTypeScript.plugin
-        },
-        rules: {
-            ...pluginTypeScript.configs
-                .recommended
-                .find(c => c.name === "typescript-eslint/recommended")
-                ?.rules
-        }
+        languageOptions: { globals: globals.browser }
     },
     {
         files: ["**/*.{js,mjs,ts,mts,tsx}", "eslint.config.mjs"],
@@ -42,7 +33,14 @@ export default [
     },
     pluginJavaScript.configs.recommended, // css eslint rules
     {
+        plugins: {
+            "@typescript-eslint": pluginTypeScript.plugin
+        },
         rules: {
+            ...pluginTypeScript.configs
+                .recommended
+                .find(c => c.name === "typescript-eslint/recommended")
+                ?.rules,
             "@typescript-eslint/no-explicit-any": "off",
             "@typescript-eslint/no-namespace": "off",
             "@typescript-eslint/consistent-type-imports": [
@@ -100,6 +98,7 @@ export default [
 
                 jsx: true
             }).rules,
+            "@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: true }],
             "@stylistic/indent": ["error", 4, { offsetTernaryExpressions: false }]
         }
     }

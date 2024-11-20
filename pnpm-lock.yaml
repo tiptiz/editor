@@ -51,15 +51,87 @@ importers:
       typescript:
         specifier: ^5
         version: 5.6.3
+      vite:
+        specifier: ^5.4.10
+        version: 5.4.11
+      vite-plugin-tsconfig-paths:
+        specifier: npm:vite-tsconfig-paths@^5.1.3
+        version: vite-tsconfig-paths@5.1.3(typescript@5.6.3)(vite@5.4.11)
 
   example:
     dependencies:
-      '@tiptap-contentful/packs-universal':
-        specifier: workspace:*
-        version: link:../packages/tiptap-packs-universal
+      '@tiptap/extension-code-block':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
+      '@tiptap/extension-color':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/extension-text-style@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1)))
+      '@tiptap/extension-highlight':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/extension-image':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/extension-text-align':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/extension-text-style':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/extension-underline':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/starter-kit':
+        specifier: ^2.9.1
+        version: 2.9.1
+      tiptap-extension-bullet-list:
+        specifier: ^1.0.1
+        version: 1.0.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      tiptap-extension-float:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/pm@2.9.1)
+      tiptap-extension-font-size:
+        specifier: ^1.2.0
+        version: 1.2.0(@tiptap/pm@2.9.1)
+      tiptap-extension-hr:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/pm@2.9.1)
+      tiptap-extension-iframe:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/pm@2.9.1)
+      tiptap-extension-image:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/pm@2.9.1)
+      tiptap-extension-image-link:
+        specifier: ^1.0.0
+        version: 1.0.0
+      tiptap-extension-line-height:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/pm@2.9.1)
+      tiptap-extension-link:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
+      tiptap-extension-margin:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/pm@2.9.1)
+      tiptap-extension-ordered-list:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      tiptap-extension-resizable:
+        specifier: ^1.1.1
+        version: 1.1.1(@tiptap/pm@2.9.1)
+      tiptap-extension-section:
+        specifier: ^1.0.0
+        version: 1.0.0(@tiptap/pm@2.9.1)
+      tiptap-extension-trailing-node:
+        specifier: ^1.0.0
+        version: 1.0.0
+      tiptap-extension-video:
+        specifier: ^1.0.1
+        version: 1.0.1(@tiptap/pm@2.9.1)
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^4.0.0
+        specifier: ^4.0.1
         version: 4.0.1(svelte@5.2.2)(vite@5.4.11)
       '@tsconfig/svelte':
         specifier: ^5.0.4
@@ -67,6 +139,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       postcss:
         specifier: ^8
         version: 8.4.49
@@ -76,15 +151,15 @@ importers:
       svelte-check:
         specifier: ^4.0.5
         version: 4.0.9(picomatch@4.0.2)(svelte@5.2.2)(typescript@5.6.3)
+      tailwind-merge:
+        specifier: ^2.5.4
+        version: 2.5.4
+      tailwind-variants:
+        specifier: ^0.3.0
+        version: 0.3.0(tailwindcss@3.4.15)
       tslib:
         specifier: ^2.8.0
         version: 2.8.1
-      typescript:
-        specifier: ~5.6.2
-        version: 5.6.3
-      vite:
-        specifier: ^5.4.10
-        version: 5.4.11
 
   packages/tiptap-packs-universal:
     dependencies:
@@ -495,6 +570,12 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
+  '@tiptap/extension-color@2.9.1':
+    resolution: {integrity: sha512-9h4FcCDenOmr8x8/Vfzg9PBYrgXIXTi2x8JiaTbrQX+Ufea1SMx+Ko/Vowp7SGMnBAsB+sXkTVhAhiXDQbtWcQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/extension-text-style': ^2.7.0
+
   '@tiptap/extension-document@2.9.1':
     resolution: {integrity: sha512-1a+HCoDPnBttjqExfYLwfABq8MYdiowhy/wp8eCxVb6KGFEENO53KapstISvPzqH7eOi+qRjBB1KtVYb/ZXicg==}
     peerDependencies:
@@ -522,6 +603,11 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
+  '@tiptap/extension-highlight@2.9.1':
+    resolution: {integrity: sha512-ro3bARRgxb4v8w6fPVfG1kO2UWtLgKI5ESfsQ9CqiZuRkZdRKhM5ZpXPIky28Pn7CxhDUSXBXS/MhvP0VuhMJQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+
   '@tiptap/extension-history@2.9.1':
     resolution: {integrity: sha512-wp9qR1NM+LpvyLZFmdNaAkDq0d4jDJ7z7Fz7icFQPu31NVxfQYO3IXNmvJDCNu8hFAbImpA5aG8MBuwzRo0H9w==}
     peerDependencies:
@@ -534,10 +620,21 @@ packages:
       '@tiptap/core': ^2.7.0
       '@tiptap/pm': ^2.7.0
 
+  '@tiptap/extension-image@2.9.1':
+    resolution: {integrity: sha512-aGqJnsuS8oagIhsx7wetm8jw4NEDsOV0OSx4FQ4VPlUqWlnzK0N+erFKKJmXTdAxL8PGzoPSlITFH63MV3eV3Q==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+
   '@tiptap/extension-italic@2.9.1':
     resolution: {integrity: sha512-VkNA6Vz96+/+7uBlsgM7bDXXx4b62T1fDam/3UKifA72aD/fZckeWrbT7KrtdUbzuIniJSbA0lpTs5FY29+86Q==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
+
+  '@tiptap/extension-link@2.9.1':
+    resolution: {integrity: sha512-yG+e3e8cCCN9dZjX4ttEe3e2xhh58ryi3REJV4MdiEkOT9QF75Bl5pUbMIS4tQ8HkOr04QBFMHKM12kbSxg1BA==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/pm': ^2.7.0
 
   '@tiptap/extension-list-item@2.9.1':
     resolution: {integrity: sha512-6O4NtYNR5N2Txi4AC0/4xMRJq9xd4+7ShxCZCDVL0WDVX37IhaqMO7LGQtA6MVlYyNaX4W1swfdJaqrJJ5HIUw==}
@@ -559,6 +656,11 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
+  '@tiptap/extension-text-align@2.9.1':
+    resolution: {integrity: sha512-oUp0XnwJpAImcOVV68vsY2CpkHpRZ3gzWfIRTuy+aYitQim3xDKis/qfWQUWZsANp9/TZ0VyjtkZxNMwOfcu1g==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+
   '@tiptap/extension-text-style@2.9.1':
     resolution: {integrity: sha512-LAxc0SeeiPiAVBwksczeA7BJSZb6WtVpYhy5Esvy9K0mK5kttB4KxtnXWeQzMIJZQbza65yftGKfQlexf/Y7yg==}
     peerDependencies:
@@ -566,6 +668,11 @@ packages:
 
   '@tiptap/extension-text@2.9.1':
     resolution: {integrity: sha512-3wo9uCrkLVLQFgbw2eFU37QAa1jq1/7oExa+FF/DVxdtHRS9E2rnUZ8s2hat/IWzvPUHXMwo3Zg2XfhoamQpCA==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+
+  '@tiptap/extension-underline@2.9.1':
+    resolution: {integrity: sha512-IrUsIqKPgD7GcAjr4D+RC0WvLHUDBTMkD8uPNEoeD1uH9t9zFyDfMRPnx/z3/6Gf6fTh3HzLcHGibiW2HiMi2A==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
@@ -761,6 +868,10 @@ packages:
   chokidar@4.0.1:
     resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
     engines: {node: '>= 14.16.0'}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -994,6 +1105,9 @@ packages:
     resolution: {integrity: sha512-1+gLErljJFhbOVyaetcwJiJ4+eLe45S2E7P5UiZ9xGfeq3ATQf5DOv9G7MH3gGbKQLkzmNh2DxfZwLdw+j6oTQ==}
     engines: {node: '>=18'}
 
+  globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
@@ -1095,12 +1209,18 @@ packages:
   linkify-it@5.0.0:
     resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
 
+  linkifyjs@4.1.4:
+    resolution: {integrity: sha512-0/NxkHNpiJ0k9VrYCkAn9OtU1eu8xEr1tCCpDtSsVRm/SF0xAak2Gzv3QimSfgUgqLBCDlfhMbu73XvaEHUTPQ==}
+
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
   locate-path@6.0.0:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
+
+  lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
 
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -1481,6 +1601,15 @@ packages:
     resolution: {integrity: sha512-eHIJRcvA6iuXdRGMESTmBtWTQCcCiol4gyH9DA60ybS35W1x27cvtbndNvWDqX72blyf+AYeQ4gzZ0XGg3L8sw==}
     engines: {node: '>=18'}
 
+  tailwind-merge@2.5.4:
+    resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
+
+  tailwind-variants@0.3.0:
+    resolution: {integrity: sha512-ho2k5kn+LB1fT5XdNS3Clb96zieWxbStE9wNLK7D0AV64kdZMaYzAKo0fWl6fXLPY99ffF9oBJnIj5escEl/8A==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
+
   tailwindcss@3.4.15:
     resolution: {integrity: sha512-r4MeXnfBmSOuKUWmXe6h2CcyfzJCEk4F0pptO5jlnYSIViUkVmsawj80N5h2lO3gwcmSb4n3PuN+e+GC1Guylw==}
     engines: {node: '>=14.0.0'}
@@ -1492,6 +1621,52 @@ packages:
 
   thenify@3.3.1:
     resolution: {integrity: sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==}
+
+  tiptap-extension-bullet-list@1.0.1:
+    resolution: {integrity: sha512-c1iQSigpIDkMKHg51ch9b/nYqEPDCtRbMkiq6HIYTR6f0wcKblOnQNoax9O8LDHLEDiwhM5xQHW1O5/0YpoxwQ==}
+
+  tiptap-extension-float@1.0.0:
+    resolution: {integrity: sha512-Iy2SFjG15RTnfbJge5jVFYKnwRG1o05StW8qSNg3B3hXeAphBi967Au3uEZGMbMUZnV2gAfDmjp7jrXI3VXPoA==}
+
+  tiptap-extension-font-size@1.2.0:
+    resolution: {integrity: sha512-akVve/bIAhAf4ze6XR4sh0qV7o7XgAoPkDGumTj4SFNtjhcH61wD97ibxWQAXchJPNAV6DdzRJiuUtEgzspjyA==}
+    engines: {node: '>=10'}
+
+  tiptap-extension-hr@1.0.0:
+    resolution: {integrity: sha512-TJMdT08EOJ7TC5YUYdc6e2tK6Bu58oPG+QrS47+k5HPlWexucjhkLvs+rP4nmg+4+5fsyrYcdA5ZqMyE08NL3A==}
+
+  tiptap-extension-iframe@1.0.0:
+    resolution: {integrity: sha512-/Z6f+0Hq4QtrWkCvbSZKZMjoxC0TrKoOGkuWJoeweRNy4fykcDeCYv9g9/2MyW/Yw06EKoGQT+AX7UBFLDe/GA==}
+
+  tiptap-extension-image-link@1.0.0:
+    resolution: {integrity: sha512-dscYyjfxIvILMBH/pDW/EQdC0X8Hrvyz4I46wHCCMa3ct3vS/1mogHWnKSib5JTbMi9VdN6/ZiPxTZoC2MaLlQ==}
+
+  tiptap-extension-image@1.0.0:
+    resolution: {integrity: sha512-23SUL4T0Q4eSB5f7gNGbcRO8xqh+7RH9csrwyYgLnYIM+PFmS/uB1yjbZojBUQHEM7Sv5FbgLs8vMPzSkqi/vA==}
+
+  tiptap-extension-line-height@1.0.0:
+    resolution: {integrity: sha512-tNQeBRgNKqPtMQ1/F8mB8r+v0bfdQX+Iw+Qg3CZu+7rcnnY57U+LcS9uxyINwCCAb5F6XnSuLBvbRVKJX5c6fg==}
+
+  tiptap-extension-link@1.0.0:
+    resolution: {integrity: sha512-GBLfsyXECD2gcVwrNGcmS1rSL2s9jko3H/nEVEngRePkAHJjGZOFrXLUhZfFEAntFHaMeDd8WJa4GKDtufW9zg==}
+
+  tiptap-extension-margin@1.0.0:
+    resolution: {integrity: sha512-OKh9Y4tC7MDUasGEc8yb1TTm+h/3DOyHr9ZrsGOvxholdpjNgiJrUhENnGKUvds3NiGrpAFm7ELBTEYiOwrhqg==}
+
+  tiptap-extension-ordered-list@1.0.0:
+    resolution: {integrity: sha512-RhhhZmJGloLbgoUXd1PWeJxtf0s7r+lUkTfG6MnwuyEnJUmJMPPyGmcXCuB8yMEiuYk2a5r9OIk1i6w+GCV7SQ==}
+
+  tiptap-extension-resizable@1.1.1:
+    resolution: {integrity: sha512-kArfuHstYziqGM6r8NR+qttRJHres562b+sMfQcUBnBdLgO2fmaOapChZeTKrRrZAhNJaXqY0c+erq74FOhQtg==}
+
+  tiptap-extension-section@1.0.0:
+    resolution: {integrity: sha512-WJdrJxwT50dYqNt2x6www7qf3pgQLI5xvFnJpwGq0/9IyuXqySiItpK+Pn9Nf+ZsimwxUznwlTAIXYtTdM5w3A==}
+
+  tiptap-extension-trailing-node@1.0.0:
+    resolution: {integrity: sha512-EnNuYlBFP6RSCTdGbffs4YyNNi1DxubgP+YS6mUXtuP0V/D8DnncVTqtnF0uhFD35q/EfUD+ld7hG4owXs1pKw==}
+
+  tiptap-extension-video@1.0.1:
+    resolution: {integrity: sha512-6u2cKjYxEP1L1G5swVjLb5mkBDODz/Pir+xZtcMXmDNu7gSDVlMWM0ik/+JtiG4EUzxnxFFVDLCqpJG8JSEuiw==}
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -1505,6 +1680,16 @@ packages:
 
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+
+  tsconfck@3.1.4:
+    resolution: {integrity: sha512-kdqWFGVJqe+KGYvlSO9NIaWn9jT1Ny4oKVzAJsKii5eoE9snzTJzL4+MMVOMn+fikWGFmKEylcXL710V/kIPJQ==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
@@ -1542,6 +1727,14 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  vite-tsconfig-paths@5.1.3:
+    resolution: {integrity: sha512-0bz+PDlLpGfP2CigeSKL9NFTF1KtXkeHGZSSaGQSuPZH77GhoiQaA8IjYgOaynSuwlDTolSUEU0ErVvju3NURg==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
 
   vite@5.4.11:
     resolution: {integrity: sha512-c7jFQRklXua0mTzneGW9QVyxFjUgwcihC4bXEtujIo2ouWCe1Ajt/amn2PCxYnhYfd5k09JX3SB7OYWFKYqj8Q==}
@@ -1904,6 +2097,11 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
+  '@tiptap/extension-color@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/extension-text-style@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1)))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/extension-text-style': 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+
   '@tiptap/extension-document@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
@@ -1926,6 +2124,10 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
+  '@tiptap/extension-highlight@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+
   '@tiptap/extension-history@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
@@ -1936,9 +2138,19 @@ snapshots:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
       '@tiptap/pm': 2.9.1
 
+  '@tiptap/extension-image@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+
   '@tiptap/extension-italic@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+
+  '@tiptap/extension-link@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/pm': 2.9.1
+      linkifyjs: 4.1.4
 
   '@tiptap/extension-list-item@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
@@ -1956,11 +2168,19 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
+  '@tiptap/extension-text-align@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+
   '@tiptap/extension-text-style@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
   '@tiptap/extension-text@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+
+  '@tiptap/extension-underline@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
@@ -2208,6 +2428,8 @@ snapshots:
   chokidar@4.0.1:
     dependencies:
       readdirp: 4.0.2
+
+  clsx@2.1.1: {}
 
   color-convert@2.0.1:
     dependencies:
@@ -2470,6 +2692,8 @@ snapshots:
 
   globals@15.12.0: {}
 
+  globrex@0.1.2: {}
+
   graphemer@1.4.0: {}
 
   has-flag@4.0.0: {}
@@ -2552,11 +2776,15 @@ snapshots:
     dependencies:
       uc.micro: 2.1.0
 
+  linkifyjs@4.1.4: {}
+
   locate-character@3.0.0: {}
 
   locate-path@6.0.0:
     dependencies:
       p-locate: 5.0.0
+
+  lodash-es@4.17.21: {}
 
   lodash.merge@4.6.2: {}
 
@@ -2969,6 +3197,13 @@ snapshots:
       magic-string: 0.30.12
       zimmerframe: 1.1.2
 
+  tailwind-merge@2.5.4: {}
+
+  tailwind-variants@0.3.0(tailwindcss@3.4.15):
+    dependencies:
+      tailwind-merge: 2.5.4
+      tailwindcss: 3.4.15
+
   tailwindcss@3.4.15:
     dependencies:
       '@alloc/quick-lru': 5.2.0
@@ -3004,6 +3239,95 @@ snapshots:
     dependencies:
       any-promise: 1.3.0
 
+  tiptap-extension-bullet-list@1.0.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1)):
+    dependencies:
+      '@tiptap/extension-bullet-list': 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+    transitivePeerDependencies:
+      - '@tiptap/core'
+
+  tiptap-extension-float@1.0.0(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-font-size@1.2.0(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/extension-text-style': 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-hr@1.0.0(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-iframe@1.0.0(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-image-link@1.0.0: {}
+
+  tiptap-extension-image@1.0.0(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/extension-image': 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-line-height@1.0.0(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-link@1.0.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/extension-link': 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
+    transitivePeerDependencies:
+      - '@tiptap/core'
+      - '@tiptap/pm'
+
+  tiptap-extension-margin@1.0.0(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-ordered-list@1.0.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1)):
+    dependencies:
+      '@tiptap/extension-ordered-list': 2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+    transitivePeerDependencies:
+      - '@tiptap/core'
+
+  tiptap-extension-resizable@1.1.1(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      lodash-es: 4.17.21
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-section@1.0.0(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptap-extension-trailing-node@1.0.0:
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/pm': 2.9.1
+
+  tiptap-extension-video@1.0.1(@tiptap/pm@2.9.1):
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
@@ -3013,6 +3337,10 @@ snapshots:
       typescript: 5.6.3
 
   ts-interface-checker@0.1.13: {}
+
+  tsconfck@3.1.4(typescript@5.6.3):
+    optionalDependencies:
+      typescript: 5.6.3
 
   tslib@2.8.1: {}
 
@@ -3046,6 +3374,17 @@ snapshots:
       punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
+
+  vite-tsconfig-paths@5.1.3(typescript@5.6.3)(vite@5.4.11):
+    dependencies:
+      debug: 4.3.7
+      globrex: 0.1.2
+      tsconfck: 3.1.4(typescript@5.6.3)
+    optionalDependencies:
+      vite: 5.4.11
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   vite@5.4.11:
     dependencies:

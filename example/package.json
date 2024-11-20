@@ -10,17 +10,40 @@
         "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
     },
     "dependencies": {
-        "@tiptap-contentful/packs-universal": "workspace:*"
+        "@tiptap/extension-code-block": "^2.9.1",
+        "@tiptap/extension-color": "^2.9.1",
+        "@tiptap/extension-highlight": "^2.9.1",
+        "@tiptap/extension-image": "^2.9.1",
+        "@tiptap/extension-text-align": "^2.9.1",
+        "@tiptap/extension-text-style": "^2.9.1",
+        "@tiptap/extension-underline": "^2.9.1",
+        "@tiptap/starter-kit": "^2.9.1",
+        "tiptap-extension-bullet-list": "^1.0.1",
+        "tiptap-extension-float": "^1.0.0",
+        "tiptap-extension-font-size": "^1.2.0",
+        "tiptap-extension-hr": "^1.0.0",
+        "tiptap-extension-iframe": "^1.0.0",
+        "tiptap-extension-image": "^1.0.0",
+        "tiptap-extension-image-link": "^1.0.0",
+        "tiptap-extension-line-height": "^1.0.0",
+        "tiptap-extension-link": "^1.0.0",
+        "tiptap-extension-margin": "^1.0.0",
+        "tiptap-extension-ordered-list": "^1.0.0",
+        "tiptap-extension-resizable": "^1.1.1",
+        "tiptap-extension-section": "^1.0.0",
+        "tiptap-extension-trailing-node": "^1.0.0",
+        "tiptap-extension-video": "^1.0.1"
     },
     "devDependencies": {
-        "@sveltejs/vite-plugin-svelte": "^4.0.0",
+        "@sveltejs/vite-plugin-svelte": "^4.0.1",
         "@tsconfig/svelte": "^5.0.4",
         "autoprefixer": "^10.4.20",
+        "clsx": "^2.1.1",
         "postcss": "^8",
         "svelte": "^5.1.3",
         "svelte-check": "^4.0.5",
-        "tslib": "^2.8.0",
-        "typescript": "~5.6.2",
-        "vite": "^5.4.10"
+        "tailwind-merge": "^2.5.4",
+        "tailwind-variants": "^0.3.0",
+        "tslib": "^2.8.0"
     }
 }
