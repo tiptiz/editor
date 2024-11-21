@@ -67,9 +67,11 @@
     body {
         @apply bg-background text-foreground;
     }
+
     .border {
         @apply border-gray-200
     }
+
     .dark .border {
         @apply border-gray-600
     }

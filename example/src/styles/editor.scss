@@ -1,0 +1,15 @@
+.editor-container {
+    height: 100%;
+    padding: 10px 20px;
+}
+.editor-container .tiptap {
+    min-height: 100%;
+}
+
+.tiptap:focus {
+    outline: none;
+}
+
+.tiptap {
+    h1 {}
+}
