@@ -1,0 +1,19 @@
+{
+    "name": "tiptap-extension-heading",
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "git@github.com:aolyang/tiptap-contentful.git",
+    "author": "aolyang <aolyang@foxmail.com>",
+    "exports": {
+        ".": {
+            "import": "./src/index.ts"
+        }
+    },
+    "dependencies": {
+        "@tiptap/core": "^2.9.1",
+        "@tiptap/extension-heading": "^2.10.0"
+    },
+    "peerDependencies": {
+        "@tiptap/core": "^2.9.1"
+    }
+}
