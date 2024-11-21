@@ -18,9 +18,6 @@ importers:
         specifier: ^2.9.1
         version: 2.9.1
     devDependencies:
-      csstype:
-        specifier: ^3.1.3
-        version: 3.1.3
       eslint:
         specifier: ^9.15.0
         version: 9.15.0(jiti@1.21.6)
@@ -69,6 +66,9 @@ importers:
       '@tiptap/extension-history':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
+      '@tiptap/extension-horizontal-rule':
+        specifier: ^2.10.1
+        version: 2.10.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
       '@tiptap/extension-paragraph':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
@@ -654,6 +654,12 @@ packages:
       '@tiptap/core': ^2.7.0
       '@tiptap/pm': ^2.7.0
 
+  '@tiptap/extension-horizontal-rule@2.10.1':
+    resolution: {integrity: sha512-bUmIESr/MEHO7R9v9CGona2QXUs639hrQ+7ltRswlfGrb+eTRtHHSzRuJE9vGrkBIGeUkTLxSCogtIUafjJNgQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/pm': ^2.7.0
+
   '@tiptap/extension-horizontal-rule@2.9.1':
     resolution: {integrity: sha512-ydUhABeaBI1CoJp+/BBqPhXINfesp1qMNL/jiDcMsB66fsD4nOyphpAJT7FaRFZFtQVF06+nttBtFZVkITQVqg==}
     peerDependencies:
@@ -927,9 +933,6 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
-
-  csstype@3.1.3:
-    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
@@ -2190,6 +2193,11 @@ snapshots:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
       '@tiptap/pm': 2.9.1
 
+  '@tiptap/extension-horizontal-rule@2.10.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/pm': 2.9.1
+
   '@tiptap/extension-horizontal-rule@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
@@ -2497,8 +2505,6 @@ snapshots:
       which: 2.0.2
 
   cssesc@3.0.0: {}
-
-  csstype@3.1.3: {}
 
   debug@4.3.7:
     dependencies:

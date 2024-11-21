@@ -27,8 +27,8 @@
         <div class="flex-1"></div>
         <ThemeMode />
     </div>
-    <div class="flex flex-col items-center gap-4 pb-4 bg-gray-100/50" style="height: calc(100% - 52px)">
+    <div class="flex flex-col items-center gap-4 pb-4 bg-accent" style="height: calc(100% - 52px)">
         <Toolbar />
-        <div class="w-[860px] h-full overflow-y-auto mx-auto border bg-white dark:bg-gray-700" bind:this={divRef}></div>
+        <div class="w-[860px] h-full overflow-y-auto mx-auto border dark:bg-neutral-900" bind:this={divRef}></div>
     </div>
 </div>

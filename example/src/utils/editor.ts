@@ -5,6 +5,7 @@ import html from "@/assets/features.html?raw"
 import { Editor } from "@tiptap/core"
 import Document from "@tiptap/extension-document"
 import History from "@tiptap/extension-history"
+import Hr from "@tiptap/extension-horizontal-rule"
 import Paragraph from "@tiptap/extension-paragraph"
 import Text from "@tiptap/extension-text"
 import Heading from "tiptap-extension-heading"
@@ -14,6 +15,7 @@ export const extensions: Extensions = [
     History,
     Text,
     Paragraph,
+    Hr,
     // packages/*
     Heading
 ]
