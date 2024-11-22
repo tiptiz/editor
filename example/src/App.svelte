@@ -34,7 +34,7 @@
 </div>
 <div class="size-full pt-[120px] pb-4 bg-accent">
     <div class="size-full overflow-y-auto">
-        <div class="w-[826px] min-h-full mx-auto bg-white dark:bg-neutral-700"
+        <div class="max-w-[826px] mx-4 min-h-full mx-auto bg-white dark:bg-neutral-700"
              bind:this={divRef}></div>
     </div>
 </div>

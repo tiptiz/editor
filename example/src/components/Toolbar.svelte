@@ -29,25 +29,33 @@
 </script>
 
 <div class="toolbar h-[52px] flex items-center justify-center gap-1">
-    <SvgUndo onclick={undo} />
-    <SvgRedo onclick={redo} />
-    <SvgClear onclick={clear} />
-    <SvgBrush />
-    <SvgBold class={editor.isActive("bold") ? "active" : ""} onclick={toggleBold} />
+    <SvgUndo onclick={undo}/>
+    <SvgRedo onclick={redo}/>
+    <SvgClear onclick={clear}/>
+    <SvgBrush/>
+    <SvgBold class={editor.isActive("bold") ? "active" : ""} onclick={toggleBold}/>
 </div>
 <style lang="scss">
-  .toolbar {
-    :global(svg.active) {
-      color: hsl(var(--primary));
+    :global(.dark) {
+        .toolbar {
+            --font-color: #e6e6e6;
+        }
+    }
+    .toolbar {
+        --font-color: #4d4d4d;
+
+        :global(svg.active) {
+            color: hsl(var(--primary));
+        }
+
+        :global(svg) {
+            color: var(--font-color);
+            font-size: 20px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 
-    :global(svg) {
-      color: #4d4d4d;
-      font-size: 20px;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
 </style>
