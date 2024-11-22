@@ -17,7 +17,7 @@
     const redo = () => editor.commands.redo()
     const clear = () => {
         editor.chain().focus().clearNodes().run()
-        editor.chain().focus().unsetMark("inline", { extendEmptyMarkRange: true }).run()
+        editor.chain().focus().selectParentNode().unsetAllMarks().run()
     }
     const toggleBold = () => {
         if (editor.isActive("bold")) {
@@ -41,6 +41,7 @@
             --font-color: #e6e6e6;
         }
     }
+
     .toolbar {
         --font-color: #4d4d4d;
 
