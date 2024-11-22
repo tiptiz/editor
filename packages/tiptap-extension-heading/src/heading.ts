@@ -12,7 +12,8 @@ export const Heading = TipTapHeading.Heading.extend<HeadingOptions>({
             HTMLAttributes: {
                 h1: { style: "font-size: 1.625em; font-weight: bolder; margin-top: 0.5em" },
                 h2: { style: "font-size: 1.250em; font-weight: bold; margin-top: 0.5em" },
-                h3: { style: "font-size: 1.125em; font-weight: bold; margin-top: 0.3em" }
+                h3: { style: "font-size: 1.125em; font-weight: bold; margin-top: 0.3em" },
+                h4: { style: "font-size: 1.000em; font-weight: bold; margin-top: 0.3em" }
             }
         }
     },
