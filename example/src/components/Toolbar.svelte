@@ -23,7 +23,7 @@
         if (editor.isActive("bold")) {
             editor.chain().focus().unsetMark("bold", { extendEmptyMarkRange: true }).run()
         } else {
-            editor.chain().focus().setMark("bold").run()
+            editor.chain().focus().selectParentNode().setMark("bold").run()
         }
     }
 </script>
