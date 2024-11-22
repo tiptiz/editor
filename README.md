@@ -12,7 +12,7 @@ Above all, this is an example repo with some opinionated changed extensions. May
 
 ## Two parts might help you
 
-1. `example/src/utils/editor.ts`: 
+1. `example/src/utils/editor.svelte.ts`: 
    this file contains all editor extensions and configurations.   
    `example` folder is a simple example project build with `vite` and `svelte`.  
    you can simply start up with command `pnpm dev`

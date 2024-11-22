@@ -1,17 +1,19 @@
 <script lang="ts">
     import "@/styles/editor.scss"
 
-    import type { EditorContext } from "@/states/editor"
-
     import ThemeMode from "@/components/ThemeMode.svelte"
     import Toolbar from "@/components/Toolbar.svelte"
-    import { setEditorContext } from "@/states/editor"
     import { createEditor } from "@/utils/editor"
 
     import { onMount } from "svelte"
 
-    const ctx = $state<EditorContext>(createEditor())
-    setEditorContext(ctx)
+    const ctx = createEditor({
+        onTransaction() {
+            // reactive problem
+            // eslint-disable-next-line no-self-assign
+            ctx.editor = ctx.editor
+        }
+    })
 
     let divRef: HTMLDivElement
     onMount(() => {
@@ -27,7 +29,7 @@
         <div class="flex-1"></div>
         <ThemeMode />
     </div>
-    <Toolbar />
+    <Toolbar editor={ctx.editor} />
     <hr />
 </div>
 <div class="size-full pt-[120px] pb-4 bg-accent">

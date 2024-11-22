@@ -60,6 +60,9 @@ importers:
 
   example:
     dependencies:
+      '@tiptap/extension-bold':
+        specifier: ^2.10.1
+        version: 2.10.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
       '@tiptap/extension-document':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
@@ -586,6 +589,11 @@ packages:
 
   '@tiptap/extension-blockquote@2.9.1':
     resolution: {integrity: sha512-Y0jZxc/pdkvcsftmEZFyG+73um8xrx6/DMfgUcNg3JAM63CISedNcr+OEI11L0oFk1KFT7/aQ9996GM6Kubdqg==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+
+  '@tiptap/extension-bold@2.10.1':
+    resolution: {integrity: sha512-OHOMfVPVYWtg7ytyPifJeSWvo6VwRtKCXdTy8Wa7xg3K07LPzIpXx5Z/HergKARJfLl3mZys417ppSsBPMk9Yg==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
@@ -2137,6 +2145,10 @@ snapshots:
       '@tiptap/pm': 2.9.1
 
   '@tiptap/extension-blockquote@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+
+  '@tiptap/extension-bold@2.10.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
