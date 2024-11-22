@@ -22,13 +22,17 @@
     })
 </script>
 
-<div class="size-full flex flex-col">
-    <div class="w-full min-h-[52px] px-4 border flex items-center">
+<div class="w-full h-[104px] fixed top-0 z-10">
+    <div class="w-full min-h-[52px] px-4 border flex items-center bg-background">
         <div class="flex-1"></div>
         <ThemeMode />
     </div>
-    <div class="flex flex-col items-center gap-4 pb-4 bg-accent" style="height: calc(100% - 52px)">
-        <Toolbar />
-        <div class="w-[860px] h-full overflow-y-auto mx-auto border dark:bg-neutral-900" bind:this={divRef}></div>
+    <Toolbar />
+    <hr />
+</div>
+<div class="size-full pt-[120px] pb-4 bg-accent">
+    <div class="size-full overflow-y-auto">
+        <div class="w-[826px] min-h-full mx-auto bg-white dark:bg-neutral-700"
+             bind:this={divRef}></div>
     </div>
 </div>

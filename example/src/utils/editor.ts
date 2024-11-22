@@ -15,7 +15,7 @@ export const extensions: Extensions = [
     History,
     Text,
     Paragraph,
-    Hr,
+    Hr.configure({ HTMLAttributes: { style: "margin: 10px 0;" } }),
     // packages/*
     Heading
 ]
