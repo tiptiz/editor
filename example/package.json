@@ -15,6 +15,8 @@
         "@tiptap/extension-history": "^2.10.0",
         "@tiptap/extension-horizontal-rule": "^2.10.1",
         "@tiptap/extension-paragraph": "^2.10.0",
+        "@tiptap/extension-subscript": "^2.10.2",
+        "@tiptap/extension-superscript": "^2.10.2",
         "@tiptap/extension-text": "^2.10.0",
         "tiptap-extension-heading": "workspace:*"
     },

@@ -8,6 +8,8 @@ import Document from "@tiptap/extension-document"
 import History from "@tiptap/extension-history"
 import Hr from "@tiptap/extension-horizontal-rule"
 import Paragraph from "@tiptap/extension-paragraph"
+import Sub from "@tiptap/extension-subscript"
+import Sup from "@tiptap/extension-superscript"
 import Text from "@tiptap/extension-text"
 import Heading from "tiptap-extension-heading"
 
@@ -18,6 +20,8 @@ export const extensions: Extensions = [
     Paragraph,
     Hr.configure({ HTMLAttributes: { style: "margin: 10px 0;" } }),
     Bold,
+    Sub,
+    Sup,
     // packages/*
     Heading
 ]
