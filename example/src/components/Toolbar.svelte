@@ -19,11 +19,19 @@
         editor().chain().focus().clearNodes().run()
         editor().chain().focus().selectParentNode().unsetAllMarks().run()
     }
+    // TODO find a way, select node by focus
     const handleToggle = (name: string) => () => {
-        if (editor().isActive(name)) {
-            editor().chain().focus().unsetMark(name, { extendEmptyMarkRange: true }).run()
+        const editor = state.editor
+        const { from, to } = editor.state.selection
+
+        if (from !== to) {
+            editor.chain().focus().toggleMark(name).run()
         } else {
-            editor().chain().focus().selectParentNode().setMark(name).run()
+            if (editor.isActive(name)) {
+                editor.chain().focus().unsetMark(name, { extendEmptyMarkRange: true }).run()
+            } else {
+                editor.chain().focus().selectParentNode().setMark(name).run()
+            }
         }
     }
     const toggleBold = handleToggle("bold")
