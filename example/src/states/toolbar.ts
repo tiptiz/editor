@@ -9,6 +9,7 @@ export interface ToolbarState {
     editor: Editor
     isBold: boolean
     isItalic: boolean
+    isStrike: boolean
 }
 
 export const setToolbarContext = (state: ToolbarState) => {

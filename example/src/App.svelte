@@ -11,11 +11,13 @@
     const state = $state<ToolbarState>({
         isBold: false,
         isItalic: false,
+        isStrike: false,
         ...createEditor({
             onTransaction({ editor }) {
                 state.editor = editor
                 state.isBold = editor.isActive("bold")
                 state.isItalic = editor.isActive("italic")
+                state.isStrike = editor.isActive("strike")
             }
         })
     })
