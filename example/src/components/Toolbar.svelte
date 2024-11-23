@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Hr from "@/components/Hr.svelte"
     import SvgBold from "@/components/toolbars/SvgBold.svelte"
     import SvgBrush from "@/components/toolbars/SvgBrush.svelte"
     import SvgClear from "@/components/toolbars/SvgClear.svelte"
@@ -27,8 +28,10 @@
 <div class="toolbar h-[52px] flex items-center justify-center gap-1">
     <SvgUndo onclick={undo}/>
     <SvgRedo onclick={redo}/>
+    <Hr class="h-2/5 mx-2"/>
     <SvgClear onclick={clear}/>
     <SvgBrush/>
+    <Hr class="h-2/5 mx-2"/>
     <SvgBold class={state.isBold ? "active" : ""} onclick={toggleBold}/>
 </div>
 <style lang="scss">
@@ -54,5 +57,4 @@
             }
         }
     }
-
 </style>
