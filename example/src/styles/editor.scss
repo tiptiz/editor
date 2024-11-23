@@ -11,5 +11,11 @@
 }
 
 .tiptap {
-    h1 {}
+    code {
+    }
+}
+.dark .tiptap {
+    code {
+        background-color: rgba(45, 45, 45, 0.47) !important;
+    }
 }
