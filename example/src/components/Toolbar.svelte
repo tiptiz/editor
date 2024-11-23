@@ -3,6 +3,7 @@
     import SvgBold from "@/components/toolbars/SvgBold.svelte"
     import SvgBrush from "@/components/toolbars/SvgBrush.svelte"
     import SvgClear from "@/components/toolbars/SvgClear.svelte"
+    import SvgItalic from "@/components/toolbars/SvgItalic.svelte"
     import SvgRedo from "@/components/toolbars/SvgRedo.svelte"
     import SvgUndo from "@/components/toolbars/SvgUndo.svelte"
     import { getToolbarContext } from "@/states/toolbar"
@@ -16,13 +17,15 @@
         editor().chain().focus().clearNodes().run()
         editor().chain().focus().selectParentNode().unsetAllMarks().run()
     }
-    const toggleBold = () => {
-        if (state.isBold) {
-            editor().chain().focus().unsetMark("bold", { extendEmptyMarkRange: true }).run()
+    const handleToggle = (name: string) => () => {
+        if (editor().isActive(name)) {
+            editor().chain().focus().unsetMark(name, { extendEmptyMarkRange: true }).run()
         } else {
-            editor().chain().focus().selectParentNode().setMark("bold").run()
+            editor().chain().focus().selectParentNode().setMark(name).run()
         }
     }
+    const toggleBold = handleToggle("bold")
+    const toggleItalic = handleToggle("italic")
 </script>
 
 <div class="toolbar h-[52px] flex items-center justify-center gap-1">
@@ -33,6 +36,7 @@
     <SvgBrush/>
     <Hr class="h-2/5 mx-2"/>
     <SvgBold class={state.isBold ? "active" : ""} onclick={toggleBold}/>
+    <SvgItalic class={state.isItalic ? "active" : ""} onclick={toggleItalic}/>
 </div>
 <style lang="scss">
     :global(.dark) {

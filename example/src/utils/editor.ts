@@ -9,6 +9,7 @@ import Document from "@tiptap/extension-document"
 import DropCursor from "@tiptap/extension-dropcursor"
 import History from "@tiptap/extension-history"
 import Hr from "@tiptap/extension-horizontal-rule"
+import Italic from "@tiptap/extension-italic"
 import Paragraph from "@tiptap/extension-paragraph"
 import Sub from "@tiptap/extension-subscript"
 import Sup from "@tiptap/extension-superscript"
@@ -23,6 +24,7 @@ export const extensions: Extensions = [
     Paragraph.configure({ HTMLAttributes: { style: "margin: 5px 0" } }),
     Hr.configure({ HTMLAttributes: { style: "margin: 10px 0;" } }),
     Bold,
+    Italic,
     Code.configure({ HTMLAttributes: { style: "background-color: #dfdfdf; border-radius: 3px; padding: 2px 6px" } }),
     Sub,
     Sup,

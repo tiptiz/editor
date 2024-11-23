@@ -8,6 +8,7 @@ export interface ToolbarState {
     container: HTMLDivElement
     editor: Editor
     isBold: boolean
+    isItalic: boolean
 }
 
 export const setToolbarContext = (state: ToolbarState) => {
