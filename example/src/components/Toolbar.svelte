@@ -1,29 +1,25 @@
 <script lang="ts">
-    import type { Editor } from "@tiptap/core"
-
     import SvgBold from "@/components/toolbars/SvgBold.svelte"
     import SvgBrush from "@/components/toolbars/SvgBrush.svelte"
     import SvgClear from "@/components/toolbars/SvgClear.svelte"
     import SvgRedo from "@/components/toolbars/SvgRedo.svelte"
     import SvgUndo from "@/components/toolbars/SvgUndo.svelte"
+    import { getToolbarContext } from "@/states/toolbar"
 
-    interface Props {
-        editor: Editor
-    }
+    const state = getToolbarContext()
+    const editor = () => state.editor
 
-    let { editor }: Props = $props()
-
-    const undo = () => editor.commands.undo()
-    const redo = () => editor.commands.redo()
+    const undo = () => editor().commands.undo()
+    const redo = () => editor().commands.redo()
     const clear = () => {
-        editor.chain().focus().clearNodes().run()
-        editor.chain().focus().selectParentNode().unsetAllMarks().run()
+        editor().chain().focus().clearNodes().run()
+        editor().chain().focus().selectParentNode().unsetAllMarks().run()
     }
     const toggleBold = () => {
-        if (editor.isActive("bold")) {
-            editor.chain().focus().unsetMark("bold", { extendEmptyMarkRange: true }).run()
+        if (state.isBold) {
+            editor().chain().focus().unsetMark("bold", { extendEmptyMarkRange: true }).run()
         } else {
-            editor.chain().focus().selectParentNode().setMark("bold").run()
+            editor().chain().focus().selectParentNode().setMark("bold").run()
         }
     }
 </script>
@@ -33,7 +29,7 @@
     <SvgRedo onclick={redo}/>
     <SvgClear onclick={clear}/>
     <SvgBrush/>
-    <SvgBold class={editor.isActive("bold") ? "active" : ""} onclick={toggleBold}/>
+    <SvgBold class={state.isBold ? "active" : ""} onclick={toggleBold}/>
 </div>
 <style lang="scss">
     :global(.dark) {

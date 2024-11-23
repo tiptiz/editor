@@ -5,7 +5,8 @@
     "author": "aolyang <aolyang@foxmail.com>",
     "license": "MIT",
     "scripts": {
-        "example": "pnpm --filter example"
+        "example": "pnpm --filter example",
+        "dev": "pnpm --filter example dev"
     },
     "dependencies": {
         "@tiptap/core": "^2.9.1",

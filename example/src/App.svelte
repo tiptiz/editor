@@ -3,23 +3,27 @@
 
     import ThemeMode from "@/components/ThemeMode.svelte"
     import Toolbar from "@/components/Toolbar.svelte"
+    import { setToolbarContext, type ToolbarState } from "@/states/toolbar"
     import { createEditor } from "@/utils/editor"
 
     import { onMount } from "svelte"
 
-    const ctx = createEditor({
-        onTransaction() {
-            // reactive problem
-            // eslint-disable-next-line no-self-assign
-            ctx.editor = ctx.editor
-        }
+    const state = $state<ToolbarState>({
+        isBold: false,
+        ...createEditor({
+            onTransaction({ editor }) {
+                state.editor = editor
+                state.isBold = editor.isActive("bold")
+            }
+        })
     })
+    setToolbarContext(state)
 
     let divRef: HTMLDivElement
     onMount(() => {
-        divRef.appendChild(ctx.container)
+        divRef.appendChild(state.container)
         return () => {
-            ctx.editor.destroy()
+            state.editor.destroy()
         }
     })
 </script>
@@ -27,10 +31,10 @@
 <div class="w-full h-[104px] fixed top-0 z-10">
     <div class="w-full min-h-[52px] px-4 border flex items-center bg-background">
         <div class="flex-1"></div>
-        <ThemeMode />
+        <ThemeMode/>
     </div>
-    <Toolbar editor={ctx.editor} />
-    <hr />
+    <Toolbar/>
+    <hr/>
 </div>
 <div class="size-full pt-[120px] pb-4 bg-accent">
     <div class="size-full overflow-y-auto px-4">
