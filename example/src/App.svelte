@@ -12,12 +12,14 @@
         isBold: false,
         isItalic: false,
         isStrike: false,
+        isUnderline: false,
         ...createEditor({
             onTransaction({ editor }) {
                 state.editor = editor
                 state.isBold = editor.isActive("bold")
                 state.isItalic = editor.isActive("italic")
                 state.isStrike = editor.isActive("strike")
+                state.isUnderline = editor.isActive("underline")
             }
         })
     })

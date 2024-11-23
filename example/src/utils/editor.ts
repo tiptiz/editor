@@ -15,6 +15,7 @@ import Strike from "@tiptap/extension-strike"
 import Sub from "@tiptap/extension-subscript"
 import Sup from "@tiptap/extension-superscript"
 import Text from "@tiptap/extension-text"
+import Underline from "@tiptap/extension-underline"
 import Heading from "tiptap-extension-heading"
 
 export const extensions: Extensions = [
@@ -27,6 +28,7 @@ export const extensions: Extensions = [
     Bold,
     Italic,
     Strike,
+    Underline,
     Code.configure({ HTMLAttributes: { style: "background-color: #dfdfdf; border-radius: 3px; padding: 2px 6px" } }),
     Sub,
     Sup,

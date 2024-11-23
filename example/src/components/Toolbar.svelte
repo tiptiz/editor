@@ -6,6 +6,7 @@
     import SvgItalic from "@/components/toolbars/SvgItalic.svelte"
     import SvgRedo from "@/components/toolbars/SvgRedo.svelte"
     import SvgStrike from "@/components/toolbars/SvgStrike.svelte"
+    import SvgUnderline from "@/components/toolbars/SvgUnderline.svelte"
     import SvgUndo from "@/components/toolbars/SvgUndo.svelte"
     import { getToolbarContext } from "@/states/toolbar"
 
@@ -30,7 +31,7 @@
     const toggleStrike = handleToggle("strike")
 </script>
 
-<div class="toolbar h-[52px] flex items-center justify-center gap-1">
+<div class="toolbar h-[52px] flex items-center justify-center gap-1.5">
     <SvgUndo onclick={undo}/>
     <SvgRedo onclick={redo}/>
     <Hr class="h-2/5 mx-2"/>
@@ -40,6 +41,7 @@
     <SvgBold class={state.isBold ? "active" : ""} onclick={toggleBold}/>
     <SvgItalic class={state.isItalic ? "active" : ""} onclick={toggleItalic}/>
     <SvgStrike class={state.isStrike ? "active" : ""} onclick={toggleStrike}/>
+    <SvgUnderline class={state.isUnderline ? "active" : ""} onclick={handleToggle("underline")}/>
 </div>
 <style lang="scss">
     :global(.dark) {
