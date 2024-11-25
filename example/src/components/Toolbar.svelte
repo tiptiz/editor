@@ -50,6 +50,7 @@
     <SvgItalic class={state.isItalic ? "active" : ""} onclick={toggleItalic}/>
     <SvgStrike class={state.isStrike ? "active" : ""} onclick={toggleStrike}/>
     <SvgUnderline class={state.isUnderline ? "active" : ""} onclick={handleToggle("underline")}/>
+    <Hr class="h-2/5 mx-2"/>
 </div>
 <style lang="scss">
     :global(.dark) {
