@@ -1,4 +1,5 @@
 <script lang="ts">
+    import HeadingSelect from "@/components/HeadingSelect.svelte"
     import Hr from "@/components/Hr.svelte"
     import SvgBold from "@/components/toolbars/SvgBold.svelte"
     import SvgBrush from "@/components/toolbars/SvgBrush.svelte"
@@ -6,6 +7,10 @@
     import SvgItalic from "@/components/toolbars/SvgItalic.svelte"
     import SvgRedo from "@/components/toolbars/SvgRedo.svelte"
     import SvgStrike from "@/components/toolbars/SvgStrike.svelte"
+    import SvgTextBgStyle from "@/components/toolbars/SvgTextBgStyle.svelte"
+    import SvgTextMinus from "@/components/toolbars/SvgTextMinus.svelte"
+    import SvgTextPlugs from "@/components/toolbars/SvgTextPlugs.svelte"
+    import SvgTextStyle from "@/components/toolbars/SvgTextStyle.svelte"
     import SvgUnderline from "@/components/toolbars/SvgUnderline.svelte"
     import SvgUndo from "@/components/toolbars/SvgUndo.svelte"
     import { getToolbarContext } from "@/states/toolbar"
@@ -45,6 +50,12 @@
     <Hr class="h-2/5 mx-2"/>
     <SvgClear onclick={clear}/>
     <SvgBrush/>
+    <Hr class="h-2/5 mx-2"/>
+    <SvgTextMinus />
+    <SvgTextPlugs />
+    <HeadingSelect />
+    <SvgTextStyle />
+    <SvgTextBgStyle />
     <Hr class="h-2/5 mx-2"/>
     <SvgBold class={state.isBold ? "active" : ""} onclick={toggleBold}/>
     <SvgItalic class={state.isItalic ? "active" : ""} onclick={toggleItalic}/>
