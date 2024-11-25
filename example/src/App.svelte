@@ -4,7 +4,7 @@
     import ThemeMode from "@/components/ThemeMode.svelte"
     import Toolbar from "@/components/Toolbar.svelte"
     import { setToolbarContext, type ToolbarState } from "@/states/toolbar"
-    import { createEditor } from "@/utils/editor"
+    import { createEditor, headingLevels } from "@/utils/editor"
 
     import { onMount } from "svelte"
 
@@ -13,6 +13,7 @@
         isItalic: false,
         isStrike: false,
         isUnderline: false,
+        isHeading: 0,
         ...createEditor({
             onTransaction({ editor }) {
                 state.editor = editor
@@ -20,6 +21,7 @@
                 state.isItalic = editor.isActive("italic")
                 state.isStrike = editor.isActive("strike")
                 state.isUnderline = editor.isActive("underline")
+                state.isHeading = headingLevels.find(level => editor.isActive(`heading`, { level })) || 0
             }
         })
     })

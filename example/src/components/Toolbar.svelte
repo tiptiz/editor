@@ -1,4 +1,6 @@
 <script lang="ts">
+    import type { HeadingLevel } from "@/utils/editor"
+
     import HeadingSelect from "@/components/HeadingSelect.svelte"
     import Hr from "@/components/Hr.svelte"
     import SvgBold from "@/components/toolbars/SvgBold.svelte"
@@ -42,6 +44,10 @@
     const toggleBold = handleToggle("bold")
     const toggleItalic = handleToggle("italic")
     const toggleStrike = handleToggle("strike")
+
+    const setupHeading = (level: HeadingLevel) => {
+        editor().chain().focus().toggleHeading({ level }).run()
+    }
 </script>
 
 <div class="toolbar h-[52px] flex items-center justify-center gap-1.5">
@@ -51,11 +57,13 @@
     <SvgClear onclick={clear}/>
     <SvgBrush/>
     <Hr class="h-2/5 mx-2"/>
-    <SvgTextMinus />
-    <SvgTextPlugs />
-    <HeadingSelect />
-    <SvgTextStyle />
-    <SvgTextBgStyle />
+    <SvgTextMinus/>
+    <SvgTextPlugs/>
+    <HeadingSelect class={state.isHeading ? "active" : ""}
+                   level={state.isHeading}
+                   onselect={setupHeading}/>
+    <SvgTextStyle/>
+    <SvgTextBgStyle/>
     <Hr class="h-2/5 mx-2"/>
     <SvgBold class={state.isBold ? "active" : ""} onclick={toggleBold}/>
     <SvgItalic class={state.isItalic ? "active" : ""} onclick={toggleItalic}/>
@@ -73,10 +81,6 @@
     .toolbar {
         --font-color: #4d4d4d;
 
-        :global(svg.active) {
-            color: hsl(var(--primary));
-        }
-
         :global(svg) {
             color: var(--font-color);
             font-size: 20px;
@@ -84,6 +88,14 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+
+        :global(svg.active) {
+            color: hsl(var(--primary));
+        }
+
+        :global(.active svg) {
+            color: hsl(var(--primary));
         }
     }
 </style>

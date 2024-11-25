@@ -19,6 +19,9 @@ import TextStyle from "@tiptap/extension-text-style"
 import Underline from "@tiptap/extension-underline"
 import Heading from "tiptap-extension-heading"
 
+export const headingLevels = [1, 2, 3, 4, 5, 6] as const
+export type HeadingLevel = typeof headingLevels[number]
+
 export const extensions: Extensions = [
     Document,
     DropCursor,

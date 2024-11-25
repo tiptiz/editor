@@ -1,4 +1,5 @@
 import type { Editor } from "@tiptap/core"
+import type { HeadingLevel } from "@/utils/editor"
 
 import { getContext, setContext } from "svelte"
 
@@ -11,6 +12,7 @@ export interface ToolbarState {
     isItalic: boolean
     isStrike: boolean
     isUnderline: boolean
+    isHeading: HeadingLevel | 0
 }
 
 export const setToolbarContext = (state: ToolbarState) => {
