@@ -23,6 +23,7 @@
         "@tiptap/extension-subscript": "^2.10.2",
         "@tiptap/extension-superscript": "^2.10.2",
         "@tiptap/extension-text": "^2.10.0",
+        "@tiptap/extension-text-style": "^2.10.2",
         "@tiptap/extension-underline": "^2.10.2",
         "tiptap-extension-heading": "workspace:*"
     },
@@ -30,7 +31,9 @@
         "@sveltejs/vite-plugin-svelte": "^4.0.1",
         "@tsconfig/svelte": "^5.0.4",
         "autoprefixer": "^10.4.20",
+        "bits-ui": "^0.21.16",
         "clsx": "^2.1.1",
+        "lucide-svelte": "^0.460.1",
         "postcss": "^8",
         "sass": "^1.81.0",
         "svelte": "^5.1.3",

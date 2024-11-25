@@ -7,7 +7,7 @@
 		"baseColor": "stone"
 	},
 	"aliases": {
-		"components": "@/components/ui",
+		"components": "@/components",
 		"utils": "@/utils/shadcn"
 	},
 	"typescript": true
