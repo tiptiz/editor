@@ -101,5 +101,11 @@ export default [
             "@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: true }],
             "@stylistic/indent": ["error", 4, { offsetTernaryExpressions: false }]
         }
+    },
+    {
+        ignores: [
+            "**/node_modules",
+            "**/components/ui"
+        ]
     }
 ]
