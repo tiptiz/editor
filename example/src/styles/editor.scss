@@ -2,6 +2,7 @@
     height: auto;
     padding: 10px 20px;
 }
+
 .editor-container .tiptap {
     min-height: 100%;
 }
@@ -14,8 +15,30 @@
     code {
     }
 }
+
 .dark .tiptap {
     code {
         background-color: rgba(45, 45, 45, 0.47) !important;
+    }
+}
+
+.dark .toolbar {
+    --font-color: #e6e6e6;
+}
+
+.toolbar {
+    --font-color: #4d4d4d;
+
+    svg {
+        color: var(--font-color);
+        font-size: 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .active, svg.active, .active svg {
+        color: hsl(var(--primary));
     }
 }

@@ -5,8 +5,11 @@ import html from "@/assets/features.html?raw"
 import { Editor } from "@tiptap/core"
 import Bold from "@tiptap/extension-bold"
 import Code from "@tiptap/extension-code"
+import Color from "@tiptap/extension-color"
 import Document from "@tiptap/extension-document"
 import DropCursor from "@tiptap/extension-dropcursor"
+import FontFamily from "@tiptap/extension-font-family"
+import Highlight from "@tiptap/extension-highlight"
 import History from "@tiptap/extension-history"
 import Hr from "@tiptap/extension-horizontal-rule"
 import Italic from "@tiptap/extension-italic"
@@ -36,7 +39,10 @@ export const extensions: Extensions = [
     Code.configure({ HTMLAttributes: { style: "background-color: #dfdfdf; border-radius: 3px; padding: 2px 6px" } }),
     Sub,
     Sup,
-    TextStyle,
+    TextStyle, /* */// given ability to let <span style="" /> element can keep style attribute
+    FontFamily, /**/// operate style.fontFamily
+    Color, /*     */// operate style.color
+    Highlight, /* */// operate style.backgroundColor
     // packages/*
     Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } })
 ]

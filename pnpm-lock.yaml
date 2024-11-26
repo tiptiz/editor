@@ -69,12 +69,21 @@ importers:
       '@tiptap/extension-code':
         specifier: ^2.10.2
         version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/extension-color':
+        specifier: ^2.10.2
+        version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/extension-text-style@2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1)))
       '@tiptap/extension-document':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
       '@tiptap/extension-dropcursor':
         specifier: ^2.10.2
         version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
+      '@tiptap/extension-font-family':
+        specifier: ^2.10.2
+        version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/extension-text-style@2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1)))
+      '@tiptap/extension-highlight':
+        specifier: ^2.10.2
+        version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
       '@tiptap/extension-history':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
@@ -685,6 +694,12 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
+  '@tiptap/extension-color@2.10.2':
+    resolution: {integrity: sha512-lIUrsk8XBG0h8ft5vU6u0ehPk0pcZK3xjhOLF/qxiGhZNBynX5/Nb7mez05J0/P6GKsD9Hj6UD7wm4ZkGmNT9A==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/extension-text-style': ^2.7.0
+
   '@tiptap/extension-document@2.10.0':
     resolution: {integrity: sha512-vseMW3EKiQAPgdbN48Y8F0nRqWhhrAo9DLacAfP7tu0x3uv44uotNjDBtAgp5QmJmqQVyrEdkLSZaU5vFzduhQ==}
     peerDependencies:
@@ -701,6 +716,12 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.7.0
       '@tiptap/pm': ^2.7.0
+
+  '@tiptap/extension-font-family@2.10.2':
+    resolution: {integrity: sha512-0O3aBLgJ7QNkqFm3Ca+QnMnF3FEzvtFXICxRYXOSawjW8bYJLpA5/bl4q9cbLYOfNGU2BncFb0OjDDvye5UGVQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/extension-text-style': ^2.7.0
 
   '@tiptap/extension-gapcursor@2.9.1':
     resolution: {integrity: sha512-jsRBmX01vr+5H02GljiHMo0n5H1vzoMLmFarxe0Yq2d2l9G/WV2VWX2XnGliqZAYWd1bI0phs7uLQIN3mxGQTw==}
@@ -720,6 +741,11 @@ packages:
 
   '@tiptap/extension-heading@2.9.1':
     resolution: {integrity: sha512-SjZowzLixOFaCrV2cMaWi1mp8REK0zK1b3OcVx7bCZfVSmsOETJyrAIUpCKA8o60NwF7pwhBg0MN8oXlNKMeFw==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+
+  '@tiptap/extension-highlight@2.10.2':
+    resolution: {integrity: sha512-yJpqagUS672RPsGRc6JrNuqf3DbMiP+g4Al3cVpU3ff3yEORbCMsgvwkCOE9thSO9B4SOFQP4HzX2x1DLJtjew==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
@@ -2341,6 +2367,11 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
+  '@tiptap/extension-color@2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/extension-text-style@2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1)))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/extension-text-style': 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+
   '@tiptap/extension-document@2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
@@ -2354,6 +2385,11 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
       '@tiptap/pm': 2.9.1
+
+  '@tiptap/extension-font-family@2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/extension-text-style@2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1)))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/extension-text-style': 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
 
   '@tiptap/extension-gapcursor@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)':
     dependencies:
@@ -2369,6 +2405,10 @@ snapshots:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
   '@tiptap/extension-heading@2.9.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+
+  '@tiptap/extension-highlight@2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
