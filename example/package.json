@@ -28,7 +28,8 @@
         "@tiptap/extension-text": "^2.10.0",
         "@tiptap/extension-text-style": "^2.10.2",
         "@tiptap/extension-underline": "^2.10.2",
-        "tiptap-extension-heading": "workspace:*"
+        "tiptap-extension-heading": "workspace:*",
+        "tiptap-extension-font-size": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",

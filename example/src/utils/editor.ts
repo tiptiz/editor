@@ -20,6 +20,7 @@ import Sup from "@tiptap/extension-superscript"
 import Text from "@tiptap/extension-text"
 import TextStyle from "@tiptap/extension-text-style"
 import Underline from "@tiptap/extension-underline"
+import FontSize from "tiptap-extension-font-size"
 import Heading from "tiptap-extension-heading"
 
 export const headingLevels = [1, 2, 3, 4, 5, 6] as const
@@ -44,7 +45,8 @@ export const extensions: Extensions = [
     Color, /*     */// operate style.color
     Highlight, /* */// operate style.backgroundColor
     // packages/*
-    Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } })
+    Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } }),
+    FontSize
 ]
 
 export const createEditor = (options?: Partial<EditorOptions>) => {
@@ -61,4 +63,13 @@ export const createEditor = (options?: Partial<EditorOptions>) => {
             ...options
         })
     }
+}
+
+export const currentFocusNode = (editor: Editor, nodeType = Node.ELEMENT_NODE) => {
+    const pos = editor.state.selection.from
+    let node: Node | null = editor.view.domAtPos(pos).node
+    while (node && node.nodeType !== nodeType) {
+        node = node.parentNode
+    }
+    return node
 }
