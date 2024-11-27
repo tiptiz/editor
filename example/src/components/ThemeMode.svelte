@@ -1,11 +1,12 @@
 <script lang="ts">
     import SvgDarkMode from "@/components/icons/SvgDarkMode.svelte"
     import SvgLightMode from "@/components/icons/SvgLightMode.svelte"
+    import { theme } from "@/states/theme.svelte"
 
-    let isDark = $state(localStorage.getItem("theme-mode") === "dark")
+    theme.isDark = localStorage.getItem("theme-mode") === "dark"
 
     $effect(() => {
-        if (isDark) {
+        if (theme.isDark) {
             document.body.classList.add("dark")
             localStorage.setItem("theme-mode", "dark")
         } else {
@@ -15,8 +16,8 @@
     })
 </script>
 
-<button onclick={() => isDark = !isDark}>
-    {#if isDark}
+<button onclick={() => theme.isDark = !theme.isDark}>
+    {#if theme.isDark}
         <SvgLightMode width="30px" />
     {:else}
         <SvgDarkMode width="30px" />
