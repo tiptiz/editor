@@ -40,10 +40,12 @@ export const extensions: Extensions = [
     Code.configure({ HTMLAttributes: { style: "background-color: #dfdfdf; border-radius: 3px; padding: 2px 6px" } }),
     Sub,
     Sup,
-    TextStyle, /* */// given ability to let <span style="" /> element can keep style attribute
-    FontFamily, /**/// operate style.fontFamily
-    Color, /*     */// operate style.color
-    Highlight, /* */// operate style.backgroundColor
+    TextStyle, /*           */// given ability to let <span style="" /> element can keep style attribute
+    FontFamily, /*          */// operate style.fontFamily
+    Color, /*               */// operate style.color
+    Highlight.configure({ /**/// operate style.backgroundColor
+        multicolor: true /* */// true to enable textStyle setup style.backgroundColor
+    }),
     // packages/*
     Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } }),
     FontSize

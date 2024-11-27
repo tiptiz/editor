@@ -15,10 +15,10 @@ export interface ToolbarState {
     isHeading: HeadingLevel | 0
 }
 
-export const setToolbarContext = (state: ToolbarState) => {
+export const setEditorContext = (state: ToolbarState) => {
     setContext(toolbarStateKey, state)
 }
 
-export const getToolbarContext = () => {
+export const getEditorContext = () => {
     return getContext(toolbarStateKey) as ToolbarState
 }

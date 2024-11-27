@@ -10,8 +10,7 @@
     },
     "dependencies": {
         "@tiptap/core": "^2.9.1",
-        "@tiptap/pm": "^2.9.1",
-        "@tiptap/starter-kit": "^2.9.1"
+        "@tiptap/pm": "^2.9.1"
     },
     "devDependencies": {
         "eslint": "^9.15.0",

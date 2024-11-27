@@ -3,7 +3,7 @@
 
     import ThemeMode from "@/components/ThemeMode.svelte"
     import Toolbar from "@/components/Toolbar.svelte"
-    import { setToolbarContext, type ToolbarState } from "@/states/toolbar"
+    import { setEditorContext, type ToolbarState } from "@/states/toolbar"
     import { createEditor, headingLevels } from "@/utils/editor"
 
     import { onMount } from "svelte"
@@ -25,7 +25,7 @@
             }
         })
     })
-    setToolbarContext(state)
+    setEditorContext(state)
 
     let divRef: HTMLDivElement
     onMount(() => {

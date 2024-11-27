@@ -3,9 +3,9 @@
     import SvgItalic from "@/components/toolbars/SvgItalic.svelte"
     import SvgStrike from "@/components/toolbars/SvgStrike.svelte"
     import SvgUnderline from "@/components/toolbars/SvgUnderline.svelte"
-    import { getToolbarContext } from "@/states/toolbar"
+    import { getEditorContext } from "@/states/toolbar"
 
-    const state = getToolbarContext()
+    const state = getEditorContext()
 
     // TODO find a way, select node by focus
     const handleToggle = (name: string) => () => {
