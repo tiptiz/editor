@@ -5,7 +5,7 @@ export const BulletList = TiptapBulletList.extend({
     addAttributes() {
         return {
             ...this.parent?.(),
-            listType: {
+            listStyleType: {
                 default: "disc",
                 parseHTML: element => element.style.getPropertyValue("list-style-type") || "disc",
                 renderHTML: ({ listType }) => {

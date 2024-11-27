@@ -1,7 +1,5 @@
 <script lang="ts">
-import SvgBulletList from "@/components/toolbars/SvgBulletList.svelte"
-import SvgOrderedList from "@/components/toolbars/SvgOrderedList.svelte"
+import SelectListType from "@/components/SelectListType.svelte"
 </script>
 
-<SvgBulletList/>
-<SvgOrderedList />
+<SelectListType onselect={() => void 0} />

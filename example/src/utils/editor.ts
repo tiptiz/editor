@@ -49,7 +49,9 @@ export const extensions: Extensions = [
         multicolor: true /* */// true to enable textStyle setup style.backgroundColor
     }),
     ListItem,
-    BulletList,
+    BulletList.configure({
+        // listStyleType: "disc"
+    }),
     // packages/*
     Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } }),
     FontSize
