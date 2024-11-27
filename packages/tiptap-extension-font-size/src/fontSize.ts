@@ -2,6 +2,9 @@ import "@tiptap/extension-text-style"
 
 import { Extension } from "@tiptap/core"
 
+type FontSizeOptions = {
+    types: string[]
+}
 declare module "@tiptap/core" {
     interface Commands<ReturnType> {
         fontSize: {
@@ -19,7 +22,7 @@ declare module "@tiptap/core" {
     }
 }
 
-export const FontSize = Extension.create({
+export const FontSize = Extension.create<FontSizeOptions>({
     name: "fontSize",
 
     addOptions() {
