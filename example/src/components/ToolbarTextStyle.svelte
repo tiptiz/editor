@@ -53,6 +53,7 @@
         }
     }
 </script>
+
 <EditorTransactionEvent handler={handleTextStyleTr}/>
 <SvgTextMinus onclick={() => updateFontSize(-2)}/>
 <SvgTextPlugs onclick={() => updateFontSize(2)}/>
