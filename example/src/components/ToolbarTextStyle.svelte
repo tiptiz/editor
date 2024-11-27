@@ -3,7 +3,7 @@
 
     import ColorPicker from "@/components/ColorPicker.svelte"
     import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
-    import HeadingSelect from "@/components/HeadingSelect.svelte"
+    import SelectHeadingLevel from "@/components/SelectHeadingLevel.svelte"
     import SvgTextBgStyle from "@/components/toolbars/SvgTextBgStyle.svelte"
     import SvgTextMinus from "@/components/toolbars/SvgTextMinus.svelte"
     import SvgTextPlugs from "@/components/toolbars/SvgTextPlugs.svelte"
@@ -57,9 +57,9 @@
 <EditorTransactionEvent handler={handleTextStyleTr}/>
 <SvgTextMinus onclick={() => updateFontSize(-2)}/>
 <SvgTextPlugs onclick={() => updateFontSize(2)}/>
-<HeadingSelect class={ctx.isHeading ? "active" : ""}
-               level={ctx.isHeading}
-               onselect={setupHeading}/>
+<SelectHeadingLevel class={ctx.isHeading ? "active" : ""}
+                    level={ctx.isHeading}
+                    onselect={setupHeading}/>
 <ColorPicker onselect={setFontColor}>
     <SvgTextStyle color={foreground}/>
 </ColorPicker>

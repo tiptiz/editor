@@ -12,6 +12,7 @@
     "dependencies": {
         "@tiptap/extension-bold": "^2.10.1",
         "@tiptap/extension-bubble-menu": "^2.10.2",
+        "@tiptap/extension-bullet-list": "^2.10.3",
         "@tiptap/extension-code": "^2.10.2",
         "@tiptap/extension-color": "^2.10.2",
         "@tiptap/extension-document": "^2.10.0",
@@ -21,6 +22,7 @@
         "@tiptap/extension-history": "^2.10.0",
         "@tiptap/extension-horizontal-rule": "^2.10.1",
         "@tiptap/extension-italic": "^2.10.2",
+        "@tiptap/extension-list-item": "^2.10.3",
         "@tiptap/extension-paragraph": "^2.10.0",
         "@tiptap/extension-strike": "^2.10.2",
         "@tiptap/extension-subscript": "^2.10.2",
@@ -29,7 +31,8 @@
         "@tiptap/extension-text-style": "^2.10.2",
         "@tiptap/extension-underline": "^2.10.2",
         "tiptap-extension-font-size": "workspace:*",
-        "tiptap-extension-heading": "workspace:*"
+        "tiptap-extension-heading": "workspace:*",
+        "tiptap-extension-bullet-list": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",

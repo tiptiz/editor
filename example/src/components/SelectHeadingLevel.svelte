@@ -43,7 +43,7 @@
 {/snippet}
 <DropdownMenu>
     <DropdownMenuTrigger>
-        <div class={`w-11 -mb-0.5 flex pl-1.5 heading-trigger ${classes}`} {...restProps}>
+        <div class={`w-11 h-6 -mb-0.5 flex items-center pl-1.5 heading-trigger ${classes}`} {...restProps}>
             <CurrentHeading/>
             <SvgArrowDown width="16px"/>
         </div>
