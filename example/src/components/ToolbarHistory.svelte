@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Hr from "@/components/Hr.svelte"
     import SvgBrush from "@/components/toolbars/SvgBrush.svelte"
     import SvgClear from "@/components/toolbars/SvgClear.svelte"
     import SvgRedo from "@/components/toolbars/SvgRedo.svelte"
@@ -19,6 +18,5 @@
 
 <SvgUndo onclick={undo}/>
 <SvgRedo onclick={redo}/>
-<Hr class="h-2/5 mx-2"/>
 <SvgClear onclick={clear}/>
-<SvgBrush/>
+<SvgBrush class="cursor-not-allowed"/>
