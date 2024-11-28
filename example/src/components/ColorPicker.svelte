@@ -1,7 +1,9 @@
 <script lang="ts">
     import type { Snippet } from "svelte"
 
+    import SvgForbidden from "@/components/icons/SvgForbidden.svelte"
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+    import { appendColors, colors, colorsRecommended } from "@/states/histories.svelte"
     import { theme } from "@/states/theme.svelte"
 
     import LibColorPicker from "svelte-color-picker"
@@ -12,18 +14,51 @@
     }
 
     const { onselect, children }: Props = $props()
+
+    let currentColor: string | undefined
+    const handleMenuClose = (open: boolean) => {
+        if (!open && currentColor) appendColors(currentColor)
+        else {
+            currentColor = undefined
+        }
+    }
+    const handleColorChange = (color?: string) => {
+        currentColor = color
+        onselect(color)
+    }
 </script>
 
-<DropdownMenu>
+{#snippet block(_colors: string[])}
+    {#each _colors as color}
+        <button class="w-6 h-6 rounded-full shadow-2xl"
+                aria-label={`color ${color}`}
+                style="background-color: {color}">
+        </button>
+    {/each}
+{/snippet}
+<DropdownMenu onOpenChange={handleMenuClose}>
     <DropdownMenuTrigger>
         {@render children()}
     </DropdownMenuTrigger>
     <DropdownMenuContent class="min-w-0 color-picker-menu-content">
-        <LibColorPicker on:input={e => onselect(e.detail.color?.toRgbString())}
+        <LibColorPicker on:input={e => handleColorChange(e.detail.color?.toHex())}
                         isDark={theme.isDark}
                         isDialog={false}
                         textInputModes={["hex"]}
                         disableCloseClickOutside/>
+        {#if colors.length}
+            <div class="flex flex-wrap w-full gap-2 p-2">
+                {@render block(colors)}
+            </div>
+            <hr/>
+        {/if}
+        <div class="flex flex-wrap w-[263px] gap-2 p-2">
+            <button class="w-6 h-6 rounded-full border-2 bg-gray-200"
+                 onclick={() => handleColorChange()}>
+                <SvgForbidden class="size-full" style="color: red"/>
+            </button>
+            {@render block(colorsRecommended)}
+        </div>
     </DropdownMenuContent>
 </DropdownMenu>
 

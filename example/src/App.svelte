@@ -8,9 +8,6 @@
 
     import { onMount } from "svelte"
     /*
-    * TODO better reset / clear
-    * 1. reset text heading,bold to normal but not clear color & backgroundColor
-    * 2. clear color/backgroundColor only
     * TODO features
     * list, table, emoji, text align, resize box, resize image, resize video, codepen
     * */
