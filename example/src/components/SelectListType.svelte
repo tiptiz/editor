@@ -1,14 +1,11 @@
 <script lang="ts">
-
     import type { Component } from "svelte"
 
-    import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
     import SvgArrowDown from "@/components/icons/SvgArrowDown.svelte"
     import SvgCircle from "@/components/icons/SvgCircle.svelte"
     import SvgDot from "@/components/icons/SvgDot.svelte"
     import SvgSquare from "@/components/icons/SvgSquare.svelte"
     import SvgListBulleted from "@/components/toolbars/SvgListBulleted.svelte"
-    import SvgListNumbered from "@/components/toolbars/SvgListNumbered.svelte"
     import {
         DropdownMenu,
         DropdownMenuContent,
@@ -35,41 +32,36 @@
         { label: "A, B, C...", name: "Upper Alpha", style: "upper-alpha" },
         { label: "i, ii, iii...", name: "Lower Roman", style: "lower-roman" }
     ]
-    let listStyleType: string = "disc"
-    let CurrentListStyle = $derived(listStyles.find(ls => ls.style === listStyleType)
-        ?.label
-        ? SvgListNumbered
-        : SvgListBulleted)
+    let listStyleType = $state("disc")
 
-    const handleListStyleTr = () => {
+    const handleListStyleState = () => {
         listStyleType = ctx.editor.getAttributes("bulletList").listStyleType
     }
     const handleListStyleSelect = (listStyleType: string) => {
-        const { editor } = ctx
+        const { editor, isBulletList } = ctx
         let chain = editor.chain().focus()
-        if (!editor.isActive("bulletList")) {
-            chain.toggleBulletList().updateAttributes("bulletList", { listStyleType })
+        if (!isBulletList) {
+            chain.toggleBulletList().updateAttributes("bulletList", { listStyleType }).run()
         } else if (editor.getAttributes("bulletList").listStyleType !== listStyleType) {
-            chain.updateAttributes("bulletList", { listStyleType })
+            chain.updateAttributes("bulletList", { listStyleType }).run()
         } else {
-            chain.toggleBulletList()
+            chain.toggleBulletList().run()
         }
     }
 </script>
 
-<EditorTransactionEvent handler={handleListStyleTr}/>
 {#snippet renderIcon(Icon: Component)}
     <Icon width="10px" class="mr-2"/>
 {/snippet}
 
-<DropdownMenu>
+<DropdownMenu onOpenChange={handleListStyleState}>
     <DropdownMenuTrigger>
-        <div class={`w-11 h-6 -mb-0.5 flex items-center pl-1.5 heading-trigger`}>
-            <CurrentListStyle/>
+        <div class={`w-11 h-6 -mb-0.5 flex items-center pl-1.5 heading-trigger`} class:active={ctx.isBulletList}>
+            <SvgListBulleted/>
             <SvgArrowDown width="16px"/>
         </div>
     </DropdownMenuTrigger>
-    <DropdownMenuContent>
+    <DropdownMenuContent class="svg-active-able">
         {#each listStyles as { icon, name, style, label }}
             <DropdownMenuItem class={style === listStyleType ? "active" : "" }
                               onclick={() => handleListStyleSelect(style)}>

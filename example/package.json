@@ -12,7 +12,6 @@
     "dependencies": {
         "@tiptap/extension-bold": "^2.10.1",
         "@tiptap/extension-bubble-menu": "^2.10.2",
-        "@tiptap/extension-bullet-list": "^2.10.3",
         "@tiptap/extension-code": "^2.10.2",
         "@tiptap/extension-color": "^2.10.2",
         "@tiptap/extension-document": "^2.10.0",

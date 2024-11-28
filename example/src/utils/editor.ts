@@ -35,7 +35,7 @@ export const extensions: Extensions = [
     Text,
     Paragraph.configure({ HTMLAttributes: { style: "margin: 5px 0" } }),
     Hr.configure({ HTMLAttributes: { style: "margin: 10px 0;" } }),
-    Bold,
+    Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
     Italic,
     Strike,
     Underline,
@@ -49,9 +49,7 @@ export const extensions: Extensions = [
         multicolor: true /* */// true to enable textStyle setup style.backgroundColor
     }),
     ListItem,
-    BulletList.configure({
-        // listStyleType: "disc"
-    }),
+    BulletList.configure({ HTMLAttributes: { style: "padding-left: 20px" } }),
     // packages/*
     Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } }),
     FontSize

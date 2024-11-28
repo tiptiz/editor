@@ -13,6 +13,7 @@ export interface ToolbarState {
     isStrike: boolean
     isUnderline: boolean
     isHeading: HeadingLevel | 0
+    isBulletList: boolean
 }
 
 export const setEditorContext = (state: ToolbarState) => {

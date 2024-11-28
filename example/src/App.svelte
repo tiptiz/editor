@@ -20,6 +20,7 @@
         isStrike: false,
         isUnderline: false,
         isHeading: 0,
+        isBulletList: false,
         ...createEditor({
             onTransaction({ editor }) {
                 state.editor = editor
@@ -28,6 +29,7 @@
                 state.isStrike = editor.isActive("strike")
                 state.isUnderline = editor.isActive("underline")
                 state.isHeading = headingLevels.find(level => editor.isActive(`heading`, { level })) || 0
+                state.isBulletList = editor.isActive("bulletList")
             }
         })
     })
