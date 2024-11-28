@@ -43,7 +43,7 @@
 {/snippet}
 <DropdownMenu>
     <DropdownMenuTrigger>
-        <div class={`w-11 h-6 -mb-0.5 flex items-center pl-1.5 heading-trigger ${classes}`} {...restProps}>
+        <div class={`w-11 h-6 -mb-0.5 flex items-center pl-1.5 toolbar-icon-trigger ${classes}`} {...restProps}>
             <CurrentHeading/>
             <SvgArrowDown width="16px"/>
         </div>
@@ -55,21 +55,6 @@
     </DropdownMenuContent>
 </DropdownMenu>
 <style lang="scss">
-    :global(.dark) {
-        .heading-trigger {
-            --hover-color: #4d4d4d55;
-        }
-    }
-
-    .heading-trigger {
-        --hover-color: #e5e5e5;
-        border-radius: 2px;
-
-        &:hover {
-            background-color: var(--hover-color);
-        }
-    }
-
     :global(svg.active) {
         color: hsl(var(--primary));
     }
