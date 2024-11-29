@@ -89,3 +89,38 @@ html, body, #app {
         background-color: #4d4d4d;
     }
 }
+.dark .toolbar {
+    --font-color: #e6e6e6;
+}
+
+.toolbar, .svg-active-able {
+    --font-color: #4d4d4d;
+
+    svg {
+        color: var(--font-color);
+        font-size: 20px;
+
+        &:not(.cursor-not-allowed):hover {
+            cursor: pointer;
+        }
+    }
+
+    .active, svg.active, .active svg {
+        color: hsl(var(--primary));
+    }
+}
+
+.dark {
+    .toolbar-icon-trigger {
+        --hover-color: #4d4d4d55;
+    }
+}
+
+.toolbar-icon-trigger {
+    --hover-color: #e5e5e5;
+    border-radius: 2px;
+
+    &:hover {
+        background-color: var(--hover-color);
+    }
+}

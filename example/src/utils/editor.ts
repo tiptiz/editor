@@ -20,6 +20,8 @@ import Paragraph from "@tiptap/extension-paragraph"
 import Strike from "@tiptap/extension-strike"
 import Sub from "@tiptap/extension-subscript"
 import Sup from "@tiptap/extension-superscript"
+import TaskListItem from "@tiptap/extension-task-item"
+import TaskList from "@tiptap/extension-task-list"
 import Text from "@tiptap/extension-text"
 import TextStyle from "@tiptap/extension-text-style"
 import Underline from "@tiptap/extension-underline"
@@ -37,8 +39,8 @@ export const extensions: Extensions = [
     DropCursor,
     History,
     Text,
-    Paragraph.configure(attrs({ style: "margin: 0.625em 0" })),
-    Hr.configure(attrs({ style: "margin: 10px 0;" })),
+    Paragraph,
+    Hr.configure(attrs({ style: css`margin: 10px 0` })),
     Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
     Italic,
     Strike,
@@ -58,8 +60,28 @@ export const extensions: Extensions = [
     Highlight.configure({ /**/// operate style.backgroundColor
         multicolor: true /* */// true to enable textStyle setup style.backgroundColor
     }),
+    BulletList.configure(attrs({ class: "list-paddingleft-1", style: css`padding-left: 1.25em` })),
     ListItem,
-    BulletList.configure(attrs({ style: css`padding-left: 20px` })),
+    TaskList.configure(attrs({
+        style: css`
+            /*
+             * It's a hack here, for some editor (eg: wechat editor) 
+             * didn't support 0 value padding
+             * so, you can paste taskList with style now
+             */
+            padding-left: 1px;
+            margin-left: -1px;
+        `
+    })),
+    TaskListItem.configure({
+        nested: true,
+        ...attrs({
+            style: css`
+                display: flex;
+                gap: 0.625em;
+            `
+        })
+    }),
     BlockQuote.configure(attrs({
         style: css`
             overflow: hidden;
