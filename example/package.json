@@ -10,6 +10,7 @@
         "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
     },
     "dependencies": {
+        "@tiptap/extension-blockquote": "^2.10.3",
         "@tiptap/extension-bold": "^2.10.1",
         "@tiptap/extension-bubble-menu": "^2.10.2",
         "@tiptap/extension-code": "^2.10.2",
@@ -31,9 +32,9 @@
         "@tiptap/extension-underline": "^2.10.2",
         "tiptap-extension-bullet-list": "workspace:*",
         "tiptap-extension-font-size": "workspace:*",
+        "tiptap-extension-hard-break": "workspace:*",
         "tiptap-extension-heading": "workspace:*",
-        "tiptap-extension-indent": "workspace:*",
-        "tiptap-extension-hard-break": "workspace:*"
+        "tiptap-extension-indent": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",

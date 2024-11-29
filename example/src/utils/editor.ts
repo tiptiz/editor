@@ -1,8 +1,10 @@
 import type { EditorOptions, Extensions } from "@tiptap/core"
 
 import html from "@/assets/features.html?raw"
+import { attrs, css } from "@/utils/config"
 
 import { Editor } from "@tiptap/core"
+import BlockQuote from "@tiptap/extension-blockquote"
 import Bold from "@tiptap/extension-bold"
 import Code from "@tiptap/extension-code"
 import Color from "@tiptap/extension-color"
@@ -35,13 +37,19 @@ export const extensions: Extensions = [
     DropCursor,
     History,
     Text,
-    Paragraph.configure({ HTMLAttributes: { style: "margin-top: 0.625em" } }),
-    Hr.configure({ HTMLAttributes: { style: "margin: 10px 0;" } }),
+    Paragraph.configure(attrs({ style: "margin: 0.625em 0" })),
+    Hr.configure(attrs({ style: "margin: 10px 0;" })),
     Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
     Italic,
     Strike,
     Underline,
-    Code.configure({ HTMLAttributes: { style: "background-color: #dfdfdf; border-radius: 3px; padding: 2px 6px" } }),
+    Code.configure(attrs({
+        style: css`
+            padding: 2px 6px;
+            border-radius: 3px;
+            background-color: #dfdfdf;
+        `
+    })),
     Sub,
     Sup,
     TextStyle, /*           */// given ability to let <span style="" /> element can keep style attribute
@@ -51,11 +59,21 @@ export const extensions: Extensions = [
         multicolor: true /* */// true to enable textStyle setup style.backgroundColor
     }),
     ListItem,
-    BulletList.configure({ HTMLAttributes: { style: "padding-left: 20px" } }),
+    BulletList.configure(attrs({ style: css`padding-left: 20px` })),
+    BlockQuote.configure(attrs({
+        style: css`
+            overflow: hidden;
+            padding-left: 20px;
+            border-left: 4px;
+            border-style: solid;
+            border-color: #dfdfdf66;
+            background-color: #efefef44
+        `
+    })),
     Indent,
     HardBreak,
     // packages/*
-    Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } }),
+    Heading.configure(attrs({ all: { style: css`margin: 5px 0` } })),
     FontSize
 ]
 
@@ -73,13 +91,4 @@ export const createEditor = (options?: Partial<EditorOptions>) => {
             ...options
         })
     }
-}
-
-export const currentFocusNode = (editor: Editor, nodeType = Node.ELEMENT_NODE) => {
-    const pos = editor.state.selection.from
-    let node: Node | null = editor.view.domAtPos(pos).node
-    while (node && node.nodeType !== nodeType) {
-        node = node.parentNode
-    }
-    return node
 }
