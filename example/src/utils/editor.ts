@@ -23,6 +23,7 @@ import TextStyle from "@tiptap/extension-text-style"
 import Underline from "@tiptap/extension-underline"
 import BulletList from "tiptap-extension-bullet-list"
 import FontSize from "tiptap-extension-font-size"
+import HardBreak from "tiptap-extension-hard-break"
 import Heading from "tiptap-extension-heading"
 import Indent from "tiptap-extension-indent"
 
@@ -34,7 +35,7 @@ export const extensions: Extensions = [
     DropCursor,
     History,
     Text,
-    Paragraph.configure({ HTMLAttributes: { style: "margin: 5px 0" } }),
+    Paragraph.configure({ HTMLAttributes: { style: "margin-top: 0.625em" } }),
     Hr.configure({ HTMLAttributes: { style: "margin: 10px 0;" } }),
     Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
     Italic,
@@ -52,6 +53,7 @@ export const extensions: Extensions = [
     ListItem,
     BulletList.configure({ HTMLAttributes: { style: "padding-left: 20px" } }),
     Indent,
+    HardBreak,
     // packages/*
     Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } }),
     FontSize

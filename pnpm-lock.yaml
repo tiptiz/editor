@@ -135,6 +135,9 @@ importers:
       tiptap-extension-font-size:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-font-size
+      tiptap-extension-hard-break:
+        specifier: workspace:*
+        version: link:../packages/tiptap-extension-hard-break
       tiptap-extension-heading:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-heading
@@ -205,6 +208,18 @@ importers:
       '@tiptap/core':
         specifier: ^2.9.1
         version: 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/extension-text-style':
+        specifier: ^2.10.2
+        version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+
+  packages/tiptap-extension-hard-break:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/extension-hard-break':
+        specifier: ^2.10.3
+        version: 2.10.3(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
       '@tiptap/extension-text-style':
         specifier: ^2.10.2
         version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
@@ -749,6 +764,11 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.7.0
       '@tiptap/extension-text-style': ^2.7.0
+
+  '@tiptap/extension-hard-break@2.10.3':
+    resolution: {integrity: sha512-2rFlimUKAgKDwT6nqAMtPBjkrknQY8S7oBNyIcDOUGyFkvbDUl3Jd0PiC929S5F3XStJRppnMqhpNDAlWmvBLA==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
 
   '@tiptap/extension-heading@2.10.0':
     resolution: {integrity: sha512-x2Uj5wrAHFaUdlChwLoQVmWtzZCuNyJpBRA19kA4idWL5z+6cIrUWepvwVBxA8ou6ictbzWW15o+blKtW7DlqA==}
@@ -2353,6 +2373,10 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
       '@tiptap/extension-text-style': 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+
+  '@tiptap/extension-hard-break@2.10.3(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
   '@tiptap/extension-heading@2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:

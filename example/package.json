@@ -29,10 +29,11 @@
         "@tiptap/extension-text": "^2.10.0",
         "@tiptap/extension-text-style": "^2.10.2",
         "@tiptap/extension-underline": "^2.10.2",
+        "tiptap-extension-bullet-list": "workspace:*",
         "tiptap-extension-font-size": "workspace:*",
         "tiptap-extension-heading": "workspace:*",
-        "tiptap-extension-bullet-list": "workspace:*",
-        "tiptap-extension-indent": "workspace:*"
+        "tiptap-extension-indent": "workspace:*",
+        "tiptap-extension-hard-break": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",
