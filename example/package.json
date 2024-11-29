@@ -31,7 +31,8 @@
         "@tiptap/extension-underline": "^2.10.2",
         "tiptap-extension-font-size": "workspace:*",
         "tiptap-extension-heading": "workspace:*",
-        "tiptap-extension-bullet-list": "workspace:*"
+        "tiptap-extension-bullet-list": "workspace:*",
+        "tiptap-extension-indent": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",

@@ -1,26 +1,31 @@
 <script lang="ts">
-import SelectListType from "@/components/SelectListType.svelte"
-import SvgIndentDec from "@/components/toolbars/SvgIndentDec.svelte"
-import SvgIndentInc from "@/components/toolbars/SvgIndentInc.svelte"
-import { getEditorContext } from "@/states/toolbar"
+    import SelectListType from "@/components/SelectListType.svelte"
+    import SvgIndentDec from "@/components/toolbars/SvgIndentDec.svelte"
+    import SvgIndentInc from "@/components/toolbars/SvgIndentInc.svelte"
+    import { getEditorContext } from "@/states/toolbar"
 
-const ctx = getEditorContext()
+    const ctx = getEditorContext()
 
-// TODO indent paragraph
-const handleIndentInc = () => {
-    const listCanSink = ctx.editor.can().sinkListItem("listItem")
-    if (ctx.isBulletList && listCanSink) {
-        ctx.editor.chain().focus().sinkListItem("listItem").run()
+    const handleIndentInc = () => {
+        const chain = ctx.editor.chain()
+        // const listCanSink = ctx.editor.can().sinkListItem("listItem")
+        if (ctx.isBulletList) {
+            chain.sinkListItem("listItem").run()
+        } else {
+            chain.focus().indent().run()
+        }
     }
-}
-const handleIndentDec = () => {
-    const listCanLift = ctx.editor.can().liftListItem("listItem")
-    if (ctx.isBulletList && listCanLift) {
-        ctx.editor.chain().focus().liftListItem("listItem").run()
+    const handleIndentDec = () => {
+        const chain = ctx.editor.chain()
+        // const listCanLift = ctx.editor.can().liftListItem("listItem")
+        if (ctx.isBulletList) {
+            chain.liftListItem("listItem").run()
+        } else {
+            chain.focus().outdent().run()
+        }
     }
-}
 </script>
 
-<SelectListType />
+<SelectListType/>
 <SvgIndentInc onclick={handleIndentInc}/>
 <SvgIndentDec onclick={handleIndentDec}/>

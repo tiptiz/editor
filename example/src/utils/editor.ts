@@ -24,6 +24,7 @@ import Underline from "@tiptap/extension-underline"
 import BulletList from "tiptap-extension-bullet-list"
 import FontSize from "tiptap-extension-font-size"
 import Heading from "tiptap-extension-heading"
+import Indent from "tiptap-extension-indent"
 
 export const headingLevels = [1, 2, 3, 4, 5, 6] as const
 export type HeadingLevel = typeof headingLevels[number]
@@ -50,6 +51,7 @@ export const extensions: Extensions = [
     }),
     ListItem,
     BulletList.configure({ HTMLAttributes: { style: "padding-left: 20px" } }),
+    Indent,
     // packages/*
     Heading.configure({ HTMLAttributes: { all: { style: "margin: 5px 0" } } }),
     FontSize
