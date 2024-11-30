@@ -22,6 +22,26 @@ Above all, this is an example repo with some opinionated changed extensions. May
 
 ## Features
 
++ ✅ supported
++ ❌ not support
+
+| feature              | current       | we-chat             |
+|----------------------|---------------|---------------------|
+| heading              | ✅             | ✅(paste)            |
+| bold                 | ✅             | ✅                   |
+| italic               | ✅             | ✅                   |
+| strike               | ✅             | ✅                   |
+| underline            | ✅             | ✅                   |
+| font-size            | ✅             | ✅                   |
+| font-color           | ✅             | ✅                   |
+| background-color     | ✅ (highlight) | ✅                   |
+| clear color/bg-color | ✅             | ✅                   |
+| list                 | ✅             | ✅                   |
+| block-quote          | ✅             | ✅ (paste)           |
+| list lift/sink       | ✅             | ✅ (margin simulate) |
+| task-list            | ✅             | ❌                   |
+| text Sup/Sub         | ✅             | ❌                   |
+
 ## Internal classes table (using)
 
 You can see there are some classes preset in `utils/editor.ts`, that's
@@ -29,7 +49,7 @@ both current editor and editors I need to paste to support.
 the internal classes which editor will auto add to the element
 
 + ✅ add class while compile time
-+ ❎ not support
++ ❌ not support
 
 | internal classes   | current | we-chat |
 |--------------------|---------|---------|
