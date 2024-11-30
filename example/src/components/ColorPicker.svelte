@@ -5,6 +5,7 @@
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
     import { appendColors, colors, colorsRecommended } from "@/states/histories.svelte"
     import { theme } from "@/states/theme.svelte"
+    import { css } from "@/utils/config"
 
     import LibColorPicker from "svelte-color-picker"
 
@@ -30,9 +31,9 @@
 
 {#snippet block(_colors: string[])}
     {#each _colors as color}
-        <button class="w-6 h-6 rounded-full shadow-2xl"
+        <button class="w-6 h-6 rounded-full btn-color"
                 aria-label={`color ${color}`}
-                style="background-color: {color}">
+                style={css` background-color: ${color};`}>
         </button>
     {/each}
 {/snippet}
@@ -63,6 +64,9 @@
 </DropdownMenu>
 
 <style lang="scss">
+    .btn-color {
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+    }
     :global(.dark .color-picker-menu-content) {
         --cp-bg-color: hsl(var(--background));
         --cp-border-color: white;
