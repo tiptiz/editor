@@ -14,6 +14,7 @@ export interface ToolbarState {
     isUnderline: boolean
     isHeading: HeadingLevel | 0
     isBulletList: boolean
+    isTable: boolean
 }
 
 export const setEditorContext = (state: ToolbarState) => {

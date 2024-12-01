@@ -18,6 +18,7 @@
         isUnderline: false,
         isHeading: 0,
         isBulletList: false,
+        isTable: false,
         ...createEditor({
             onTransaction({ editor }) {
                 state.editor = editor
@@ -27,6 +28,7 @@
                 state.isUnderline = editor.isActive("underline")
                 state.isHeading = headingLevels.find(level => editor.isActive(`heading`, { level })) || 0
                 state.isBulletList = editor.isActive("bulletList")
+                state.isTable = editor.isActive("table")
             }
         })
     })

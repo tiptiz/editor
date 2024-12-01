@@ -20,6 +20,10 @@ import Paragraph from "@tiptap/extension-paragraph"
 import Strike from "@tiptap/extension-strike"
 import Sub from "@tiptap/extension-subscript"
 import Sup from "@tiptap/extension-superscript"
+import Table from "@tiptap/extension-table"
+import TableCell from "@tiptap/extension-table-cell"
+import TableHeader from "@tiptap/extension-table-header"
+import TableRow from "@tiptap/extension-table-row"
 import TaskListItem from "@tiptap/extension-task-item"
 import TaskList from "@tiptap/extension-task-list"
 import Text from "@tiptap/extension-text"
@@ -33,6 +37,9 @@ import Indent from "tiptap-extension-indent"
 
 export const headingLevels = [1, 2, 3, 4, 5, 6] as const
 export type HeadingLevel = typeof headingLevels[number]
+
+const lowContrastBg = "#afafaf33"
+const lowContrastGray = "#70707099"
 
 export const extensions: Extensions = [
     Document,
@@ -79,6 +86,7 @@ export const extensions: Extensions = [
             style: css`
                 display: flex;
                 gap: 0.625em;
+                align-items: center;
             `
         })
     }),
@@ -92,13 +100,24 @@ export const extensions: Extensions = [
             background-color: #efefef44
         `
     })),
+    Table.configure({ resizable: true, allowTableNodeSelection: true }),
+    TableCell.configure(attrs({
+        style: css`border: 1px solid ${lowContrastGray}`
+    })),
+    TableHeader.configure(attrs({
+        style: css`
+            background-color: ${lowContrastBg};
+            border: 1px solid ${lowContrastGray} 
+        `
+    })),
+    TableRow,
     Indent,
     HardBreak,
     // packages/*
     Heading.configure(attrs({ all: { style: css`margin: 5px 0` } })),
     FontSize
 ]
-
+console.log(extensions.find(e => e.name === "paper"))
 export const createEditor = (options?: Partial<EditorOptions>) => {
     const container = document.createElement("div")
     container.classList.add("editor-container")
