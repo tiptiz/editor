@@ -1,3 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
-	<path fill="currentColor" d="M12.15 20q-1.9 0-3.375-1.125T6.65 15.8l2.2-.95q.35 1.2 1.213 1.975t2.137.775q1.05 0 1.9-.5t.85-1.6q0-.45-.175-.825T14.3 14h2.8q.125.35.188.713t.062.787q0 2.15-1.537 3.325T12.15 20M2 12v-2h20v2zm10.05-8.15q1.65 0 2.888.812T16.85 7.15l-2.2.975q-.225-.725-.837-1.3T12.1 6.25q-1.025 0-1.7.463T9.65 8h-2.4q.05-1.725 1.363-2.937T12.05 3.85" />
+    <path fill="none"
+          stroke-width="3"
+          transform="scale(0.9) translate(0 1.3)"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17 5h-7a3 3 0 0 0-3 3v1a3 3 0 0 0 3 3h7M7 19h7a3 3 0 0 0 3-3v-1M5 12h14"/>
 </svg>
