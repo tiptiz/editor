@@ -57,8 +57,8 @@ export const extensions: Extensions = [
     TextStyle, /*           */// given ability to let <span style="" /> element can keep style attribute
     FontFamily, /*          */// operate style.fontFamily
     Color, /*               */// operate style.color
-    Highlight.configure({ /**/// operate style.backgroundColor
-        multicolor: true /* */// true to enable textStyle setup style.backgroundColor
+    Highlight.configure({ /**/// <mark /> style.backgroundColor
+        multicolor: true
     }),
     BulletList.configure(attrs({ class: "list-paddingleft-1", style: css`padding-left: 1.25em` })),
     ListItem,
