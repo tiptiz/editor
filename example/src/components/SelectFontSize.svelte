@@ -34,5 +34,5 @@
 {/snippet}
 <EditorTransactionEvent handler={handleTr}/>
 <Tooltip label="select font-size">
-    <AutoComplete class="w-[100px]" items={items} {label} {handleSelect} placeholder={currentFontSize || "Font Size"}/>
+    <AutoComplete class="w-[110px]" items={items} {label} {handleSelect} placeholder={currentFontSize || "Font Size"}/>
 </Tooltip>

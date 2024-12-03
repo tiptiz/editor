@@ -36,7 +36,7 @@
 {/snippet}
 <EditorTransactionEvent handler={handleTr}/>
 <Tooltip label="select font-family">
-    <AutoComplete class="w-[113px]"
+    <AutoComplete class="w-[129px]"
                   items={items} {label} {handleSelect}
                   placeholder={ currentFontFamily || "Font Family"}/>
 </Tooltip>

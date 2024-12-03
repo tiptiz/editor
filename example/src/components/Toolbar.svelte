@@ -1,5 +1,7 @@
 <script lang="ts">
     import Hr from "@/components/Hr.svelte"
+    import SelectFontFamily from "@/components/SelectFontFamily.svelte"
+    import SelectFontSize from "@/components/SelectFontSize.svelte"
     import SelectHeadingLevel from "@/components/SelectHeadingLevel.svelte"
     import SelectListType from "@/components/SelectListType.svelte"
     import ToolbarColors from "@/components/ToolbarColors.svelte"
@@ -18,21 +20,23 @@
         <ToolbarFormat/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[277px] gap-x-2">
-        <ToolbarTextStyle/>
+    <ToolbarTwoLine class="w-[332px] gap-x-2.5">
+        <SelectFontFamily/>
+        <SelectFontSize/>
+        <div class="flex items-center gap-x-[9px]">
+            <ToolbarTextStyle/>
+        </div>
         <ToolbarMarks/>
         <ToolbarColors/>
-        <div class="ml-auto -mr-[5px] -mb-[8px]">
-            <SelectHeadingLevel/>
-        </div>
+        <ToolbarIndent/>
+        <SelectHeadingLevel/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
     <SelectListType/>
-    <ToolbarIndent/>
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTable/>
-    <hr class="absolute top-[9px] border-red-600/50 w-full"/>
-    <hr class="absolute top-[22px] border-red-600/50 w-full"/>
-    <hr class="absolute top-[30px] border-red-600/50 w-full"/>
-    <hr class="absolute top-[46px] border-red-600/50 w-full"/>
+    <!--    <hr class="absolute top-[9px] border-red-600/50 w-full"/>-->
+    <!--    <hr class="absolute top-[22px] border-red-600/50 w-full"/>-->
+    <!--    <hr class="absolute top-[30px] border-red-600/50 w-full"/>-->
+    <!--    <hr class="absolute top-[46px] border-red-600/50 w-full"/>-->
 </div>
