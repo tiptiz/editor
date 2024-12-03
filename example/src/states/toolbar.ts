@@ -12,6 +12,8 @@ export interface ToolbarState {
     isItalic: boolean
     isStrike: boolean
     isUnderline: boolean
+    isSup: boolean
+    isSub: boolean
     isHeading: HeadingLevel | 0
     isBulletList: boolean
     isTable: boolean

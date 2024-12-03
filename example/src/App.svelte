@@ -16,6 +16,8 @@
         isItalic: false,
         isStrike: false,
         isUnderline: false,
+        isSup: false,
+        isSub: false,
         isHeading: 0,
         isBulletList: false,
         isTable: false,
@@ -26,6 +28,8 @@
                 state.isItalic = editor.isActive("italic")
                 state.isStrike = editor.isActive("strike")
                 state.isUnderline = editor.isActive("underline")
+                state.isSup = editor.isActive("superscript")
+                state.isSub = editor.isActive("subscript")
                 state.isHeading = headingLevels.find(level => editor.isActive(`heading`, { level })) || 0
                 state.isBulletList = editor.isActive("bulletList")
                 state.isTable = editor.isActive("table")
