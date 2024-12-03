@@ -16,20 +16,23 @@
         ctx.editor.chain().focus().setFontSize(item.value).run()
     }
     let currentFontSize: string
-    const handleFontSizeTr = () => {
+    const handleTr = () => {
         currentFontSize = ctx.editor.getAttributes("textStyle")?.fontSize
+    }
+    const currentColor = (fontSize: string) => {
+        return currentFontSize === fontSize ? "hsl(var(--primary))" : "inherit"
     }
 </script>
 
 {#snippet label(item: SelectOption)}
     <p style={css`
             font-size: ${item.label};
-            color: ${currentFontSize === item.label ? "hsl(var(--primary))" : "inherit"}
+            color: ${currentColor(item.label)}
        `}>
         {item.label}
     </p>
 {/snippet}
-<EditorTransactionEvent handler={handleFontSizeTr}/>
+<EditorTransactionEvent handler={handleTr}/>
 <Tooltip label="select font-size">
-    <AutoComplete items={items} {label} {handleSelect} placeholder={currentFontSize || "default"}/>
+    <AutoComplete class="w-[80px]" items={items} {label} {handleSelect} placeholder={currentFontSize || "default"}/>
 </Tooltip>

@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { HeadingLevel } from "@/utils/editor"
 
+    import SelectFontFamily from "@/components/SelectFontFamily.svelte"
     import SelectFontSize from "@/components/SelectFontSize.svelte"
     import SelectHeadingLevel from "@/components/SelectHeadingLevel.svelte"
     import SvgTextMinus from "@/components/toolbars/SvgTextMinus.svelte"
@@ -25,6 +26,7 @@
     }
 </script>
 
+<SelectFontFamily />
 <SelectFontSize />
 <SvgTextMinus onclick={() => updateFontSize(-2)} wdith="18" height="18"/>
 <SvgTextPlugs onclick={() => updateFontSize(2)} wdith="18" height="18"/>
