@@ -3,11 +3,11 @@
     import SelectFontFamily from "@/components/SelectFontFamily.svelte"
     import SelectFontSize from "@/components/SelectFontSize.svelte"
     import SelectHeadingLevel from "@/components/SelectHeadingLevel.svelte"
-    import SelectListType from "@/components/SelectListType.svelte"
     import ToolbarColors from "@/components/ToolbarColors.svelte"
     import ToolbarFormat from "@/components/ToolbarFormat.svelte"
     import ToolbarHistory from "@/components/ToolbarHistory.svelte"
     import ToolbarIndent from "@/components/ToolbarIndent.svelte"
+    import ToolbarList from "@/components/ToolbarList.svelte"
     import ToolbarMarks from "@/components/ToolbarMarks.svelte"
     import ToolbarTable from "@/components/ToolbarTable.svelte"
     import ToolbarTextStyle from "@/components/ToolbarTextStyle.svelte"
@@ -32,11 +32,13 @@
         <SelectHeadingLevel/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <SelectListType/>
+    <ToolbarTwoLine class="w-[86px]">
+        <ToolbarList/>
+    </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTable/>
-    <!--    <hr class="absolute top-[9px] border-red-600/50 w-full"/>-->
-    <!--    <hr class="absolute top-[22px] border-red-600/50 w-full"/>-->
-    <!--    <hr class="absolute top-[30px] border-red-600/50 w-full"/>-->
-    <!--    <hr class="absolute top-[46px] border-red-600/50 w-full"/>-->
+    <hr class="absolute top-[9px] border-red-600/50 w-full"/>
+    <hr class="absolute top-[22px] border-red-600/50 w-full"/>
+    <hr class="absolute top-[30px] border-red-600/50 w-full"/>
+    <hr class="absolute top-[46px] border-red-600/50 w-full"/>
 </div>

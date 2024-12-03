@@ -16,6 +16,7 @@ export interface ToolbarState {
     isSub: boolean
     isHeading: HeadingLevel | 0
     isBulletList: boolean
+    isTaskList: boolean
     isTable: boolean
 }
 

@@ -6,22 +6,10 @@
     const ctx = getEditorContext()
 
     const handleIndentInc = () => {
-        const chain = ctx.editor.chain()
-        // const listCanSink = ctx.editor.can().sinkListItem("listItem")
-        if (ctx.isBulletList) {
-            chain.sinkListItem("listItem").run()
-        } else {
-            chain.focus().indent().run()
-        }
+        ctx.editor.chain().focus().indent().run()
     }
     const handleIndentDec = () => {
-        const chain = ctx.editor.chain()
-        // const listCanLift = ctx.editor.can().liftListItem("listItem")
-        if (ctx.isBulletList) {
-            chain.liftListItem("listItem").run()
-        } else {
-            chain.focus().outdent().run()
-        }
+        ctx.editor.chain().focus().outdent().run()
     }
 </script>
 

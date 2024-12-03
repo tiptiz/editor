@@ -20,6 +20,7 @@
         isSub: false,
         isHeading: 0,
         isBulletList: false,
+        isTaskList: false,
         isTable: false,
         ...createEditor({
             onTransaction({ editor }) {
@@ -32,6 +33,7 @@
                 state.isSub = editor.isActive("subscript")
                 state.isHeading = headingLevels.find(level => editor.isActive(`heading`, { level })) || 0
                 state.isBulletList = editor.isActive("bulletList")
+                state.isTaskList = editor.isActive("taskList")
                 state.isTable = editor.isActive("table")
             }
         })
