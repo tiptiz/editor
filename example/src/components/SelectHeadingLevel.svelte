@@ -1,21 +1,15 @@
 <script lang="ts">
-    import type { Component } from "svelte"
+    import type { HeadingLevel } from "@/utils/editor"
 
+    import SvgArrowDown from "@/components/icons/SvgArrowDown.svelte"
+    import SvgHeading from "@/components/toolbars/SvgHeading.svelte"
     import {
         DropdownMenu,
         DropdownMenuContent,
         DropdownMenuItem,
         DropdownMenuTrigger
     } from "@/components/ui/dropdown-menu"
-    import { type HeadingLevel, headingLevels } from "@/utils/editor"
-
-    import SvgArrowDown from "./icons/SvgArrowDown.svelte"
-    import SvgHeading1 from "./toolbars/SvgHeading1.svelte"
-    import SvgHeading2 from "./toolbars/SvgHeading2.svelte"
-    import SvgHeading3 from "./toolbars/SvgHeading3.svelte"
-    import SvgHeading4 from "./toolbars/SvgHeading4.svelte"
-    import SvgHeading5 from "./toolbars/SvgHeading5.svelte"
-    import SvgHeading6 from "./toolbars/SvgHeading6.svelte"
+    import { headingLevels } from "@/utils/editor"
 
     interface Props {
         class?: string
@@ -23,34 +17,21 @@
         onselect: (level: HeadingLevel) => void
     }
 
-    const components = {
-        0: SvgHeading1,
-        1: SvgHeading1,
-        2: SvgHeading2,
-        3: SvgHeading3,
-        4: SvgHeading4,
-        5: SvgHeading5,
-        6: SvgHeading6
-    } as const
     const { class: classes, level, onselect, ...restProps }: Props = $props()
-    let CurrentHeading = $derived(components[level])
 </script>
 
-{#snippet renderHeading(HeadingComponent: Component, lv: HeadingLevel)}
-    <DropdownMenuItem onclick={() => onselect(lv)}>
-        <HeadingComponent class={lv === level ? "active" : "" }/>
-    </DropdownMenuItem>
-{/snippet}
 <DropdownMenu>
     <DropdownMenuTrigger>
         <div class={`w-11 h-6 -mb-0.5 flex items-center pl-1.5 toolbar-icon-trigger ${classes}`} {...restProps}>
-            <CurrentHeading/>
+            <SvgHeading level={level || 1}/>
             <SvgArrowDown width="16px"/>
         </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="min-w-0 w-11">
         {#each headingLevels as lv}
-            {@render renderHeading(components[lv], lv)}
+            <DropdownMenuItem on:click={() => onselect(lv)}>
+                <SvgHeading level={lv} class={lv === level ? "active" : ""}/>
+            </DropdownMenuItem>
         {/each}
     </DropdownMenuContent>
 </DropdownMenu>
