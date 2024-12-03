@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
     <path fill="none"
-          stroke-width="2.5"
+          stroke-width="2.3"
           transform="scale(0.85) translate(1 1.8)"
           stroke="currentColor"
           stroke-linecap="round"
