@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Snippet } from "svelte"
+    import type { HTMLInputAttributes } from "svelte/elements"
 
     import SvgArrowDown from "@/components/icons/SvgArrowDown.svelte"
     import {
@@ -15,19 +16,23 @@
         value: any
     }
 
-    interface Props {
+    interface Props extends HTMLInputAttributes {
         items: SelectOption[]
         placeholder?: string
         handleSelect?: (item: SelectOption) => void
         label?: Snippet<[option: SelectOption]>
     }
 
-    const { items, placeholder, handleSelect, label }: Props = $props()
+    const {
+        items, placeholder, handleSelect, label,
+        class: classes,
+        ...inputAttrs
+    }: Props = $props()
 </script>
 
 <DropdownMenu>
     <DropdownMenuTrigger class="flex items-center relative">
-        <Input class="w-[80px] h-6 pr-4 rounded bg-opacity-50" placeholder={placeholder}/>
+        <Input class={`h-6 pr-4 rounded bg-opacity-50 ${classes}`} placeholder={placeholder} {...inputAttrs}/>
         <SvgArrowDown class="absolute right-1" width="16px"/>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="min-w-0">
