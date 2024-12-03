@@ -7,7 +7,7 @@
     import ToolbarTextStyle from "@/components/ToolbarTextStyle.svelte"
 </script>
 
-<div class="toolbar h-[52px] flex items-center justify-center gap-1.5 relative">
+<div class="toolbar h-[52px] flex items-center justify-center gap-2 relative">
     <ToolbarHistory/>
     <Hr class="h-2/5 mx-1"/>
     <ToolbarTextStyle />

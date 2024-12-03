@@ -35,9 +35,6 @@ import HardBreak from "tiptap-extension-hard-break"
 import Heading from "tiptap-extension-heading"
 import Indent from "tiptap-extension-indent"
 
-export const headingLevels = [1, 2, 3, 4, 5, 6] as const
-export type HeadingLevel = typeof headingLevels[number]
-
 const lowContrastBg = "#afafaf33"
 const lowContrastGray = "#70707099"
 
@@ -117,7 +114,7 @@ export const extensions: Extensions = [
     Heading.configure(attrs({ all: { style: css`margin: 5px 0` } })),
     FontSize
 ]
-console.log(extensions.find(e => e.name === "paper"))
+
 export const createEditor = (options?: Partial<EditorOptions>) => {
     const container = document.createElement("div")
     container.classList.add("editor-container")
@@ -133,3 +130,9 @@ export const createEditor = (options?: Partial<EditorOptions>) => {
         })
     }
 }
+
+export const headingLevels = [1, 2, 3, 4, 5, 6] as const
+export type HeadingLevel = typeof headingLevels[number]
+
+export const tableInsertTargets = ["col-before", "col-after", "row-below", "row-above"] as const
+export type TableInsertTarget = typeof tableInsertTargets[number]

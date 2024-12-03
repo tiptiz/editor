@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SvgTable from "@/components/toolbars/SvgTable.svelte"
+    import SvgTablePlus from "@/components/toolbars/SvgTablePlus.svelte"
     import { Button } from "@/components/ui/button"
     import { Checkbox } from "@/components/ui/checkbox"
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -8,6 +8,8 @@
     import { range } from "@/utils/common"
 
     const ctx = getEditorContext()
+
+    let open = false
     let currentPos: [row: number, col: number] = [0, 0]
     let firstRowHeader = true
 
@@ -15,12 +17,15 @@
         const editor = ctx.editor
         const [rows, cols] = currentPos
         editor.chain().focus().insertTable({ rows, cols, withHeaderRow: firstRowHeader }).run()
+        open = false
     }
 </script>
 
-<DropdownMenu>
-    <DropdownMenuTrigger>
-        <SvgTable/>
+<DropdownMenu bind:open>
+    <DropdownMenuTrigger class="flex">
+        <Button class="p-0 h-auto" disabled={ctx.isTable} variant="ghost">
+            <SvgTablePlus/>
+        </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent>
         <div class="flex flex-wrap w-[204px] gap-1 p-2">
@@ -54,6 +59,6 @@
 
 <style>
     .index-active {
-        border-color: blue;
+        border-color: hsl(var(--primary));
     }
 </style>
