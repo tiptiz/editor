@@ -1,5 +1,4 @@
 <script lang="ts">
-    import SelectListType from "@/components/SelectListType.svelte"
     import SvgIndentDec from "@/components/toolbars/SvgIndentDec.svelte"
     import SvgIndentInc from "@/components/toolbars/SvgIndentInc.svelte"
     import { getEditorContext } from "@/states/toolbar"
@@ -26,6 +25,5 @@
     }
 </script>
 
-<SelectListType/>
 <SvgIndentInc onclick={handleIndentInc}/>
 <SvgIndentDec onclick={handleIndentDec}/>

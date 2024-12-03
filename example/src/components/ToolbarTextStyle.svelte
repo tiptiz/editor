@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { HeadingLevel } from "@/utils/editor"
 
+    import SelectFontSize from "@/components/SelectFontSize.svelte"
     import SelectHeadingLevel from "@/components/SelectHeadingLevel.svelte"
     import SvgTextMinus from "@/components/toolbars/SvgTextMinus.svelte"
     import SvgTextPlugs from "@/components/toolbars/SvgTextPlugs.svelte"
@@ -24,8 +25,9 @@
     }
 </script>
 
-<SvgTextMinus onclick={() => updateFontSize(-2)}/>
-<SvgTextPlugs onclick={() => updateFontSize(2)}/>
+<SelectFontSize />
+<SvgTextMinus onclick={() => updateFontSize(-2)} wdith="18" height="18"/>
+<SvgTextPlugs onclick={() => updateFontSize(2)} wdith="18" height="18"/>
 <SelectHeadingLevel class={ctx.isHeading ? "active" : ""}
                     level={ctx.isHeading}
                     onselect={setupHeading}/>
