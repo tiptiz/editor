@@ -31,7 +31,7 @@
     <Tooltip openDelay={100} closeDelay={0}>
         <TooltipTrigger class="flex">
             <Button class="p-0 h-auto" disabled={!ctx.isTable} variant="ghost" on:click={() => handleInsert(target)}>
-                <SvgTableInsert target={target} class="text-[20px]"/>
+                <SvgTableInsert target={target} width="16" height="16"/>
             </Button>
         </TooltipTrigger>
         <TooltipContent side="bottom">

@@ -3,15 +3,14 @@
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
-    <g fill="none" transform="translate(0 0.5)">
+    <g fill="none" transform="translate(1 1)">
         <path stroke="currentColor"
-              transform="scale(1.1)"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
               d="m5.719 16.25l1.92-4.404m0 0h6.91m-6.91 0l2.94-6.747a.553.553 0 0 1 1.029 0l2.941 6.747m0 0l.337.774"/>
     </g>
-    <g transform="translate(1 0)">
+    <g transform="scale(0.95) translate(2 -1)">
         <path fill={color || "currentColor"}
               d="M15.68 20.936a2.5 2.5 0 0 0 1.218-.673l5.455-5.45a2.526 2.526 0 1 0-3.57-3.573l-5.453 5.452c-.335.336-.57.76-.675 1.222l-.535 2.354a1.007 1.007 0 0 0 1.206 1.206z"/>
         <path stroke={color || "currentColor"}

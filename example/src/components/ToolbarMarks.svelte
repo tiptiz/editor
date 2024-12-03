@@ -2,14 +2,15 @@
     import SvgBold from "@/components/toolbars/SvgBold.svelte"
     import SvgItalic from "@/components/toolbars/SvgItalic.svelte"
     import SvgStrike from "@/components/toolbars/SvgStrike.svelte"
+    import SvgSubscript from "@/components/toolbars/SvgSubscript.svelte"
+    import SvgSuperscript from "@/components/toolbars/SvgSuperscript.svelte"
     import SvgUnderline from "@/components/toolbars/SvgUnderline.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
-    const state = getEditorContext()
+    const ctx = getEditorContext()
 
-    // TODO find a way, select node by focus
     const handleToggle = (name: string) => () => {
-        const editor = state.editor
+        const editor = ctx.editor
         const { from, to } = editor.state.selection
 
         if (from !== to) {
@@ -25,9 +26,14 @@
     const toggleBold = handleToggle("bold")
     const toggleItalic = handleToggle("italic")
     const toggleStrike = handleToggle("strike")
+
+    const toggleSup = () => ctx.editor.chain().focus().toggleSuperscript().run()
+    const toggleSub = () => ctx.editor.chain().focus().toggleSubscript().run()
 </script>
 
-<SvgBold class={state.isBold ? "active" : ""} onclick={toggleBold}/>
-<SvgItalic class={state.isItalic ? "active" : ""} onclick={toggleItalic}/>
-<SvgStrike class={state.isStrike ? "active" : ""} onclick={toggleStrike}/>
-<SvgUnderline class={state.isUnderline ? "active" : ""} onclick={handleToggle("underline")}/>
+<SvgBold class={ctx.isBold ? "active" : ""} onclick={toggleBold}/>
+<SvgItalic class={ctx.isItalic ? "active" : ""} onclick={toggleItalic}/>
+<SvgStrike class={ctx.isStrike ? "active" : ""} onclick={toggleStrike}/>
+<SvgUnderline class={ctx.isUnderline ? "active" : ""} onclick={handleToggle("underline")}/>
+<SvgSuperscript class={ctx.isSup ? "active" : "" } onclick={toggleSup}/>
+<SvgSubscript class={ctx.isSub ? "active" : "" } onclick={toggleSub}/>

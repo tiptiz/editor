@@ -22,7 +22,7 @@
 
 <DropdownMenu>
     <DropdownMenuTrigger>
-        <div class={`w-11 h-6 -mb-0.5 flex items-center pl-1.5 toolbar-icon-trigger ${classes}`} {...restProps}>
+        <div class={`w-11 h-6 flex items-center pl-1.5 toolbar-icon-trigger ${classes}`} {...restProps}>
             <SvgHeading level={level || 1}/>
             <SvgArrowDown width="16px"/>
         </div>
