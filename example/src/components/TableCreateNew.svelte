@@ -1,9 +1,9 @@
 <script lang="ts">
-    import SvgTablePlus from "@/components/toolbars/SvgTablePlus.svelte"
     import { Button } from "@/components/ui/button"
     import { Checkbox } from "@/components/ui/checkbox"
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
     import { Input } from "@/components/ui/input"
+    import SvgTablePlus from "@/icons/toolbars/SvgTablePlus.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { range } from "@/utils/common"
 

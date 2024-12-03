@@ -1,6 +1,6 @@
 <script lang="ts">
-    import SvgTextMinus from "@/components/toolbars/SvgTextMinus.svelte"
-    import SvgTextPlugs from "@/components/toolbars/SvgTextPlugs.svelte"
+    import SvgTextMinus from "@/icons/toolbars/SvgTextMinus.svelte"
+    import SvgTextPlugs from "@/icons/toolbars/SvgTextPlugs.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
     const ctx = getEditorContext()

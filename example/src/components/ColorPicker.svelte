@@ -1,8 +1,8 @@
 <script lang="ts">
     import type { Snippet } from "svelte"
 
-    import SvgForbidden from "@/components/icons/SvgForbidden.svelte"
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+    import SvgForbidden from "@/icons/SvgForbidden.svelte"
     import { appendColors, colors, colorsRecommended } from "@/states/histories.svelte"
     import { theme } from "@/states/theme.svelte"
     import { css } from "@/utils/config"
@@ -29,13 +29,11 @@
     }
 </script>
 
-{#snippet block(_colors: string[])}
-    {#each _colors as color}
-        <button class="w-6 h-6 rounded-full btn-color"
-                aria-label={`color ${color}`}
-                style={css` background-color: ${color};`}>
-        </button>
-    {/each}
+{#snippet colorBlock(color: string)}
+    <button class="w-6 h-6 rounded-full btn-color"
+            aria-label={`color ${color}`}
+            style={css` background-color: ${color};`}>
+    </button>
 {/snippet}
 <DropdownMenu onOpenChange={handleMenuClose}>
     <DropdownMenuTrigger>
@@ -49,16 +47,20 @@
                         disableCloseClickOutside/>
         {#if colors.length}
             <div class="flex flex-wrap w-full gap-2 p-2">
-                {@render block(colors)}
+                {#each colors as color}
+                    {@render colorBlock(color)}
+                {/each}
             </div>
             <hr/>
         {/if}
         <div class="flex flex-wrap w-[263px] gap-2 p-2">
             <button class="w-6 h-6 rounded-full border-2 bg-gray-200"
-                 onclick={() => handleColorChange()}>
+                    onclick={() => handleColorChange()}>
                 <SvgForbidden class="size-full" style="color: red"/>
             </button>
-            {@render block(colorsRecommended)}
+            {#each colorsRecommended as color}
+                {@render colorBlock(color)}
+            {/each}
         </div>
     </DropdownMenuContent>
 </DropdownMenu>
@@ -67,6 +69,7 @@
     .btn-color {
         box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
     }
+
     :global(.dark .color-picker-menu-content) {
         --cp-bg-color: hsl(var(--background));
         --cp-border-color: white;

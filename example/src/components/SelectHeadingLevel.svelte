@@ -1,14 +1,14 @@
 <script lang="ts">
     import type { HeadingLevel } from "@/utils/editor"
 
-    import SvgArrowDown from "@/components/icons/SvgArrowDown.svelte"
-    import SvgHeading from "@/components/toolbars/SvgHeading.svelte"
     import {
         DropdownMenu,
         DropdownMenuContent,
         DropdownMenuItem,
         DropdownMenuTrigger
     } from "@/components/ui/dropdown-menu"
+    import SvgArrowDown from "@/icons/SvgArrowDown.svelte"
+    import SvgHeading from "@/icons/toolbars/SvgHeading.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { headingLevels } from "@/utils/editor"
 

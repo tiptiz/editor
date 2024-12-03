@@ -1,6 +1,6 @@
 <script lang="ts">
-    import SvgBrush from "@/components/toolbars/SvgBrush.svelte"
-    import SvgClear from "@/components/toolbars/SvgClear.svelte"
+    import SvgBrush from "@/icons/toolbars/SvgBrush.svelte"
+    import SvgClear from "@/icons/toolbars/SvgClear.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
     const ctx = getEditorContext()

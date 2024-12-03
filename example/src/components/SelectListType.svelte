@@ -1,17 +1,17 @@
 <script lang="ts">
     import type { Component } from "svelte"
 
-    import SvgArrowDown from "@/components/icons/SvgArrowDown.svelte"
-    import SvgCircle from "@/components/icons/SvgCircle.svelte"
-    import SvgDot from "@/components/icons/SvgDot.svelte"
-    import SvgSquare from "@/components/icons/SvgSquare.svelte"
-    import SvgListBulleted from "@/components/toolbars/SvgListBulleted.svelte"
     import {
         DropdownMenu,
         DropdownMenuContent,
         DropdownMenuItem,
         DropdownMenuTrigger
     } from "@/components/ui/dropdown-menu"
+    import SvgArrowDown from "@/icons/SvgArrowDown.svelte"
+    import SvgCircle from "@/icons/SvgCircle.svelte"
+    import SvgDot from "@/icons/SvgDot.svelte"
+    import SvgSquare from "@/icons/SvgSquare.svelte"
+    import SvgListBulleted from "@/icons/toolbars/SvgListBulleted.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
     interface ListStyle {

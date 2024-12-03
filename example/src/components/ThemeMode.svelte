@@ -1,6 +1,6 @@
 <script lang="ts">
-    import SvgDarkMode from "@/components/icons/SvgDarkMode.svelte"
-    import SvgLightMode from "@/components/icons/SvgLightMode.svelte"
+    import SvgDarkMode from "@/icons/SvgDarkMode.svelte"
+    import SvgLightMode from "@/icons/SvgLightMode.svelte"
     import { theme } from "@/states/theme.svelte"
 
     theme.isDark = localStorage.getItem("theme-mode") === "dark"

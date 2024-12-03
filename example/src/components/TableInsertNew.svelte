@@ -1,9 +1,9 @@
 <script lang="ts">
     import type { TableInsertTarget } from "@/utils/editor"
 
-    import SvgTableInsert from "@/components/toolbars/SvgTableInsert.svelte"
     import { Button } from "@/components/ui/button"
     import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+    import SvgTableInsert from "@/icons/toolbars/SvgTableInsert.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { tableInsertTargets } from "@/utils/editor"
 

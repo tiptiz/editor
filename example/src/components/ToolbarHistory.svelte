@@ -1,6 +1,6 @@
 <script lang="ts">
-    import SvgRedo from "@/components/toolbars/SvgRedo.svelte"
-    import SvgUndo from "@/components/toolbars/SvgUndo.svelte"
+    import SvgRedo from "@/icons/toolbars/SvgRedo.svelte"
+    import SvgUndo from "@/icons/toolbars/SvgUndo.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
     const ctx = getEditorContext()

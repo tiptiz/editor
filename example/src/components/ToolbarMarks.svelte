@@ -1,10 +1,10 @@
 <script lang="ts">
-    import SvgBold from "@/components/toolbars/SvgBold.svelte"
-    import SvgItalic from "@/components/toolbars/SvgItalic.svelte"
-    import SvgStrike from "@/components/toolbars/SvgStrike.svelte"
-    import SvgSubscript from "@/components/toolbars/SvgSubscript.svelte"
-    import SvgSuperscript from "@/components/toolbars/SvgSuperscript.svelte"
-    import SvgUnderline from "@/components/toolbars/SvgUnderline.svelte"
+    import SvgBold from "@/icons/toolbars/SvgBold.svelte"
+    import SvgItalic from "@/icons/toolbars/SvgItalic.svelte"
+    import SvgStrike from "@/icons/toolbars/SvgStrike.svelte"
+    import SvgSubscript from "@/icons/toolbars/SvgSubscript.svelte"
+    import SvgSuperscript from "@/icons/toolbars/SvgSuperscript.svelte"
+    import SvgUnderline from "@/icons/toolbars/SvgUnderline.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
     const ctx = getEditorContext()
