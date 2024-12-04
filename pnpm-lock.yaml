@@ -114,6 +114,9 @@ importers:
       '@tiptap/extension-paragraph':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/extension-placeholder':
+        specifier: ^2.10.3
+        version: 2.10.3(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
       '@tiptap/extension-strike':
         specifier: ^2.10.2
         version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
@@ -144,6 +147,9 @@ importers:
       '@tiptap/extension-text':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+      '@tiptap/extension-text-align':
+        specifier: ^2.10.3
+        version: 2.10.3(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
       '@tiptap/extension-text-style':
         specifier: ^2.10.2
         version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
@@ -842,6 +848,12 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
+  '@tiptap/extension-placeholder@2.10.3':
+    resolution: {integrity: sha512-0OkwnDLguZgoiJM85cfnOySuMmPUF7qqw7DHQ+c3zwTAYnvzpvqrvpupc+2Zi9GfC1sDgr+Ajrp8imBHa6PHfA==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/pm': ^2.7.0
+
   '@tiptap/extension-strike@2.10.2':
     resolution: {integrity: sha512-TjrBbO6UbXCt55hV9wRE7h5R/jLTB+z2yn2blz1TfR7wKkX3tJOnb+ptvIHEVFGJOjkZP6Xaj+aAkGVg5dKZYA==}
     peerDependencies:
@@ -886,6 +898,11 @@ packages:
 
   '@tiptap/extension-task-list@2.10.3':
     resolution: {integrity: sha512-Zj1pj+6VrL8VXlFYWdcLlCMykzARsvdqdU8cGVnBuC0H0vrSSfLGl+GxGnQwxTnqiNtxR4t70DLi/UjFBvzlqw==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+
+  '@tiptap/extension-text-align@2.10.3':
+    resolution: {integrity: sha512-g75sNl73gtgjP3XIcl06kvv1qw3c0rGEUD848rUU1bvlBpU3IxjkcQLgYvHmv3vpuUp9cKUkA2wa7Sv6R3fjvw==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
@@ -2479,6 +2496,11 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 
+  '@tiptap/extension-placeholder@2.10.3(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/pm': 2.9.1
+
   '@tiptap/extension-strike@2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
@@ -2514,6 +2536,10 @@ snapshots:
       '@tiptap/pm': 2.9.1
 
   '@tiptap/extension-task-list@2.10.3(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
+    dependencies:
+      '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
+
+  '@tiptap/extension-text-align@2.10.3(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))':
     dependencies:
       '@tiptap/core': 2.9.1(@tiptap/pm@2.9.1)
 

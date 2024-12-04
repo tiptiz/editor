@@ -17,6 +17,7 @@ import Hr from "@tiptap/extension-horizontal-rule"
 import Italic from "@tiptap/extension-italic"
 import ListItem from "@tiptap/extension-list-item"
 import Paragraph from "@tiptap/extension-paragraph"
+import Placeholder from "@tiptap/extension-placeholder"
 import Strike from "@tiptap/extension-strike"
 import Sub from "@tiptap/extension-subscript"
 import Sup from "@tiptap/extension-superscript"
@@ -27,6 +28,7 @@ import TableRow from "@tiptap/extension-table-row"
 import TaskListItem from "@tiptap/extension-task-item"
 import TaskList from "@tiptap/extension-task-list"
 import Text from "@tiptap/extension-text"
+import TextAlign from "@tiptap/extension-text-align"
 import TextStyle from "@tiptap/extension-text-style"
 import Underline from "@tiptap/extension-underline"
 import BulletList from "tiptap-extension-bullet-list"
@@ -40,15 +42,26 @@ const lowContrastGray = "#70707099"
 
 export const extensions: Extensions = [
     Document,
+    Placeholder.configure({ placeholder: "Write down your imagination …" }),
     DropCursor,
     History,
     Text,
+    TextAlign,
     Paragraph,
-    Hr.configure(attrs({ style: css`margin: 10px 0` })),
-    Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
+    TextStyle, /*           */// given ability to let <span style="" /> element can keep style attribute
+    FontFamily, /*          */// operate style.fontFamily
+    FontSize, /*            */// operate style.fontSize
+    Color, /*               */// operate style.color
+    Highlight.configure({ /**/// <mark /> style.backgroundColor
+        multicolor: true
+    }),
     Italic,
     Strike,
     Underline,
+    Indent,
+    HardBreak,
+    Hr.configure(attrs({ style: css`margin: 10px 0` })),
+    Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
     Code.configure(attrs({
         style: css`
             padding: 2px 6px;
@@ -58,12 +71,6 @@ export const extensions: Extensions = [
     })),
     Sub,
     Sup,
-    TextStyle, /*           */// given ability to let <span style="" /> element can keep style attribute
-    FontFamily, /*          */// operate style.fontFamily
-    Color, /*               */// operate style.color
-    Highlight.configure({ /**/// <mark /> style.backgroundColor
-        multicolor: true
-    }),
     BulletList.configure(attrs({ class: "list-paddingleft-1", style: css`padding-left: 1.25em` })),
     ListItem,
     TaskList.configure(attrs({
@@ -103,15 +110,12 @@ export const extensions: Extensions = [
     TableHeader.configure(attrs({
         style: css`
             background-color: ${lowContrastBg};
-            border: 1px solid ${lowContrastGray} 
+            border: 1px solid ${lowContrastGray}
         `
     })),
     TableRow,
-    Indent,
-    HardBreak,
     // packages/*
-    Heading.configure(attrs({ all: { style: css`margin: 5px 0` } })),
-    FontSize
+    Heading.configure(attrs({ all: { style: css`margin: 5px 0` } }))
 ]
 
 export const createEditor = (options?: Partial<EditorOptions>) => {

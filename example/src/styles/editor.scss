@@ -11,7 +11,14 @@
     outline: none;
 }
 
+.tiptap p.is-empty::before {
+    opacity: 0.2;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
 
 // task modules
 @import "./editor-styles/table.scss";
-@import "editor-styles/list.scss";
+@import "./editor-styles/list.scss";
