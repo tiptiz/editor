@@ -25,7 +25,7 @@
 <DropdownMenu bind:open>
     <DropdownMenuTrigger class="flex">
         <Button class="p-0 h-auto" disabled={ctx.isTable} variant="ghost">
-            <SvgTablePlus width="16" height="16"/>
+            <SvgTablePlus/>
         </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent>

@@ -26,7 +26,7 @@
 <TableCellSplit/>
 {#snippet header(position: Position)}
     <Tooltip label={`toggle table header ${position}`}>
-        <SvgTableHead position={position} width="16" height="16" onclick={() => handleToggleHeader(position)}/>
+        <SvgTableHead position={position} onclick={() => handleToggleHeader(position)}/>
     </Tooltip>
 {/snippet}
 {#each positions as pos}

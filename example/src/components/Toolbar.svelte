@@ -18,12 +18,12 @@
 </script>
 
 <div class="toolbar h-[52px] flex items-center justify-center gap-2 relative">
-    <ToolbarTwoLine class="w-10 gap-x-2 pt-[2px] gap-y-[6px]">
+    <ToolbarTwoLine class="w-11 gap-x-2 pt-[2px] gap-y-[6px]">
         <ToolbarHistory/>
         <ToolbarFormat/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[332px] gap-x-2.5">
+    <ToolbarTwoLine class="w-[320px] gap-x-2.5">
         <SelectFontFamily/>
         <SelectFontSize/>
         <div class="flex items-center gap-x-[9px]">
@@ -37,11 +37,11 @@
         </div>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[86px] pt-[3px] gap-y-2">
+    <ToolbarTwoLine class="w-[94px] pt-[3px] gap-y-[6px]">
         <ToolbarList/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[112px] gap-x-2 pt-[3px] gap-y-[7px]">
+    <ToolbarTwoLine class="w-[123px] gap-x-2 pt-[3px] gap-y-[5px]">
         <ToolbarTable/>
     </ToolbarTwoLine>
     {#if globalState.viewSparkLines}

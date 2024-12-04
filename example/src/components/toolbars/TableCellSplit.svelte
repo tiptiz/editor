@@ -11,5 +11,5 @@
 </script>
 
 <Tooltip label="split table cells">
-    <SvgTableCellSplit width="16" height="16" onclick={splitCell}/>
+    <SvgTableCellSplit onclick={splitCell}/>
 </Tooltip>

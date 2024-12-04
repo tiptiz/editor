@@ -10,5 +10,5 @@
     const redo = () => ctx.editor.commands.redo()
 </script>
 
-<SvgUndo onclick={undo} width="16" height="16"/>
-<SvgRedo onclick={redo} width="16" height="16"/>
+<SvgUndo onclick={undo}/>
+<SvgRedo onclick={redo}/>

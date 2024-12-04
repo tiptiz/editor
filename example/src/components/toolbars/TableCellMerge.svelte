@@ -11,5 +11,5 @@
 </script>
 
 <Tooltip label="merge table cells">
-    <SvgTableCellMerge width="16" height="16" onclick={mergeCells}/>
+    <SvgTableCellMerge onclick={mergeCells}/>
 </Tooltip>
