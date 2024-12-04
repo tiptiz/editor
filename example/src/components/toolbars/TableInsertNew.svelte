@@ -1,8 +1,8 @@
 <script lang="ts">
     import type { TableInsertTarget } from "@/utils/editor"
 
-    import { Button } from "@/components/ui/button"
     import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+    import ToolbarButton from "@/components/ToolbarButton.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { tableInsertTargets } from "@/utils/editor"
 
@@ -31,9 +31,9 @@
 {#snippet tableInsert(target: TableInsertTarget)}
     <Tooltip openDelay={100} closeDelay={0}>
         <TooltipTrigger class="flex">
-            <Button class="p-0 h-auto" disabled={!ctx.isTable} variant="ghost" on:click={() => handleInsert(target)}>
+            <ToolbarButton disabled={!ctx.isTable} onclick={() => handleInsert(target)}>
                 <SvgTableInsert target={target}/>
-            </Button>
+            </ToolbarButton>
         </TooltipTrigger>
         <TooltipContent side="bottom">
             <span>insert {target.replace("-", " ")}</span>

@@ -23,7 +23,7 @@
         <ToolbarFormat/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[332px] gap-x-[11px]">
+    <ToolbarTwoLine class="w-[324px] gap-x-[11px]">
         <SelectFontFamily/>
         <SelectFontSize/>
         <div class="pl-[1px] flex items-center gap-x-2">
