@@ -23,7 +23,7 @@
 </script>
 
 <DropdownMenu bind:open>
-    <DropdownMenuTrigger class="flex">
+    <DropdownMenuTrigger class="flex" disabled={ctx.isTable}>
         <Button class="p-0 h-auto" disabled={ctx.isTable} variant="ghost">
             <SvgTablePlus/>
         </Button>

@@ -41,7 +41,7 @@
         <ToolbarList/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[123px] gap-x-2 pt-[3px] gap-y-[5px]">
+    <ToolbarTwoLine class="w-[174px] gap-x-2 pt-[3px] gap-y-[5px]">
         <ToolbarTable/>
     </ToolbarTwoLine>
     {#if globalState.viewSparkLines}
