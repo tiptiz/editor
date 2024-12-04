@@ -23,18 +23,16 @@
         <ToolbarFormat/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[320px] gap-x-2.5">
+    <ToolbarTwoLine class="w-[332px] gap-x-[11px]">
         <SelectFontFamily/>
         <SelectFontSize/>
-        <div class="flex items-center gap-x-[9px]">
+        <div class="pl-[1px] flex items-center gap-x-2">
             <ToolbarTextStyle/>
         </div>
-        <div class="h-[20px] flex items-center gap-x-[11px]">
-            <ToolbarMarks/>
-            <ToolbarColors/>
-            <ToolbarIndent/>
-            <SelectHeadingLevel/>
-        </div>
+        <ToolbarMarks/>
+        <ToolbarColors/>
+        <ToolbarIndent/>
+        <SelectHeadingLevel/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTwoLine class="w-[94px] pt-[3px] gap-y-[6px]">

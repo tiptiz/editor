@@ -20,5 +20,5 @@
     }
 </script>
 
-<SvgTextMinus onclick={() => updateFontSize(-2)} wdith="18" height="18"/>
-<SvgTextPlugs onclick={() => updateFontSize(2)} wdith="18" height="18"/>
+<SvgTextMinus onclick={() => updateFontSize(-2)}/>
+<SvgTextPlugs onclick={() => updateFontSize(2)}/>
