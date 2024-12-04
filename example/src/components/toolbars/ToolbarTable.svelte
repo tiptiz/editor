@@ -38,10 +38,20 @@
 <TableInsertNew/>
 
 <Tooltip label="delete column">
-    <SvgTableColDelete onclick={deleteCol}/>
+    <ToolbarButton disabled={!ctx.isTable} onclick={deleteCol}>
+        <SvgTableColDelete/>
+    </ToolbarButton>
 </Tooltip>
 <Tooltip label="delete row">
-    <SvgTableRowDelete onclick={deleteRow}/>
+    <ToolbarButton disabled={!ctx.isTable} onclick={deleteRow}>
+        <SvgTableRowDelete/>
+    </ToolbarButton>
+</Tooltip>
+
+<Tooltip label="fix table">
+    <ToolbarButton disabled={!ctx.isTable} onclick={fixTable}>
+        <SvgTable class={ctx.isTable ? "active" : ""}/>
+    </ToolbarButton>
 </Tooltip>
 
 <Tooltip label="delete table">
@@ -49,17 +59,15 @@
         <SvgTableRemove/>
     </ToolbarButton>
 </Tooltip>
-<Tooltip label="fix table">
-    <ToolbarButton disabled={!ctx.isTable} onclick={fixTable}>
-        <SvgTable class={ctx.isTable ? "active" : ""}/>
-    </ToolbarButton>
-</Tooltip>
 
 <TableCellMerge/>
 <TableCellSplit/>
+
 {#snippet header(position: Position)}
     <Tooltip label={`toggle table header ${position}`}>
-        <SvgTableHead position={position} onclick={() => handleToggleHeader(position)}/>
+        <ToolbarButton disabled={!ctx.isTable} onclick={() => handleToggleHeader(position)}>
+            <SvgTableHead position={position}/>
+        </ToolbarButton>
     </Tooltip>
 {/snippet}
 {#each positions as pos}
@@ -67,5 +75,7 @@
 {/each}
 
 <Tooltip label="toggle cell as header">
-    <SvgTableToggleCell onclick={toggleCell}/>
+    <ToolbarButton disabled={!ctx.isTable} onclick={toggleCell}>
+        <SvgTableToggleCell/>
+    </ToolbarButton>
 </Tooltip>

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ToolbarButton from "@/components/ToolbarButton.svelte"
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
@@ -11,5 +12,7 @@
 </script>
 
 <Tooltip label="merge table cells">
-    <SvgTableCellMerge onclick={mergeCells}/>
+    <ToolbarButton disabled={!ctx.isTable} onclick={mergeCells}>
+        <SvgTableCellMerge/>
+    </ToolbarButton>
 </Tooltip>

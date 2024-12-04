@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ToolbarButton from "@/components/ToolbarButton.svelte"
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
@@ -11,5 +12,7 @@
 </script>
 
 <Tooltip label="split table cells">
-    <SvgTableCellSplit onclick={splitCell}/>
+    <ToolbarButton disabled={!ctx.isTable} onclick={splitCell}>
+        <SvgTableCellSplit/>
+    </ToolbarButton>
 </Tooltip>
