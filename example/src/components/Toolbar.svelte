@@ -12,6 +12,7 @@
     import ToolbarIndent from "@/components/toolbars/ToolbarIndent.svelte"
     import ToolbarList from "@/components/toolbars/ToolbarList.svelte"
     import ToolbarMarks from "@/components/toolbars/ToolbarMarks.svelte"
+    import ToolbarOthers from "@/components/toolbars/ToolbarOthers.svelte"
     import ToolbarTable from "@/components/toolbars/ToolbarTable.svelte"
     import ToolbarTextStyle from "@/components/toolbars/ToolbarTextStyle.svelte"
     import ToolbarTwoLine from "@/components/toolbars/ToolbarTwoLine.svelte"
@@ -37,8 +38,9 @@
         </div>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[94px] pt-[3px] gap-y-[6px]">
+    <ToolbarTwoLine class="w-[148px] pt-[3px] gap-x-2 gap-y-[6px]">
         <ToolbarList/>
+        <ToolbarOthers/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTwoLine class="w-[174px] gap-x-2 pt-[3px] gap-y-[5px]">

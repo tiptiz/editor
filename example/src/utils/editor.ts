@@ -98,11 +98,11 @@ export const extensions: Extensions = [
     BlockQuote.configure(attrs({
         style: css`
             overflow: hidden;
-            padding-left: 20px;
+            padding: 10px 20px;
             border-left: 4px;
             border-style: solid;
-            border-color: #dfdfdf66;
-            background-color: #efefef44
+            border-color: ${lowContrastGray};
+            background-color: ${lowContrastBg}
         `
     })),
     Table.configure({ resizable: true, allowTableNodeSelection: true }),

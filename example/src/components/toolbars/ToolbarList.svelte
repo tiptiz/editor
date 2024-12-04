@@ -31,15 +31,12 @@
 <Tooltip label="task list">
     <SvgTaskList class={ctx.isTaskList ? "active" : ""} onclick={toggleTaskList}/>
 </Tooltip>
-<div class="flex-1"></div>
-<div class="ml-[5px] flex items-center gap-x-[13px]">
-    <Tooltip label="break list">
-        <SvgListBreak class="mr-[6px]" onclick={breakList}/>
-    </Tooltip>
-    <Tooltip label="sink list item">
-        <SvgListIndent onclick={sinkList}/>
-    </Tooltip>
-    <Tooltip label="lift list item">
-        <SvgListOutdent onclick={liftList}/>
-    </Tooltip>
-</div>
+<Tooltip label="break list">
+    <SvgListBreak onclick={breakList}/>
+</Tooltip>
+<Tooltip label="sink list item">
+    <SvgListIndent onclick={sinkList}/>
+</Tooltip>
+<Tooltip label="lift list item">
+    <SvgListOutdent onclick={liftList}/>
+</Tooltip>

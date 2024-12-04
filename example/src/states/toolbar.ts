@@ -19,6 +19,7 @@ export interface ToolbarState {
     isTaskList: boolean
     isTable: boolean
     isTextAlign: AlignStyle | ""
+    isBlockquote: boolean
 }
 
 export const setEditorContext = (state: ToolbarState) => {

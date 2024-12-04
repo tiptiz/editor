@@ -12,7 +12,8 @@
     import { onMount } from "svelte"
     /*
     * TODO features
-    * table, emoji, resize box, resize image, resize video, codepen
+    * block quote button, code block
+    * emoji, resize box, resize image, resize video, codepen
     * */
     const state = $state<ToolbarState>({
         isBold: false,
@@ -26,6 +27,7 @@
         isTaskList: false,
         isTable: false,
         isTextAlign: "",
+        isBlockquote: false,
         ...createEditor({
             onTransaction({ editor }) {
                 state.editor = editor
@@ -40,6 +42,7 @@
                 state.isTaskList = editor.isActive("taskList")
                 state.isTable = editor.isActive("table")
                 state.isTextAlign = aligns.find(textAlign => editor.isActive({ textAlign })) || ""
+                state.isBlockquote = editor.isActive("blockquote")
             }
         })
     })
