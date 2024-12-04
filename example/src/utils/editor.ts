@@ -36,6 +36,7 @@ import FontSize from "tiptap-extension-font-size"
 import HardBreak from "tiptap-extension-hard-break"
 import Heading from "tiptap-extension-heading"
 import Indent from "tiptap-extension-indent"
+import TrailingNode from "tiptap-extension-trailing-node"
 
 const lowContrastBg = "#afafaf33"
 const lowContrastGray = "#70707099"
@@ -45,9 +46,10 @@ export const extensions: Extensions = [
     Placeholder.configure({ placeholder: "Write down your imagination …" }),
     DropCursor,
     History,
+    Paragraph,
+    TrailingNode,
     Text,
     TextAlign.configure({ types: ["heading", "paragraph"] }),
-    Paragraph,
     TextStyle, /*           */// given ability to let <span style="" /> element can keep style attribute
     FontFamily, /*          */// operate style.fontFamily
     FontSize, /*            */// operate style.fontSize

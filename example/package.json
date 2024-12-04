@@ -42,7 +42,8 @@
         "tiptap-extension-font-size": "workspace:*",
         "tiptap-extension-hard-break": "workspace:*",
         "tiptap-extension-heading": "workspace:*",
-        "tiptap-extension-indent": "workspace:*"
+        "tiptap-extension-indent": "workspace:*",
+        "tiptap-extension-trailing-node": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",
