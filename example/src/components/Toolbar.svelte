@@ -18,7 +18,7 @@
 </script>
 
 <div class="toolbar h-[52px] flex items-center justify-center gap-2 relative">
-    <ToolbarTwoLine class="w-11 gap-x-2 pt-[2px] gap-y-[6px]">
+    <ToolbarTwoLine class="w-11 gap-x-2 pt-1 gap-y-[5px]">
         <ToolbarHistory/>
         <ToolbarFormat/>
     </ToolbarTwoLine>
