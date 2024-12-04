@@ -1,9 +1,9 @@
 <script lang="ts">
-    import type { AlignStyle } from "@/utils/editor"
+    import type { AlignStyle } from "@/utils/editor-presets"
 
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
-    import { aligns } from "@/utils/editor"
+    import { aligns } from "@/utils/editor-presets"
 
     import SvgAlign from "@/icons/toolbars/SvgAlign.svelte"
 

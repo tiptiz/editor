@@ -1,5 +1,5 @@
 import type { Editor } from "@tiptap/core"
-import type { AlignStyle, HeadingLevel } from "@/utils/editor"
+import type { AlignStyle, HeadingLevel } from "@/utils/editor-presets"
 
 import { getContext, setContext } from "svelte"
 

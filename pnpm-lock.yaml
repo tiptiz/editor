@@ -102,9 +102,6 @@ importers:
       '@tiptap/extension-history':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
-      '@tiptap/extension-horizontal-rule':
-        specifier: ^2.10.1
-        version: 2.10.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
       '@tiptap/extension-italic':
         specifier: ^2.10.2
         version: 2.10.2(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
@@ -168,6 +165,9 @@ importers:
       tiptap-extension-heading:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-heading
+      tiptap-extension-horizontal-rules:
+        specifier: workspace:*
+        version: link:../packages/tiptap-extension-horizontal-rules
       tiptap-extension-indent:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-indent
@@ -262,6 +262,18 @@ importers:
       '@tiptap/extension-heading':
         specifier: ^2.10.0
         version: 2.10.0(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))
+
+  packages/tiptap-extension-horizontal-rules:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.9.1
+        version: 2.9.1(@tiptap/pm@2.9.1)
+      '@tiptap/extension-horizontal-rule':
+        specifier: ^2.10.1
+        version: 2.10.1(@tiptap/core@2.9.1(@tiptap/pm@2.9.1))(@tiptap/pm@2.9.1)
+      '@tiptap/pm':
+        specifier: ^2.9.1
+        version: 2.9.1
 
   packages/tiptap-extension-indent:
     dependencies:

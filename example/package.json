@@ -20,7 +20,6 @@
         "@tiptap/extension-font-family": "^2.10.2",
         "@tiptap/extension-highlight": "^2.10.2",
         "@tiptap/extension-history": "^2.10.0",
-        "@tiptap/extension-horizontal-rule": "^2.10.1",
         "@tiptap/extension-italic": "^2.10.2",
         "@tiptap/extension-list-item": "^2.10.3",
         "@tiptap/extension-paragraph": "^2.10.0",
@@ -43,7 +42,8 @@
         "tiptap-extension-hard-break": "workspace:*",
         "tiptap-extension-heading": "workspace:*",
         "tiptap-extension-indent": "workspace:*",
-        "tiptap-extension-trailing-node": "workspace:*"
+        "tiptap-extension-trailing-node": "workspace:*",
+        "tiptap-extension-horizontal-rules": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",

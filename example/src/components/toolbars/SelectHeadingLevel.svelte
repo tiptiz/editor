@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { HeadingLevel } from "@/utils/editor"
+    import type { HeadingLevel } from "@/utils/editor-presets"
 
     import SvgArrowDown from "@/icons/SvgArrowDown.svelte"
 
@@ -10,7 +10,7 @@
         DropdownMenuTrigger
     } from "@/components/ui/dropdown-menu"
     import { getEditorContext } from "@/states/toolbar"
-    import { headingLevels } from "@/utils/editor"
+    import { headingLevels } from "@/utils/editor-presets"
 
     import SvgHeading from "@/icons/toolbars/SvgHeading.svelte"
 

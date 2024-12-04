@@ -7,7 +7,8 @@
     import ToggleSparkLine from "@/components/ToggleSparkLine.svelte"
     import Toolbar from "@/components/Toolbar.svelte"
     import { setEditorContext } from "@/states/toolbar"
-    import { aligns, createEditor, headingLevels } from "@/utils/editor"
+    import { createEditor } from "@/utils/editor"
+    import { aligns, headingLevels } from "@/utils/editor-presets"
 
     import { onMount } from "svelte"
     /*

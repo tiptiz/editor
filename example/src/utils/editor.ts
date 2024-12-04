@@ -2,9 +2,10 @@ import type { EditorOptions, Extensions } from "@tiptap/core"
 
 import html from "@/assets/features.html?raw"
 import { attrs, css } from "@/utils/config"
+import { horizontalTypes, lowContrastBg, lowContrastGray } from "@/utils/editor-presets"
 
 import { Editor } from "@tiptap/core"
-import BlockQuote from "@tiptap/extension-blockquote"
+import Blockquote from "@tiptap/extension-blockquote"
 import Bold from "@tiptap/extension-bold"
 import Code from "@tiptap/extension-code"
 import Color from "@tiptap/extension-color"
@@ -13,7 +14,6 @@ import DropCursor from "@tiptap/extension-dropcursor"
 import FontFamily from "@tiptap/extension-font-family"
 import Highlight from "@tiptap/extension-highlight"
 import History from "@tiptap/extension-history"
-import Hr from "@tiptap/extension-horizontal-rule"
 import Italic from "@tiptap/extension-italic"
 import ListItem from "@tiptap/extension-list-item"
 import Paragraph from "@tiptap/extension-paragraph"
@@ -35,11 +35,9 @@ import BulletList from "tiptap-extension-bullet-list"
 import FontSize from "tiptap-extension-font-size"
 import HardBreak from "tiptap-extension-hard-break"
 import Heading from "tiptap-extension-heading"
+import HorizontalRules from "tiptap-extension-horizontal-rules"
 import Indent from "tiptap-extension-indent"
 import TrailingNode from "tiptap-extension-trailing-node"
-
-const lowContrastBg = "#afafaf33"
-const lowContrastGray = "#70707099"
 
 export const extensions: Extensions = [
     Document,
@@ -62,7 +60,11 @@ export const extensions: Extensions = [
     Underline,
     Indent,
     HardBreak,
-    Hr.configure(attrs({ style: css`margin: 10px 0` })),
+    // TODO better hr style
+    HorizontalRules.configure({
+        ...attrs({ style: css`margin: 10px 0; border-top-width: 2px` }),
+        types: horizontalTypes
+    }),
     Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
     Code.configure(attrs({
         style: css`
@@ -95,7 +97,7 @@ export const extensions: Extensions = [
             `
         })
     }),
-    BlockQuote.configure(attrs({
+    Blockquote.configure(attrs({
         style: css`
             overflow: hidden;
             padding: 10px 20px;
@@ -135,12 +137,3 @@ export const createEditor = (options?: Partial<EditorOptions>) => {
         })
     }
 }
-
-export const headingLevels = [1, 2, 3, 4, 5, 6] as const
-export type HeadingLevel = typeof headingLevels[number]
-
-export const tableInsertTargets = ["col-before", "col-after", "row-below", "row-above"] as const
-export type TableInsertTarget = typeof tableInsertTargets[number]
-
-export const aligns = ["left", "center", "right", "justify"] as const
-export type AlignStyle = typeof aligns[number]

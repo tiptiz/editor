@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { TableInsertTarget } from "@/utils/editor"
+    import type { TableInsertTarget } from "@/utils/editor-presets"
 
     export let target: TableInsertTarget
 </script>

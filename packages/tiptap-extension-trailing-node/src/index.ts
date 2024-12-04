@@ -1,5 +1,5 @@
-import { TrailingNode } from "./indent"
+import { TrailingNode } from "./trailingNode"
 
-export * from "./indent"
+export * from "./trailingNode"
 
 export default TrailingNode
