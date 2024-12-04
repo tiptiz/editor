@@ -18,8 +18,8 @@
 
 <button onclick={() => theme.isDark = !theme.isDark}>
     {#if theme.isDark}
-        <SvgLightMode width="30px" />
+        <SvgLightMode width="20" height="20"/>
     {:else}
-        <SvgDarkMode width="30px" />
+        <SvgDarkMode width="20" height="20"/>
     {/if}
 </button>

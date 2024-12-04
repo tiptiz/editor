@@ -1,0 +1,48 @@
+// bullet list
+.tiptap {
+    :first-child {
+        margin-top: 0;
+    }
+
+    .list-paddingleft-1 {
+        padding-left: 1.25em;
+    }
+
+    & > p {
+        margin: 0.625em 0;
+    }
+}
+
+// task list
+.tiptap {
+    ul[data-type="taskList"] {
+        list-style: none;
+        margin-left: 0;
+        padding: 0;
+
+        li {
+            align-items: flex-start;
+            display: flex;
+
+            > label {
+                flex: 0 0 auto;
+                user-select: none;
+                > input[type="checkbox"] {
+                    accent-color: hsl(var(--primary));
+                }
+            }
+
+            > div {
+                flex: 1 1 auto;
+            }
+        }
+
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        ul[data-type="taskList"] {
+            margin: 0;
+        }
+    }
+}

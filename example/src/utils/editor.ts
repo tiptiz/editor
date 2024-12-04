@@ -83,7 +83,6 @@ export const extensions: Extensions = [
             style: css`
                 display: flex;
                 gap: 0.625em;
-                align-items: center;
             `
         })
     }),

@@ -12,6 +12,8 @@
     import ToolbarTable from "@/components/ToolbarTable.svelte"
     import ToolbarTextStyle from "@/components/ToolbarTextStyle.svelte"
     import ToolbarTwoLine from "@/components/ToolbarTwoLine.svelte"
+    import { globalState } from "@/states/global.svelte"
+
 </script>
 
 <div class="toolbar h-[52px] flex items-center justify-center gap-2 relative">
@@ -37,8 +39,10 @@
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTable/>
-    <hr class="absolute top-[9px] border-red-600/50 w-full"/>
-    <hr class="absolute top-[22px] border-red-600/50 w-full"/>
-    <hr class="absolute top-[30px] border-red-600/50 w-full"/>
-    <hr class="absolute top-[46px] border-red-600/50 w-full"/>
+    {#if globalState.viewSparkLines}
+        <hr class="absolute top-[9px] border-red-600/50 w-full"/>
+        <hr class="absolute top-[22px] border-red-600/50 w-full"/>
+        <hr class="absolute top-[30px] border-red-600/50 w-full"/>
+        <hr class="absolute top-[46px] border-red-600/50 w-full"/>
+    {/if}
 </div>
