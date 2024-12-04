@@ -8,9 +8,11 @@
 
     const updateFontSize = (size: number) => {
         const editor = ctx.editor
-        const { fontSize = "16px" } = editor.getAttributes("textStyle") ?? {}
 
-        let newSize = parseInt(fontSize) + size
+        // if textStyle has style attribute, other style property must be null if not set
+        let fontSize = editor.getAttributes("textStyle")?.fontSize || "16px"
+
+        let newSize = parseInt(fontSize, 10) + size
         if (newSize <= 4) newSize = 4
         else if (newSize >= 96) newSize = 96
 
