@@ -60,7 +60,7 @@
     <DropdownMenuTrigger>
         <div class={`w-11 flex pl-1.5 toolbar-icon-trigger`} class:active={ctx.isBulletList}>
             <SvgListBulleted/>
-            <SvgArrowDown width="16px"/>
+            <SvgArrowDown/>
         </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="svg-active-able">
