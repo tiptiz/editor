@@ -1,9 +1,10 @@
 <script lang="ts">
     import ColorPicker from "@/components/ColorPicker.svelte"
     import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
+    import { getEditorContext } from "@/states/toolbar"
+
     import SvgTextBgStyle from "@/icons/toolbars/SvgTextBgStyle.svelte"
     import SvgTextStyle from "@/icons/toolbars/SvgTextStyle.svelte"
-    import { getEditorContext } from "@/states/toolbar"
 
     const ctx = getEditorContext()
 

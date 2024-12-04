@@ -1,7 +1,8 @@
 <script lang="ts">
+    import { getEditorContext } from "@/states/toolbar"
+
     import SvgTextMinus from "@/icons/toolbars/SvgTextMinus.svelte"
     import SvgTextPlugs from "@/icons/toolbars/SvgTextPlugs.svelte"
-    import { getEditorContext } from "@/states/toolbar"
 
     const ctx = getEditorContext()
 

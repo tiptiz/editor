@@ -3,9 +3,10 @@
 
     import { Button } from "@/components/ui/button"
     import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
-    import SvgTableInsert from "@/icons/toolbars/SvgTableInsert.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { tableInsertTargets } from "@/utils/editor"
+
+    import SvgTableInsert from "@/icons/toolbars/SvgTableInsert.svelte"
 
     const ctx = getEditorContext()
     const handleInsert = (target: TableInsertTarget) => {

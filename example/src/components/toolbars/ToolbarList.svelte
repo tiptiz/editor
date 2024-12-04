@@ -1,10 +1,11 @@
 <script lang="ts">
-    import SelectListType from "@/components/SelectListType.svelte"
+    import { getEditorContext } from "@/states/toolbar"
+
     import SvgListBreak from "@/icons/toolbars/SvgListBreak.svelte"
     import SvgListIndent from "@/icons/toolbars/SvgListIndent.svelte"
     import SvgListOutdent from "@/icons/toolbars/SvgListOutdent.svelte"
     import SvgTaskList from "@/icons/toolbars/SvgTaskList.svelte"
-    import { getEditorContext } from "@/states/toolbar"
+    import SelectListType from "@/components/toolbars/SelectListType.svelte"
 
     const ctx = getEditorContext()
     // TODO TaskList has style problem

@@ -1,7 +1,8 @@
 <script lang="ts">
+    import { getEditorContext } from "@/states/toolbar"
+
     import SvgIndentDec from "@/icons/toolbars/SvgIndentDec.svelte"
     import SvgIndentInc from "@/icons/toolbars/SvgIndentInc.svelte"
-    import { getEditorContext } from "@/states/toolbar"
 
     const ctx = getEditorContext()
 

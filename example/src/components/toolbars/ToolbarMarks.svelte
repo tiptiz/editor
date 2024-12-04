@@ -1,11 +1,12 @@
 <script lang="ts">
+    import { getEditorContext } from "@/states/toolbar"
+
     import SvgBold from "@/icons/toolbars/SvgBold.svelte"
     import SvgItalic from "@/icons/toolbars/SvgItalic.svelte"
     import SvgStrike from "@/icons/toolbars/SvgStrike.svelte"
     import SvgSubscript from "@/icons/toolbars/SvgSubscript.svelte"
     import SvgSuperscript from "@/icons/toolbars/SvgSuperscript.svelte"
     import SvgUnderline from "@/icons/toolbars/SvgUnderline.svelte"
-    import { getEditorContext } from "@/states/toolbar"
 
     const ctx = getEditorContext()
 

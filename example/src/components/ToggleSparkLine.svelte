@@ -1,5 +1,6 @@
 <script lang="ts">
     import SvgSparkLines from "@/icons/SvgSparkLines.svelte"
+
     import { globalState } from "@/states/global.svelte"
 
     let viewSparkLines = $derived(globalState.viewSparkLines)

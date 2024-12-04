@@ -71,7 +71,9 @@ export default [
                         // Side effect imports.
                         ["^\\u0000"],
                         ["^@?\\w.*\\u0000$", "^[^.].*\\u0000$", "^\\..*\\u0000$"],
-                        ["^@/"],
+                        ["^@/icons"],
+                        ["^@/components/ui", "^@/"],
+                        ["^@/icons/toolbars", "^@/components/toolbars"],
                         // Parent imports. Put `..` last.
                         ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
                         // Other relative imports. Put same-folder imports and `.` last.
@@ -105,7 +107,9 @@ export default [
     {
         ignores: [
             "**/node_modules",
-            "**/components/ui"
+            "**/components/ui",
+            "**/dist*",
+            ".*"
         ]
     }
 ]

@@ -2,6 +2,8 @@
     import type { Snippet } from "svelte"
     import type { HTMLInputAttributes } from "svelte/elements"
 
+    import SvgArrowDown from "@/icons/SvgArrowDown.svelte"
+
     import {
         DropdownMenu,
         DropdownMenuContent,
@@ -9,7 +11,6 @@
         DropdownMenuTrigger
     } from "@/components/ui/dropdown-menu"
     import { Input } from "@/components/ui/input"
-    import SvgArrowDown from "@/icons/SvgArrowDown.svelte"
 
     export type SelectOption = {
         label: string

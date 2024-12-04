@@ -3,9 +3,10 @@
     import { Checkbox } from "@/components/ui/checkbox"
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
     import { Input } from "@/components/ui/input"
-    import SvgTablePlus from "@/icons/toolbars/SvgTablePlus.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { range } from "@/utils/common"
+
+    import SvgTablePlus from "@/icons/toolbars/SvgTablePlus.svelte"
 
     const ctx = getEditorContext()
 

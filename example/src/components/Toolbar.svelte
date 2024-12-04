@@ -1,18 +1,19 @@
 <script lang="ts">
     import Hr from "@/components/Hr.svelte"
-    import SelectFontFamily from "@/components/SelectFontFamily.svelte"
-    import SelectFontSize from "@/components/SelectFontSize.svelte"
-    import SelectHeadingLevel from "@/components/SelectHeadingLevel.svelte"
-    import ToolbarColors from "@/components/ToolbarColors.svelte"
-    import ToolbarFormat from "@/components/ToolbarFormat.svelte"
-    import ToolbarHistory from "@/components/ToolbarHistory.svelte"
-    import ToolbarIndent from "@/components/ToolbarIndent.svelte"
-    import ToolbarList from "@/components/ToolbarList.svelte"
-    import ToolbarMarks from "@/components/ToolbarMarks.svelte"
-    import ToolbarTable from "@/components/ToolbarTable.svelte"
-    import ToolbarTextStyle from "@/components/ToolbarTextStyle.svelte"
-    import ToolbarTwoLine from "@/components/ToolbarTwoLine.svelte"
     import { globalState } from "@/states/global.svelte"
+
+    import SelectFontFamily from "@/components/toolbars/SelectFontFamily.svelte"
+    import SelectFontSize from "@/components/toolbars/SelectFontSize.svelte"
+    import SelectHeadingLevel from "@/components/toolbars/SelectHeadingLevel.svelte"
+    import ToolbarColors from "@/components/toolbars/ToolbarColors.svelte"
+    import ToolbarFormat from "@/components/toolbars/ToolbarFormat.svelte"
+    import ToolbarHistory from "@/components/toolbars/ToolbarHistory.svelte"
+    import ToolbarIndent from "@/components/toolbars/ToolbarIndent.svelte"
+    import ToolbarList from "@/components/toolbars/ToolbarList.svelte"
+    import ToolbarMarks from "@/components/toolbars/ToolbarMarks.svelte"
+    import ToolbarTable from "@/components/toolbars/ToolbarTable.svelte"
+    import ToolbarTextStyle from "@/components/toolbars/ToolbarTextStyle.svelte"
+    import ToolbarTwoLine from "@/components/toolbars/ToolbarTwoLine.svelte"
 
 </script>
 
