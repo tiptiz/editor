@@ -39,11 +39,13 @@
         <ToolbarList/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTable/>
+    <ToolbarTwoLine class="w-[112px] gap-x-2 pt-[3px] gap-y-[7px]">
+        <ToolbarTable/>
+    </ToolbarTwoLine>
     {#if globalState.viewSparkLines}
         <hr class="absolute top-[9px] border-red-600/50 w-full"/>
         <hr class="absolute top-[22px] border-red-600/50 w-full"/>
-        <hr class="absolute top-[30px] border-red-600/50 w-full"/>
-        <hr class="absolute top-[46px] border-red-600/50 w-full"/>
+        <hr class="absolute top-[32px] border-red-600/50 w-full"/>
+        <hr class="absolute top-[45px] border-red-600/50 w-full"/>
     {/if}
 </div>
