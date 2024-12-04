@@ -1,6 +1,7 @@
 <script lang="ts">
     import ColorPicker from "@/components/ColorPicker.svelte"
     import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
+    import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
     import SvgTextBgStyle from "@/icons/toolbars/SvgTextBgStyle.svelte"
@@ -35,8 +36,12 @@
 </script>
 <EditorTransactionEvent handler={handleTextStyleTr}/>
 <ColorPicker onselect={setFontColor}>
-    <SvgTextStyle color={foreground}/>
+    <Tooltip label="pick a font color">
+        <SvgTextStyle color={foreground}/>
+    </Tooltip>
 </ColorPicker>
 <ColorPicker onselect={setBgColor}>
-    <SvgTextBgStyle color={background}/>
+    <Tooltip label="pick a bg color">
+        <SvgTextBgStyle color={background}/>
+    </Tooltip>
 </ColorPicker>

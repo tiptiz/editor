@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
     import SvgRedo from "@/icons/toolbars/SvgRedo.svelte"
@@ -10,5 +11,9 @@
     const redo = () => ctx.editor.commands.redo()
 </script>
 
-<SvgUndo onclick={undo}/>
-<SvgRedo onclick={redo}/>
+<Tooltip label="undo">
+    <SvgUndo onclick={undo}/>
+</Tooltip>
+<Tooltip label="redo">
+    <SvgRedo onclick={redo}/>
+</Tooltip>

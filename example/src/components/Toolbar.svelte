@@ -29,7 +29,7 @@
         <div class="flex items-center gap-x-[9px]">
             <ToolbarTextStyle/>
         </div>
-        <div class="h-[20px] flex items-center gap-x-2.5">
+        <div class="h-[20px] flex items-center gap-x-[11px]">
             <ToolbarMarks/>
             <ToolbarColors/>
             <ToolbarIndent/>

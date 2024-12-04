@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
 
     import SvgBrush from "@/icons/toolbars/SvgBrush.svelte"
@@ -11,5 +12,9 @@
     }
 </script>
 
-<SvgClear onclick={clear}/>
-<SvgBrush class="cursor-not-allowed"/>
+<Tooltip label="clear current marks">
+    <SvgClear onclick={clear}/>
+</Tooltip>
+<Tooltip label="marks brush (not supported yet!)">
+    <SvgBrush class="cursor-not-allowed"/>
+</Tooltip>
