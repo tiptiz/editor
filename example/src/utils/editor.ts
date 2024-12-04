@@ -46,7 +46,7 @@ export const extensions: Extensions = [
     DropCursor,
     History,
     Text,
-    TextAlign,
+    TextAlign.configure({ types: ["heading", "paragraph"] }),
     Paragraph,
     TextStyle, /*           */// given ability to let <span style="" /> element can keep style attribute
     FontFamily, /*          */// operate style.fontFamily
@@ -139,3 +139,6 @@ export type HeadingLevel = typeof headingLevels[number]
 
 export const tableInsertTargets = ["col-before", "col-after", "row-below", "row-above"] as const
 export type TableInsertTarget = typeof tableInsertTargets[number]
+
+export const aligns = ["left", "center", "right", "justify"] as const
+export type AlignStyle = typeof aligns[number]

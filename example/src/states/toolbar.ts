@@ -1,5 +1,5 @@
 import type { Editor } from "@tiptap/core"
-import type { HeadingLevel } from "@/utils/editor"
+import type { AlignStyle, HeadingLevel } from "@/utils/editor"
 
 import { getContext, setContext } from "svelte"
 
@@ -18,6 +18,7 @@ export interface ToolbarState {
     isBulletList: boolean
     isTaskList: boolean
     isTable: boolean
+    isTextAlign: AlignStyle | ""
 }
 
 export const setEditorContext = (state: ToolbarState) => {

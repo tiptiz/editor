@@ -7,12 +7,12 @@
     import ToggleSparkLine from "@/components/ToggleSparkLine.svelte"
     import Toolbar from "@/components/Toolbar.svelte"
     import { setEditorContext } from "@/states/toolbar"
-    import { createEditor, headingLevels } from "@/utils/editor"
+    import { aligns, createEditor, headingLevels } from "@/utils/editor"
 
     import { onMount } from "svelte"
     /*
     * TODO features
-    * table, emoji, text align, resize box, resize image, resize video, codepen
+    * table, emoji, resize box, resize image, resize video, codepen
     * */
     const state = $state<ToolbarState>({
         isBold: false,
@@ -25,6 +25,7 @@
         isBulletList: false,
         isTaskList: false,
         isTable: false,
+        isTextAlign: "",
         ...createEditor({
             onTransaction({ editor }) {
                 state.editor = editor
@@ -38,6 +39,7 @@
                 state.isBulletList = editor.isActive("bulletList")
                 state.isTaskList = editor.isActive("taskList")
                 state.isTable = editor.isActive("table")
+                state.isTextAlign = aligns.find(textAlign => editor.isActive({ textAlign })) || ""
             }
         })
     })

@@ -5,6 +5,7 @@
     import SelectFontFamily from "@/components/toolbars/SelectFontFamily.svelte"
     import SelectFontSize from "@/components/toolbars/SelectFontSize.svelte"
     import SelectHeadingLevel from "@/components/toolbars/SelectHeadingLevel.svelte"
+    import ToolbarAlign from "@/components/toolbars/ToolbarAlign.svelte"
     import ToolbarColors from "@/components/toolbars/ToolbarColors.svelte"
     import ToolbarFormat from "@/components/toolbars/ToolbarFormat.svelte"
     import ToolbarHistory from "@/components/toolbars/ToolbarHistory.svelte"
@@ -23,16 +24,17 @@
         <ToolbarFormat/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[324px] gap-x-[11px]">
+    <ToolbarTwoLine class="w-[357px] gap-x-[10px]">
         <SelectFontFamily/>
         <SelectFontSize/>
-        <div class="pl-[1px] flex items-center gap-x-2">
-            <ToolbarTextStyle/>
-        </div>
-        <ToolbarMarks/>
-        <ToolbarColors/>
-        <ToolbarIndent/>
+        <ToolbarTextStyle/>
         <SelectHeadingLevel/>
+        <div class="flex items-center gap-x-2">
+            <ToolbarMarks/>
+            <ToolbarColors/>
+            <ToolbarIndent/>
+            <ToolbarAlign/>
+        </div>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTwoLine class="w-[94px] pt-[3px] gap-y-[6px]">
