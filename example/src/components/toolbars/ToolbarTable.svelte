@@ -6,6 +6,7 @@
     import SvgTableColDelete from "@/icons/toolbars/SvgTableColDelete.svelte"
     import SvgTableHead from "@/icons/toolbars/SvgTableHead.svelte"
     import SvgTableRowDelete from "@/icons/toolbars/SvgTableRowDelete.svelte"
+    import SvgTableToggleCell from "@/icons/toolbars/SvgTableToggleCell.svelte"
     import TableCellMerge from "@/components/toolbars/TableCellMerge.svelte"
     import TableCellSplit from "@/components/toolbars/TableCellSplit.svelte"
     import TableCreateNew from "@/components/toolbars/TableCreateNew.svelte"
@@ -30,20 +31,17 @@
     const deleteRow = () => {
         ctx.editor.chain().focus().deleteRow().run()
     }
+    const toggleCell = () => {
+        ctx.editor.chain().focus().toggleHeaderCell().run()
+    }
 </script>
 
-<Tooltip label="insert new table">
-    <TableCreateNew/>
-</Tooltip>
+<Tooltip label="insert new table"><TableCreateNew/></Tooltip>
 
 <TableInsertNew/>
 
-<Tooltip label="delete column">
-    <SvgTableColDelete onclick={deleteCol}/>
-</Tooltip>
-<Tooltip label="delete row">
-    <SvgTableRowDelete onclick={deleteRow}/>
-</Tooltip>
+<Tooltip label="delete column"><SvgTableColDelete onclick={deleteCol}/></Tooltip>
+<Tooltip label="delete row"><SvgTableRowDelete onclick={deleteRow}/></Tooltip>
 
 <Tooltip label="fix table">
     <button disabled={!ctx.isTable} onclick={fixTable}>
@@ -61,3 +59,5 @@
 {#each positions as pos}
     {@render header(pos)}
 {/each}
+
+<Tooltip label="toggle cell as header"><SvgTableToggleCell onclick={toggleCell}/></Tooltip>
