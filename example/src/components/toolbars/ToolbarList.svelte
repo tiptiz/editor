@@ -27,9 +27,9 @@
 </script>
 
 <SelectListType/>
-<SvgTaskList class={ctx.isTaskList ? "active" : ""} width="18" height="18" onclick={toggleTaskList}/>
+<SvgTaskList class={ctx.isTaskList ? "active" : ""} onclick={toggleTaskList}/>
 <div class="flex-1"></div>
-<div class="ml-[5px] flex items-center gap-x-2">
+<div class="ml-[5px] flex items-center gap-x-[13px]">
     <SvgListBreak class="mr-[9px]" onclick={breakList}/>
     <SvgListIndent onclick={sinkList}/>
     <SvgListOutdent onclick={liftList}/>

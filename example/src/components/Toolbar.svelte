@@ -18,7 +18,7 @@
 </script>
 
 <div class="toolbar h-[52px] flex items-center justify-center gap-2 relative">
-    <ToolbarTwoLine class="w-12 gap-x-2">
+    <ToolbarTwoLine class="w-10 gap-x-2 pt-[2px] gap-y-[6px]">
         <ToolbarHistory/>
         <ToolbarFormat/>
     </ToolbarTwoLine>
@@ -29,13 +29,15 @@
         <div class="flex items-center gap-x-[9px]">
             <ToolbarTextStyle/>
         </div>
-        <ToolbarMarks/>
-        <ToolbarColors/>
-        <ToolbarIndent/>
-        <SelectHeadingLevel/>
+        <div class="h-[20px] flex items-center gap-x-2.5">
+            <ToolbarMarks/>
+            <ToolbarColors/>
+            <ToolbarIndent/>
+            <SelectHeadingLevel/>
+        </div>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[86px]">
+    <ToolbarTwoLine class="w-[86px] pt-[3px] gap-y-2">
         <ToolbarList/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>

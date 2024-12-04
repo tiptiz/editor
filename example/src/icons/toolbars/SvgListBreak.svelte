@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48" {...$$props}>
     <g fill="none"
-       transform="scale(0.75) translate(10 10)"
+       transform="scale(0.8) translate(8 4)"
        stroke="currentColor"
        stroke-linecap="round"
        stroke-linejoin="round"

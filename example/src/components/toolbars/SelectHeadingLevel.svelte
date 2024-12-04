@@ -24,9 +24,9 @@
 
 <DropdownMenu>
     <DropdownMenuTrigger>
-        <div class={`w-11 h-6 flex items-center toolbar-icon-trigger ${ctx.isHeading ? "active" : ""}`}>
-            <SvgHeading level={level || 1} style="transform: scale(0.85)"/>
-            <SvgArrowDown width="16px"/>
+        <div class={`w-11 h-4 pt-0.5 flex items-center toolbar-icon-trigger ${ctx.isHeading ? "active" : ""}`}>
+            <SvgHeading level={level || 1}/>
+            <SvgArrowDown />
         </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="min-w-0 w-11">

@@ -11,5 +11,5 @@
     }
 </script>
 
-<SvgClear onclick={clear}/>
-<SvgBrush class="cursor-not-allowed"/>
+<SvgClear onclick={clear} width="16" height="16"/>
+<SvgBrush class="cursor-not-allowed" width="16" height="16"/>

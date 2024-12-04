@@ -58,7 +58,7 @@
 
 <DropdownMenu onOpenChange={handleListStyleState}>
     <DropdownMenuTrigger>
-        <div class={`w-11 h-6 flex items-center pl-1.5 toolbar-icon-trigger`} class:active={ctx.isBulletList}>
+        <div class={`w-11 flex pl-1.5 toolbar-icon-trigger`} class:active={ctx.isBulletList}>
             <SvgListBulleted/>
             <SvgArrowDown width="16px"/>
         </div>
