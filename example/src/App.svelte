@@ -1,10 +1,12 @@
 <script lang="ts">
     import "@/styles/editor.scss"
 
+    import type { ToolbarState } from "@/states/toolbar"
+
     import ThemeMode from "@/components/ThemeMode.svelte"
     import ToggleSparkLine from "@/components/ToggleSparkLine.svelte"
     import Toolbar from "@/components/Toolbar.svelte"
-    import { setEditorContext, type ToolbarState } from "@/states/toolbar"
+    import { setEditorContext } from "@/states/toolbar"
     import { createEditor, headingLevels } from "@/utils/editor"
 
     import { onMount } from "svelte"
@@ -53,7 +55,7 @@
 <div class="w-full h-[104px] fixed top-0 z-10">
     <div class="w-full min-h-[52px] px-4 border flex gap-3 items-center bg-background">
         <div class="flex-1"></div>
-        <ToggleSparkLine />
+        <ToggleSparkLine/>
         <ThemeMode/>
     </div>
     <Toolbar/>
