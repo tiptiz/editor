@@ -36,8 +36,8 @@
                 <div class="grid__group">
                     <h1 class="grid__group-title">{meta.group}</h1>
                     <div class="grid__group-emojis">
-                        {#each meta.emoji as { base, shortcodes }}
-                            <LazyComponent class="size-9">
+                        {#each meta.emoji as { base, shortcodes }, i}
+                            <LazyComponent class="size-9" priority={i}>
                                 <button class="size-full emoji__button"
                                         title={shortcodes.join(" ")}
                                         onclick={() => insertEmoji(render(base))}>
