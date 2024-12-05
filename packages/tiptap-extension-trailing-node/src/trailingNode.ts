@@ -1,7 +1,9 @@
+import type { Node, NodeType } from "prosemirror-model"
+
 import { Extension } from "@tiptap/core"
 import { Plugin, PluginKey } from "@tiptap/pm/state"
 
-function nodeEqualsType({ types, node }) {
+function nodeEqualsType({ node, types }: { node: Node, types: NodeType[] | NodeType }) {
     return (Array.isArray(types) && types.includes(node.type)) || node.type === types
 }
 

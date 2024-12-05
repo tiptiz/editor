@@ -32,6 +32,7 @@ import TextAlign from "@tiptap/extension-text-align"
 import TextStyle from "@tiptap/extension-text-style"
 import Underline from "@tiptap/extension-underline"
 import BulletList from "tiptap-extension-bullet-list"
+import CodeBlockShiki from "tiptap-extension-code-block-shiki"
 import FontSize from "tiptap-extension-font-size"
 import HardBreak from "tiptap-extension-hard-break"
 import Heading from "tiptap-extension-heading"
@@ -62,7 +63,12 @@ export const extensions: Extensions = [
     HardBreak,
     // TODO better hr style
     HorizontalRules.configure({
-        ...attrs({ style: css`margin: 10px 0; border-top-width: 2px` }),
+        ...attrs({
+            style: css`
+                margin: 10px 0;
+                border-top-width: 2px
+            `
+        }),
         types: horizontalTypes
     }),
     Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
@@ -73,6 +79,10 @@ export const extensions: Extensions = [
             background-color: #dfdfdf;
         `
     })),
+    CodeBlockShiki.configure({
+        defaultLanguage: "javascript",
+        defaultTheme: "vitesse-dark"
+    }),
     Sub,
     Sup,
     BulletList.configure(attrs({ class: "list-paddingleft-1", style: css`padding-left: 1.25em` })),

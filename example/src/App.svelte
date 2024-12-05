@@ -14,7 +14,7 @@
     import { onMount } from "svelte"
     /*
     * TODO features
-    * block quote button, code block
+    *  code block
     * emoji, resize box, resize image, resize video, codepen
     * */
     const state = $state<ToolbarState>({
@@ -71,7 +71,7 @@
 </div>
 <div class="size-full pt-[120px] pb-4 bg-accent">
     <div class="size-full overflow-y-auto px-4">
-        <div class="max-w-[826px] min-h-full mx-auto bg-white dark:bg-neutral-700 shadow-xl"
+        <div class="px-10 py-6 max-w-[826px] min-h-full mx-auto bg-white dark:bg-neutral-700 shadow-xl"
              bind:this={divRef}></div>
     </div>
 </div>

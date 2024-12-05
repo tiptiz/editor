@@ -43,7 +43,8 @@
         "tiptap-extension-heading": "workspace:*",
         "tiptap-extension-indent": "workspace:*",
         "tiptap-extension-trailing-node": "workspace:*",
-        "tiptap-extension-horizontal-rules": "workspace:*"
+        "tiptap-extension-horizontal-rules": "workspace:*",
+        "tiptap-extension-code-block-shiki": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",

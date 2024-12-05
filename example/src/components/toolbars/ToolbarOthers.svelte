@@ -3,11 +3,13 @@
     import { getEditorContext } from "@/states/toolbar"
 
     import SvgBlockquote from "@/icons/toolbars/SvgBlockquote.svelte"
+    import SvgCodeBlock from "@/icons/toolbars/SvgCodeBlock.svelte"
     import SelectEmojis from "@/components/toolbars/SelectEmojis.svelte"
     import SelectHorizontalRules from "@/components/toolbars/SelectHorizontalRules.svelte"
 
     const ctx = getEditorContext()
     const blockquote = () => ctx.editor.chain().focus().toggleBlockquote().run()
+    const addCodeBlock = () => ctx.editor.chain().focus().toggleCodeBlock().run()
 </script>
 
 <SelectHorizontalRules/>
@@ -17,4 +19,5 @@
         <SvgBlockquote class={ctx.isBlockquote ? "active" : ""} onclick={blockquote}/>
     </Tooltip>
     <SelectEmojis/>
+    <SvgCodeBlock onclick={addCodeBlock}/>
 </div>
