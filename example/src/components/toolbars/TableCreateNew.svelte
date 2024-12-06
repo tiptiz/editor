@@ -4,7 +4,7 @@
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
     import { Input } from "@/components/ui/input"
     import { getEditorContext } from "@/states/toolbar"
-    import { range } from "@/utils/common"
+    import { range } from "@/utils/svelte-helper"
 
     import SvgTablePlus from "@/icons/toolbars/SvgTablePlus.svelte"
 

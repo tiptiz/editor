@@ -54,6 +54,6 @@ So here is the classes table I'm using in this editor
 + ✅ used classes
 + ❌ not support
 
-| internal classes   | extension            | current | we-chat  |
-|--------------------|----------------------|---------|----------|
-| list-paddingleft-1 | taskList, bulletList | ✅       | ✅(paste) |
+| internal classes   | extension            | current | we-chat |
+|--------------------|----------------------|---------|---------|
+| list-paddingleft-1 | taskList, bulletList | ✅       | ✅       |
