@@ -1,24 +1,33 @@
 {
-    "extends": "@tsconfig/svelte/tsconfig.json",
+    "extends": "../tsconfig.base.json",
     "compilerOptions": {
-        "target": "ESNext",
-        "useDefineForClassFields": true,
         "module": "ESNext",
-        "resolveJsonModule": true,
+        "target": "ESNext",
         /**
-         * Typecheck JS in `.svelte` and `.js` files by default.
+         * TypeCheck JS in `.svelte` and `.js` files by default.
          * Disable checkJs if you'd like to use dynamic types in JS.
          * Note that setting allowJs false does not prevent the use
          * of JS in `.svelte` files.
          */
         "allowJs": true,
         "checkJs": true,
+        /**
+          Svelte Preprocess cannot figure out whether you have a value or a type, so tell TypeScript
+          to enforce using `import type` instead of `import` for Types.
+         */
+        "resolveJsonModule": true,
+        "useDefineForClassFields": true,
+        "verbatimModuleSyntax": true,
+        "sourceMap": true,
         "isolatedModules": true,
         "moduleDetection": "force",
+        "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"]
-        },
+        }
     },
     "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
-    "references": [{ "path": "./tsconfig.node.json" }]
+    "references": [
+        { "path": "./tsconfig.node.json" }
+    ]
 }

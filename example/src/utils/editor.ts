@@ -1,7 +1,6 @@
 import type { EditorOptions, Extensions } from "@tiptap/core"
 
 import html from "@/assets/features.html?raw"
-import { attrs, css } from "@/utils/config"
 import { horizontalTypes, lowContrastBg, lowContrastGray } from "@/utils/editor-presets"
 
 import { Editor } from "@tiptap/core"
@@ -39,6 +38,7 @@ import Heading from "tiptap-extension-heading"
 import HorizontalRules from "tiptap-extension-horizontal-rules"
 import Indent from "tiptap-extension-indent"
 import TrailingNode from "tiptap-extension-trailing-node"
+import { attrs, css } from "tiptap-utils-shared"
 
 export const extensions: Extensions = [
     Document,

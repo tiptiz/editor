@@ -6,9 +6,9 @@
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
     import { appendColors, colors, colorsRecommended } from "@/states/histories.svelte"
     import { theme } from "@/states/theme.svelte"
-    import { css } from "@/utils/config"
 
     import LibColorPicker from "svelte-color-picker"
+    import { css } from "tiptap-utils-shared"
 
     interface Props {
         children: Snippet

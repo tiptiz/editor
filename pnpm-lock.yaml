@@ -177,6 +177,9 @@ importers:
       tiptap-extension-trailing-node:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-trailing-node
+      tiptap-utils-shared:
+        specifier: workspace:*
+        version: link:../packages/tiptap-utils-shared
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^4.0.1
@@ -310,6 +313,8 @@ importers:
       '@tiptap/pm':
         specifier: ^2.9.1
         version: 2.9.1
+
+  packages/tiptap-utils-shared: {}
 
 packages:
 

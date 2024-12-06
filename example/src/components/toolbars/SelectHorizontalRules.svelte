@@ -9,10 +9,11 @@
     } from "@/components/ui/dropdown-menu"
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
-    import { css } from "@/utils/config"
     import { horizontalTypes, lowContrastGray } from "@/utils/editor-presets"
 
     import SvgHr from "@/icons/toolbars/SvgHr.svelte"
+
+    import { css } from "tiptap-utils-shared"
 
     const ctx = getEditorContext()
 

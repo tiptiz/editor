@@ -1,0 +1,12 @@
+{
+    "name": "tiptap-utils-shared",
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "git@github.com:aolyang/tiptap-contentful.git",
+    "author": "aolyang <aolyang@foxmail.com>",
+    "exports": {
+        ".": {
+            "import": "./src/index.ts"
+        }
+    }
+}

@@ -3,7 +3,8 @@
     import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
-    import { css } from "@/utils/config"
+
+    import { css } from "tiptap-utils-shared"
 
     const ctx = getEditorContext()
     const sizes = [12, 14, 15, 16, 17, 18, 20, 22, 24, 26]
