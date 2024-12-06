@@ -1,56 +1,58 @@
-# TipTap Contentful
+# TipTap Contentful Example
 
-why? this is because many web platforms didn't provide a way to customize css with css file,   
-they only accept limited `<tag/>` and `inline style`,  
-so I need the rich-text editor can provide inline style while copy and recognize the style when pasty.  
-And I need this editor can be easily integrated in my blog & email project.  
-the project must keep opensource and high customizable,  
-there is not a perfect project for my requirements,
-so I need to try to build one.
+This is `tiptap` & `svelte` guide project, which is prototype phase.  
+This demo project is the practice of using `tiptap` to create a:  
+`HTML5 Copy/Paste Friendly` & `Email Friendly` & `Markdown Friendly` Rich Text Editor.
 
-Above all, this is an example repo with some opinionated changed extensions. Maybe can help you.
+## Features Table
 
-## Two parts might help you
+To build a feature rich editor is not easy. Features table collected those features I have done.  
+And also the features others editor not supported. Maybe some day supported with paste hook.
 
-1. `example/src/utils/editor.svelte.ts`:
-   this file contains all editor extensions and configurations.   
-   `example` folder is a simple example project build with `vite` and `svelte`.  
-   you can simply start up with command `pnpm dev`
-2. `packages/tiptap-extension-*`:
-   these are extensions folder I have build or made some changes.  
-   to see extension
++ current practice status:
+  ✅ supported; ❌ not support; ⏳ working on; 🚧 planning;
++ other editors status:
+  🆗 partially support; 📋 paste support;
 
-## Features
-
-+ ✅ supported
-+ ❌ not support
-
-| feature              | current       | we-chat             |
-|----------------------|---------------|---------------------|
-| heading              | ✅             | ✅(paste)            |
-| bold                 | ✅             | ✅                   |
-| italic               | ✅             | ✅                   |
-| strike               | ✅             | ✅                   |
-| underline            | ✅             | ✅                   |
-| font-size            | ✅             | ✅                   |
-| font-color           | ✅             | ✅                   |
-| background-color     | ✅ (highlight) | ✅                   |
-| clear color/bg-color | ✅             | ✅                   |
-| list                 | ✅             | ✅                   |
-| block-quote          | ✅             | ✅ (paste)           |
-| list lift/sink       | ✅             | ✅ (margin simulate) |
-| task-list            | ✅             | ❌                   |
-| text Sup/Sub         | ✅             | ❌                   |
+| features               | current practice | we-chat editor  |
+|------------------------|------------------|-----------------|
+| undo/redo              | ✅                | ✅               |
+| clear marks            | ✅                | ✅               |
+| heading                | ✅                | ❌ 📋            |
+| fontFamily             | ✅                | ❌ 📋            |
+| fontSize               | ✅                | 🆗 (options) 📋 |
+| bold                   | ✅                | ✅               |
+| italic                 | ✅                | ✅               |
+| underline              | ✅                | ✅               |
+| strike                 | ✅                | ✅               |
+| Sup/sub                | ✅                | ❌ 📋            |
+| font-color             | ✅                | ✅               |
+| background-color       | ✅ (mark)         | ✅               |
+| clear color/bg only    | ✅                | ✅               |
+| alignment              | ✅                | ✅               |
+| indent                 | ✅                | ✅               |
+| line-height            | 🚧               | ✅               |
+| paragraph margin       | 🚧               | ✅               |
+| letter-spacing         | 🚧               | ✅               |
+| Emoji                  | ✅                | ✅               |
+| list                   | ✅                | ✅               |
+| TaskList               | ✅                | ❌               |
+| list lift/sink         | ✅                | ✅ (margin)      |
+| Table                  | ✅                | ❌               |
+| Table Head/Cell Toggle | ✅                | ❌ 📋            |
+| Table Cell Merge/Split | ✅                | ❌ 📋            |
+| Table Row Add/Delete   | ✅                | ❌ 📋            |
+| Table Col Add/Delete   | ✅                | ❌ 📋            |
+| block-quote            | ✅                | ❌ 📋            |
 
 ## Internal classes table (using)
 
-You can see there are some classes preset in `utils/editor.ts`, that's
-both current editor and editors I need to paste to support.
-the internal classes which editor will auto add to the element
+I'm try my best to use inline style, but using classes to style the editor is can not be avoided.  
+So here is the classes table I'm using in this editor
 
-+ ✅ add class while compile time
++ ✅ used classes
 + ❌ not support
 
-| internal classes   | current | we-chat |
-|--------------------|---------|---------|
-| list-paddingleft-1 | ✅       | ✅       |
+| internal classes   | extension            | current | we-chat  |
+|--------------------|----------------------|---------|----------|
+| list-paddingleft-1 | taskList, bulletList | ✅       | ✅(paste) |
