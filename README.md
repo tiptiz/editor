@@ -44,6 +44,7 @@ And also the features others editor not supported. Maybe some day supported with
 | Table Row Add/Delete   | ✅                | ❌ 📋            |
 | Table Col Add/Delete   | ✅                | ❌ 📋            |
 | block-quote            | ✅                | ❌ 📋            |
+| code-block             | ⏳                |                 |
 
 ## Internal classes table (using)
 
