@@ -21,29 +21,48 @@ export function getDecorations({
     const codeBlocks = findChildren(doc, node => node.type.name === name)
 
     codeBlocks.forEach((block) => {
-        let from = block.pos + 1
-        let language = block.node.attrs.language || defaultLanguage
-        let theme = block.node.attrs.theme || defaultTheme
-
         const highlighter = getShiki()
 
         if (!highlighter) return
+
+        const showLineNumbers = block.node.attrs.showLineNumbers
+        let language = block.node.attrs.language || defaultLanguage
 
         if (!highlighter.getLoadedLanguages().includes(language)) {
             language = "plaintext"
         }
 
+        let theme = block.node.attrs.theme || defaultTheme
         const themeToApply = highlighter.getLoadedThemes().includes(theme)
             ? theme
             : highlighter.getLoadedThemes()[0]
 
-        const tokens = highlighter.codeToTokensBase(block.node.textContent, {
+        const lines = highlighter.codeToTokensBase(block.node.textContent, {
             lang: language,
             theme: themeToApply
         })
 
-        for (const line of tokens) {
-            for (const token of line) {
+        let from = block.pos + 1
+
+        const baseSpan = document.createElement("span")
+        baseSpan.classList.add("line-number")
+        baseSpan.innerText = "\u200B"
+
+        lines.forEach((lineTokens, index) => {
+            if (showLineNumbers) {
+                const span = baseSpan.cloneNode(true) as HTMLElement
+                span.setAttribute("line", String(index + 1))
+
+                const decoration = Decoration.widget(from, () => span, {
+                    side: -1,
+                    ignoreSelection: true,
+                    destroy() {
+                        span.remove()
+                    }
+                })
+                decorations.push(decoration)
+            }
+            for (const token of lineTokens) {
                 const to = from + token.content.length
 
                 const decoration = Decoration.inline(from, to, {
@@ -56,7 +75,7 @@ export function getDecorations({
             }
 
             from += 1
-        }
+        })
     })
 
     return DecorationSet.create(doc, decorations)

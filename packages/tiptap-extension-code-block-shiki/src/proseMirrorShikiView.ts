@@ -13,7 +13,10 @@ export interface PluginShikiOptions {
 }
 
 class ShikiPluginView implements PluginView {
-    constructor(private view: EditorView, private options: PluginShikiOptions) {
+    constructor(
+        private view: EditorView,
+        private options: PluginShikiOptions
+    ) {
         this.initDecorations()
     }
 

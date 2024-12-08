@@ -65,7 +65,8 @@ export const extensions: Extensions = [
     HorizontalRules.configure({
         ...attrs({
             style: css`
-                margin: 10px 0;
+                margin-top: 10px;
+                margin-bottom: 10px;
                 border-top-width: 2px
             `
         }),
@@ -80,6 +81,13 @@ export const extensions: Extensions = [
         `
     })),
     CodeBlockShiki.configure({
+        ...attrs({
+            class: "code-block",
+            style: css`
+                margin-top: 10px;
+                margin-bottom: 10px;
+            `
+        }),
         defaultLanguage: "javascript",
         defaultTheme: "vitesse-dark"
     }),

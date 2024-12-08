@@ -10,7 +10,7 @@ export function proseMirrorPluginShiki(options: PluginShikiOptions) {
     const { name, defaultLanguage, defaultTheme } = options
 
     const shikiPlugin: Plugin = new Plugin({
-        key: new PluginKey("shiki"),
+        key: new PluginKey("codeBlockShiki"),
 
         view(view) {
             return new ShikiPluginView(view, options)
@@ -27,9 +27,10 @@ export function proseMirrorPluginShiki(options: PluginShikiOptions) {
                 const oldNodes = findChildren(oldState.doc, node => node.type.name === name)
                 const newNodes = findChildren(newState.doc, node => node.type.name === name)
 
-                // Apply decorations if:
-                // selection includes named node,
-                const didChangeSomeCodeBlock = transaction.docChanged && ([oldNodeName, newNodeName].includes(name)
+                const didChangeSomeCodeBlock = transaction.docChanged && (
+                    // Apply decorations if:
+                    // selection includes named node,
+                    [oldNodeName, newNodeName].includes(name)
                     // OR transaction adds/removes named node,
                     || newNodes.length !== oldNodes.length
                     // OR transaction has changes that completely encapsulate a node
@@ -37,9 +38,7 @@ export function proseMirrorPluginShiki(options: PluginShikiOptions) {
                     // Such transactions can happen during collaboration syncing via y-prosemirror, for example.
                     // FIXME: any is not expected, type didn't have a good way to express this.
                     || transaction.steps.some((step: any) => {
-                        return (
-                            step.from !== undefined
-                            && step.to !== undefined
+                        return (step.from !== undefined && step.to !== undefined
                             && oldNodes.some((node) => {
                                 return (
                                     node.pos >= step.from
