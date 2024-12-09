@@ -25,10 +25,7 @@ class ShikiPluginView implements NodeView {
     svelteRoot = mount(Toolbars, {
         target: this.dom,
         props: {
-            copyContent: () => {
-                console.log("copying", this.node.content)
-                this.node.copy(this.node.content)
-            }
+            copyContent: this.handleCopyContent.bind(this)
         }
     })
 
@@ -66,6 +63,12 @@ class ShikiPluginView implements NodeView {
         })
     }
 
+    private handleCopyContent() {
+        navigator.clipboard.writeText(this.node.textContent).then(() => {
+            console.log("Copied to clipboard")
+        })
+    }
+
     private updateView() {
         const { language, theme, showLineNumbers } = this.options
         if (theme) this.dom.setAttribute("data-theme", theme)
@@ -80,6 +83,10 @@ class ShikiPluginView implements NodeView {
 
     update(node: NodeViewRendererProps["node"]) {
         if (node.type !== this.node.type) return false
+        // TODO figure out is the node really destroyed, node.textContent is new
+        // it looks like has a memory leak problem
+        this.node = node
+
         this.updateView()
         this.checkUndecoratedBlocks()
         return true
@@ -90,7 +97,6 @@ class ShikiPluginView implements NodeView {
     }
 
     destroy() {
-        console.log("destroying")
         unmount(this.svelteRoot)
     }
 
