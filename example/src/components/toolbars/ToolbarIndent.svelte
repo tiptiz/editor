@@ -1,6 +1,7 @@
 <script lang="ts">
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { t } from "@/utils/i18n"
 
     import SvgIndentDec from "@/icons/toolbars/SvgIndentDec.svelte"
     import SvgIndentInc from "@/icons/toolbars/SvgIndentInc.svelte"
@@ -15,9 +16,9 @@
     }
 </script>
 
-<Tooltip label="increase indent">
+<Tooltip label={$t("Increase indent")}>
     <SvgIndentInc onclick={handleIndentInc}/>
 </Tooltip>
-<Tooltip label="decrease indent">
+<Tooltip label={$t("Decrease indent")}>
     <SvgIndentDec onclick={handleIndentDec}/>
 </Tooltip>

@@ -10,7 +10,7 @@ export const lowContrastGray = "#70707099"
 export const headingLevels = [1, 2, 3, 4, 5, 6] as const
 export type HeadingLevel = typeof headingLevels[number]
 
-export const tableInsertTargets = ["col-before", "col-after", "row-below", "row-above"] as const
+export const tableInsertTargets = ["col before", "col after", "row below", "row above"] as const
 export type TableInsertTarget = typeof tableInsertTargets[number]
 
 export const aligns = ["left", "center", "right", "justify"] as const

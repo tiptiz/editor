@@ -4,6 +4,7 @@
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { aligns } from "@/utils/editor-presets"
+    import { t } from "@/utils/i18n"
 
     import SvgAlign from "@/icons/toolbars/SvgAlign.svelte"
 
@@ -18,7 +19,7 @@
 </script>
 
 {#each aligns as align}
-    <Tooltip label={`text align ${align}`}>
+    <Tooltip label={$t(`Align ${align}`)}>
         <SvgAlign class={ctx.isTextAlign === align ? "active" : ""}
                   {align}
                   onclick={() => handleAlign(align)}/>

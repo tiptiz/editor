@@ -1,8 +1,11 @@
 <script lang="ts">
+    import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { t } from "@/utils/i18n"
 
     import SvgTextMinus from "@/icons/toolbars/SvgTextMinus.svelte"
     import SvgTextPlugs from "@/icons/toolbars/SvgTextPlugs.svelte"
+    import SelectHeadingLevel from "@/components/toolbars/SelectHeadingLevel.svelte"
 
     const ctx = getEditorContext()
 
@@ -20,5 +23,12 @@
     }
 </script>
 
-<SvgTextMinus onclick={() => updateFontSize(-2)}/>
-<SvgTextPlugs onclick={() => updateFontSize(2)}/>
+<Tooltip label={$t("Increase font size")}>
+    <SvgTextMinus onclick={() => updateFontSize(-2)}/>
+</Tooltip>
+<Tooltip label={$t("Decrease font size")}>
+    <SvgTextPlugs onclick={() => updateFontSize(2)}/>
+</Tooltip>
+<Tooltip label={$t("Select heading level")}>
+    <SelectHeadingLevel />
+</Tooltip>

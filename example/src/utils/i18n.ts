@@ -18,7 +18,7 @@ const translations = {
     zh_CN
 }
 
-export type TranslationKey = keyof typeof en_US
+export type TranslationKey = keyof typeof zh_CN
 
 function translate(locale: Locale, key: TranslationKey, vars: Record<string, any>) {
     // Let's throw some errors if we're trying to use keys/locales that don't exist.
@@ -29,7 +29,10 @@ function translate(locale: Locale, key: TranslationKey, vars: Record<string, any
     // Grab the translation from the translations object.
     let text = translations[locale][key]
 
-    if (!text) throw new Error(`no translation found for ${locale}.${key}`)
+    if (!text) {
+        console.warn(`no translation found for ${locale}.${key}`)
+        return key
+    }
 
     // Replace any passed in variables in the translation string.
     Object.keys(vars).map((k) => {

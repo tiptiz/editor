@@ -4,7 +4,6 @@
 
     import SelectFontFamily from "@/components/toolbars/SelectFontFamily.svelte"
     import SelectFontSize from "@/components/toolbars/SelectFontSize.svelte"
-    import SelectHeadingLevel from "@/components/toolbars/SelectHeadingLevel.svelte"
     import ToolbarAlign from "@/components/toolbars/ToolbarAlign.svelte"
     import ToolbarColors from "@/components/toolbars/ToolbarColors.svelte"
     import ToolbarFormat from "@/components/toolbars/ToolbarFormat.svelte"
@@ -29,7 +28,6 @@
         <SelectFontFamily/>
         <SelectFontSize/>
         <ToolbarTextStyle/>
-        <SelectHeadingLevel/>
         <div class="flex items-center gap-x-2">
             <ToolbarMarks/>
             <ToolbarColors/>

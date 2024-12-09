@@ -3,6 +3,7 @@
     import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { t } from "@/utils/i18n"
 
     import { css } from "tiptap-utils-shared"
 
@@ -34,6 +35,6 @@
     </p>
 {/snippet}
 <EditorTransactionEvent handler={handleTr}/>
-<Tooltip label="select font-size">
-    <AutoComplete class="w-[110px]" items={items} {label} {handleSelect} placeholder={currentFontSize || "Font Size"}/>
+<Tooltip label={$t("Select font size")}>
+    <AutoComplete class="w-[110px]" items={items} {label} {handleSelect} placeholder={currentFontSize || $t("Font Size")}/>
 </Tooltip>

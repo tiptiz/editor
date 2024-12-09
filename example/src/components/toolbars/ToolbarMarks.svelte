@@ -1,5 +1,7 @@
 <script lang="ts">
+    import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { t } from "@/utils/i18n"
 
     import SvgBold from "@/icons/toolbars/SvgBold.svelte"
     import SvgItalic from "@/icons/toolbars/SvgItalic.svelte"
@@ -32,9 +34,21 @@
     const toggleSub = () => ctx.editor.chain().focus().toggleSubscript().run()
 </script>
 
-<SvgBold class={ctx.isBold ? "active" : ""} onclick={toggleBold}/>
-<SvgItalic class={ctx.isItalic ? "active" : ""} onclick={toggleItalic}/>
-<SvgStrike class={ctx.isStrike ? "active" : ""} onclick={toggleStrike}/>
-<SvgUnderline class={ctx.isUnderline ? "active" : ""} onclick={handleToggle("underline")}/>
-<SvgSuperscript class={ctx.isSup ? "active" : "" } onclick={toggleSup}/>
-<SvgSubscript class={ctx.isSub ? "active" : "" } onclick={toggleSub}/>
+<Tooltip label={$t("Bold")}>
+    <SvgBold class={ctx.isBold ? "active" : ""} onclick={toggleBold}/>
+</Tooltip>
+<Tooltip label={$t("Italic")}>
+    <SvgItalic class={ctx.isItalic ? "active" : ""} onclick={toggleItalic}/>
+</Tooltip>
+<Tooltip label={$t("Strikethrough")}>
+    <SvgStrike class={ctx.isStrike ? "active" : ""} onclick={toggleStrike}/>
+</Tooltip>
+<Tooltip label={$t("Underline")}>
+    <SvgUnderline class={ctx.isUnderline ? "active" : ""} onclick={handleToggle("underline")}/>
+</Tooltip>
+<Tooltip label={$t("Superscript")}>
+    <SvgSuperscript class={ctx.isSup ? "active" : "" } onclick={toggleSup}/>
+</Tooltip>
+<Tooltip label={$t("Subscript")}>
+    <SvgSubscript class={ctx.isSub ? "active" : "" } onclick={toggleSub}/>
+</Tooltip>

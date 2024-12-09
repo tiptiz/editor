@@ -1,6 +1,7 @@
 <script lang="ts">
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { t } from "@/utils/i18n"
 
     import SvgBlockquote from "@/icons/toolbars/SvgBlockquote.svelte"
     import SvgCodeBlock from "@/icons/toolbars/SvgCodeBlock.svelte"
@@ -15,9 +16,13 @@
 <SelectHorizontalRules/>
 
 <div class="flex items-center gap-x-[10px]">
-    <Tooltip label="lift list item">
+    <Tooltip label={$t("Blockquote")}>
         <SvgBlockquote class={ctx.isBlockquote ? "active" : ""} onclick={blockquote}/>
     </Tooltip>
-    <SelectEmojis/>
-    <SvgCodeBlock onclick={addCodeBlock}/>
+    <Tooltip label={$t("Pick a emoji")}>
+        <SelectEmojis/>
+    </Tooltip>
+    <Tooltip label={$t("Insert a code block")}>
+        <SvgCodeBlock onclick={addCodeBlock}/>
+    </Tooltip>
 </div>

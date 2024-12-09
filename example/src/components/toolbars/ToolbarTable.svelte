@@ -2,6 +2,7 @@
     import ToolbarButton from "@/components/ToolbarButton.svelte"
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { t } from "@/utils/i18n"
 
     import SvgTable from "@/icons/toolbars/SvgTable.svelte"
     import SvgTableColDelete from "@/icons/toolbars/SvgTableColDelete.svelte"
@@ -31,40 +32,44 @@
     const deleteTable = () => ctx.editor.chain().focus().deleteTable().run()
 </script>
 
-<Tooltip label="insert new table">
+<Tooltip label={$t("Insert a table")}>
     <TableCreateNew/>
 </Tooltip>
 
 <TableInsertNew/>
 
-<Tooltip label="delete column">
+<Tooltip label={$t("Delete col")}>
     <ToolbarButton disabled={!ctx.isTable} onclick={deleteCol}>
         <SvgTableColDelete/>
     </ToolbarButton>
 </Tooltip>
-<Tooltip label="delete row">
+<Tooltip label={$t("Delete row")}>
     <ToolbarButton disabled={!ctx.isTable} onclick={deleteRow}>
         <SvgTableRowDelete/>
     </ToolbarButton>
 </Tooltip>
 
-<Tooltip label="fix table">
+<Tooltip label={$t("Fix table")}>
     <ToolbarButton disabled={!ctx.isTable} onclick={fixTable}>
         <SvgTable class={ctx.isTable ? "active" : ""}/>
     </ToolbarButton>
 </Tooltip>
 
-<Tooltip label="delete table">
+<Tooltip label={$t("Delete table")}>
     <ToolbarButton disabled={!ctx.isTable} onclick={deleteTable}>
         <SvgTableRemove/>
     </ToolbarButton>
 </Tooltip>
 
-<TableCellMerge/>
-<TableCellSplit/>
+<Tooltip label={$t("Merge cells")}>
+    <TableCellMerge/>
+</Tooltip>
+<Tooltip label={$t("Split cell")}>
+    <TableCellSplit/>
+</Tooltip>
 
 {#snippet header(position: Position)}
-    <Tooltip label={`toggle table header ${position}`}>
+    <Tooltip label={$t(`Toggle table header ${position}`)}>
         <ToolbarButton disabled={!ctx.isTable} onclick={() => handleToggleHeader(position)}>
             <SvgTableHead position={position}/>
         </ToolbarButton>
@@ -74,7 +79,7 @@
     {@render header(pos)}
 {/each}
 
-<Tooltip label="toggle cell as header">
+<Tooltip label={$t("Toggle cell as header")}>
     <ToolbarButton disabled={!ctx.isTable} onclick={toggleCell}>
         <SvgTableToggleCell/>
     </ToolbarButton>
