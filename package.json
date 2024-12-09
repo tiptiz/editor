@@ -10,11 +10,11 @@
         "build": "pnpm --filter example build"
     },
     "dependencies": {
-        "@tiptap/core": "^2.9.1",
-        "@tiptap/pm": "^2.9.1",
+        "@tiptap/core": "^2.10.3",
+        "@tiptap/pm": "^2.10.3",
         "prosemirror-model": "^1.24.0",
         "prosemirror-schema-basic": "^1.2.3",
-        "prosemirror-schema-list": "^1.4.1",
+        "prosemirror-schema-list": "^1.5.0",
         "prosemirror-state": "^1.4.3",
         "prosemirror-view": "^1.37.0"
     },
