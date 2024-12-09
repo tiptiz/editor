@@ -1,8 +1,9 @@
 import type { Command } from "@tiptap/core"
 import type { CodeBlockOptions } from "@tiptap/extension-code-block"
 import type { EditorState } from "@tiptap/pm/state"
-import type { PluginShikiOptions } from "./proseMirrorShikiView"
+import type { PluginShikiOptions } from "./proseMirrorPluginShiki"
 
+import { ShikiPluginView } from "./codeBlockShikiView"
 import { proseMirrorPluginShiki } from "./proseMirrorPluginShiki"
 
 import { findParentNode } from "@tiptap/core"
@@ -28,7 +29,7 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
             ...this.parent?.(),
             showLineNumbers: false,
             defaultLanguage: "javascript",
-            defaultTheme: "vitesse-light"
+            defaultTheme: "plaintext"
         }
     },
 
@@ -37,15 +38,33 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
             ...this.parent?.(),
             showLineNumbers: {
                 default: this.options.showLineNumbers,
-                parseHTML: element => element.getAttribute("data-show-line-numbers") === "true",
-                renderHTML: (attributes) => {
-                    if (!attributes.showLineNumbers) return {}
-                    return {
-                        "data-show-line-numbers": "true",
-                        "class": "show-line-numbers"
+                parseHTML: element => element.getAttribute("data-show-line-numbers") === "true"
+            },
+            language: {
+                default: this.options.defaultLanguage,
+                parseHTML: (element) => {
+                    let language = element.getAttribute("data-language")
+                    if (!language) {
+                        const { languageClassPrefix } = this.options
+                        const languages = Array.from(element.firstElementChild?.classList)
+                            .filter(className => className.startsWith(languageClassPrefix))
+                            .map(className => className.replace(languageClassPrefix, ""))
+                        language = languages[0]
                     }
+
+                    return language && null
                 }
+            },
+            theme: {
+                default: this.options.defaultTheme,
+                parseHTML: element => element.getAttribute("data-theme")
             }
+        }
+    },
+
+    addNodeView() {
+        return (...args) => {
+            return new ShikiPluginView(...args)
         }
     },
 

@@ -1,5 +1,5 @@
 import type { Node as ProseMirrorNode } from "prosemirror-model"
-import type { PluginShikiOptions } from "./proseMirrorShikiView"
+import type { PluginShikiOptions } from "./proseMirrorPluginShiki"
 
 import { getShiki } from "./highlighter"
 

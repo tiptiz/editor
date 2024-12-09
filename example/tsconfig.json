@@ -15,9 +15,9 @@
           Svelte Preprocess cannot figure out whether you have a value or a type, so tell TypeScript
           to enforce using `import type` instead of `import` for Types.
          */
-        "resolveJsonModule": true,
         "useDefineForClassFields": true,
         "verbatimModuleSyntax": true,
+        "resolveJsonModule": true,
         "sourceMap": true,
         "isolatedModules": true,
         "moduleDetection": "force",

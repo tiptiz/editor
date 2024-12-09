@@ -1,21 +1,20 @@
-import type { PluginShikiOptions } from "./proseMirrorShikiView"
+import type { BundledLanguage, BundledTheme } from "shiki"
 
 import { getDecorations } from "./getDecorations"
-import { ShikiPluginView } from "./proseMirrorShikiView"
 
 import { findChildren } from "@tiptap/core"
 import { Plugin, PluginKey } from "@tiptap/pm/state"
 
+export interface PluginShikiOptions {
+    name: string
+    defaultLanguage: BundledLanguage | null | undefined
+    defaultTheme: BundledTheme | "plaintext"
+}
 export function proseMirrorPluginShiki(options: PluginShikiOptions) {
     const { name, defaultLanguage, defaultTheme } = options
 
     const shikiPlugin: Plugin = new Plugin({
         key: new PluginKey("codeBlockShiki"),
-
-        view(view) {
-            return new ShikiPluginView(view, options)
-        },
-
         state: {
             init: (_, { doc }) => {
                 return getDecorations({ doc, ...options })

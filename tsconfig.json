@@ -2,6 +2,6 @@
     "files": [],
     "references": [
         { "path": "./example/tsconfig.json" },
-        { "path": "./tsconfig.extensions.json" }
+        { "path": "./packages/tiptap-extension-code-block-shiki/tsconfig.json" }
     ]
 }

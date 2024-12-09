@@ -16,7 +16,7 @@ pre.code-block {
     padding: 10px;
     border-radius: 4px;
 
-    &.show-line-numbers {
+    &[data-show-line-numbers="true"] {
         padding-left: 42px;
 
         .ProseMirror-widget.line-number {
@@ -28,7 +28,7 @@ pre.code-block {
 pre.code-block {
     background-color: #fafafa;
 
-    &.show-line-numbers {
+    &[data-show-line-numbers="true"] {
         .ProseMirror-widget.line-number {
             color: rgba(0, 0, 0, 0.15);
         }
@@ -38,10 +38,53 @@ pre.code-block {
 .dark pre.code-block {
     background-color: rgba(46, 46, 46, 0.68);
 
-    &.show-line-numbers {
+    &[data-show-line-numbers="true"] {
         .ProseMirror-widget.line-number {
             color: rgba(255, 255, 255, 0.22);
         }
     }
 }
 
+// code block toolbar
+pre.code-block {
+    position: relative;
+
+    .code-block-toolbar {
+        display: none;
+        padding: 5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &:hover .code-block-toolbar {
+        display: flex;
+    }
+}
+
+pre.code-block .code-block-toolbar {
+    button {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        color: #606060;
+        background-color: #ffffff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+}
+
+.dark pre.code-block .code-block-toolbar {
+    button {
+        color: #f4f4f4;
+        background-color: #5b5b5b;
+    }
+}
+
+pre.code-block .code-block-toolbar {
+    button .svg-icon-copied {
+        color: hsl(var(--primary))
+    }
+}

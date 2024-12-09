@@ -1,5 +1,6 @@
 import type { Node as ProseMirrorNode } from "@tiptap/pm/model"
 import type { BundledLanguage, BundledTheme, Highlighter } from "shiki"
+import type { ShiKiViewOptions } from "./codeBlockShikiView"
 
 import { findChildren } from "@tiptap/core"
 import { bundledLanguages, bundledThemes, createHighlighter } from "shiki"
@@ -87,6 +88,10 @@ export async function loadLanguage(language: BundledLanguage) {
     return false
 }
 
+type InitHighlighterOptions = Omit<ShiKiViewOptions, "showLineNumbers"> & {
+    doc: ProseMirrorNode
+}
+
 /**
  * Initializes the highlighter based on the prose-mirror document,
  * with the themes and languages in the document.
@@ -94,23 +99,20 @@ export async function loadLanguage(language: BundledLanguage) {
 export async function initHighlighter({
     doc,
     name,
-    defaultTheme,
-    defaultLanguage
-}: {
-    doc: ProseMirrorNode
-    name: string
-    defaultLanguage: BundledLanguage | null | undefined
-    defaultTheme: BundledTheme
-}) {
+    language,
+    theme
+}: InitHighlighterOptions) {
+    if (language === "plaintext") return
+
     const codeBlocks = findChildren(doc, node => node.type.name === name)
 
     const themes = [
         ...codeBlocks.map(block => block.node.attrs.theme as BundledTheme),
-        defaultTheme
+        theme
     ]
     const languages = [
         ...codeBlocks.map(block => block.node.attrs.language as BundledLanguage),
-        defaultLanguage
+        language
     ]
 
     if (!highlighter) {
