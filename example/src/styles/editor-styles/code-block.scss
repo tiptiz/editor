@@ -1,22 +1,47 @@
-.code-block.show-line-numbers {
-    margin-left: 34px;
-}
-
 .ProseMirror-widget.line-number {
     position: absolute;
-    width: 0;
     text-align: right;
-    left: 0;
     user-select: none;
-}
-.code-block.show-line-numbers {
-    .line-number {
-        left: -16px;
+    width: 0;
+    left: 0;
+
+    &::before {
+        content: attr(line);
+        position: absolute;
+        width: 34px;
     }
 }
 
-.ProseMirror-widget.line-number::before {
-    content: attr(line);
-    position: absolute;
-    width: 34px;
+pre.code-block {
+    padding: 10px;
+    border-radius: 4px;
+
+    &.show-line-numbers {
+        padding-left: 42px;
+
+        .ProseMirror-widget.line-number {
+            left: -5px;
+        }
+    }
 }
+
+pre.code-block {
+    background-color: #fafafa;
+
+    &.show-line-numbers {
+        .ProseMirror-widget.line-number {
+            color: rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+.dark pre.code-block {
+    background-color: rgba(46, 46, 46, 0.68);
+
+    &.show-line-numbers {
+        .ProseMirror-widget.line-number {
+            color: rgba(255, 255, 255, 0.22);
+        }
+    }
+}
+
