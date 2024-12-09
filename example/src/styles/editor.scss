@@ -7,8 +7,16 @@
     min-height: 100%;
 }
 
-.tiptap:focus {
-    outline: none;
+.tiptap {
+    color: rgba(0, 0, 0, .85);
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.dark .tiptap {
+    color: #dedede;
 }
 
 

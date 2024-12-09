@@ -60,16 +60,16 @@
 </script>
 
 <div class="w-full h-[104px] fixed top-0 z-10">
-    <div class="w-full min-h-[52px] px-4 border flex gap-3 items-center bg-background">
+    <div class="w-full min-h-[52px] px-4 shadow flex gap-3 items-center bg-background dark:bg-neutral-700">
         <div class="flex-1"></div>
         <ToggleLocale />
         <ToggleSparkLine/>
         <ThemeMode/>
     </div>
     <Toolbar/>
-    <hr/>
+    <hr class="dark:border-neutral-600"/>
 </div>
-<div class="size-full pt-[120px] pb-4 bg-accent">
+<div class="size-full pt-[120px] pb-4 bg-accent dark:bg-neutral-800">
     <div class="size-full overflow-y-auto px-4">
         <div class="px-10 py-6 max-w-[826px] min-h-full mx-auto bg-white dark:bg-neutral-700 shadow-xl"
              bind:this={divRef}></div>
