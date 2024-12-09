@@ -25,7 +25,7 @@ export function getDecorations({
 
         if (!highlighter) return
 
-        const showLineNumbers = block.node.attrs.showLineNumbers
+        const highlightLines = new Set<string>(block.node.attrs.highlightLines)
         let language = block.node.attrs.language || defaultLanguage
 
         if (!highlighter.getLoadedLanguages().includes(language)) {
@@ -45,23 +45,25 @@ export function getDecorations({
         let from = block.pos + 1
 
         const baseSpan = document.createElement("span")
-        baseSpan.classList.add("line-number")
         baseSpan.innerText = "\u200B"
 
         lines.forEach((lineTokens, index) => {
-            if (showLineNumbers) {
-                const span = baseSpan.cloneNode(true) as HTMLElement
-                span.setAttribute("line", String(index + 1))
+            const lineIndex = String(index + 1)
+            const span = baseSpan.cloneNode(true) as HTMLElement
+            span.classList.add("line-number")
+            span.setAttribute("line", lineIndex)
 
-                const decoration = Decoration.widget(from, () => span, {
-                    side: -1,
-                    ignoreSelection: true,
-                    destroy() {
-                        span.remove()
-                    }
-                })
-                decorations.push(decoration)
-            }
+            if (highlightLines.has(lineIndex)) span.classList.add("highlighted")
+
+            const decoration = Decoration.widget(from, () => span, {
+                side: -1,
+                ignoreSelection: true,
+                destroy() {
+                    span.remove()
+                }
+            })
+            decorations.push(decoration)
+
             for (const token of lineTokens) {
                 const to = from + token.content.length
 

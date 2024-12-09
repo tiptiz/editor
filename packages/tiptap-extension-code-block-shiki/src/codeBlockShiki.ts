@@ -19,6 +19,7 @@ declare module "@tiptap/core" {
         codeBlockShiki: {
             selectCodes: () => ReturnType
             toggleLineNumbers: () => ReturnType
+            toggleLineHighlight: () => ReturnType
         }
     }
 }
@@ -36,6 +37,10 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
     addAttributes() {
         return {
             ...this.parent?.(),
+            highlightLines: {
+                default: [],
+                parseHTML: element => element.getAttribute("data-highlight-lines")?.split(",")
+            },
             showLineNumbers: {
                 default: this.options.showLineNumbers,
                 parseHTML: element => element.getAttribute("data-show-line-numbers") === "true"
@@ -97,16 +102,29 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
                 }
                 return false
             }
+        const chainToggleLineHighlight: ChainCommandFactory = () =>
+            ({ editor, tr, dispatch }) => {
+                const codeBlock = getCodeBlock(editor.state)
+                if (codeBlock) {
+                    const highlightLines = editor.getAttributes("codeBlock").highlightLines || []
+                    tr.setNodeAttribute(codeBlock.pos, "highlightLines", highlightLines)
+                    dispatch(tr)
+                    return true
+                }
+                return false
+            }
         return {
             selectCodes: chainCommandSelectCodes,
-            toggleLineNumbers: chainCommandToggleLineNumbers
+            toggleLineNumbers: chainCommandToggleLineNumbers,
+            toggleLineHighlight: chainToggleLineHighlight
         }
     },
 
     addKeyboardShortcuts() {
         return {
             "Mod-a": () => this.editor.commands.selectCodes(),
-            "Mod-Alt-l": () => this.editor.commands.toggleLineNumbers()
+            "Mod-Alt-l": () => this.editor.commands.toggleLineNumbers(),
+            "Mod-alt-h": () => this.editor.commands.toggleLineHighlight()
         }
     },
 

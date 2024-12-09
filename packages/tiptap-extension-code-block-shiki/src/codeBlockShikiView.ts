@@ -13,6 +13,7 @@ export interface ShiKiViewOptions {
     language: BundledLanguage | "plaintext" | null
     theme: BundledTheme
     showLineNumbers: boolean
+    highlightLines: string[]
 }
 
 class ShikiPluginView implements NodeView {
@@ -33,6 +34,7 @@ class ShikiPluginView implements NodeView {
         return {
             name: this.node.type.name,
             showLineNumbers: this.node.attrs.showLineNumbers,
+            highlightLines: this.node.attrs.highlightLines,
             language: this.node.attrs.language,
             theme: this.node.attrs.theme
         } as ShiKiViewOptions
@@ -89,7 +91,7 @@ class ShikiPluginView implements NodeView {
     }
 
     private updateView() {
-        const { language, theme, showLineNumbers } = this.options
+        const { language, theme, showLineNumbers, highlightLines } = this.options
         if (theme) this.dom.setAttribute("data-theme", theme)
         else this.dom.removeAttribute("data-theme")
 
@@ -98,6 +100,9 @@ class ShikiPluginView implements NodeView {
 
         if (showLineNumbers) this.dom.setAttribute("data-show-line-numbers", "true")
         else this.dom.removeAttribute("data-show-line-numbers")
+
+        if (highlightLines) this.dom.setAttribute("data-highlight-lines", highlightLines.join(","))
+        else this.dom.removeAttribute("data-highlight-lines")
     }
 
     update(node: NodeViewRendererProps["node"]) {

@@ -1,14 +1,15 @@
-.ProseMirror-widget.line-number {
-    position: absolute;
-    text-align: right;
-    user-select: none;
-    width: 0;
-    left: 0;
-
-    &::before {
-        content: attr(line);
+.code-block {
+    .line-number {
         position: absolute;
-        width: 34px;
+        text-align: right;
+        user-select: none;
+        width: 0;
+        left: 0;
+
+        &.highlighted {
+            z-index: 0;
+            width: 100%;
+        }
     }
 }
 
@@ -19,8 +20,11 @@ pre.code-block {
     &[data-show-line-numbers="true"] {
         padding-left: 42px;
 
-        .ProseMirror-widget.line-number {
-            left: -5px;
+        .line-number::before {
+            content: attr(line);
+            width: 34px;
+            position: absolute;
+            left: 0;
         }
     }
 }
@@ -29,9 +33,13 @@ pre.code-block {
     background-color: #fafafa;
 
     &[data-show-line-numbers="true"] {
-        .ProseMirror-widget.line-number {
+        .line-number {
             color: rgba(0, 0, 0, 0.15);
         }
+    }
+
+    .line-number.highlighted {
+        background-color: rgba(24, 158, 255, 0.09);
     }
 }
 
@@ -39,9 +47,13 @@ pre.code-block {
     background-color: rgba(46, 46, 46, 0.68);
 
     &[data-show-line-numbers="true"] {
-        .ProseMirror-widget.line-number {
+        .line-number {
             color: rgba(255, 255, 255, 0.22);
         }
+    }
+
+    .line-number.highlighted {
+        background-color: rgba(40, 148, 255, 0.14);
     }
 }
 
@@ -84,7 +96,11 @@ pre.code-block .code-block-toolbar {
 }
 
 pre.code-block .code-block-toolbar {
+    z-index: 1;
+
     button .svg-icon-copied {
         color: hsl(var(--primary))
     }
 }
+
+
