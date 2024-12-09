@@ -3,7 +3,6 @@
 
     import AutoComplete from "@/components/AutoComplete.svelte"
     import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
-    import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { t } from "@/utils/i18n"
 
@@ -37,8 +36,6 @@
     </p>
 {/snippet}
 <EditorTransactionEvent handler={handleTr}/>
-<Tooltip label={$t("Select font family")}>
-    <AutoComplete class="w-[129px]"
-                  items={items} {label} {handleSelect}
-                  placeholder={currentFontFamily || $t("Font Family")}/>
-</Tooltip>
+<AutoComplete class="w-[129px]"
+              items={items} {label} {handleSelect}
+              placeholder={currentFontFamily || $t("Font Family")}/>

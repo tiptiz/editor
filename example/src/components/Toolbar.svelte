@@ -2,8 +2,6 @@
     import Hr from "@/components/Hr.svelte"
     import { globalState } from "@/states/global.svelte"
 
-    import SelectFontFamily from "@/components/toolbars/SelectFontFamily.svelte"
-    import SelectFontSize from "@/components/toolbars/SelectFontSize.svelte"
     import ToolbarAlign from "@/components/toolbars/ToolbarAlign.svelte"
     import ToolbarColors from "@/components/toolbars/ToolbarColors.svelte"
     import ToolbarFormat from "@/components/toolbars/ToolbarFormat.svelte"
@@ -15,7 +13,6 @@
     import ToolbarTable from "@/components/toolbars/ToolbarTable.svelte"
     import ToolbarTextStyle from "@/components/toolbars/ToolbarTextStyle.svelte"
     import ToolbarTwoLine from "@/components/toolbars/ToolbarTwoLine.svelte"
-
 </script>
 
 <div class="toolbar h-[52px] flex items-center justify-center gap-2 relative">
@@ -25,8 +22,6 @@
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTwoLine class="w-[357px] gap-x-[10px]">
-        <SelectFontFamily/>
-        <SelectFontSize/>
         <ToolbarTextStyle/>
         <div class="flex items-center gap-x-2">
             <ToolbarMarks/>
@@ -38,7 +33,9 @@
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTwoLine class="w-[148px] pt-[3px] gap-x-2 gap-y-[6px]">
         <ToolbarList/>
-        <ToolbarOthers/>
+        <div class="flex items-center gap-x-[9px]">
+            <ToolbarOthers/>
+        </div>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
     <ToolbarTwoLine class="w-[174px] gap-x-2 pt-[3px] gap-y-[5px]">

@@ -30,6 +30,7 @@
         isTable: false,
         isTextAlign: "",
         isBlockquote: false,
+        isCodeBlock: false,
         ...createEditor({
             onTransaction({ editor }) {
                 state.editor = editor
@@ -45,6 +46,7 @@
                 state.isTable = editor.isActive("table")
                 state.isTextAlign = aligns.find(textAlign => editor.isActive({ textAlign })) || ""
                 state.isBlockquote = editor.isActive("blockquote")
+                state.isCodeBlock = editor.isActive("codeBlock")
             }
         })
     })

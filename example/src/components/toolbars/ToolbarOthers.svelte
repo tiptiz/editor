@@ -14,15 +14,12 @@
 </script>
 
 <SelectHorizontalRules/>
-
-<div class="flex items-center gap-x-[10px]">
-    <Tooltip label={$t("Blockquote")}>
-        <SvgBlockquote class={ctx.isBlockquote ? "active" : ""} onclick={blockquote}/>
-    </Tooltip>
-    <Tooltip label={$t("Pick a emoji")}>
-        <SelectEmojis/>
-    </Tooltip>
-    <Tooltip label={$t("Insert a code block")}>
-        <SvgCodeBlock onclick={addCodeBlock}/>
-    </Tooltip>
-</div>
+<Tooltip label={$t("Blockquote")}>
+    <SvgBlockquote class={ctx.isBlockquote ? "active" : ""} onclick={blockquote}/>
+</Tooltip>
+<Tooltip label={$t("Pick a emoji")}>
+    <SelectEmojis/>
+</Tooltip>
+<Tooltip label={$t("Toggle/Insert code block")}>
+    <SvgCodeBlock class={ctx.isCodeBlock ? "active" : ""} onclick={addCodeBlock}/>
+</Tooltip>

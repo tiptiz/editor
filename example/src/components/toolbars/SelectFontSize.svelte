@@ -1,7 +1,6 @@
 <script lang="ts">
     import AutoComplete, { type SelectOption } from "@/components/AutoComplete.svelte"
     import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
-    import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { t } from "@/utils/i18n"
 
@@ -35,6 +34,4 @@
     </p>
 {/snippet}
 <EditorTransactionEvent handler={handleTr}/>
-<Tooltip label={$t("Select font size")}>
-    <AutoComplete class="w-[110px]" items={items} {label} {handleSelect} placeholder={currentFontSize || $t("Font Size")}/>
-</Tooltip>
+<AutoComplete class="w-[110px]" items={items} {label} {handleSelect} placeholder={currentFontSize || $t("Font Size")}/>

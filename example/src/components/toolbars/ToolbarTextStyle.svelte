@@ -5,6 +5,8 @@
 
     import SvgTextMinus from "@/icons/toolbars/SvgTextMinus.svelte"
     import SvgTextPlugs from "@/icons/toolbars/SvgTextPlugs.svelte"
+    import SelectFontFamily from "@/components/toolbars/SelectFontFamily.svelte"
+    import SelectFontSize from "@/components/toolbars/SelectFontSize.svelte"
     import SelectHeadingLevel from "@/components/toolbars/SelectHeadingLevel.svelte"
 
     const ctx = getEditorContext()
@@ -23,6 +25,13 @@
     }
 </script>
 
+<Tooltip label={$t("Select font family")}>
+    <SelectFontFamily/>
+</Tooltip>
+<Tooltip label={$t("Select font size")}>
+    <SelectFontSize/>
+</Tooltip>
+
 <Tooltip label={$t("Increase font size")}>
     <SvgTextMinus onclick={() => updateFontSize(-2)}/>
 </Tooltip>
@@ -30,5 +39,5 @@
     <SvgTextPlugs onclick={() => updateFontSize(2)}/>
 </Tooltip>
 <Tooltip label={$t("Select heading level")}>
-    <SelectHeadingLevel />
+    <SelectHeadingLevel/>
 </Tooltip>
