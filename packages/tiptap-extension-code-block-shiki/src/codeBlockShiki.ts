@@ -1,5 +1,6 @@
 import type { Command } from "@tiptap/core"
 import type { CodeBlockOptions } from "@tiptap/extension-code-block"
+import type { EditorState } from "@tiptap/pm/state"
 import type { PluginShikiOptions } from "./proseMirrorShikiView"
 
 import { proseMirrorPluginShiki } from "./proseMirrorPluginShiki"
@@ -16,6 +17,7 @@ declare module "@tiptap/core" {
     interface Commands<ReturnType> {
         codeBlockShiki: {
             selectCodes: () => ReturnType
+            toggleLineNumbers: () => ReturnType
         }
     }
 }
@@ -39,7 +41,8 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
                 renderHTML: (attributes) => {
                     if (!attributes.showLineNumbers) return {}
                     return {
-                        class: "show-line-numbers"
+                        "data-show-line-numbers": "true",
+                        "class": "show-line-numbers"
                     }
                 }
             }
@@ -47,25 +50,44 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
     },
 
     addCommands() {
-        const chainCommandSelectCodes: () => Command = () => ({ state, tr, dispatch }) => {
+        const getCodeBlock = (state: EditorState) => {
             const { selection } = state
-            const codeBlock = findParentNode(node => node.type.name === this.type.name)(selection)
-            if (codeBlock) {
-                const codesSelection = TextSelection.create(tr.doc, codeBlock.pos + 1, codeBlock.pos + codeBlock.node.nodeSize - 1)
-                tr.setSelection(codesSelection)
-                dispatch(tr)
-                return true
-            }
-            return false
+            return findParentNode(node => node.type.name === this.type.name)(selection)
         }
+        type ChainCommandFactory = () => Command
+        const chainCommandSelectCodes: ChainCommandFactory = () =>
+            ({ state, tr, dispatch }) => {
+                const codeBlock = getCodeBlock(state)
+                if (codeBlock) {
+                    const codesSelection = TextSelection.create(tr.doc, codeBlock.pos + 1, codeBlock.pos + codeBlock.node.nodeSize - 1)
+                    tr.setSelection(codesSelection)
+                    dispatch(tr)
+                    return true
+                }
+                return false
+            }
+
+        const chainCommandToggleLineNumbers: ChainCommandFactory = () =>
+            ({ editor, tr, dispatch }) => {
+                const codeBlock = getCodeBlock(editor.state)
+                if (codeBlock) {
+                    const showLineNumbers = !editor.getAttributes("codeBlock").showLineNumbers
+                    tr.setNodeAttribute(codeBlock.pos, "showLineNumbers", showLineNumbers)
+                    dispatch(tr)
+                    return true
+                }
+                return false
+            }
         return {
-            selectCodes: chainCommandSelectCodes
+            selectCodes: chainCommandSelectCodes,
+            toggleLineNumbers: chainCommandToggleLineNumbers
         }
     },
 
     addKeyboardShortcuts() {
         return {
-            "Mod-a": () => this.editor.commands.selectCodes()
+            "Mod-a": () => this.editor.commands.selectCodes(),
+            "Mod-Alt-l": () => this.editor.commands.toggleLineNumbers()
         }
     },
 
