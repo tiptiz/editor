@@ -64,9 +64,28 @@ class ShikiPluginView implements NodeView {
     }
 
     private handleCopyContent() {
-        navigator.clipboard.writeText(this.node.textContent).then(() => {
-            console.log("Copied to clipboard")
+        const textArea = document.createElement("textarea")
+        Object.assign(textArea.style, {
+            position: "fixed",
+            top: "-1000px",
+            left: "-1000px",
+            opacity: "0"
         })
+        textArea.innerText = this.node.textContent
+        document.body.appendChild(textArea)
+        textArea.select()
+        textArea.addEventListener("copy", (e) => {
+            if (e.clipboardData) {
+                e.clipboardData.setData("text/plain", this.node.textContent)
+                e.clipboardData.setData("vscode-editor-data", JSON.stringify({
+                    mode: this.options.language
+                }))
+            }
+            e.preventDefault()
+        })
+        // TODO, navigator.clipboard not working yet. But this code, it works!
+        document.execCommand("copy")
+        textArea.remove()
     }
 
     private updateView() {
