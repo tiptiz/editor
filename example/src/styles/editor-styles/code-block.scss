@@ -1,4 +1,15 @@
-.code-block {
+pre.code-block {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.dark pre.code-block {
+    background-color: rgba(46, 46, 46, 0.68);
+}
+
+// line numbers
+pre.code-block {
     .line-number {
         position: absolute;
         text-align: right;
@@ -13,45 +24,46 @@
     }
 }
 
+pre.code-block[data-show-line-numbers="true"] {
+    padding-left: 42px;
+
+    .line-number::before {
+        content: attr(line);
+        width: 34px;
+        position: absolute;
+        left: 0;
+    }
+}
+
+
 pre.code-block {
-    padding: 10px;
-    border-radius: 4px;
+    .line-number {
+        color: rgba(0, 0, 0, 0.15);
+    }
+}
 
-    &[data-show-line-numbers="true"] {
-        padding-left: 42px;
+.dark pre.code-block {
+    .line-number {
+        color: rgba(255, 255, 255, 0.22);
+    }
+}
 
-        .line-number::before {
-            content: attr(line);
-            width: 34px;
-            position: absolute;
-            left: 0;
-        }
+// line highlight
+pre.code-block {
+    .line-number.highlighted {
+        width: 100%;
+        pointer-events: none;
+        z-index: 0;
     }
 }
 
 pre.code-block {
-    background-color: #fafafa;
-
-    &[data-show-line-numbers="true"] {
-        .line-number {
-            color: rgba(0, 0, 0, 0.15);
-        }
-    }
-
     .line-number.highlighted {
         background-color: rgba(24, 158, 255, 0.09);
     }
 }
 
 .dark pre.code-block {
-    background-color: rgba(46, 46, 46, 0.68);
-
-    &[data-show-line-numbers="true"] {
-        .line-number {
-            color: rgba(255, 255, 255, 0.22);
-        }
-    }
-
     .line-number.highlighted {
         background-color: rgba(40, 148, 255, 0.14);
     }
