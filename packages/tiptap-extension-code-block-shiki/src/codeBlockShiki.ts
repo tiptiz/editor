@@ -106,8 +106,41 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
             ({ editor, tr, dispatch }) => {
                 const codeBlock = getCodeBlock(editor.state)
                 if (codeBlock) {
-                    const highlightLines = editor.getAttributes("codeBlock").highlightLines || []
-                    tr.setNodeAttribute(codeBlock.pos, "highlightLines", highlightLines)
+                    const highlightLines = new Set(editor.getAttributes("codeBlock").highlightLines || [])
+
+                    let append = true
+                    const lines: number[] = []
+
+                    let line = 1
+                    let index = 0
+                    const selection = editor.state.selection
+                    const [from, to] = [selection.from, selection.to].sort()
+                    const content = codeBlock.node.textContent
+                    // get the selection covered lines, append/remove based on head pos
+                    while (content.at(index)) {
+                        const pos = index + codeBlock.start
+
+                        if (pos >= from && pos <= to) {
+                            lines.push(line)
+                            if (pos === selection.head && highlightLines.has(String(line))) {
+                                append = false
+                            }
+                        }
+                        if (pos === to && from === to) break
+
+                        if (/\n/.test(content.at(index))) {
+                            line++
+                        }
+                        index++
+                    }
+
+                    lines.forEach((line) => {
+                        if (append) highlightLines.add(String(line))
+                        else {
+                            highlightLines.delete(String(line))
+                        }
+                    })
+                    tr.setNodeAttribute(codeBlock.pos, "highlightLines", Array.from(highlightLines))
                     dispatch(tr)
                     return true
                 }
