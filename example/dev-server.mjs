@@ -23,8 +23,9 @@ content.put("/content", (req, res) => {
 const viteDevServer = await import("vite").then(vite =>
     vite.createServer({
         server: {
-            middlewareMode: true, watch: {
-                ignored: [fileTarget]
+            middlewareMode: true,
+            watch: {
+                // ignored: [fileTarget]
             }
         }
     })
