@@ -1,6 +1,5 @@
 import type { EditorOptions, Extensions } from "@tiptap/core"
 
-import html from "@/assets/features.html?raw"
 import { horizontalTypes, lowContrastBg, lowContrastGray } from "@/utils/editor-presets"
 
 import { Editor } from "@tiptap/core"
@@ -156,7 +155,7 @@ export const createEditor = (options?: Partial<EditorOptions>) => {
         editor: new Editor({
             element: container,
             extensions,
-            content: html,
+            content: "",
             ...options
         })
     }

@@ -5,6 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "server": "node dev-server.mjs",
         "build": "vite build",
         "preview": "vite preview",
         "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
@@ -57,6 +58,7 @@
         "autoprefixer": "^10.4.20",
         "bits-ui": "^0.21.16",
         "clsx": "^2.1.1",
+        "express": "^4.21.2",
         "lodash": "^4.17.21",
         "lucide-svelte": "^0.460.1",
         "postcss": "^8",

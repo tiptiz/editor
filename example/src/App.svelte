@@ -3,6 +3,7 @@
 
     import type { ToolbarState } from "@/states/toolbar"
 
+    import htmlRaw from "@/assets/explain.html?raw"
     import ExportContent from "@/components/ExportContent.svelte"
     import ToggleLocale from "@/components/ToggleLocale.svelte"
     import ToggleSparkLine from "@/components/ToggleSparkLine.svelte"
@@ -56,6 +57,16 @@
     let divRef: HTMLDivElement
     onMount(() => {
         divRef.appendChild(state.container)
+
+        if (import.meta.env.DEV) {
+            fetch("/content", { method: "GET" }).then((res) => {
+                res.body.getReader().read().then(({ value }) => {
+                    state.editor.commands.setContent(new TextDecoder().decode(value))
+                })
+            })
+        } else {
+            state.editor.commands.setContent(htmlRaw)
+        }
         return () => {
             state.editor.destroy()
         }
@@ -65,8 +76,8 @@
 <div class="w-full h-[104px] fixed top-0 z-10">
     <div class="w-full min-h-[52px] px-4 shadow flex gap-3 items-center bg-background dark:bg-neutral-700">
         <div class="flex-1"></div>
-        <ExportContent />
-        <ToggleLocale />
+        <ExportContent/>
+        <ToggleLocale/>
         <ToggleSparkLine/>
         <ThemeMode/>
     </div>

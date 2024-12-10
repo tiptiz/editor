@@ -25,5 +25,5 @@
     <SvgCodeBlock class={ctx.isCodeBlock ? "active" : ""} onclick={addCodeBlock}/>
 </Tooltip>
 <Tooltip label={$t("Insert image")}>
-    <InsertImage />
+    <InsertImage/>
 </Tooltip>
