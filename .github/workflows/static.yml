@@ -46,7 +46,7 @@ jobs:
           pnpm -v
           pnpm i
           pnpm build
-          cp public/* dist
+          cp example/public/* example/dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
