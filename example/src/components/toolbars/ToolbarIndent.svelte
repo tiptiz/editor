@@ -5,6 +5,7 @@
 
     import SvgIndentDec from "@/icons/toolbars/SvgIndentDec.svelte"
     import SvgIndentInc from "@/icons/toolbars/SvgIndentInc.svelte"
+    import SelectMargin from "@/components/toolbars/SelectMargin.svelte"
 
     const ctx = getEditorContext()
 
@@ -21,4 +22,8 @@
 </Tooltip>
 <Tooltip label={$t("Decrease indent")}>
     <SvgIndentDec onclick={handleIndentDec}/>
+</Tooltip>
+
+<Tooltip label={$t("Margin")}>
+    <SelectMargin/>
 </Tooltip>

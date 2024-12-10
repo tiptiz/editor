@@ -43,6 +43,7 @@
 <Tooltip label={$t("Decrease font size")}>
     <SvgTextPlugs onclick={() => updateFontSize(2)}/>
 </Tooltip>
+
 <Tooltip label={$t("Line height")}>
     <SelectLineHeight />
 </Tooltip>

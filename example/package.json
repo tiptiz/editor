@@ -41,6 +41,7 @@
         "tiptap-extension-code-block-shiki": "workspace:*",
         "tiptap-extension-font-size": "workspace:*",
         "tiptap-extension-line-height": "workspace:*",
+        "tiptap-extension-margin": "workspace:*",
         "tiptap-extension-hard-break": "workspace:*",
         "tiptap-extension-heading": "workspace:*",
         "tiptap-extension-horizontal-rules": "workspace:*",

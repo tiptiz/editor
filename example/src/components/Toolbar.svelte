@@ -21,13 +21,15 @@
         <ToolbarFormat/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[406px] gap-x-[10px]">
+    <ToolbarTwoLine class="w-[408px] gap-x-[10px]">
         <ToolbarTextStyle/>
         <div class="flex items-center gap-x-2">
             <ToolbarMarks/>
             <ToolbarColors/>
-            <ToolbarIndent/>
             <ToolbarAlign/>
+        </div>
+        <div class="flex items-center gap-x-2">
+            <ToolbarIndent/>
         </div>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>

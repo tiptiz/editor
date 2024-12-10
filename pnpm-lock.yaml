@@ -177,6 +177,9 @@ importers:
       tiptap-extension-line-height:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-line-height
+      tiptap-extension-margin:
+        specifier: workspace:*
+        version: link:../packages/tiptap-extension-margin
       tiptap-extension-trailing-node:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-trailing-node
@@ -313,6 +316,15 @@ importers:
         version: 2.10.3
 
   packages/tiptap-extension-line-height:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.10.3
+        version: 2.10.3(@tiptap/pm@2.10.3)
+      '@tiptap/extension-text-style':
+        specifier: ^2.10.3
+        version: 2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))
+
+  packages/tiptap-extension-margin:
     dependencies:
       '@tiptap/core':
         specifier: ^2.10.3
