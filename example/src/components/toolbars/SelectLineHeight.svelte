@@ -22,15 +22,18 @@
         { Icon: SvgChevronDown, step: -20 }
     ]
 
-    type StepSize = number
-    const handleStep = (step: StepSize) => size += step
-
     const ctx = getEditorContext()
     const setLineHeight = (size: number) => {
         ctx.editor.chain().focus()
             .selectParentNode()
             .setLineHeight(`${size}em`)
             .run()
+    }
+
+    type StepSize = number
+    const handleStep = (step: StepSize) => {
+        size += step
+        setLineHeight(size / 100)
     }
 </script>
 

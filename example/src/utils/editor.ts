@@ -53,7 +53,7 @@ export const extensions: Extensions = [
     TextAlign.configure({ types: ["heading", "paragraph"] }),
     FontFamily,
     FontSize,
-    LineHeight.configure({ types: ["heading", "paragraph", "textStyle"] }),
+    LineHeight,
     Color,
     Highlight.configure({ multicolor: true }),
     Italic,
