@@ -30,7 +30,7 @@ function translate(locale: Locale, key: TranslationKey, vars: Record<string, any
     let text = translations[locale][key]
 
     if (!text) {
-        console.warn(`no translation found for ${locale}.${key}`)
+        // console.warn(`no translation found for ${locale}.${key}`)
         return key
     }
 

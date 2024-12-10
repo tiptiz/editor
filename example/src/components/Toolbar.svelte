@@ -21,7 +21,7 @@
         <ToolbarFormat/>
     </ToolbarTwoLine>
     <Hr class="h-[75%] mx-1"/>
-    <ToolbarTwoLine class="w-[357px] gap-x-[10px]">
+    <ToolbarTwoLine class="w-[406px] gap-x-[10px]">
         <ToolbarTextStyle/>
         <div class="flex items-center gap-x-2">
             <ToolbarMarks/>

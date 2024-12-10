@@ -37,6 +37,7 @@ import HardBreak from "tiptap-extension-hard-break"
 import Heading from "tiptap-extension-heading"
 import HorizontalRules from "tiptap-extension-horizontal-rules"
 import Indent from "tiptap-extension-indent"
+import LineHeight from "tiptap-extension-line-height"
 import TrailingNode from "tiptap-extension-trailing-node"
 import { attrs, css } from "tiptap-utils-shared"
 
@@ -48,14 +49,13 @@ export const extensions: Extensions = [
     Paragraph,
     TrailingNode,
     Text,
-    TextAlign.configure({ types: ["heading", "paragraph"] }),
     TextStyle, /*           */// given ability to let <span style="" /> element can keep style attribute
-    FontFamily, /*          */// operate style.fontFamily
-    FontSize, /*            */// operate style.fontSize
-    Color, /*               */// operate style.color
-    Highlight.configure({ /**/// <mark /> style.backgroundColor
-        multicolor: true
-    }),
+    TextAlign.configure({ types: ["heading", "paragraph"] }),
+    FontFamily,
+    FontSize,
+    LineHeight.configure({ types: ["heading", "paragraph", "textStyle"] }),
+    Color,
+    Highlight.configure({ multicolor: true }),
     Italic,
     Strike,
     Underline,
