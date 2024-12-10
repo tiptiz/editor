@@ -38,6 +38,7 @@ import Heading from "tiptap-extension-heading"
 import HorizontalRules from "tiptap-extension-horizontal-rules"
 import Indent from "tiptap-extension-indent"
 import LineHeight from "tiptap-extension-line-height"
+import Margin from "tiptap-extension-margin"
 import TrailingNode from "tiptap-extension-trailing-node"
 import { attrs, css } from "tiptap-utils-shared"
 
@@ -60,6 +61,7 @@ export const extensions: Extensions = [
     Strike,
     Underline,
     Indent,
+    Margin,
     HardBreak,
     // TODO better hr style
     HorizontalRules.configure({

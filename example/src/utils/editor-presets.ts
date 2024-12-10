@@ -16,6 +16,9 @@ export type TableInsertTarget = typeof tableInsertTargets[number]
 export const aligns = ["left", "center", "right", "justify"] as const
 export type AlignStyle = typeof aligns[number]
 
+export const marginTargets = ["top", "bottom", "right", "left"] as const
+export type MarginTarget = typeof marginTargets[number]
+
 export const horizontalTypes: HorizontalType[] = [
     ...builtinTypes
 ]
