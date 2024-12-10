@@ -9,7 +9,7 @@
     }
 </script>
 
-<Button class="py-0 px-2 h-[26px] rounded" variant="secondary" on:click={toggleLocale}>
-    <SvgI18n width="20" height="20"/>
+<Button class="py-0 px-2 h-7 rounded" variant="secondary" on:click={toggleLocale}>
+    <SvgI18n width="18" height="18"/>
     <div class="w-16">{$t($locale)}</div>
 </Button>

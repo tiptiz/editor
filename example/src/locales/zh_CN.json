@@ -57,5 +57,7 @@
     "Split cell": "拆分单元格",
     "Toggle table header left": "切换左侧表头",
     "Toggle table header top": "切换顶部表头",
-    "Toggle cell as header": "切换单元格为表头"
+    "Toggle cell as header": "切换单元格为表头",
+    "Export as JSON": "导出为 JSON",
+    "Export as HTML": "导出为 HTML"
 }
