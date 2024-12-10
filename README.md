@@ -6,6 +6,8 @@ so , this project is **in prototype phase**.
 This project final goal is to create a `HTML5 Copy/Paste Friendly`
 & `Email Friendly` & `Markdown Friendly` feature rich WYSIWYG rich text editor.
 
+## [Github io Demo Page](https://aolyang.github.io/tiptap-contentful)
+
 ## Features Table
 
 To build a feature rich editor is not easy. Features table collected those features I have done.  
