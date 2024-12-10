@@ -55,6 +55,16 @@ class ShikiPluginView implements NodeView {
         this.updateView()
     }
 
+    private handleCopyEvent(e: ClipboardEvent) {
+        if (e.clipboardData) {
+            e.clipboardData.setData("text/plain", this.node.textContent)
+            e.clipboardData.setData("vscode-editor-data", JSON.stringify({
+                mode: this.options.language
+            }))
+        }
+        e.preventDefault()
+    }
+
     // TODO figure out the behavior of NodeView destroy
     private handleHovering() {
         this.dom.addEventListener("mouseover", () => {
@@ -63,6 +73,7 @@ class ShikiPluginView implements NodeView {
         this.dom.addEventListener("mouseleave", () => {
             toolbarsState.isHovering = false
         })
+        this.dom.addEventListener("copy", this.handleCopyContent.bind(this))
     }
 
     private handleCopyContent() {
@@ -76,15 +87,7 @@ class ShikiPluginView implements NodeView {
         textArea.innerText = this.node.textContent
         document.body.appendChild(textArea)
         textArea.select()
-        textArea.addEventListener("copy", (e) => {
-            if (e.clipboardData) {
-                e.clipboardData.setData("text/plain", this.node.textContent)
-                e.clipboardData.setData("vscode-editor-data", JSON.stringify({
-                    mode: this.options.language
-                }))
-            }
-            e.preventDefault()
-        })
+        textArea.addEventListener("copy", this.handleCopyEvent.bind(this))
         // TODO, navigator.clipboard not working yet. But this code, it works!
         document.execCommand("copy")
         textArea.remove()
