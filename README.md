@@ -1,8 +1,10 @@
 # TipTap Contentful Example
 
-This is `tiptap` & `svelte` guide project, which is prototype phase.  
-This demo project is the practice of using `tiptap` to create a:  
-`HTML5 Copy/Paste Friendly` & `Email Friendly` & `Markdown Friendly` Rich Text Editor.
+This is a guide project for exploring `Svelte` and `Tiptap` to create a WYSIWYG rich text editor,
+so , this project is **in prototype phase**.
+
+The project final goal is to create a `free` & `open source` & `HTML5 Copy/Paste Friendly`
+& `Email Friendly` & `Markdown Friendly` feature rich WYSIWYG rich text editor.
 
 ## Features Table
 
@@ -31,9 +33,8 @@ And also the features others editor not supported. Maybe some day supported with
 | clear color/bg only    | ✅                | ✅               |
 | alignment              | ✅                | ✅               |
 | indent                 | ✅                | ✅               |
-| line-height            | 🚧               | ✅               |
-| paragraph margin       | 🚧               | ✅               |
-| letter-spacing         | 🚧               | ✅               |
+| line-height            | ✅                | ✅               |
+| paragraph margin       | ✅                | ✅               |
 | Emoji                  | ✅                | ✅               |
 | list                   | ✅                | ✅               |
 | TaskList               | ✅                | ❌               |
