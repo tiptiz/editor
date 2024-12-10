@@ -7,8 +7,9 @@
 
     const saveFile = (content: string, ext: "json" | "html") => {
         let fileName = window.prompt("Enter a file name")
-        if (!fileName) fileName = "tiptap-contentful." + ext
-        else if (!fileName.endsWith("." + ext)) {
+        if (!fileName) return
+
+        if (!fileName.endsWith("." + ext)) {
             fileName += "." + ext
         }
 
