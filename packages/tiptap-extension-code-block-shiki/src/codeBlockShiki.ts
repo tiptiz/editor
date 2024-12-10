@@ -147,6 +147,7 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
                 return false
             }
         return {
+            ...this.parent?.(),
             selectCodes: chainCommandSelectCodes,
             toggleLineNumbers: chainCommandToggleLineNumbers,
             toggleLineHighlight: chainToggleLineHighlight
