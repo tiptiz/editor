@@ -13,6 +13,7 @@ import DropCursor from "@tiptap/extension-dropcursor"
 import FontFamily from "@tiptap/extension-font-family"
 import Highlight from "@tiptap/extension-highlight"
 import History from "@tiptap/extension-history"
+import Image from "@tiptap/extension-image"
 import Italic from "@tiptap/extension-italic"
 import ListItem from "@tiptap/extension-list-item"
 import Paragraph from "@tiptap/extension-paragraph"
@@ -54,6 +55,7 @@ export const extensions: Extensions = [
     TextAlign.configure({ types: ["heading", "paragraph"] }),
     FontFamily,
     FontSize,
+    Heading.configure(attrs({ all: { style: css`margin: 5px 0` } })),
     LineHeight,
     Color,
     Highlight.configure({ multicolor: true }),
@@ -83,11 +85,6 @@ export const extensions: Extensions = [
             background-color: #dfdfdf;
         `
     })),
-    CodeBlockShiki.configure({
-        ...attrs({ class: "code-block" }),
-        defaultLanguage: "javascript",
-        defaultTheme: "vitesse-dark"
-    }),
     Sub,
     Sup,
     BulletList.configure(attrs({ class: "list-paddingleft-1", style: css`padding-left: 1.25em` })),
@@ -122,6 +119,20 @@ export const extensions: Extensions = [
             background-color: ${lowContrastBg}
         `
     })),
+    CodeBlockShiki.configure({
+        ...attrs({ class: "code-block" }),
+        defaultLanguage: "javascript",
+        defaultTheme: "vitesse-dark"
+    }),
+    Image.configure(attrs({
+        style: css`
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        `
+    })),
     Table.configure({ resizable: true, allowTableNodeSelection: true }),
     TableCell.configure(attrs({
         style: css`border: 1px solid ${lowContrastGray}`
@@ -132,9 +143,7 @@ export const extensions: Extensions = [
             border: 1px solid ${lowContrastGray}
         `
     })),
-    TableRow,
-    // packages/*
-    Heading.configure(attrs({ all: { style: css`margin: 5px 0` } }))
+    TableRow
 ]
 
 export const createEditor = (options?: Partial<EditorOptions>) => {

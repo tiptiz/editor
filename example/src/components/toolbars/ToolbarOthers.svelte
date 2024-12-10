@@ -5,6 +5,7 @@
 
     import SvgBlockquote from "@/icons/toolbars/SvgBlockquote.svelte"
     import SvgCodeBlock from "@/icons/toolbars/SvgCodeBlock.svelte"
+    import InsertImage from "@/components/toolbars/InsertImage.svelte"
     import SelectEmojis from "@/components/toolbars/SelectEmojis.svelte"
     import SelectHorizontalRules from "@/components/toolbars/SelectHorizontalRules.svelte"
 
@@ -22,4 +23,7 @@
 </Tooltip>
 <Tooltip label={$t("Toggle/Insert code block")}>
     <SvgCodeBlock class={ctx.isCodeBlock ? "active" : ""} onclick={addCodeBlock}/>
+</Tooltip>
+<Tooltip label={$t("Insert image")}>
+    <InsertImage />
 </Tooltip>
