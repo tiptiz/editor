@@ -1,4 +1,16 @@
-<h1 style="margin: 5px 0; font-size: 1.625em; font-weight: bolder; margin-top: 0.5em"><b>Tiptap Contentful example project</b></h1><p>This is a practive project for exploring <code style="
+<h1 style="margin: 5px 0; font-size: 1.625em; font-weight: bolder; margin-top: 0.5em"><b>Tiptap Contentful pototype demo project</b></h1><table style="min-width: 422px"><colgroup><col style="width: 397px"><col style="min-width: 25px"></colgroup><tbody><tr><td style="border: 1px solid #70707099" colspan="1" rowspan="1" colwidth="397"><img style="
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        " src="/doc-imgs/tiptap-logo.png"></td><td style="border: 1px solid #70707099" colspan="1" rowspan="1"><img style="
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        " src="/doc-imgs/svelte-logo.png"></td></tr></tbody></table><p>This is a practive project for exploring <code style="
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
@@ -6,11 +18,11 @@
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
-        ">Tiptap</code> to create a WYSIWYG rich text editor. So , this project is <b>in prototype phase</b>.🤣</p><p>The project final goal is to create a <code style="
+        ">Tiptap</code> to create a WYSIWYG rich text editor. So , this project is <b>in prototype phase</b>.🤣</p><p>This project's final goal is to be able to be a <code style="
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
-        ">HTML5 Copy/Paste Friendly</code> &amp; <code style="
+        ">TML5 Copy/Paste Friendly</code> &amp; <code style="
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
@@ -18,12 +30,89 @@
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
-        ">Markdown Friendly</code> feature rich WYSIWYG rich text editor.</p><p>Month ago, I's zero experience with <code style="
+        ">Markdown Friendly</code> feature rich WYSIWYG rich text editor 🚀🚀🚀.</p><table style="min-width: 343px"><colgroup><col style="width: 318px"><col style="min-width: 25px"></colgroup><tbody><tr><td style="border: 1px solid #70707099" colspan="1" rowspan="1" colwidth="318"><ul style="
+            /*
+             * It's a hack here, for some editor (eg: wechat editor) 
+             * didn't support 0 value padding
+             * so, you can paste taskList with style now
+             */
+            padding-left: 1px;
+            margin-left: -1px;
+        " data-type="taskList"><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="true" data-type="taskItem"><label><input type="checkbox" checked="checked"><span></span></label><div><p>fontStyle &amp; Alignment</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="true" data-type="taskItem"><label><input type="checkbox" checked="checked"><span></span></label><div><p>Marks</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="true" data-type="taskItem"><label><input type="checkbox" checked="checked"><span></span></label><div><p>CodeBlock (Shiki)</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="true" data-type="taskItem"><label><input type="checkbox" checked="checked"><span></span></label><div><p>Table</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="true" data-type="taskItem"><label><input type="checkbox" checked="checked"><span></span></label><div><p>Emojis &amp; Image</p></div></li></ul></td><td style="border: 1px solid #70707099" colspan="1" rowspan="1"><ul style="
+            /*
+             * It's a hack here, for some editor (eg: wechat editor) 
+             * didn't support 0 value padding
+             * so, you can paste taskList with style now
+             */
+            padding-left: 1px;
+            margin-left: -1px;
+        " data-type="taskList"><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Better Tooltip (include keymap, next)</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Table of contents</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Menu &amp; Quick command (select, slash)</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Dragbar (in plan, soon)</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Resize Box (base extension, in plan, soon)</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Paper Mode (support <b>docx</b> and <b>PDF export</b>)</p></div></li></ul></td></tr></tbody></table><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em"><b>0x01 Why Svelte?</b></h2><p><code style="
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
-        ">editor development</code>. And now I made this poto out.</p><p>In this post, I gonna show you how I gradually implement the toolbar above based on <code style="
+        ">Svelte</code> is a less runtime UI framework. Fewer components can get fewer runtime code.</p><p>I have built some vanilla JavaScript extensions for <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://www.sphinx-doc.org/en/master/#get-started"><u>Sphinx — Sphinx documentation</u></a>. For example Sphinx SVG contoller for <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://github.com/mermaid-js/mermaid"><u>mermaid-js/mermaid </u></a>(like github markdown mermaid controller)</p><img style="
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        " src="/doc-imgs/mermaid-extension.png"><img style="
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        " src="/doc-imgs/mermaid-example.png"><p>I got a small output, less than 5KB that excited me (17.33KB total including 12KB pan zoom library and icons).</p><p>Using <code style="
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
-        ">Tiptap &amp; ProseMirror</code>.</p><p></p>
+        ">Svelte</code> to build a vanilla JavaScript plugin, can provide you with good DX and small output. So I can use <code style="
+            padding: 2px 6px;
+            border-radius: 3px;
+            background-color: #afafaf33;
+        ">Svelte</code> to build <code style="
+            padding: 2px 6px;
+            border-radius: 3px;
+            background-color: #afafaf33;
+        ">Tiptap NodeView</code> components with pleasure.</p><p></p>

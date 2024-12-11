@@ -14,6 +14,7 @@ import Highlight from "@tiptap/extension-highlight"
 import History from "@tiptap/extension-history"
 import Image from "@tiptap/extension-image"
 import Italic from "@tiptap/extension-italic"
+import Link from "@tiptap/extension-link"
 import ListItem from "@tiptap/extension-list-item"
 import Paragraph from "@tiptap/extension-paragraph"
 import Placeholder from "@tiptap/extension-placeholder"
@@ -86,6 +87,13 @@ export const extensions: Extensions = [
     })),
     Sub,
     Sup,
+    Link.configure(attrs({
+        style: css`
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        `
+    })),
     BulletList.configure(attrs({ class: "list-paddingleft-1", style: css`padding-left: 1.25em` })),
     ListItem,
     TaskList.configure(attrs({
