@@ -123,6 +123,7 @@ export const extensions: Extensions = [
             border-left: 4px;
             border-style: solid;
             border-color: ${lowContrastGray};
+            margin: 10px 0;
             background-color: ${lowContrastBg}
         `
     })),
