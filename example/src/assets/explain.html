@@ -1,4 +1,4 @@
-<h1 style="margin: 5px 0; font-size: 1.625em; font-weight: bolder; margin-top: 0.5em"><b>Tiptap Contentful pototype demo project</b></h1><table style="min-width: 422px"><colgroup><col style="width: 397px"><col style="min-width: 25px"></colgroup><tbody><tr><td style="border: 1px solid #70707099" colspan="1" rowspan="1" colwidth="397"><img style="
+<h1 style="margin: 5px 0; font-size: 1.625em; font-weight: bolder; margin-top: 0.5em"><b>About Tiptap WYSIWYG Editor All I Know</b></h1><table style="min-width: 422px"><colgroup><col style="width: 397px"><col style="min-width: 25px"></colgroup><tbody><tr><td style="border: 1px solid #70707099" colspan="1" rowspan="1" colwidth="397"><img style="
             display: block;
             margin: 0 auto;
             max-width: 100%;
@@ -150,7 +150,7 @@
             text-decoration: underline;
             color: #0096dc;
             cursor: pointer
-        " href="https://github.com/ueberdosis/awesome-tiptap"><u>ueberdosis/awesome-tiptap: ⚡</u></a></p></li></ul><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em"><b>0x03 Get started with tiptap</b></h2><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em"><b>0x03-00 How ProseMirror describe an editable content?</b></h3><p>ProseMirror use <a target="_blank" rel="noopener noreferrer nofollow" style="
+        " href="https://github.com/ueberdosis/awesome-tiptap"><u>ueberdosis/awesome-tiptap: ⚡</u></a></p></li></ul><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em"><b>0x03 Get started with Tiptap</b></h2><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em"><b>0x03-00 How ProseMirror describe an editable content?</b></h3><p>ProseMirror use <a target="_blank" rel="noopener noreferrer nofollow" style="
             text-decoration: underline;
             color: #0096dc;
             cursor: pointer
@@ -237,12 +237,77 @@ const editor = new Editor({
         Bold, // strong
         Heading // h1, h2, h3...
     ]
-})</code></pre><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em"><b>0x03-02 Full view of tiptap extension, frequently used features</b></h3><p><b>Mark </b>is a subset of Node, Mark <b>only style or annotate text</b>, they can be a applied to any part of node, but can not change any structure of document.</p><p><b>Node </b>can be <b>block</b> or <b>inline</b> element. node can <b>render extra element</b> (like code block toolbars).</p><p><b>Extension </b>base helper class to help you create <code style="
+})</code></pre><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em"><b>0x03-02 Full view of tiptap extension, "How" questions</b></h3><p><b>Extension </b>is a base helper class to help you create <b>commands</b> , <b>keymap</b> etc...</p><p><b>Mark </b>is a subset of Node, Mark <b>only style or annotate text</b>, they can be a applied to any part of node, but can not change any structure of document.</p><p><b>Node </b>can be <b>block</b> or <b>inline</b> element. node can <b>render extra element</b> (like code block toolbars).</p><p>In the following, I will simply use <b>extension</b> to replace <b>node/mark/extension</b></p><h4 style="margin: 5px 0; font-size: 1.000em; font-weight: bold; margin-top: 0.3em"><span style="font-size: 18px"><b>1. How extension render a content?</b></span></h4><pre class="code-block" language="javascript" highlightlines="" showlinenumbers="false" theme="vitesse-dark"><code class="language-javascript">const Node = Node.create({
+    // 1. simple, just text
+    renderText: () =&gt; "text content"
+    // 2. describe the dom
+    renderHTML: () =&gt; ["h1", {}, 0] // &lt;h1&gt;{children}&lt;/h1&gt;
+    //    more complex one
+    //    &lt;h1 data-id="my-block" class="foo"&gt;{children}&lt;/h1&gt;
+    renderHTML: () =&gt; ["h1[data-id='my-block']", { class: "foo" }, 0]
+    // 3. Node-View, advanced, handle change and DOM by your self
+    addNodeView: () =&gt; {
+        const pre = document.createElement("pre")
+        const code = document.createElement("code")
+        const toolbar = ReactDOM.createRoot(pre, &lt;ToolbarComponent /&gt;)
+        return {
+            // Node-View root dom node, will mount to editor doc
+            dom: pre,
+            // Content node, where the editable area
+            // code element content change handled by ProseMirror
+            contentDOM: code
+        }
+    }
+})</code></pre><p><code style="
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
-        ">commands</code> and <code style="
+        ">contentDOM</code> is important, if you want fully control your sub content, for example, mount a third party code editor (CodeMirror), just leave contentDOM null. <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://prosemirror.net/examples/codemirror/"><u>ProseMirror official example</u></a></p><pre class="code-block" language="javascript" highlightlines="" showlinenumbers="false" theme="vitesse-dark"><code class="language-javascript">const Node = Node.create({
+    addNodeView: () =&gt; {
+        // CodeMirror will handle content change
+	    const cm = new CodeMirror({
+            doc: this.node.textContent,
+            extensions: [
+        	    CodeMirror.updateListener
+                    .of(update =&gt; this.forwardUpdate(update))
+            ]
+	    })
+        return {
+            dom: cm.dom
+        }
+    }
+})</code></pre><h4 style="margin: 5px 0; font-size: 1.000em; font-weight: bold; margin-top: 0.3em"><span style="font-size: 18px"><b>2. How exntension get "params" before render?</b></span></h4><p>Editor content accept <b>HTML string</b> and <b>JSON content </b>(like VDOM, describe node &amp; marks)</p><blockquote style="
+            overflow: hidden;
+            padding: 10px 20px;
+            border-left: 4px;
+            border-style: solid;
+            border-color: #70707099;
+            margin: 10px 0;
+            background-color: #afafaf33
+        "><p>The <code style="
             padding: 2px 6px;
             border-radius: 3px;
             background-color: #afafaf33;
-        ">keymap</code> .</p><p>I personally sort a list of frequently used features must have to know.</p><p>1. </p><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em">0x04 Let's build a CodeBlock extension as an example, and get figure out how it works.</h2><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+        ">parseFromString()</code> method of the <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser"><u>DOMParser</u></a> interface parses a string containing either HTML or XML, returning an <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLDocument"><u>HTMLDocument</u></a> or an <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://developer.mozilla.org/en-US/docs/Web/API/XMLDocument"><u>XMLDocument</u></a>.</p></blockquote><pre class="code-block" language="javascript" highlightlines="" showlinenumbers="false" theme="vitesse-dark"><code class="language-javascript">// native browser support
+const parser = new window.DOMParser()
+const document = parser.parseFromString(HTMLContent, "text/html")
+
+// prosemirror-model provide methods to deserialize a node/mark from its JSON representation
+const node = schema.nodeFromJSON(content) 
+// ...</code></pre><p></p><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em"><b>0x04 Let's build a CodeBlock extension as an example, and get figure out how it works.</b></h2><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
