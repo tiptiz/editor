@@ -2,7 +2,7 @@
     "name": "tiptap-extension-hard-break",
     "version": "1.0.0",
     "license": "MIT",
-    "repository": "git@github.com:aolyang/tiptap-contentful.git",
+    "repository": "https://github.com/aolyang/tiptap-contentful.git",
     "author": "aolyang <aolyang@foxmail.com>",
     "exports": {
         ".": {

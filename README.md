@@ -1,21 +1,22 @@
 # TipTap Contentful Example
 
-This is a guide project for exploring `Svelte` and `Tiptap` to create a WYSIWYG rich text editor,
-so , this project is **in prototype phase**.
+![first view](./example/src/assets/first-view.png)
 
-This project final goal is to create a `HTML5 Copy/Paste Friendly`
-& `Email Friendly` & `Markdown Friendly` feature rich WYSIWYG rich text editor.
+This is a practice project for exploring `Svelte` and `Tiptap` to create a `WYSIWYG` rich text editor.
+Yeah, this project is **in prototype phase**.🤣
 
-## [Github io Demo Page](https://aolyang.github.io/tiptap-contentful)
+This project's final goal is to be able to be a `HTML5 Copy/Paste Friendly` & `Email Friendly` & `Markdown Friendly`
+feature rich WYSIWYG rich text editor.
 
-## Features Table
+## [Try this GitHub.io Demo Page](https://aolyang.github.io/tiptap-contentful)
 
-To build a feature rich editor is not easy. Features table collected those features I have done.  
-And also the features others editor not supported. Maybe some day supported with paste hook.
+I wrote a post on this demo page to show how I built it. Hopefully, it can help you, and I'm very grateful for your feedback.
 
-+ current practice status:
+## Editor features (Improving)
+
++ current practice status:  
   ✅ supported; ❌ not support; ⏳ working on; 🚧 planning;
-+ other editors status:
++ other editors status:  
   🆗 partially support; 📋 paste support;
 
 | features               | current practice | we-chat editor  |
@@ -47,12 +48,13 @@ And also the features others editor not supported. Maybe some day supported with
 | Table Row Add/Delete   | ✅                | ❌ 📋            |
 | Table Col Add/Delete   | ✅                | ❌ 📋            |
 | block-quote            | ✅                | ❌ 📋            |
-| code-block             | ⏳                |                 |
+| code-block             | ✅                | ✅ 📋 (paste)    |
+| image                  | ✅                | ✅               |
 
-## Internal classes table (using)
+## Internal classes table (Not done yet)
 
-I'm try my best to use inline style, but using classes to style the editor is can not be avoided.  
-So here is the classes table I'm using in this editor
+To compact with other rich text editors, I'm try my best to use inline style.
+But using classes to style the editor is can not be avoided. So here is the classes table I'm using in this editor
 
 + ✅ used classes
 + ❌ not support
@@ -60,3 +62,33 @@ So here is the classes table I'm using in this editor
 | internal classes   | extension            | current | we-chat |
 |--------------------|----------------------|---------|---------|
 | list-paddingleft-1 | taskList, bulletList | ✅       | ✅       |
+
+## Project structure
+
+This project is a monorepo based on pnpm workspaces.
+
++ `packages/*`: customized extensions.
++ `example`: this demo page.
++ `example/dev-server.mjs`: provide `/content` api, and serve vite (as middleware mode).
++ `src/App.svelte`: Page layout (editor, toolbars), Editor state context
++ `src/icons/toolbars`: all toolbar SVG icons here are modified to look the same size and support svelte.
++ `src/icons/*`: toolbars SVG icon.
++ `src/components/ui`: shadcn-svelte components, you can see the details in `src/components.josn`
++ `src/components/Toolbar.svelte`: toolbar entry component.
++ `src/components/toolbars/*.svelte`: all toolbar and editor features implemented here.
++ `src/states/*.svelte.ts`: global shared states. (editor state, theme, color picker  histories ...)
++ `src/assets/noto-emojis-v16.json`: Google NotoEmoji metadata json file.
++ `public/NotoColorEmoji.ttf`: Google NotoEmoji font file.
+
+## Run this Project
+
+This project based on `Node 21.7.3`, I personally recommend using [fnm](https://github.com/Schniz/fnm) to manager your node version.
+
+```bash
+> git clone https://github.com/aolyang/tiptap-contentful.git --depth=1
+> cd tiptap-contentful
+> fnm install/use # optional
+> pnpm install
+> cd exmaple 
+> node dev-server.mjs # also pnpm server, or you can't use local save
+```
