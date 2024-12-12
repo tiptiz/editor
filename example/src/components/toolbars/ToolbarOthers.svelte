@@ -11,7 +11,15 @@
 
     const ctx = getEditorContext()
     const blockquote = () => ctx.editor.chain().focus().toggleBlockquote().run()
-    const addCodeBlock = () => ctx.editor.chain().focus().toggleCodeBlock().run()
+    const addCodeBlock = () => {
+        const selection = ctx.editor.state.selection
+
+        if (selection.empty) {
+            ctx.editor.chain().focus().toggleCodeBlock().run()
+        } else {
+            ctx.editor.chain().focus().toggleMark("code").run()
+        }
+    }
 </script>
 
 <SelectHorizontalRules/>
