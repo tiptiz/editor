@@ -37,11 +37,11 @@ import HardBreak from "tiptap-extension-hard-break"
 import Heading from "tiptap-extension-heading"
 import HorizontalRules from "tiptap-extension-horizontal-rules"
 import Indent from "tiptap-extension-indent"
-import { InlineCodeBlock } from "tiptap-extension-inline-code-block"
 import LineHeight from "tiptap-extension-line-height"
 import Margin from "tiptap-extension-margin"
 import TrailingNode from "tiptap-extension-trailing-node"
 import { attrs, css } from "tiptap-utils-shared"
+import { InlineCodeBlock } from "tiptap-extension-inline-code-block"
 
 export const extensions: Extensions = [
     Document,
