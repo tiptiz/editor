@@ -183,6 +183,9 @@ importers:
       tiptap-extension-indent:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-indent
+      tiptap-extension-inline-code-block:
+        specifier: workspace:*
+        version: link:../packages/tiptap-extension-inline-code-block
       tiptap-extension-line-height:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-line-height
@@ -323,6 +326,18 @@ importers:
       '@tiptap/core':
         specifier: ^2.10.3
         version: 2.10.3(@tiptap/pm@2.10.3)
+      '@tiptap/pm':
+        specifier: ^2.10.3
+        version: 2.10.3
+
+  packages/tiptap-extension-inline-code-block:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.10.3
+        version: 2.10.3(@tiptap/pm@2.10.3)
+      '@tiptap/extension-code':
+        specifier: ^2.10.3
+        version: 2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))
       '@tiptap/pm':
         specifier: ^2.10.3
         version: 2.10.3
