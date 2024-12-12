@@ -145,7 +145,7 @@ export const extensions: Extensions = [
         `
     })),
     TableRow,
-    InlineCodeBlock
+    InlineCodeBlock.configure(attrs({ class: "inline-code" }))
 ]
 
 export const createEditor = (options?: Partial<EditorOptions>) => {
