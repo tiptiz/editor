@@ -27,6 +27,16 @@
     height: 0;
     pointer-events: none;
 }
+// inline code
+.tiptap code.inline-code {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+.dark .tiptap code.inline-code {
+    background-color: rgb(89, 89, 89);
+}
+
 
 // task modules
 @import url("./editor-styles/table.scss");

@@ -78,13 +78,7 @@ export const extensions: Extensions = [
         types: horizontalTypes
     }),
     Bold.extend({ renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0] }),
-    Code.configure(attrs({
-        style: css`
-            padding: 2px 6px;
-            border-radius: 3px;
-            background-color: ${lowContrastBg};
-        `
-    })),
+    Code.configure(attrs({ class: "inline-code" })),
     Sub,
     Sup,
     Link.configure(attrs({
