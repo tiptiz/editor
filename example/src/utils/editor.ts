@@ -5,7 +5,6 @@ import { horizontalTypes, lowContrastBg, lowContrastGray } from "@/utils/editor-
 import { Editor } from "@tiptap/core"
 import Blockquote from "@tiptap/extension-blockquote"
 import Bold from "@tiptap/extension-bold"
-import Code from "@tiptap/extension-code"
 import Color from "@tiptap/extension-color"
 import Document from "@tiptap/extension-document"
 import DropCursor from "@tiptap/extension-dropcursor"
@@ -42,6 +41,7 @@ import LineHeight from "tiptap-extension-line-height"
 import Margin from "tiptap-extension-margin"
 import TrailingNode from "tiptap-extension-trailing-node"
 import { attrs, css } from "tiptap-utils-shared"
+import { InlineCodeBlock } from "tiptap-extension-inline-code-block"
 
 export const extensions: Extensions = [
     Document,
@@ -151,7 +151,8 @@ export const extensions: Extensions = [
             border: 1px solid ${lowContrastGray}
         `
     })),
-    TableRow
+    TableRow,
+    InlineCodeBlock
 ]
 
 export const createEditor = (options?: Partial<EditorOptions>) => {

@@ -50,7 +50,8 @@
         "tiptap-extension-line-height": "workspace:*",
         "tiptap-extension-margin": "workspace:*",
         "tiptap-extension-trailing-node": "workspace:*",
-        "tiptap-utils-shared": "workspace:*"
+        "tiptap-utils-shared": "workspace:*",
+        "tiptap-extension-inline-code-block": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",
