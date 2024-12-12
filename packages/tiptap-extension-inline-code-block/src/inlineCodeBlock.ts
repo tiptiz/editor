@@ -26,3 +26,9 @@ export const InlineCodeBlock = Code.extend({
     }
   }
 })
+
+declare module '@tiptap/core' {
+  interface Commands<ReturnType> {
+    toggleInlineCodeBlock: () => ReturnType
+  }
+}
