@@ -16,10 +16,17 @@
         if (ctx.isTextAlign === align) chain.unsetTextAlign().run()
         else chain.setTextAlign(align).run()
     }
+
+    const keymap = {
+        "Align left": "Mod+Shift+l",
+        "Align center": "Mod+Shift+e",
+        "Align right": "Mod+Shift+r",
+        "Align justify": "Mod+Shift+j"
+    }
 </script>
 
 {#each aligns as align}
-    <Tooltip label={$t(`Align ${align}`)}>
+    <Tooltip label={$t(`Align ${align}`) + ` (${keymap[`Align ${align}`]})`}>
         <SvgAlign class={ctx.isTextAlign === align ? "active" : ""}
                   {align}
                   onclick={() => handleAlign(align)}/>

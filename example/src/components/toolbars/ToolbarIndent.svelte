@@ -15,12 +15,17 @@
     const handleIndentDec = () => {
         ctx.editor.chain().focus().outdent().run()
     }
+
+    const keymap = {
+        "Increase indent": "Mod+]",
+        "Decrease indent": "Mod+["
+    }
 </script>
 
-<Tooltip label={$t("Increase indent")}>
+<Tooltip label={$t("Increase indent") + ` (${keymap["Increase indent"]})`}>
     <SvgIndentInc onclick={handleIndentInc}/>
 </Tooltip>
-<Tooltip label={$t("Decrease indent")}>
+<Tooltip label={$t("Decrease indent") + ` (${keymap["Decrease indent"]})`}>
     <SvgIndentDec onclick={handleIndentDec}/>
 </Tooltip>
 

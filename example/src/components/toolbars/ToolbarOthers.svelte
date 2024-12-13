@@ -20,16 +20,21 @@
             ctx.editor.chain().focus().toggleMark("code").run()
         }
     }
+
+    const keymap = {
+        "Blockquote": "Mod+Shift+B",
+        "Toggle/Insert code block": "Mod+Shift+C"
+    }
 </script>
 
 <SelectHorizontalRules/>
-<Tooltip label={$t("Blockquote")}>
+<Tooltip label={$t("Blockquote") + ` (${keymap["Blockquote"]})`}>
     <SvgBlockquote class={ctx.isBlockquote ? "active" : ""} onclick={blockquote}/>
 </Tooltip>
 <Tooltip label={$t("Pick a emoji")}>
     <SelectEmojis/>
 </Tooltip>
-<Tooltip label={$t("Toggle/Insert code block")}>
+<Tooltip label={$t("Toggle/Insert code block") + ` (${keymap["Toggle/Insert code block"]})`}>
     <SvgCodeBlock class={ctx.isCodeBlock ? "active" : ""} onclick={addCodeBlock}/>
 </Tooltip>
 <Tooltip label={$t("Insert image")}>
