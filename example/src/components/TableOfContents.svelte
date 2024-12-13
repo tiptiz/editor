@@ -1,92 +1,109 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import { getEditorContext } from "@/states/toolbar";
-    import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte";
+    import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
+    import { globalState } from "@/states/global.svelte"
+    import { getEditorContext } from "@/states/toolbar"
 
-    const ctx = getEditorContext();
+    import { onMount } from "svelte"
 
-    let headings: { level: number; text: string }[] = [];
+    const ctx = getEditorContext()
+
+    type Heading = { level: number, text: string, pos: number }
+
+    let headings: Heading[] = []
 
     const updateHeadings = () => {
-        const doc = ctx.editor.state.doc;
-        const newHeadings: { level: number; text: string }[] = [];
+        const doc = ctx.editor.state.doc
+        const newHeadings: Heading[] = []
 
-        doc.descendants((node) => {
+        doc.descendants((node, pos) => {
             if (node.type.name === "heading") {
                 newHeadings.push({
                     level: node.attrs.level,
                     text: node.textContent,
-                });
+                    pos
+                })
             }
-        });
+        })
 
-        headings = newHeadings;
-    };
+        headings = newHeadings
+    }
+
+    const jump2Node = (heading: Heading) => {
+        const dom = ctx.editor.view.nodeDOM(heading.pos) as HTMLElement | null
+        dom?.scrollIntoView({ behavior: "smooth" })
+    }
 
     onMount(() => {
-        updateHeadings();
-    });
+        updateHeadings()
+    })
 </script>
 
-<EditorTransactionEvent {updateHeadings} />
+<EditorTransactionEvent handler={updateHeadings}/>
 
-<div class="toc">
-    <h2>Table of Contents</h2>
-    <ul>
+<div class="toc shadow-xl fixed bg-background" class:active={globalState.viewToc}>
+    <h1 class="px-4 py-2">Table of Contents</h1>
+    <hr/>
+    <ul class="overflow-y-auto px-4" style="height: calc(100% - 50px)">
         {#each headings as heading}
-            <li class="heading-{heading.level}">
-                <a href="#">{heading.text}</a>
+            <li class={`my-2 h${heading.level} cursor-pointer`}>
+                <button class="text-left" onclick={() => jump2Node(heading)}>
+                    <span>{heading.text}</span>
+                </button>
             </li>
         {/each}
     </ul>
 </div>
 
-<style>
+<style lang="scss">
     .toc {
         position: fixed;
+        z-index: 999;
         top: 120px;
-        right: 20px;
-        width: 200px;
-        background: white;
-        border: 1px solid #ccc;
-        padding: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        right: 10px;
+        width: 460px;
+        height: 70%;
+        transform: translateX(500px);
+        transition: transform 0.3s;
     }
 
-    .toc h2 {
-        margin-top: 0;
+    .toc.active {
+        transform: translateX(0);
+    }
+
+    .toc h1 {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 900;
     }
 
     .toc ul {
-        list-style: none;
-        padding-left: 0;
+        li {
+            border: 1px solid #00000000;
+
+            &:hover {
+                border: 1px solid hsl(var(--primary) / 20);
+            }
+        }
+
+        li.h1 {
+            margin-bottom: 16px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        li.h2 {
+            font-weight: 600;
+        }
+
+        li.h3 {
+            font-size: 15px;
+            padding-left: 20px;
+        }
+
+        li.h4 {
+            font-size: 14px;
+            padding-left: 40px;
+        }
     }
 
-    .toc li {
-        margin-bottom: 5px;
-    }
-
-    .toc .heading-1 {
-        font-weight: bold;
-    }
-
-    .toc .heading-2 {
-        padding-left: 10px;
-    }
-
-    .toc .heading-3 {
-        padding-left: 20px;
-    }
-
-    .toc .heading-4 {
-        padding-left: 30px;
-    }
-
-    .toc .heading-5 {
-        padding-left: 40px;
-    }
-
-    .toc .heading-6 {
-        padding-left: 50px;
-    }
 </style>

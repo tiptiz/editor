@@ -5,14 +5,15 @@
 
     import htmlRaw from "@/assets/explain.html?raw"
     import ExportContent from "@/components/ExportContent.svelte"
+    import TableOfContents from "@/components/TableOfContents.svelte"
     import ToggleLocale from "@/components/ToggleLocale.svelte"
     import ToggleSparkLine from "@/components/ToggleSparkLine.svelte"
     import ThemeMode from "@/components/ToggleTheme.svelte"
+    import ToggleToc from "@/components/ToggleToc.svelte"
     import Toolbar from "@/components/Toolbar.svelte"
     import { setEditorContext } from "@/states/toolbar"
     import { createEditor } from "@/utils/editor"
     import { aligns, headingLevels } from "@/utils/editor-presets"
-    import TableOfContents from "@/components/TableOfContents.svelte"
 
     import { onMount } from "svelte"
     /*
@@ -78,6 +79,7 @@
     <div class="w-full min-h-[52px] px-4 shadow flex gap-3 items-center bg-background dark:bg-neutral-700">
         <div class="flex-1"></div>
         <ExportContent/>
+        <ToggleToc />
         <ToggleLocale/>
         <ToggleSparkLine/>
         <ThemeMode/>
