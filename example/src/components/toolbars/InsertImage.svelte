@@ -22,7 +22,7 @@
         <SvgImage/>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="w-[400px] flex items-center gap-2 p-2">
-        <Input placeholder="URL" class="w-full h-8" bind:value/>
+        <Input placeholder="./doc-imgs/xxx.png" class="w-full h-8" bind:value />
         <Button size="sm" on:click={insertImage}>{$t("Insert image")}</Button>
     </DropdownMenuContent>
 </DropdownMenu>
