@@ -11,11 +11,15 @@
     const undo = () => ctx.editor.commands.undo()
     const redo = () => ctx.editor.commands.redo()
 
+    const keymap = {
+        "Undo": "Mod+z",
+        "Redo": "Mod+Shift+z/Mod+y"
+    }
 </script>
 
-<Tooltip label={$t("Undo")}>
+<Tooltip label={$t("Undo") + ` (${keymap.Undo})`}>
     <SvgUndo onclick={undo}/>
 </Tooltip>
-<Tooltip label={$t("Redo")}>
+<Tooltip label={$t("Redo") + ` (${keymap.Redo})`}>
     <SvgRedo onclick={redo}/>
 </Tooltip>
