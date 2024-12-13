@@ -36,10 +36,10 @@ pre.code-block[data-show-line-numbers="true"] {
     }
 }
 
-
+// TODO fix, current bg color & font color are same, fix after toggle language done
 pre.code-block {
     .line-number {
-        color: rgba(0, 0, 0, 0.15);
+        color: rgba(255, 255, 255, 0.22);
     }
 }
 

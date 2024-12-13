@@ -39,11 +39,19 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
             ...this.parent?.(),
             highlightLines: {
                 default: [],
-                parseHTML: element => element.getAttribute("data-highlight-lines")?.split(",")
+                parseHTML: element => element.getAttribute("data-highlight-lines")?.split(","),
+                renderHTML: (attributes) => {
+                    if (!attributes.highlightLines.length) return {}
+                    return { "data-highlight-lines": attributes.highlightLines.join(",") }
+                }
             },
             showLineNumbers: {
                 default: this.options.showLineNumbers,
-                parseHTML: element => element.getAttribute("data-show-line-numbers") === "true"
+                parseHTML: element => element.getAttribute("data-show-line-numbers") === "true",
+                renderHTML: (attributes) => {
+                    if (!attributes.showLineNumbers) return {}
+                    return { "data-show-line-numbers": "true" }
+                }
             },
             language: {
                 default: this.options.defaultLanguage,
@@ -58,6 +66,10 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
                     }
 
                     return language && null
+                },
+                renderHTML: (attributes) => {
+                    if (attributes.language === this.options.defaultLanguage) return {}
+                    return { "data-language": attributes.language }
                 }
             },
             theme: {
