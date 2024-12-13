@@ -40,7 +40,7 @@
 
 <EditorTransactionEvent handler={updateHeadings}/>
 
-<div class="toc shadow-xl fixed bg-background" class:active={globalState.viewToc}>
+<div class="toc shadow-xl fixed bg-white dark:bg-neutral-700" class:active={globalState.viewToc}>
     <h1 class="px-4 py-2">Table of Contents</h1>
     <hr/>
     <ul class="overflow-y-auto px-4" style="height: calc(100% - 50px)">

@@ -9,15 +9,20 @@ const __dirname = URL.fileURLToPath(path.dirname(import.meta.url))
 const app = express()
 const content = express.Router()
 
-const fileTarget = path.resolve(__dirname, "./src/assets/explain.html")
-content.get("/content", (_, res) => {
-    res.sendFile(fileTarget)
+/** @param target {string} */
+const fileTarget = target => path.resolve(__dirname, "./src/assets", target)
+
+content.get("/content", (req, res) => {
+    res.sendFile(fileTarget(req.query.filepath))
 })
 content.put("/content", (req, res) => {
-    const stream = fs.createWriteStream(fileTarget)
+    const target = req.headers["content-file-path"]
+    if (!target) res.status(404).send("Failed!filepath not found")
+
+    const stream = fs.createWriteStream(fileTarget(target))
     req.pipe(stream)
     stream.once("error", () => res.status(500).send("error"))
-    stream.once("finish", () => res.send("done"))
+    stream.once("finish", () => res.status(200).send("done"))
 })
 
 const viteDevServer = await import("vite").then(vite =>
