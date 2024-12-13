@@ -21,5 +21,5 @@ export const globalState = $state({
     viewSparkLines: getState("toolbar-spark-line", True),
     viewToc: getState("toolbar-view-toc", True),
     viewAssetsTree: getState("toolbar-view-assets-tree", True),
-    currentAsset: getState("current-asset") || "features.html"
+    currentAsset: localStorage.getItem("current-asset") || "features.html"
 })
