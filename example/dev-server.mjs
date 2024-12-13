@@ -30,7 +30,7 @@ const viteDevServer = await import("vite").then(vite =>
         server: {
             middlewareMode: true,
             watch: {
-                // ignored: [fileTarget]
+                ignored: [path.resolve(__dirname, "./src/assets") + "/**/*.html"]
             }
         }
     })
