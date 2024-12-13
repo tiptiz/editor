@@ -28,12 +28,14 @@
         currentColor = color
         onselect(color)
     }
+    type ColorString = string
 </script>
 
-{#snippet colorBlock(color: string)}
+{#snippet colorBlock(color: ColorString)}
     <button class="w-6 h-6 rounded-full btn-color"
             aria-label={`color ${color}`}
-            style={css` background-color: ${color};`}>
+            style={css` background-color: ${color};`}
+            onclick={() => handleColorChange(color)}>
     </button>
 {/snippet}
 <DropdownMenu onOpenChange={handleMenuClose}>
