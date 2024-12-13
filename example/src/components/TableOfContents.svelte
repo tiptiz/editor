@@ -30,7 +30,7 @@
 
     const jump2Node = (heading: Heading) => {
         const dom = ctx.editor.view.nodeDOM(heading.pos) as HTMLElement | null
-        dom?.scrollIntoView({ behavior: "smooth" })
+        dom?.scrollIntoView({ behavior: "smooth", block: "center" })
     }
 
     onMount(() => {
