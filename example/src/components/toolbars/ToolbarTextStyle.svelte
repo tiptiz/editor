@@ -24,6 +24,10 @@
 
         editor.chain().focus().setFontSize(`${newSize}px`).run()
     }
+
+    const keymap = {
+        "Select heading level": "Mod+Alt+{level}"
+    }
 </script>
 
 <Tooltip label={$t("Select font family")}>
@@ -33,7 +37,7 @@
     <SelectFontSize/>
 </Tooltip>
 
-<Tooltip label={$t("Select heading level")}>
+<Tooltip label={$t("Select heading level") + ` (${keymap["Select heading level"]})`}>
     <SelectHeadingLevel/>
 </Tooltip>
 

@@ -32,23 +32,32 @@
 
     const toggleSup = () => ctx.editor.chain().focus().toggleSuperscript().run()
     const toggleSub = () => ctx.editor.chain().focus().toggleSubscript().run()
+
+    const keymap = {
+        "Bold": "Mod+B",
+        "Italic": "Mod+I",
+        "Strikethrough": "Mod+Shift+S",
+        "Underline": "Mod+U",
+        "Superscript": "Mod+.",
+        "Subscript": "Mod+,"
+    }
 </script>
 
-<Tooltip label={$t("Bold")}>
+<Tooltip label={$t("Bold") + ` (${keymap["Bold"]})`}>
     <SvgBold class={ctx.isBold ? "active" : ""} onclick={toggleBold}/>
 </Tooltip>
-<Tooltip label={$t("Italic")}>
+<Tooltip label={$t("Italic") + ` (${keymap["Italic"]})`}>
     <SvgItalic class={ctx.isItalic ? "active" : ""} onclick={toggleItalic}/>
 </Tooltip>
-<Tooltip label={$t("Strikethrough")}>
+<Tooltip label={$t("Strikethrough") + ` (${keymap["Strikethrough"]})`}>
     <SvgStrike class={ctx.isStrike ? "active" : ""} onclick={toggleStrike}/>
 </Tooltip>
-<Tooltip label={$t("Underline")}>
+<Tooltip label={$t("Underline") + ` (${keymap["Underline"]})`}>
     <SvgUnderline class={ctx.isUnderline ? "active" : ""} onclick={handleToggle("underline")}/>
 </Tooltip>
-<Tooltip label={$t("Superscript")}>
+<Tooltip label={$t("Superscript") + ` (${keymap["Superscript"]})`}>
     <SvgSuperscript class={ctx.isSup ? "active" : "" } onclick={toggleSup}/>
 </Tooltip>
-<Tooltip label={$t("Subscript")}>
+<Tooltip label={$t("Subscript") + ` (${keymap["Subscript"]})`}>
     <SvgSubscript class={ctx.isSub ? "active" : "" } onclick={toggleSub}/>
 </Tooltip>

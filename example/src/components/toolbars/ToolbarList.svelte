@@ -26,20 +26,28 @@
         const target = ctx.isBulletList ? "listItem" : "taskItem"
         ctx.editor.chain().focus().liftListItem(target).run()
     }
+
+    const keymap = {
+        "Select list": "Mod+Shift+8",
+        "Insert task list": "Mod+Shift+9",
+        "Break list": "Enter",
+        "Sink list item": "Tab",
+        "Lift list item": "Shift Tab"
+    }
 </script>
 
-<Tooltip label={$t("Select list")}>
+<Tooltip label={$t("Select list") + ` (${keymap["Select list"]})`}>
     <SelectListType/>
 </Tooltip>
-<Tooltip label={$t("Insert task list")}>
+<Tooltip label={$t("Insert task list") + ` (${keymap["Insert task list"]})`}>
     <SvgTaskList class={ctx.isTaskList ? "active" : ""} onclick={toggleTaskList}/>
 </Tooltip>
-<Tooltip label={$t("Break list")}>
+<Tooltip label={$t("Break list") + ` (${keymap["Break list"]})`}>
     <SvgListBreak onclick={breakList}/>
 </Tooltip>
-<Tooltip label={$t("Sink list item")}>
+<Tooltip label={$t("Sink list item") + ` (${keymap["Sink list item"]})`}>
     <SvgListIndent onclick={sinkList}/>
 </Tooltip>
-<Tooltip label={$t("Lift list item")}>
+<Tooltip label={$t("Lift list item") + ` (${keymap["Lift list item"]})`}>
     <SvgListOutdent onclick={liftList}/>
 </Tooltip>
