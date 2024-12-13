@@ -21,6 +21,7 @@ export interface ToolbarState {
     isTextAlign: AlignStyle | ""
     isBlockquote: boolean
     isCodeBlock: boolean
+    tocHeadings: { level: number; text: string }[] // Pb2db
 }
 
 export const setEditorContext = (state: ToolbarState) => {
@@ -30,3 +31,20 @@ export const setEditorContext = (state: ToolbarState) => {
 export const getEditorContext = () => {
     return getContext(toolbarStateKey) as ToolbarState
 }
+
+export const updateTOCHeadings = (editor: Editor) => {
+    const doc = editor.state.doc;
+    const newHeadings: { level: number; text: string }[] = [];
+
+    doc.descendants((node) => {
+        if (node.type.name === "heading") {
+            newHeadings.push({
+                level: node.attrs.level,
+                text: node.textContent,
+            });
+        }
+    });
+
+    const state = getEditorContext();
+    state.tocHeadings = newHeadings;
+};

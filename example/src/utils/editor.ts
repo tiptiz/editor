@@ -163,3 +163,21 @@ export const createEditor = (options?: Partial<EditorOptions>) => {
         })
     }
 }
+
+export const getHeadingsFromEditor = (editor: Editor) => {
+    const headings: { text: string, level: number, id: string }[] = []
+    const content = editor.getJSON()
+
+    const traverse = (node: any) => {
+        if (node.type === "heading") {
+            const id = node.attrs.id || `heading-${headings.length + 1}`
+            headings.push({ text: node.content[0].text, level: node.attrs.level, id })
+        }
+        if (node.content) {
+            node.content.forEach(traverse)
+        }
+    }
+
+    content.content.forEach(traverse)
+    return headings
+}
