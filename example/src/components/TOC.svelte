@@ -28,13 +28,13 @@
     });
 </script>
 
-<EditorTransactionEvent {updateHeadings} />
+<EditorTransactionEvent handler={updateHeadings} />
 
 <div class="toc">
     <h2>Table of Contents</h2>
     <ul>
         {#each headings as heading}
-            <li class="heading-{heading.level}">
+            <li style="font-size: 14px; font-weight: {heading.level === 1 ? 'bold' : 'normal'};">
                 <a href="#">{heading.text}</a>
             </li>
         {/each}
@@ -64,29 +64,5 @@
 
     .toc li {
         margin-bottom: 5px;
-    }
-
-    .toc .heading-1 {
-        font-weight: bold;
-    }
-
-    .toc .heading-2 {
-        padding-left: 10px;
-    }
-
-    .toc .heading-3 {
-        padding-left: 20px;
-    }
-
-    .toc .heading-4 {
-        padding-left: 30px;
-    }
-
-    .toc .heading-5 {
-        padding-left: 40px;
-    }
-
-    .toc .heading-6 {
-        padding-left: 50px;
     }
 </style>
