@@ -12,6 +12,7 @@
     import { setEditorContext } from "@/states/toolbar"
     import { createEditor } from "@/utils/editor"
     import { aligns, headingLevels } from "@/utils/editor-presets"
+    import TableOfContents from "@/components/TableOfContents.svelte"
 
     import { onMount } from "svelte"
     /*
@@ -88,5 +89,6 @@
     <div class="size-full overflow-y-auto px-4">
         <div class="px-10 py-6 max-w-[826px] min-h-full mx-auto bg-white dark:bg-neutral-700 shadow-xl"
              bind:this={divRef}></div>
+        <TableOfContents />
     </div>
 </div>
