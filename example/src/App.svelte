@@ -4,6 +4,7 @@
     import type { ToolbarState } from "@/states/toolbar"
 
     import AssetsTree from "@/components/AssetsTree.svelte"
+    import AutoSaveAsset from "@/components/AutoSaveAsset.svelte"
     import ExportContent from "@/components/ExportContent.svelte"
     import TableOfContents from "@/components/TableOfContents.svelte"
     import ToggleAssetsTree from "@/components/ToggleAssetsTree.svelte"
@@ -68,9 +69,13 @@
 
 <div class="w-full h-[104px] fixed top-0 z-10">
     <div class="w-full min-h-[52px] px-4 shadow flex gap-3 items-center bg-background dark:bg-neutral-700">
-        <ToggleAssetsTree />
-        <div class="flex-1"></div>
+        <ToggleAssetsTree/>
         <ExportContent/>
+        <div class="flex-1"></div>
+        {#if import.meta.env.DEV}
+            <AutoSaveAsset/>
+        {/if}
+        <div class="flex-1"></div>
         <ToggleToc/>
         <ToggleLocale/>
         <ToggleSparkLine/>
@@ -85,5 +90,5 @@
              bind:this={divRef}></div>
     </div>
 </div>
-<AssetsTree />
+<AssetsTree/>
 <TableOfContents/>
