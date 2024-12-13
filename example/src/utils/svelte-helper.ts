@@ -2,6 +2,8 @@ export function* range(start: number, end: number, equal = true): Generator<numb
     for (let i = start; equal ? i <= end : i < end; i++) yield i
 }
 
+export const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
 export const getAsset = (path: string) =>
     fetch(`/content?filepath=${path}`, { method: "GET" })
         .then(res => res.body.getReader().read())
