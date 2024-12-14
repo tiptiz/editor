@@ -1,0 +1,104 @@
+<h1 style="margin: 5px 0; font-size: 1.625em; font-weight: bolder; margin-top: 0.5em"><b>First page: Tiptap Contentful WYSIWYG Editor</b></h1><p><span style="margin: 0em">This is a practice demo poject build on </span><code class="inline-code">Svelte</code><span style="margin: 0em"> and </span><code class="inline-code">Tiptap</code><span style="margin: 0em"> which is in <b>prototype phase.</b></span></p><p><span style="line-height: 1em; margin: 0em">The goal is to create a </span><code class="inline-code">HTML5 Copy/Paste Friendly</code><span style="line-height: 1em; margin: 0em"> &amp; </span><code class="inline-code">Email Friendly</code><span style="line-height: 1em; margin: 0em"> &amp; </span><code class="inline-code">Markdown Friendly</code><span style="line-height: 1em; margin: 0em"> WYSIWYG rich text editor.</span></p><pre class="code-block" data-highlight-lines="4" data-show-line-numbers="true" theme="vitesse-dark"><code class="language-javascript">const codeBlock = "Shiki"
+console.log(tiptap) // awesome 💯 🔥 🎉
+
+proecss.exit(9) // highlight line</code></pre><table style="min-width: 445px"><colgroup><col style="width: 420px"><col style="min-width: 25px"></colgroup><tbody><tr><td style="border: 1px solid #70707099" colspan="1" rowspan="1" colwidth="420"><img style="
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        " src="http://localhost:6173/doc-imgs/emojis.png"></td><td style="border: 1px solid #70707099" colspan="1" rowspan="1"><img style="
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        " src="./doc-imgs/color-picker.png"></td></tr></tbody></table><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em"><b>This prototype has implemented many features</b></h2><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: decimal"><li><p>basic Marks, Styles(fontFaminly, fontSize, ColorPicker, Indent/Outdent, Text Alignment)</p></li><li><p>BulletList/TaskList, Blockquote, Emojis, InlineCode/Code Block, Image, Link, Table...</p></li><li><p>nice toolbars with <b>manually adjusted svg icons</b> (thansk <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://icon-sets.iconify.design/"><u>iconify</u></a>)</p></li><li><p><b>table of contents</b> with quick navigation jump</p></li><li><p>builtin light <b>i18n</b> system</p></li><li><p>(dev mode) assets <b>auto save</b> and <b>assets sidebar</b>, deploy to <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://github.com/aolyang/tiptap-contentful/blob/main/.github/workflows/static.yml"><u>github.io</u></a> by CI/CD in production</p></li></ul><p><b>you can see demos in </b><span style="color: rgb(255, 69, 69)"><b>features.html</b></span><b> (left sidebar)</b></p><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em"><b>Project structure details</b></h2><p>This project is a monorepo based on pnpm workspaces.</p><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: disc"><li><p><code class="inline-code">packages/*</code>: customized extensions.</p></li><li><p><code class="inline-code">example</code>: this demo page.</p></li><li><p><code class="inline-code">example/dev-server.mjs</code>: provide <code class="inline-code">/content</code> api, and serve vite (as middleware mode).</p></li><li><p><code class="inline-code">src/App.svelte</code>: Page layout (editor, toolbars), Editor state context</p></li><li><p><code class="inline-code">src/icons/toolbars</code>: all toolbar SVG icons here are modified to look the same size and support svelte.</p></li><li><p><code class="inline-code">src/icons/*</code>: toolbars SVG icon.</p></li><li><p><code class="inline-code">src/components/ui</code>: shadcn-svelte components, you can see the details in <code class="inline-code">src/components.josn</code></p></li><li><p><code class="inline-code">src/components/Toolbar.svelte</code>: toolbar entry component.</p></li><li><p><code class="inline-code">src/components/toolbars/*.svelte</code>: all toolbar and editor features implemented here.</p></li><li><p><code class="inline-code">src/states/*.svelte.ts</code>: global shared states. (editor state, theme, color picker histories ...)</p></li><li><p><code class="inline-code">src/assets/noto-emojis-v16.json</code>: Google NotoEmoji metadata json file.</p></li><li><p><code class="inline-code">public/NotoColorEmoji.ttf</code>: Google NotoEmoji font file.</p></li></ul><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em"><b>Auto save in dev mode</b></h2><p>HTML files in <code class="inline-code">example/src/assets</code> can be automatically loaded, but you need do somthing more:</p><p>1. registe <code class="inline-code">xxx.html</code> at <code class="inline-code">src/components/AssetsTree.svelte</code> , so that you can auto save in dev mode and build it it to deploy to github.io ( as static page)</p><pre class="code-block" theme="vitesse-dark"><code class="language-javascript">const docsTree: TreeItem[] = [
+    {
+        name: "get started",
+        children: [
+            createAsset("first-page.html"),
+            createAsset("features.html")
+        ]
+    },
+    {
+        name: "wikis",
+        children: [
+            createAsset("wikis/explain.html")
+        ]
+    }
+]</code></pre><p>2. remember save image file to directory <code class="inline-code">public/doc-imgs</code> , this folder will totally copy to <code class="inline-code">dist</code> . So github.io static page can load the assets</p><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em"><b>The editor roadmap</b></h2><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em"><b>P1 target (fix and improve)</b></h3><ul style="
+            /*
+             * It's a hack here, for some editor (eg: wechat editor)
+             * didn't support 0 value padding
+             * so, you can paste taskList with style now
+             */
+            padding-left: 1px;
+            margin-left: -1px;
+        " data-type="taskList"><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Resolve keymap event conflict with browser</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Improve UX, Improve style presentation</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>codeblock language &amp; theme toggle</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>bubble menu, slash command menu</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>draphandle</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>layout block</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>stable editor and nice docs</p></div></li></ul><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em"><b>P2 target (next plan)</b></h3><ul style="
+            /*
+             * It's a hack here, for some editor (eg: wechat editor)
+             * didn't support 0 value padding
+             * so, you can paste taskList with style now
+             */
+            padding-left: 1px;
+            margin-left: -1px;
+        " data-type="taskList"><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>A server (one of self-hosted, cloudflare worker...) to enhance content storage and share</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Support web and Desktop platform</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>A blog/note system</p></div></li></ul><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em"><b>P3 far target (wait list)</b></h3><ul style="
+            /*
+             * It's a hack here, for some editor (eg: wechat editor)
+             * didn't support 0 value padding
+             * so, you can paste taskList with style now
+             */
+            padding-left: 1px;
+            margin-left: -1px;
+        " data-type="taskList"><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>email editor</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>PDF editor (export to PDF first, then consider serialize from PDF file)</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Retrieval-Augmented Generation (RAG), Bidirectional Links, Canvas drawing</p></div></li><li style="
+                display: flex;
+                gap: 0.625em;
+            " data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>Live code playground block</p></div></li></ul><p></p>

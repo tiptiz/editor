@@ -15,6 +15,7 @@
 
     const dynAssets = {
         "features.html": () => import("../assets/features.html?raw").then(m => m.default),
+        "first-page.html": () => import("../assets/first-page.html?raw").then(m => m.default),
         "wikis/explain.html": () => import("../assets/wikis/explain.html?raw").then(m => m.default)
     } as const
 
@@ -27,6 +28,7 @@
         {
             name: "get started",
             children: [
+                createAsset("first-page.html"),
                 createAsset("features.html")
             ]
         },
