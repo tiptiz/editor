@@ -6,6 +6,7 @@
     import AssetsTree from "@/components/AssetsTree.svelte"
     import AutoSaveAsset from "@/components/AutoSaveAsset.svelte"
     import ExportContent from "@/components/ExportContent.svelte"
+    import Github from "@/components/Github.svelte"
     import TableOfContents from "@/components/TableOfContents.svelte"
     import ToggleAssetsTree from "@/components/ToggleAssetsTree.svelte"
     import ToggleLocale from "@/components/ToggleLocale.svelte"
@@ -76,6 +77,7 @@
             <AutoSaveAsset/>
         {/if}
         <div class="flex-1"></div>
+        <Github href="https://github.com/aolyang/tiptap-contentful" target="_blank" width="24" height="24"/>
         <ToggleToc/>
         <ToggleLocale/>
         <ToggleSparkLine/>
