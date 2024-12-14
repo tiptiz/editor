@@ -1,17 +1,25 @@
 # TipTap Contentful Example
 
 ![first view](./example/src/assets/first-view.png)
-
+![first view 2](./example/src/assets/first-view2.png)
 This is a practice project for exploring `Svelte` and `Tiptap` to create a `WYSIWYG` rich text editor.
 Yeah, this project is **in prototype phase**.🤣
 
 This project's final goal is to be able to be a `HTML5 Copy/Paste Friendly` & `Email Friendly` & `Markdown Friendly`
 feature rich WYSIWYG rich text editor.
 
-## [Try this GitHub.io Demo Page](https://aolyang.github.io/tiptap-contentful)
+## [Goto GitHub.io Playground for the details](https://aolyang.github.io/tiptap-contentful)
 
 I wrote a post on this demo page to show how I built it. Hopefully, it can help you, and I'm very grateful for your feedback.
+1. basic Marks, Styles(fontFamily, fontSize, ColorPicker, Indent/Outdent, Text Alignment)
+2. BulletList/TaskList, Blockquote, Emojis, InlineCode/Code Block, Image, Link, Table...
+3. nice toolbars with manually adjusted svg icons (thanks [iconify](https://icon-sets.iconify.design/))
+4. table of contents with quick navigation jump
+5. builtin light i18n system
+6. (dev mode) assets auto save and assets sidebar, deploy to github.io by CI/CD in production
 
+❗️❗️❗ This project is still in the prototype phase, and there are still many features to be implemented. If you have any suggestions or ideas, please feel free to open an issue or PR. 🙏     
+❗️❗️❗ And be careful while saving content, there is no swap file yet.
 ## Editor features (Improving)
 
 + current practice status:  
