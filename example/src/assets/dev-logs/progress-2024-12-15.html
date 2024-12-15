@@ -1,0 +1,39 @@
+<p>工作这几年来，个人最烦的几件事：</p><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: disc"><li><p>WPS 提示某项功能需要会员</p></li><li><p>WPS 编辑PDF需要会员</p></li><li><p>微信公众号、知乎、掘金、Notion、AFFiNE、Meduim、Dev.to 复制文章内容基本不兼容，你想要多个平台发布得重新写好几遍，累死，烦死</p></li></ul><p>因此，大部分作者只能选择某一个平台做为主力，其他平台能照顾一下就勉强照顾一下，实际上无法分心。</p><p>个人在Notion，AFFiNE上也存了很多文章，最近非常想要搬出来和大家一起讨论交流，但这些平台的功能过于强大，导致导出的内容在其它平台很难兼容、很难保持足够的表现力。</p><p>因此，我萌生了一个<b>自己制作编辑器的想法</b>，目标是复制导出到各个平台要<b>尽可能的能保持样式</b>（主要是微信公众号平台、掘金和知乎），同时，编辑器能<b>尽可能HTML5友好</b>，这样，可以同时<b>用于邮件编辑</b>，也更容易<b>导出Word和PDF</b>，后期做PDF编辑器也能更有机会，尝试性地对某些公司“以下犯上”</p><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em">项目进展（最小原型可用）</h2><p>距离第一次提交（2024-10-18）接近1个月了, 目前静态文档的路线走通了，已经具备了替代Markdown做为编辑器的能力 <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://link.juejin.cn?target=https%3A%2F%2Faolyang.github.io%2Ftiptap-contentful%2F">尝鲜 github.io demo</a></p><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: disc"><li><p>基本的Marks标记，字体，inline样式支持，CodeBlock(基于Shiki），List，Table</p></li><li><p>项目支持通过github actions部署到github pages</p></li><li><p>Dev Mode下支持保存内容到本地文件（vite middleware mode + express 做的临时api）</p></li><li><p>没有layout block，暂时用的table布局（而且后续email编辑器也是要用table布局的）</p></li><li><p>资源动态切换和文档目录支持（简易的）</p></li></ul><p>最后两个周赶进度没有对微信公众号进行兼容测试，但是目前大部分内容可以直接复制过去，README.md里有一个兼容性支持表格（还待测试和优化）</p><table style="min-width: 50px"><colgroup><col style="min-width: 25px"><col style="min-width: 25px"></colgroup><tbody><tr><th style="
+            background-color: #afafaf33;
+            border: 1px solid #70707099
+        " colspan="1" rowspan="1"><img style="
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        " src="./doc-imgs/first-view.png"></th><th style="
+            background-color: #afafaf33;
+            border: 1px solid #70707099
+        " colspan="1" rowspan="1"><img style="
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 1000px;
+            height: auto;
+        " src="./doc-imgs/first-view2.png"></th></tr></tbody></table><p></p><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em">项目小目标</h2><p>如开头所说，这个编辑器的目标是尽可能地支持内容可以兼容复制到其它平台发（至少微信公众号、掘金、知乎），所以：</p><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: disc"><li><p>首要目标：友好的交互，无bug，能做为富文本编辑器集成到其它项目</p></li><li><p>支持复制、导出Markdown；</p></li><li><p>更友好的HTML5，支持富文本编辑器间无缝复制，包括Word，PDF；</p></li><li><p>更友好地兼容邮件格式；</p></li></ul><p>由于这个项目开源用爱发电，目前还有个人的小目标分：</p><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: disc"><li><p>服务于个人的博客笔记系统，邮件发送</p></li><li><p>支持更高级的内容（Live Playground), CodePen, Video块，支持MDX（以插件形式引入JSX组件等）</p></li><li><p>服务器缓存和RAG优化</p></li></ul><p>这些都会开源，但是个人小目标会先闭源一段时间再开放。</p><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em">下一步（近期规划）</h2><p>自用编辑一段时间，实际体验下来对编辑器进行优化，编写开发心得。</p><p>项目希望更多伙伴参与进来，提提issue，使用建议，想要什么功能什么的，参与代码编写暂不乐意（因为我现在的时间大部分是22:00 到 2:00，没办法好好交流，只能个人快速迭代开发）。</p><p>目前编辑器在可用前还存在一些小毛病：</p><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: disc"><li><p>快捷键未阻止被浏览器捕获，或未生效的情况；（交互不够友好）</p></li><li><p>选中状态不明确（分割线、图、代码块），没有明显选中状态，对复制粘贴、删除不够友好</p></li><li><p>代码块的操作toolbar没做出来，就个人知道快捷键能用</p></li><li><p>测试微信公众号、掘金、知乎的复制粘贴兼容性</p></li><li><p>全面检查重构以支持完美的markdown导出</p></li></ul><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em">项目的技术路线， Why？（TL；DR）</h2><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em">目前编辑器的demo使用的是Svelte 5， But Why Svelte？</h3><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: disc"><li><p>对于输出目标是原生JS的插件，Svelte的产物不但极其的精小，同时让你有非常棒的（框架）开发体验。</p></li></ul><p>编辑器的目标本就是为了集成到框架无关的项目，正好；<br>同时，基于ProseMirror的Tiptap框架，使用Svelte编写Node-View插件定制高级块时，能从精小的产物上获益。</p><p>之前给公司的<a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://link.juejin.cn?target=https%3A%2F%2Fwww.sphinx-doc.org%2Fen%2Fmaster%2F%23get-started">Sphinx — Sphinx documentation</a>文档加过<a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2Fmermaid-js%2Fmermaid">mermaid-js/mermaid</a> 图的操作按钮（如下图），实现github markdown类似对“图”的操作，并且升级了对所有svg图片支持这些操作。</p><p></p><p>使用Svelte下来结果非常满意，甚至震惊到我，这个原生js插件用到了一个panzoom库（压缩下12KB），在包含svelte组件的前提下，整个功能17KB，也就是说Svelte的业务代码不到5KB，在你不能在某些平台使用Module Federation的使用，Svelte就是最佳的解决方案。</p><p></p><ul class="list-paddingleft-1" style="padding-left: 1.25em; list-style-type: disc"><li><p>无状态的Svelte组件几乎接近web comopnents的复用体验（我为我说的话负责），组件迁移到其它框架更加简单（因为功能更少😂，对于我想要快速进行原型验证非常重要，同时编辑器组件已经定好了要用Svelte）</p></li></ul><p>目前项目中的svg icon经过手动编辑调整大小、优化，只要删除svelte继承语法<code class="inline-code">{...$$props}</code>就能直接当svg资源用，别人想要用这套图标复制粘贴更方便</p><pre class="code-block" theme="vitesse-dark"><code class="language-javascript">html</code></pre><p>代码解读</p><p>复制代码</p><p><code class="inline-code">// SvgXXX.svelte &lt;svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}&gt; &lt;path fill="currentColor" d="m7 10l5 5l5-5z"/&gt; &lt;/svg&gt;</code></p><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em">非编辑器的业务部分不用Svelte， Why？</h3><p>此demo使用的Svelte，但是后续的编辑器业务部分（资源、保存、桌面程序、SSR）等都不会使用Svelte，why？</p><p>首先，不管是React Nextjs、Remix，Vue Nuxt，Angular17（的SSR混合渲染）他们相较于Svelte都有更成熟稳定的技术以及完全成熟稳定的UI框架，我不需要再通过shadcn-ui自己改来改去（是的，我对shadcn-ui的体验不佳）。</p><p>Svelte具备实现功能的能力，但在实现用户交互体验优化上，Svelte的生态很惨，我需要费很大劲去优化。 举个例子，我希望我的icon button，checkbox具有比看起来小图标更大的点击范围（Material Design的按钮规范），这可以让用户更轻松的点击、触摸到对该功能进行交互，如果有友好的动画就更好了。</p><p></p><p>好的UI库会在这些细节上征服开发者。所以，我大概率会使用： React + Mui + Remix</p><p>如果Remix在后续调研中不适合在 self-hosted 服务器版本、Cloudflare Workers上复用的话，就再改。</p><h3 style="margin: 5px 0; font-size: 1.125em; font-weight: bold; margin-top: 0.3em">桌面程序使用Tauri，Why？</h3><p>目前我个人不担心开发的电脑会出现Webview2不兼容缺失或者其它什么情况，选Tauri的目的很简单，我可以复用内置的Sqlite能力，如果后续要做多人协作或者处理多窗口冲突，需要一个本地（offline）下的快速存储内容的介质，目前Sqlite有Web端WASM版本，使用体验不错，支持虚拟文件系统（VFS）对于后续功能扩展也很灵活。</p><h2 style="margin: 5px 0; font-size: 1.250em; font-weight: bold; margin-top: 0.5em">总结一下</h2><p>如果进度乐观，未来的两到三个月之内，将发布体积小巧、原生JS友好的WYSIWYG富文本编辑器， 同时，一个简洁风格的开源博客系统（仅支持自部署），期待一下吧。</p><p>Tiptap的开发心得也会逐步编写发布到github pages, star关注一下吧。</p><p>求个Star，欢迎过来提需求，但暂不支持PR。</p><p>github: <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2Faolyang%2Ftiptap-contentful">github.com/aolyang/tip…</a><br>playground: <a target="_blank" rel="noopener noreferrer nofollow" style="
+            text-decoration: underline;
+            color: #0096dc;
+            cursor: pointer
+        " href="https://link.juejin.cn?target=https%3A%2F%2Faolyang.github.io%2Ftiptap-contentful">aolyang.github.io/tiptap-cont…</a></p>

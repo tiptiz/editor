@@ -60,9 +60,9 @@
         z-index: 999;
         top: 120px;
         right: 10px;
-        width: 460px;
+        width: 400px;
         height: 70%;
-        transform: translateX(500px);
+        transform: translateX(400px);
         transition: transform 0.3s;
     }
 

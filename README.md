@@ -1,7 +1,7 @@
 # TipTap Contentful Example
 
-![first view](./example/src/assets/first-view.png)
-![first view 2](./example/src/assets/first-view2.png)
+![first view](./example/public/doc-imgs/first-view.png)
+![first view 2](./example/public/doc-imgs/first-view2.png)
 This is a practice project for exploring `Svelte` and `Tiptap` to create a `WYSIWYG` rich text editor.
 Yeah, this project is **in prototype phase**.🤣
 

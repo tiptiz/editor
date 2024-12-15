@@ -16,11 +16,12 @@
     const dynAssets = {
         "features.html": () => import("../assets/features.html?raw").then(m => m.default),
         "first-page.html": () => import("../assets/first-page.html?raw").then(m => m.default),
-        "wikis/explain.html": () => import("../assets/wikis/explain.html?raw").then(m => m.default)
+        "wikis/explain.html": () => import("../assets/wikis/explain.html?raw").then(m => m.default),
+        "dev-logs/progress-2024-12-15.html": () => import("../assets/dev-logs/progress-2024-12-15.html?raw").then(m => m.default)
     } as const
 
-    const createAsset = (path: string): TreeItem => ({
-        name: path,
+    const createAsset = (name: string, path = name): TreeItem => ({
+        name,
         path,
         getContent: import.meta.env.DEV ? () => getAsset(path) : dynAssets[path]
     })
@@ -35,7 +36,13 @@
         {
             name: "wikis",
             children: [
-                createAsset("wikis/explain.html")
+                createAsset("explain.html", "wikis/explain.html")
+            ]
+        },
+        {
+            name: "develop logs & progress",
+            children: [
+                createAsset("progress-2024-12-15.html", "dev-logs/progress-2024-12-15.html")
             ]
         }
     ]
@@ -98,9 +105,9 @@
         z-index: 999;
         top: 120px;
         left: 0;
-        width: 260px;
+        width: 360px;
         height: 70%;
-        transform: translateX(-260px);
+        transform: translateX(-360px);
         transition: transform 0.3s;
 
         h1 {
