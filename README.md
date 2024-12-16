@@ -13,7 +13,9 @@ feature rich WYSIWYG rich text editor.
 
 ## [Goto GitHub.io Playground for the details](https://aolyang.github.io/tiptap-contentful)
 
-I wrote a post on this demo page to show how I built it. Hopefully, it can help you, and I'm very grateful for your feedback.
+I wrote a post on this demo page to show how I built it. Hopefully, it can help you, and I'm very grateful for your
+feedback.
+
 1. basic Marks, Styles(fontFamily, fontSize, ColorPicker, Indent/Outdent, Text Alignment)
 2. BulletList/TaskList, Blockquote, Emojis, InlineCode/Code Block, Image, Link, Table...
 3. nice toolbars with manually adjusted svg icons (thanks [iconify](https://icon-sets.iconify.design/))
@@ -21,9 +23,24 @@ I wrote a post on this demo page to show how I built it. Hopefully, it can help 
 5. builtin light i18n system
 6. (dev mode) assets auto save and assets sidebar, deploy to github.io by CI/CD in production
 
-❗️❗️❗ This project is still in the prototype phase, and there are still many features to be implemented. If you have any suggestions or ideas, please feel free to open an issue (Currently PR not welcome)🙏     
+❗️❗️❗ This project is still in the prototype phase, and there are still many features to be implemented. If you have any
+suggestions or ideas, please feel free to open an issue (Currently PR not welcome)🙏     
 ❗️❗️❗ And be careful while saving content, there is no swap file yet.
-## Editor features (Improving)
+
+## Editor feature tables (new)
+
++ current practice status:  
+  ✅ supported; ❌ not support; ⏳ working on; 🚧 planning;
++ other editors status:  
+  🆗 partially support; 📋 paste support;
+
+| features       | markdown | 微信公众号 | 知乎 | 掘金富文本 | 简书       |
+|----------------|----------|-------|----|-------|----------|
+| bold #6        | ✅        | ✅     | ✅  | ✅     | ✅        |
+| italic #8      | ✅        | ✅     | ✅  | ✅     | ✅ （丢失空格） |
+| inline code #7 | ✅        | ✅     | ✅  | ✅     | ❌        |
+
+## ~~Editor features (Improving~~)
 
 + current practice status:  
   ✅ supported; ❌ not support; ⏳ working on; 🚧 planning;
@@ -87,13 +104,14 @@ This project is a monorepo based on pnpm workspaces.
 + `src/components/ui`: shadcn-svelte components, you can see the details in `src/components.josn`
 + `src/components/Toolbar.svelte`: toolbar entry component.
 + `src/components/toolbars/*.svelte`: all toolbar and editor features implemented here.
-+ `src/states/*.svelte.ts`: global shared states. (editor state, theme, color picker  histories ...)
++ `src/states/*.svelte.ts`: global shared states. (editor state, theme, color picker histories ...)
 + `src/assets/noto-emojis-v16.json`: Google NotoEmoji metadata json file.
 + `public/NotoColorEmoji.ttf`: Google NotoEmoji font file.
 
 ## Run this Project
 
-This project based on `Node 21.7.3`, I personally recommend using [fnm](https://github.com/Schniz/fnm) to manager your node version.
+This project based on `Node 21.7.3`, I personally recommend using [fnm](https://github.com/Schniz/fnm) to manager your
+node version.
 
 ```bash
 > git clone https://github.com/aolyang/tiptap-contentful.git --depth=1
