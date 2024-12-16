@@ -67,7 +67,7 @@
 | code-block             | ✅                | ✅ 📋 (paste)    |
 | image                  | ✅                | ✅               |
 
-## 项目结构（欢饮交流）
+## 项目结构（欢迎交流）
 
 + `packages/*`: 自定义组件、公共库都在这里（暂无发布npm计划）.
 + `example`: demo playground实现的完整代码.
@@ -81,3 +81,18 @@
 + `src/states/*.svelte.ts`: 全局状态，参照vue的store理解. (editor state, theme, color picker  histories ...)
 + `src/assets/noto-emojis-v16.json`: Google Emoji图标元数据文件（NotoEmoji metadata json file）.
 + `public/NotoColorEmoji.ttf`: Google Emoji字体（NotoEmoji font file），没有这个字体，有些emoji在windows上不可渲染，有其他字体实现也可以的.
+
+## dev server
+
+目前保存文件仅能通过dev mode（node dev-server.mjs）实现，dev启动非常简单（如下）。
+
+dev模式保存在`example/src/assets`下的HTML文件会被github action复制到部署的github pages里。
+
+```bash
+> git clone https://github.com/aolyang/tiptap-contentful.git --depth=1
+> cd tiptap-contentful
+> fnm install/use # optional
+> pnpm install
+> cd exmaple 
+> node dev-server.mjs # also pnpm server, or you can't use local save
+```
