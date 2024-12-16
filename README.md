@@ -1,7 +1,10 @@
 # TipTap Contentful Example
 
+## [[简体中文]](./README.zh.md) | [[Playground & Articles]](https://aolyang.github.io/tiptap-contentful)
+
 ![first view](./example/public/doc-imgs/first-view.png)
 ![first view 2](./example/public/doc-imgs/first-view2.png)
+
 This is a practice project for exploring `Svelte` and `Tiptap` to create a `WYSIWYG` rich text editor.
 Yeah, this project is **in prototype phase**.🤣
 
@@ -18,7 +21,7 @@ I wrote a post on this demo page to show how I built it. Hopefully, it can help 
 5. builtin light i18n system
 6. (dev mode) assets auto save and assets sidebar, deploy to github.io by CI/CD in production
 
-❗️❗️❗ This project is still in the prototype phase, and there are still many features to be implemented. If you have any suggestions or ideas, please feel free to open an issue or PR. 🙏     
+❗️❗️❗ This project is still in the prototype phase, and there are still many features to be implemented. If you have any suggestions or ideas, please feel free to open an issue (Currently PR not welcome)🙏     
 ❗️❗️❗ And be careful while saving content, there is no swap file yet.
 ## Editor features (Improving)
 
@@ -80,7 +83,7 @@ This project is a monorepo based on pnpm workspaces.
 + `example/dev-server.mjs`: provide `/content` api, and serve vite (as middleware mode).
 + `src/App.svelte`: Page layout (editor, toolbars), Editor state context
 + `src/icons/toolbars`: all toolbar SVG icons here are modified to look the same size and support svelte.
-+ `src/icons/*`: toolbars SVG icon.
++ `src/icons/*`: other SVG icons.
 + `src/components/ui`: shadcn-svelte components, you can see the details in `src/components.josn`
 + `src/components/Toolbar.svelte`: toolbar entry component.
 + `src/components/toolbars/*.svelte`: all toolbar and editor features implemented here.
