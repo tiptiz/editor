@@ -34,11 +34,15 @@ suggestions or ideas, please feel free to open an issue (Currently PR not welcom
 + other editors status:  
   🆗 partially support; 📋 paste support;
 
-| features       | markdown | 微信公众号 | 知乎 | 掘金富文本 | 简书       |
-|----------------|----------|-------|----|-------|----------|
-| bold #6        | ✅        | ✅     | ✅  | ✅     | ✅        |
-| italic #8      | ✅        | ✅     | ✅  | ✅     | ✅ （丢失空格） |
-| inline code #7 | ✅        | ✅     | ✅  | ✅     | ❌        |
+| features        | markdown | 微信公众号 | 知乎 | 掘金富文本 | 简书       |
+|-----------------|----------|-------|----|-------|----------|
+| bold #6         | ✅        | ✅     | ✅  | ✅     | ✅        |
+| italic #8       | ✅        | ✅     | ✅  | ✅     | ✅ （丢失空格） |
+| inline code #7  | ✅        | ✅     | ✅  | ✅     | ❌        |
+| strike #10      | ✅        | ✅     | ✅  | ❌     | ❌        |
+| superscript #12 | ✅        | ❌     | ✅  | ❌     | ❌        |
+| subscript #11   | ✅        | ❌     | ✅  | ❌     | ❌        |
+| underline #14   | ✅        | ✅     | ✅  | ✅     | ❌        |
 
 ## ~~Editor features (Improving~~)
 
