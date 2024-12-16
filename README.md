@@ -27,22 +27,24 @@ feedback.
 suggestions or ideas, please feel free to open an issue (Currently PR not welcome)🙏     
 ❗️❗️❗ And be careful while saving content, there is no swap file yet.
 
-## Editor feature tables (new)
+## Editor feature compatible tables (new)
+
+Goto collection issue for details: https://github.com/aolyang/tiptap-contentful/issues/29
 
 + current practice status:  
   ✅ supported; ❌ not support; ⏳ working on; 🚧 planning;
-+ other editors status:  
++ other editors status (mainly paste to):  
   🆗 partially support; 📋 paste support;
 
-| features        | markdown | 微信公众号 | 知乎 | 掘金富文本 | 简书       |
-|-----------------|----------|-------|----|-------|----------|
-| bold #6         | ✅        | ✅     | ✅  | ✅     | ✅        |
-| italic #8       | ✅        | ✅     | ✅  | ✅     | ✅ （丢失空格） |
-| inline code #7  | ✅        | ✅     | ✅  | ✅     | ❌        |
-| strike #10      | ✅        | ✅     | ✅  | ❌     | ❌        |
-| superscript #12 | ✅        | ❌     | ✅  | ❌     | ❌        |
-| subscript #11   | ✅        | ❌     | ✅  | ❌     | ❌        |
-| underline #14   | ✅        | ✅     | ✅  | ✅     | ❌        |
+| features    | markdown | 微信公众号 | 知乎 | 掘金富文本 | 简书       |
+|-------------|----------|-------|----|-------|----------|
+| bold        | ✅        | ✅     | ✅  | ✅     | ✅        |
+| italic      | ✅        | ✅     | ✅  | ✅     | ✅ （丢失空格） |
+| inline code | ✅        | ✅     | ✅  | ✅     | ❌        |
+| strike      | ✅        | ✅     | ✅  | ❌     | ❌        |
+| superscript | ✅        | ❌     | ✅  | ❌     | ❌        |
+| subscript   | ✅        | ❌     | ✅  | ❌     | ❌        |
+| underline   | ✅        | ✅     | ✅  | ✅     | ❌        |
 
 ## ~~Editor features (Improving~~)
 
