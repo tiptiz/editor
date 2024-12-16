@@ -59,7 +59,7 @@ export const extensions: Extensions = [
     LineHeight,
     Color,
     Highlight.configure({ multicolor: true }),
-    Italic,
+    Italic.extend({ renderHTML: ({ HTMLAttributes }) => ["i", HTMLAttributes, 0] }),
     Strike,
     Underline,
     Indent,
