@@ -44,6 +44,12 @@
             children: [
                 createAsset("progress-2024-12-15.html", "dev-logs/progress-2024-12-15.html")
             ]
+        },
+        {
+            name: "dev test use",
+            children: [
+                createAsset("test.html", "dev-use/test.html")
+            ]
         }
     ]
 
