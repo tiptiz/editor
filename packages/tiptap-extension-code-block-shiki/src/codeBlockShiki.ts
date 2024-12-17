@@ -170,7 +170,7 @@ export const CodeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions>({
         return {
             "Mod-a": () => this.editor.commands.selectCodes(),
             "Mod-Alt-l": () => this.editor.commands.toggleLineNumbers(),
-            "Mod-alt-h": () => this.editor.commands.toggleLineHighlight()
+            "Mod-Alt-h": () => this.editor.commands.toggleLineHighlight()
         }
     },
 
