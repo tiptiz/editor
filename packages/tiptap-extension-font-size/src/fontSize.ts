@@ -1,6 +1,6 @@
 import "@tiptap/extension-text-style"
 
-import { Extension } from "@tiptap/core"
+import { type Command, Extension } from "@tiptap/core"
 
 type FontSizeOptions = {
     types: string[]
@@ -18,6 +18,11 @@ declare module "@tiptap/core" {
              * @example editor.commands.unsetFontSize()
              */
             unsetFontSize: () => ReturnType
+            /**
+             * Increase/Decrease the font size
+             * @example editor.commands.updateFontSize(2)
+             * */
+            updateFontSize: (step?: number) => ReturnType
         }
     }
 }
@@ -55,18 +60,27 @@ export const FontSize = Extension.create<FontSizeOptions>({
     },
 
     addCommands() {
-        return {
-            setFontSize: fontSize => ({ chain }) => {
-                return chain()
-                    .setMark("textStyle", { fontSize })
-                    .run()
-            },
-            unsetFontSize: () => ({ chain }) => {
-                return chain()
-                    .setMark("textStyle", { fontSize: null })
-                    .removeEmptyTextStyle()
-                    .run()
+        type ChainCmdFactory = (...args: any[]) => Command
+        const chainCmdSetFontSize: ChainCmdFactory = (fontSize: string) =>
+            ({ chain }) => chain().setMark("textStyle", { fontSize }).run()
+
+        const chainCmdUnsetFontSize: ChainCmdFactory = () =>
+            ({ chain }) => chain()
+                .setMark("textStyle", { fontSize: null })
+                .removeEmptyTextStyle()
+                .run()
+
+        const chainCmdUpdateFontSize: ChainCmdFactory = (step = 2) =>
+            ({ chain, editor }) => {
+                const fontSize = editor.getAttributes("textStyle").fontSize || "16px"
+                const size = parseInt(fontSize, 10) + step
+                return chain().setMark("textStyle", { fontSize: `${size}px` }).run()
             }
+
+        return {
+            setFontSize: chainCmdSetFontSize,
+            unsetFontSize: chainCmdUnsetFontSize,
+            updateFontSize: chainCmdUpdateFontSize
         }
     }
 })
