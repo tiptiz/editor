@@ -34,12 +34,12 @@
     const toggleSub = () => ctx.editor.chain().focus().toggleSubscript().run()
 
     const keymap = {
-        "Bold": "Mod+B",
-        "Italic": "Mod+I",
-        "Strikethrough": "Mod+Shift+S",
-        "Underline": "Mod+U",
-        "Superscript": "Mod+.",
-        "Subscript": "Mod+,"
+        Bold: "Mod+B",
+        Italic: "Mod+I",
+        Strikethrough: "Mod+Alt+S",
+        Underline: "Mod+U",
+        Superscript: "Mod+.",
+        Subscript: "Mod+,"
     }
 </script>
 

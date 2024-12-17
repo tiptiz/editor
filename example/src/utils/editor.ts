@@ -60,7 +60,15 @@ export const extensions: Extensions = [
     Color,
     Highlight.configure({ multicolor: true }),
     Italic.extend({ renderHTML: ({ HTMLAttributes }) => ["i", HTMLAttributes, 0] }),
-    Strike,
+    Strike.extend({
+        addKeyboardShortcuts() {
+            // Mod Shift s has been used by Edge screenshot
+            return {
+                "Mod-Alt-s": () => this.editor.commands.toggleStrike(),
+                "Mod-Alt-S": () => this.editor.commands.toggleStrike()
+            }
+        }
+    }),
     Underline,
     Indent,
     Margin,
