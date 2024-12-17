@@ -36,15 +36,18 @@ Goto collection issue for details: https://github.com/aolyang/tiptap-contentful/
 + other editors status (mainly paste to):  
   🆗 partially support; 📋 paste support;
 
-| features    | markdown | 微信公众号 | 知乎 | 掘金富文本 | 简书       |
-|-------------|----------|-------|----|-------|----------|
-| bold        | ✅        | ✅     | ✅  | ✅     | ✅        |
-| italic      | ✅        | ✅     | ✅  | ✅     | ✅ （丢失空格） |
-| inline code | ✅        | ✅     | ✅  | ✅     | ❌        |
-| strike      | ✅        | ✅     | ✅  | ❌     | ❌        |
-| superscript | ✅        | ❌     | ✅  | ❌     | ❌        |
-| subscript   | ✅        | ❌     | ✅  | ❌     | ❌        |
-| underline   | ✅        | ✅     | ✅  | ✅     | ❌        |
+| features     | markdown | 微信公众号 | 知乎 | 掘金富文本 |
+|--------------|----------|-------|----|-------|
+| bold         | ✅        | ✅     | ✅  | ✅     |
+| italic       | ✅        | ✅     | ✅  | ✅     |
+| inline code  | ✅        | ✅     | ✅  | ✅     |
+| strike       | ✅        | ✅     | ✅  | ❌     |
+| superscript  | ✅        | ❌     | ✅  | ❌     |
+| subscript    | ✅        | ❌     | ✅  | ❌     |
+| underline    | ✅        | ✅     | ✅  | ✅     |
+| fontFamily   | ❌        | ✅     | ❌  | ❌     |
+| fontSize     | ❌        | ✅     | ❌  | ❌     |
+| HeadingLevel | ✅        | ✅     | ❌  | ✅     |
 
 ## ~~Editor features (Improving~~)
 
