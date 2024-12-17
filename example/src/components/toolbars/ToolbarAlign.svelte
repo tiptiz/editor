@@ -3,6 +3,7 @@
 
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { EditorKeymap } from "@/utils/editor-keymap"
     import { aligns } from "@/utils/editor-presets"
     import { t } from "@/utils/i18n"
 
@@ -17,18 +18,19 @@
         else chain.setTextAlign(align).run()
     }
 
+    const alignClasses = (align: AlignStyle) =>
+        ctx.isTextAlign === align ? "active" : ""
+
     const keymap = {
-        "Align left": "Mod+Shift+l",
-        "Align center": "Mod+Shift+e",
-        "Align right": "Mod+Shift+r",
-        "Align justify": "Mod+Shift+j"
+        left: EditorKeymap.AlignLeft,
+        center: EditorKeymap.AlignCenter,
+        right: EditorKeymap.AlignRight,
+        justify: EditorKeymap.AlignJustify
     }
 </script>
 
 {#each aligns as align}
-    <Tooltip label={$t(`Align ${align}`) + ` (${keymap[`Align ${align}`]})`}>
-        <SvgAlign class={ctx.isTextAlign === align ? "active" : ""}
-                  {align}
-                  onclick={() => handleAlign(align)}/>
+    <Tooltip label={$t(`Align ${align}`) + ` (${keymap[align]})`}>
+        <SvgAlign class={alignClasses(align)} {align} onclick={() => handleAlign(align)}/>
     </Tooltip>
 {/each}

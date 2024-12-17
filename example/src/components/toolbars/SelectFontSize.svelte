@@ -1,6 +1,6 @@
 <script lang="ts">
-    import AutoComplete, { type SelectOption } from "@/components/AutoComplete.svelte"
     import EditorTransactionEvent from "@/components/EditorTransactionEvent.svelte"
+    import AutoComplete, { type SelectOption } from "@/components/SimpleSelect.svelte"
     import { getEditorContext } from "@/states/toolbar"
     import { t } from "@/utils/i18n"
 

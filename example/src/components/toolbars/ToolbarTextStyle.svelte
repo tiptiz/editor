@@ -1,6 +1,7 @@
 <script lang="ts">
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { EditorKeymap } from "@/utils/editor-keymap"
     import { t } from "@/utils/i18n"
 
     import SvgTextMinus from "@/icons/toolbars/SvgTextMinus.svelte"
@@ -13,20 +14,7 @@
     const ctx = getEditorContext()
 
     const updateFontSize = (size: number) => {
-        const editor = ctx.editor
-
-        // if textStyle has style attribute, other style property must be null if not set
-        let fontSize = editor.getAttributes("textStyle")?.fontSize || "16px"
-
-        let newSize = parseInt(fontSize, 10) + size
-        if (newSize <= 4) newSize = 4
-        else if (newSize >= 96) newSize = 96
-
-        editor.chain().focus().setFontSize(`${newSize}px`).run()
-    }
-
-    const keymap = {
-        "Select heading level": "Mod+Alt+{level}"
+        ctx.editor.chain().focus().updateFontSize(size).run()
     }
 </script>
 
@@ -37,7 +25,7 @@
     <SelectFontSize/>
 </Tooltip>
 
-<Tooltip label={$t("Select heading level") + ` (${keymap["Select heading level"]})`}>
+<Tooltip label={$t("Select heading level") + ` (${EditorKeymap.SelectHeadingLevel})`}>
     <SelectHeadingLevel/>
 </Tooltip>
 

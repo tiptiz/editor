@@ -1,6 +1,7 @@
 <script lang="ts">
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { EditorKeymap } from "@/utils/editor-keymap"
     import { t } from "@/utils/i18n"
 
     import SvgListBreak from "@/icons/toolbars/SvgListBreak.svelte"
@@ -26,28 +27,20 @@
         const target = ctx.isBulletList ? "listItem" : "taskItem"
         ctx.editor.chain().focus().liftListItem(target).run()
     }
-
-    const keymap = {
-        "Select list": "Mod+Shift+8",
-        "Insert task list": "Mod+Shift+9",
-        "Break list": "Enter",
-        "Sink list item": "Tab",
-        "Lift list item": "Shift Tab"
-    }
 </script>
 
-<Tooltip label={$t("Select list") + ` (${keymap["Select list"]})`}>
+<Tooltip label={$t("Select list") + ` (${EditorKeymap.InsertBulletList})`}>
     <SelectListType/>
 </Tooltip>
-<Tooltip label={$t("Insert task list") + ` (${keymap["Insert task list"]})`}>
+<Tooltip label={$t("Insert task list") + ` (${EditorKeymap.InsertTaskList})`}>
     <SvgTaskList class={ctx.isTaskList ? "active" : ""} onclick={toggleTaskList}/>
 </Tooltip>
-<Tooltip label={$t("Break list") + ` (${keymap["Break list"]})`}>
+<Tooltip label={$t("Break list") + ` (${EditorKeymap.BreakList})`}>
     <SvgListBreak onclick={breakList}/>
 </Tooltip>
-<Tooltip label={$t("Sink list item") + ` (${keymap["Sink list item"]})`}>
+<Tooltip label={$t("Sink list item") + ` (${EditorKeymap.SinkListItem})`}>
     <SvgListIndent onclick={sinkList}/>
 </Tooltip>
-<Tooltip label={$t("Lift list item") + ` (${keymap["Lift list item"]})`}>
+<Tooltip label={$t("Lift list item") + ` (${EditorKeymap.LiftListItem})`}>
     <SvgListOutdent onclick={liftList}/>
 </Tooltip>

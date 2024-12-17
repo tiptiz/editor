@@ -1,6 +1,7 @@
 <script lang="ts">
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { EditorKeymap } from "@/utils/editor-keymap"
     import { t } from "@/utils/i18n"
 
     import SvgRedo from "@/icons/toolbars/SvgRedo.svelte"
@@ -10,16 +11,11 @@
 
     const undo = () => ctx.editor.commands.undo()
     const redo = () => ctx.editor.commands.redo()
-
-    const keymap = {
-        "Undo": "Mod+z",
-        "Redo": "Mod+Shift+z/Mod+y"
-    }
 </script>
 
-<Tooltip label={$t("Undo") + ` (${keymap.Undo})`}>
+<Tooltip label={$t("Undo") + ` (${EditorKeymap.Undo})`}>
     <SvgUndo onclick={undo}/>
 </Tooltip>
-<Tooltip label={$t("Redo") + ` (${keymap.Redo})`}>
+<Tooltip label={$t("Redo") + ` (${EditorKeymap.Redo})`}>
     <SvgRedo onclick={redo}/>
 </Tooltip>

@@ -1,6 +1,7 @@
 <script lang="ts">
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { EditorKeymap } from "@/utils/editor-keymap"
     import { t } from "@/utils/i18n"
 
     import SvgIndentDec from "@/icons/toolbars/SvgIndentDec.svelte"
@@ -15,17 +16,12 @@
     const handleIndentDec = () => {
         ctx.editor.chain().focus().outdent().run()
     }
-
-    const keymap = {
-        "Increase indent": "Mod+]",
-        "Decrease indent": "Mod+["
-    }
 </script>
 
-<Tooltip label={$t("Increase indent") + ` (${keymap["Increase indent"]})`}>
+<Tooltip label={$t("Increase indent") + ` (${EditorKeymap.IncreaseIndent})`}>
     <SvgIndentInc onclick={handleIndentInc}/>
 </Tooltip>
-<Tooltip label={$t("Decrease indent") + ` (${keymap["Decrease indent"]})`}>
+<Tooltip label={$t("Decrease indent") + ` (${EditorKeymap.DecreaseIndent})`}>
     <SvgIndentDec onclick={handleIndentDec}/>
 </Tooltip>
 

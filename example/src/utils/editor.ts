@@ -64,8 +64,7 @@ export const extensions: Extensions = [
         addKeyboardShortcuts() {
             // Mod Shift s has been used by Edge screenshot
             return {
-                "Mod-Alt-s": () => this.editor.commands.toggleStrike(),
-                "Mod-Alt-S": () => this.editor.commands.toggleStrike()
+                "Mod-Shift-X": () => this.editor.commands.toggleStrike()
             }
         }
     }),

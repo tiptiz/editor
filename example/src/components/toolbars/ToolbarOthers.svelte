@@ -1,6 +1,7 @@
 <script lang="ts">
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { EditorKeymap } from "@/utils/editor-keymap"
     import { t } from "@/utils/i18n"
 
     import SvgBlockquote from "@/icons/toolbars/SvgBlockquote.svelte"
@@ -20,21 +21,16 @@
             ctx.editor.chain().focus().toggleMark("code").run()
         }
     }
-
-    const keymap = {
-        "Blockquote": "Mod+Shift+B",
-        "Toggle/Insert code block": "Mod+Shift+C"
-    }
 </script>
 
 <SelectHorizontalRules/>
-<Tooltip label={$t("Blockquote") + ` (${keymap["Blockquote"]})`}>
+<Tooltip label={$t("Blockquote") + ` (${EditorKeymap.Blockquote})`}>
     <SvgBlockquote class={ctx.isBlockquote ? "active" : ""} onclick={blockquote}/>
 </Tooltip>
 <Tooltip label={$t("Pick a emoji")}>
     <SelectEmojis/>
 </Tooltip>
-<Tooltip label={$t("Toggle/Insert code block") + ` (${keymap["Toggle/Insert code block"]})`}>
+<Tooltip label={$t("Toggle/Insert code block") + ` (${EditorKeymap.CodeBlock})`}>
     <SvgCodeBlock class={ctx.isCodeBlock ? "active" : ""} onclick={addCodeBlock}/>
 </Tooltip>
 <Tooltip label={$t("Insert image")}>

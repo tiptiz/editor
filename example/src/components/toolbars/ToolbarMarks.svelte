@@ -1,6 +1,7 @@
 <script lang="ts">
     import Tooltip from "@/components/Tooltip.svelte"
     import { getEditorContext } from "@/states/toolbar"
+    import { EditorKeymap } from "@/utils/editor-keymap"
     import { t } from "@/utils/i18n"
 
     import SvgBold from "@/icons/toolbars/SvgBold.svelte"
@@ -32,32 +33,23 @@
 
     const toggleSup = () => ctx.editor.chain().focus().toggleSuperscript().run()
     const toggleSub = () => ctx.editor.chain().focus().toggleSubscript().run()
-
-    const keymap = {
-        Bold: "Mod+B",
-        Italic: "Mod+I",
-        Strikethrough: "Mod+Alt+S",
-        Underline: "Mod+U",
-        Superscript: "Mod+.",
-        Subscript: "Mod+,"
-    }
 </script>
 
-<Tooltip label={$t("Bold") + ` (${keymap["Bold"]})`}>
+<Tooltip label={$t("Bold") + ` (${EditorKeymap.Bold})`}>
     <SvgBold class={ctx.isBold ? "active" : ""} onclick={toggleBold}/>
 </Tooltip>
-<Tooltip label={$t("Italic") + ` (${keymap["Italic"]})`}>
+<Tooltip label={$t("Italic") + ` (${EditorKeymap.Italic})`}>
     <SvgItalic class={ctx.isItalic ? "active" : ""} onclick={toggleItalic}/>
 </Tooltip>
-<Tooltip label={$t("Strikethrough") + ` (${keymap["Strikethrough"]})`}>
+<Tooltip label={$t("Strikethrough") + ` (${EditorKeymap.Strike})`}>
     <SvgStrike class={ctx.isStrike ? "active" : ""} onclick={toggleStrike}/>
 </Tooltip>
-<Tooltip label={$t("Underline") + ` (${keymap["Underline"]})`}>
+<Tooltip label={$t("Underline") + ` (${EditorKeymap.Underline})`}>
     <SvgUnderline class={ctx.isUnderline ? "active" : ""} onclick={handleToggle("underline")}/>
 </Tooltip>
-<Tooltip label={$t("Superscript") + ` (${keymap["Superscript"]})`}>
+<Tooltip label={$t("Superscript") + ` (${EditorKeymap.Superscript})`}>
     <SvgSuperscript class={ctx.isSup ? "active" : "" } onclick={toggleSup}/>
 </Tooltip>
-<Tooltip label={$t("Subscript") + ` (${keymap["Subscript"]})`}>
+<Tooltip label={$t("Subscript") + ` (${EditorKeymap.Subscript})`}>
     <SvgSubscript class={ctx.isSub ? "active" : "" } onclick={toggleSub}/>
 </Tooltip>
