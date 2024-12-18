@@ -48,6 +48,7 @@ Goto collection issue for details: https://github.com/aolyang/tiptap-contentful/
 | fontFamily   | ❌        | ✅     | ❌  | ❌     |
 | fontSize     | ❌        | ✅     | ❌  | ❌     |
 | HeadingLevel | ✅        | ✅     | ❌  | ✅     |
+| link         | ✅        | ❌     | ✅  | ✅     |
 
 ## ~~Editor features (Improving~~)
 
