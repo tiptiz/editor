@@ -120,12 +120,9 @@ export const extensions: Extensions = [
     Blockquote.configure(attrs({
         style: css`
             overflow: hidden;
-            padding: 10px 20px;
-            border-left: 4px;
-            border-style: solid;
-            border-color: ${lowContrastGray};
+            padding: 5px 0 5px 10px;
+            border-left: 4px solid ${lowContrastGray};
             margin: 10px 0;
-            background-color: ${lowContrastBg}
         `
     })),
     CodeBlockShiki.configure({

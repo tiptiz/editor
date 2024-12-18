@@ -5,7 +5,7 @@ import googleNotoEmojis from "@/assets/noto-emojis-v16.json"
 import { builtinTypes } from "tiptap-extension-horizontal-rules"
 
 export const lowContrastBg = "#afafaf33"
-export const lowContrastGray = "#70707099"
+export const lowContrastGray = "rgba(169,169,169,0.33)"
 
 export const headingLevels = [1, 2, 3, 4, 5, 6] as const
 export type HeadingLevel = typeof headingLevels[number]
