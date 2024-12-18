@@ -49,6 +49,9 @@ Goto collection issue for details: https://github.com/aolyang/tiptap-contentful/
 | fontSize     | ❌        | ✅     | ❌  | ❌     |
 | HeadingLevel | ✅        | ✅     | ❌  | ✅     |
 | link         | ✅        | ❌     | ✅  | ✅     |
+| blockquote   | ✅        | ✅     | ✅  | ✅     |
+| fontColor    | ❌        | ✅     | ❌  | ❌     |
+| bgColor      | ❌        | ✅     | ❌  | ❌     |
 
 ## ~~Editor features (Improving~~)
 
