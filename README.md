@@ -53,6 +53,7 @@ Goto collection issue for details: https://github.com/aolyang/tiptap-contentful/
 | fontColor    | ❌        | ✅     | ❌  | ❌     |
 | bgColor      | ❌        | ✅     | ❌  | ❌     |
 | Hr           | ✅        | ✅     | ✅  | ❌     |
+| BulletList   | ✅        | ✅     | ✅  | ✅     |
 
 ## ~~Editor features (Improving~~)
 
