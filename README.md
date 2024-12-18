@@ -1,6 +1,6 @@
 # TipTap Contentful Example
 
-## [[简体中文]](./README.zh.md) | [[Playground & Articles]](https://aolyang.github.io/tiptap-contentful)
+## [[简体中文]](./README.zh.md) | [[Playground & Articles]](https://tiptiz.github.io/editor)
 
 ![first view](./example/public/doc-imgs/first-view.png)
 ![first view 2](./example/public/doc-imgs/first-view2.png)
@@ -11,7 +11,7 @@ Yeah, this project is **in prototype phase**.🤣
 This project's final goal is to be able to be a `HTML5 Copy/Paste Friendly` & `Email Friendly` & `Markdown Friendly`
 feature rich WYSIWYG rich text editor.
 
-## [Goto GitHub.io Playground for the details](https://aolyang.github.io/tiptap-contentful)
+## [Goto GitHub.io Playground for the details](https://tiptiz.github.io/editor)
 
 I wrote a post on this demo page to show how I built it. Hopefully, it can help you, and I'm very grateful for your
 feedback.
@@ -123,7 +123,7 @@ This project based on `Node 21.7.3`, I personally recommend using [fnm](https://
 node version.
 
 ```bash
-> git clone https://github.com/aolyang/tiptap-contentful.git --depth=1
+> git clone https://github.com/tiptiz/editor.git --depth=1
 > cd tiptap-contentful
 > fnm install/use # optional
 > pnpm install

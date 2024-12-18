@@ -9,7 +9,7 @@
 项目的目标是实现一个`HTML5 Copy/Paste`友好 & `Email`格式友好 & `Markdown`友好的WYSIWYG富文本编辑器。
 编辑器将用于个人博客、邮件编辑器、博客文章快速复制粘贴到微信公众号、掘金、知乎等平台发布。
 
-## [前往 GitHub.io Demo Playground 体验现有功能](https://aolyang.github.io/tiptap-contentful)
+## [前往 GitHub.io Demo Playground 体验现有功能](https://tiptiz.github.io/editor)
 
 我在playground里持续补充文档和新的，希望能帮助到各位想入门编辑器开发的开发者。目前实现的功能：
 
@@ -89,7 +89,7 @@
 dev模式保存在`example/src/assets`下的HTML文件会被github action复制到部署的github pages里。
 
 ```bash
-> git clone https://github.com/aolyang/tiptap-contentful.git --depth=1
+> git clone https://github.com/tiptiz/editor.git --depth=1
 > cd tiptap-contentful
 > fnm install/use # optional
 > pnpm install

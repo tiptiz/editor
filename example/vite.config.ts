@@ -4,7 +4,7 @@ import tsconfigPaths from "vite-plugin-tsconfig-paths"
 
 // https://vite.dev/config/
 export default defineConfig({
-    base: "https://aolyang.github.io/tiptap-contentful",
+    base: "https://tiptiz.github.io/editor",
     plugins: [
         svelte(),
         tsconfigPaths()

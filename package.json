@@ -1,7 +1,7 @@
 {
     "name": "tiptap-contentful",
     "version": "1.0.0",
-    "repository": "https://github.com/aolyang/tiptap-contentful.git",
+    "repository": "https://github.com/tiptiz/editor.git",
     "author": "aolyang <aolyang@foxmail.com>",
     "license": "MIT",
     "scripts": {
