@@ -52,6 +52,7 @@ Goto collection issue for details: https://github.com/aolyang/tiptap-contentful/
 | blockquote   | ✅        | ✅     | ✅  | ✅     |
 | fontColor    | ❌        | ✅     | ❌  | ❌     |
 | bgColor      | ❌        | ✅     | ❌  | ❌     |
+| Hr           | ✅        | ✅     | ✅  | ❌     |
 
 ## ~~Editor features (Improving~~)
 
