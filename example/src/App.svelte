@@ -77,7 +77,7 @@
             <AutoSaveAsset/>
         {/if}
         <div class="flex-1"></div>
-        <Github href="https://github.com/aolyang/tiptap-contentful" target="_blank" width="24" height="24"/>
+        <Github href="https://github.com/tiptiz/editor" target="_blank" width="24" height="24"/>
         <ToggleToc/>
         <ToggleLocale/>
         <ToggleSparkLine/>

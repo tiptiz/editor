@@ -29,7 +29,7 @@
 
 ## 编辑器功能兼容新测试表（快速更新中🚀🚀🚀）
 
-issue记录: https://github.com/aolyang/tiptap-contentful/issues/29
+issue记录: https://github.com/tiptiz/editor/issues/29
 
 + 当前实践状态:  
   ✅ 支持; ❌ 不支持; ⏳ 正在开发; 🚧 计划中;

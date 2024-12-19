@@ -35,7 +35,7 @@ suggestions or ideas, please feel free to open an issue (Currently PR not welcom
 
 ## Editor feature compatible tables (updating fast 🚀🚀🚀)
 
-Goto collection issue for details: https://github.com/aolyang/tiptap-contentful/issues/29
+Goto collection issue for details: https://github.com/tiptiz/editor/issues/29
 
 + current practice status:  
   ✅ supported; ❌ not support; ⏳ working on; 🚧 planning;
