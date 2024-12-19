@@ -62,7 +62,7 @@ issue记录: https://github.com/tiptiz/editor/issues/29
 | TaskList                         | ✅    | ✅        | ❌     | ❌  | ❌     |
 | Emoji Picker (builtin component) | ✅    | ❌        | ✅     | ❌  | ❌     |
 | Text Alignment                   | ✅    | ❌        | ✅     | ❌  | ❌     |
-| Indent/Outdent                   | ✅    |          |       |    |       |
+| Indent/Outdent                   | ✅    | ❌        | ✅     | ❌  | ❌     |
 | LineHeight                       | ✅    |          |       |    |       |
 | Paragraph Margin                 | ✅    |          |       |    |       |
 | Table                            | ✅    |          |       |    |       |
