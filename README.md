@@ -38,42 +38,44 @@ issue记录: https://github.com/tiptiz/editor/issues/29
   🆗 部分支持; 📋 粘贴支持;
 + 空着表示没测试或者没必要测试
 
-| features                         | 本编辑器 | markdown | 微信公众号 | 知乎 | 掘金富文本 |
-|----------------------------------|------|----------|-------|----|-------|
-| Undo/Redo                        | ✅    | ✅        | ✅     | ✅  | ✅     |
-| clear marks                      | ✅    | ❌        | ✅     | ✅  | ❌     |
-| bold                             | ✅    | ✅        | ✅     | ✅  | ✅     |
-| italic                           | ✅    | ✅        | ✅     | ✅  | ✅     |
-| inline code                      | ✅    | ✅        | ✅     | ✅  | ✅     |
-| strike                           | ✅    | ✅        | ✅     | ✅  | ❌     |
-| superscript                      | ✅    | ✅        | ❌     | ✅  | ❌     |
-| subscript                        | ✅    | ✅        | ❌     | ✅  | ❌     |
-| underline                        | ✅    | ✅        | ✅     | ✅  | ✅     |
-| fontFamily                       | ✅    | ❌        | ✅     | ❌  | ❌     |
-| fontSize                         | ✅    | ❌        | ✅     | ❌  | ❌     |
-| HeadingLevel                     | ✅    | ✅        | ✅     | ❌  | ✅     |
-| link                             | ✅    | ✅        | ❌     | ✅  | ✅     |
-| blockquote                       | ✅    | ✅        | ✅     | ✅  | ✅     |
-| fontColor                        | ✅    | ❌        | ✅     | ❌  | ❌     |
-| bgColor                          | ✅    | ❌        | ✅     | ❌  | ❌     |
-| Clear font/bg color only         | ✅    | ❌        | ✅     | ❌  | ❌     |
-| Hr                               | ✅    | ✅        | ✅     | ✅  | ❌     |
-| BulletList                       | ✅    | ✅        | ✅     | ✅  | ✅     |
-| TaskList                         | ✅    | ✅        | ❌     | ❌  | ❌     |
-| Emoji Picker (builtin component) | ✅    | ❌        | ✅     | ❌  | ❌     |
-| Text Alignment                   | ✅    | ❌        | ✅     | ❌  | ❌     |
-| Indent/Outdent                   | ✅    | ❌        | ✅     | ❌  | ❌     |
-| LineHeight                       | ✅    |          |       |    |       |
-| Paragraph Margin                 | ✅    |          |       |    |       |
-| Table                            | ✅    |          |       |    |       |
-| Table Head/Cell Toggle           | ✅    |          |       |    |       |
-| Table Cell Merge/Split           | ✅    |          |       |    |       |
-| Table Row Add/Delete             | ✅    |          |       |    |       |
-| Table Col Add/Delete             | ✅    |          |       |    |       |
-| Code Block                       | ✅    |          |       |    |       |
-| Image                            | ✅    |          |       |    |       |
-| Table Layout                     | 🚧   |          |       |    |       |
-| Float layout                     | 🚧   |          |       |    |       |
+| features                         | 本编辑器 | 微信公众号 | 知乎   | markdown | 掘金富文本 |
+|----------------------------------|------|-------|------|----------|-------|
+| Undo/Redo                        | ✅    | ✅     | ✅    | ✅        | ✅     |
+| clear marks                      | ✅    | ✅     | ✅    | ❌        | ❌     |
+| bold                             | ✅    | ✅     | ✅    | ✅        | ✅     |
+| italic                           | ✅    | ✅     | ✅    | ✅        | ✅     |
+| inline code                      | ✅    | ✅     | ✅    | ✅        | ✅     |
+| strike                           | ✅    | ✅     | ✅    | ✅        | ❌     |
+| superscript                      | ✅    | ❌     | ✅    | ✅        | ❌     |
+| subscript                        | ✅    | ❌     | ✅    | ✅        | ❌     |
+| underline                        | ✅    | ✅     | ✅    | ✅        | ✅     |
+| fontFamily                       | ✅    | ✅     | ❌    | ❌        | ❌     |
+| fontSize                         | ✅    | ✅     | ❌    | ❌        | ❌     |
+| HeadingLevel                     | ✅    | ✅     | ❌    | ✅        | ✅     |
+| link                             | ✅    | ❌     | ✅    | ✅        | ✅     |
+| blockquote                       | ✅    | ✅     | ✅    | ✅        | ✅     |
+| fontColor                        | ✅    | ✅     | ❌    | ❌        | ❌     |
+| bgColor                          | ✅    | ✅     | ❌    | ❌        | ❌     |
+| Clear font/bg color only         | ✅    | ✅     | ❌    | ❌        | ❌     |
+| Hr                               | ✅    | ✅     | ✅    | ✅        | ❌     |
+| BulletList                       | ✅    | ✅ ❓   | ✅    | ✅        | ✅     |
+| TaskList                         | ✅    | ❌     | ❌    | ✅        | ❌     |
+| Emoji Picker (builtin component) | ✅    | ✅     | ❌    | ❌        | ❌     |
+| Text Alignment                   | ✅    | ✅     | ❌    | ❌        | ❌     |
+| Indent/Outdent                   | ✅    | ✅     | ❌    | ❌        | ❌     |
+| LineHeight                       | ✅    | ✅     | ❌    | ❌        | ❌     |
+| TextStyle Margin                 | ✅    | ✅     | ❌    | ❌        | ❌     |
+| Table                            | ✅    | ✅❓    | ✅    | ✅        | ❌     |
+| Table Head/Cell Toggle           | ✅    | 📋    | 🆗❓3 | ❌        | ❌     |
+| Table Cell Merge/Split           | ✅    | 📋    | ❌    | ❌        | ❌     |
+| Table Row Add/Delete             | ✅    | ❌     | ✅    | ✅        | ❌     |
+| Table Col Add/Delete             | ✅    | ❌     | ✅    | ✅        | ❌     |
+| Code Block                       | ✅    |       |      |          |       |
+| Image                            | ✅    |       |      |          |       |
+| Table Layout                     | 🚧   |       |      |          |       |
+| Float layout                     | 🚧   |       |      |          |       |
+
+❓3: 知乎表格最左侧支持toggle表头，顶部表头切换报错
 
 ## 项目结构（欢迎交流）
 
