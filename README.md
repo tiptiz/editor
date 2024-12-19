@@ -61,7 +61,7 @@ issue记录: https://github.com/tiptiz/editor/issues/29
 | BulletList                       | ✅    | ✅        | ✅     | ✅  | ✅     |
 | TaskList                         | ✅    | ✅        | ❌     | ❌  | ❌     |
 | Emoji Picker (builtin component) | ✅    | ❌        | ✅     | ❌  | ❌     |
-| Alignment                        | ✅    |          |       |    |       |
+| Text Alignment                   | ✅    | ❌        | ✅     | ❌  | ❌     |
 | Indent/Outdent                   | ✅    |          |       |    |       |
 | LineHeight                       | ✅    |          |       |    |       |
 | Paragraph Margin                 | ✅    |          |       |    |       |
