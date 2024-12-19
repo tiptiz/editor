@@ -12,7 +12,11 @@ Yeah, this project is **in prototype phase**.🤣
 This project's final goal is to be able to be a `HTML5 Copy/Paste Friendly` & `Email Friendly` & `Markdown Friendly`
 feature rich WYSIWYG rich text editor.
 
-## [Goto GitHub.io Playground for the details](https://tiptiz.github.io/editor)
+Before first public release, I will mainly use Chinese, but, a Q & Issue in English is OK.  
+Resources will release a docs with English too, after the first public release.
+
+### [[Goto GitHub.io Playground for the details]](https://tiptiz.github.io/editor)
+### [[Goto Issues for the details and records]](https://github.com/tiptiz/editor/issues)
 
 I wrote a post on this demo page to show how I built it. Hopefully, it can help you, and I'm very grateful for your
 feedback.
