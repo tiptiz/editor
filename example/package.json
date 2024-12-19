@@ -40,6 +40,7 @@
         "@tiptap/extension-text-align": "^2.10.3",
         "@tiptap/extension-text-style": "^2.10.3",
         "@tiptap/extension-underline": "^2.10.3",
+        "emoji-picker-element": "^1.26.0",
         "tiptap-extension-bullet-list": "workspace:*",
         "tiptap-extension-code-block-shiki": "workspace:*",
         "tiptap-extension-font-size": "workspace:*",

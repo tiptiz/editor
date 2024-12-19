@@ -22,19 +22,3 @@ export type MarginTarget = typeof marginTargets[number]
 export const horizontalTypes: HorizontalType[] = [
     ...builtinTypes
 ]
-
-export interface EmojiItemMeta {
-    base: number[]
-    alternates: number[]
-    emoticons: string[]
-    shortcodes: string[]
-    animated: boolean
-    directional: boolean
-}
-
-export interface EmojiMetaData {
-    group: string
-    emoji: EmojiItemMeta[]
-}
-
-export const emojis = googleNotoEmojis as any as EmojiMetaData[]

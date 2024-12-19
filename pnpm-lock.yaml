@@ -162,6 +162,9 @@ importers:
       '@tiptap/extension-underline':
         specifier: ^2.10.3
         version: 2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))
+      emoji-picker-element:
+        specifier: ^1.26.0
+        version: 1.26.0
       tiptap-extension-bullet-list:
         specifier: workspace:*
         version: link:../packages/tiptap-extension-bullet-list
@@ -1539,6 +1542,9 @@ packages:
 
   electron-to-chromium@1.5.63:
     resolution: {integrity: sha512-ddeXKuY9BHo/mw145axlyWjlJ1UBt4WK3AlvkT7W2AbqfRQoacVoRUCF6wL3uIx/8wT9oLKXzI+rFqHHscByaA==}
+
+  emoji-picker-element@1.26.0:
+    resolution: {integrity: sha512-IcffFc+LNymYScmMuxOJooZulOCOACGc1Xvj+s7XeKqpc+0EoZfWrV9o4rBjEiuM7XjsgcEjD+m5DHg0aIfnnA==}
 
   emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -3672,6 +3678,8 @@ snapshots:
   ee-first@1.1.1: {}
 
   electron-to-chromium@1.5.63: {}
+
+  emoji-picker-element@1.26.0: {}
 
   emoji-regex-xs@1.0.0: {}
 
