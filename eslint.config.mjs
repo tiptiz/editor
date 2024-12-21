@@ -1,19 +1,25 @@
-import globals from "globals"
-import { builtinModules } from "module"
-
 import parserSvelte from "eslint-parser-svelte"
 import pluginImportSort from "eslint-plugin-import-sort"
-import pluginJavaScript from "eslint-plugin-javascript"
 import pluginStylistic from "eslint-plugin-stylistic"
 import pluginTypeScript from "eslint-plugin-typescript"
+
+import configCommon from "./.configs/eslint.config.common.mjs"
+import configExample from "./.configs/eslint.config.example.mjs"
+import configDocs from "./.configs/eslint.config.docs.mjs"
+import configStylistic from "./.configs/eslint.config.stylistic.mjs"
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
     {
-        languageOptions: { globals: globals.browser }
+        plugins: {
+            "@stylistic": pluginStylistic,
+            "@typescript-eslint": pluginTypeScript.plugin,
+            "simple-import-sort": pluginImportSort
+        }
     },
+    pluginTypeScript.configs.base,
     {
-        files: ["**/*.{js,mjs,ts,mts,tsx}", "eslint.config.mjs"],
+        files: ["**/*.{js,mjs,ts,mts,tsx}"],
         languageOptions: {
             parser: pluginTypeScript.parser,
             sourceType: "module",
@@ -31,85 +37,16 @@ export default [
             }
         }
     },
-    pluginJavaScript.configs.recommended, // css eslint rules
-    {
-        plugins: {
-            "@typescript-eslint": pluginTypeScript.plugin
-        },
-        rules: {
-            ...pluginTypeScript.configs
-                .recommended
-                .find(c => c.name === "typescript-eslint/recommended")
-                ?.rules,
-            "@typescript-eslint/no-explicit-any": "off",
-            "@typescript-eslint/no-namespace": "off",
-            "@typescript-eslint/consistent-type-imports": [
-                "error",
-                {
-                    prefer: "type-imports",
-                    fixStyle: "separate-type-imports"
-                }
-            ]
-        }
-    },
-    {
-        plugins: {
-            "simple-import-sort": pluginImportSort
-        },
-        rules: {
-            "simple-import-sort/imports": [
-                "error",
-                {
-                    groups: [
-                        [
-                            "globals",
-                            `node:`,
-                            `^(${builtinModules.join("|")})(/|$)`
-                        ],
-                        // style less,scss,css
-                        ["^.+\\.(l|s)?css$"],
-                        // Side effect imports.
-                        ["^\\u0000"],
-                        ["^@?\\w.*\\u0000$", "^[^.].*\\u0000$", "^\\..*\\u0000$"],
-                        ["^@/icons"],
-                        ["^@/components/ui", "^@/"],
-                        ["^@/icons/toolbars", "^@/components/toolbars"],
-                        // Parent imports. Put `..` last.
-                        ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-                        // Other relative imports. Put same-folder imports and `.` last.
-                        ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
-                    ]
-                }
-            ]
-
-        }
-    },
-    // see: https://eslint.style/guide/getting-started
-    // see: https://github.com/eslint-stylistic/eslint-stylistic/blob/main/packages/eslint-plugin/configs/disable-legacy.ts
-    pluginStylistic.configs["disable-legacy"],
-    {
-        plugins: {
-            "@stylistic": pluginStylistic
-        },
-        rules: {
-            ...pluginStylistic.configs.customize({
-                indent: 4,
-                quotes: "double",
-                semi: false,
-                commaDangle: "never",
-
-                jsx: true
-            }).rules,
-            "@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: true }],
-            "@stylistic/indent": ["error", 4, { offsetTernaryExpressions: false }]
-        }
-    },
+    ...configCommon,
+    ...configExample,
+    ...configDocs,
+    ...configStylistic,
     {
         ignores: [
             "**/node_modules",
             "**/components/ui",
             "**/dist*",
-            ".*"
+            "^."
         ]
     }
 ]

@@ -1,5 +1,5 @@
 {
-    "extends": "../tsconfig.base.json",
+    "extends": "../.configs/tsconfig.base.json",
     "compilerOptions": {
         "module": "ESNext",
         "target": "ESNext",
@@ -26,8 +26,5 @@
             "@/*": ["./src/*"]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
-    "references": [
-        { "path": "./tsconfig.node.json" }
-    ]
+    "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
 }

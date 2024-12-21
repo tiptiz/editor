@@ -8,7 +8,7 @@
         "server": "node dev-server.mjs",
         "build": "vite build",
         "preview": "vite preview",
-        "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
+        "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "dependencies": {
         "@tiptap/extension-blockquote": "^2.10.3",

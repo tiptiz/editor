@@ -1,7 +1,5 @@
 import type { HorizontalType } from "tiptap-extension-horizontal-rules"
 
-import googleNotoEmojis from "@/assets/noto-emojis-v16.json"
-
 import { builtinTypes } from "tiptap-extension-horizontal-rules"
 
 export const lowContrastBg = "#afafaf33"

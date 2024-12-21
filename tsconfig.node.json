@@ -9,5 +9,5 @@
     "noEmit": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts", "dev-server.mjs"]
+  "include": ["example/vite.config.ts", "example/dev-server.mjs"]
 }
