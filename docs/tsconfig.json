@@ -3,7 +3,6 @@
     "compilerOptions": {
         "types": ["@remix-run/node", "vite/client"],
         "jsx": "react-jsx",
-        "target": "ES2022",
         "strict": true,
         "allowJs": true,
         "forceConsistentCasingInFileNames": true,
