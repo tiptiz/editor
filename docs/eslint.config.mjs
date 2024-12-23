@@ -4,13 +4,13 @@ import { builtinModules } from "module"
 import pluginReactJsxA11y from "eslint-plugin-jsx-a11y"
 import pluginReact from "eslint-plugin-react"
 import pluginReactHooks from "eslint-plugin-react-hooks"
+import pluginTypeScript from "eslint-plugin-typescript"
 
 import configBase, { combine, configShared } from "../.configs/eslint.config.base.mjs"
 import configStylistic from "../.configs/eslint.config.stylistic.mjs"
 
-const files = ["./**/*.{js,mjs,ts,mts,tsx}"]
+const files = ["app/**/*.{js,mjs,ts,mts,tsx}"]
 
-// from remix init
 /** @type {import('eslint').Linter.Config[]} */
 export default [
     ...configShared,
@@ -19,7 +19,9 @@ export default [
         configStylistic,
         {
             languageOptions: {
-                globals: { ...globals.browser, ...globals.node }
+                globals: { ...globals.browser, ...globals.node },
+                parser: pluginTypeScript.parser,
+                sourceType: "module"
             }
         },
         pluginReactJsxA11y.flatConfigs.recommended,
