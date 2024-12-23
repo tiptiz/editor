@@ -1,9 +1,19 @@
 import pluginJavaScript from "eslint-plugin-javascript"
 import pluginTypeScript from "eslint-plugin-typescript"
+import pluginImportSort from "eslint-plugin-import-sort"
+import pluginStylistic from "eslint-plugin-stylistic"
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+    {
+        plugins: {
+            "@stylistic": pluginStylistic,
+            "@typescript-eslint": pluginTypeScript.plugin,
+            "simple-import-sort": pluginImportSort
+        }
+    },
     pluginJavaScript.configs.recommended,
+    pluginTypeScript.configs.base,
     {
         rules: {
             ...pluginTypeScript.configs.recommended
@@ -19,6 +29,13 @@ export default [
                 }
             ]
         }
+    },
+    {
+        ignores: [
+            "**/node_modules",
+            "**/components/ui",
+            "**/dist*",
+            "^."
+        ]
     }
-
 ]

@@ -3,7 +3,6 @@ import globals from "globals"
 import pluginReact from "eslint-plugin-react"
 import pluginReactHooks from "eslint-plugin-react-hooks"
 import pluginReactJsxA11y from "eslint-plugin-jsx-a11y"
-import pluginImport from "eslint-plugin-import"
 
 const files = ["docs/**/*.{js,mjs,ts,mts,tsx}"]
 
@@ -11,11 +10,6 @@ const files = ["docs/**/*.{js,mjs,ts,mts,tsx}"]
 /** @type {import('eslint').Linter.Config[]} */
 export default [
     {
-        plugins: {
-            "react": pluginReact.configs.flat.recommended.plugins.react,
-            "react-hooks": pluginReactHooks,
-            "import": pluginImport
-        },
         languageOptions: {
             globals: { ...globals.browser, ...globals.node }
         }

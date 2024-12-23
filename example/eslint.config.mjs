@@ -1,9 +1,9 @@
 import parserSvelte from "eslint-parser-svelte"
 import pluginTypeScript from "eslint-plugin-typescript"
 
-import configCommon from "./.configs/eslint.config.common.mjs"
-import configExample from "./.configs/eslint.config.example.mjs"
-import configStylistic from "./.configs/eslint.config.stylistic.mjs"
+import configCommon from "../.configs/eslint.config.common.mjs"
+import configExample from "../.configs/eslint.config.example.mjs"
+import configStylistic from "../.configs/eslint.config.stylistic.mjs"
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -18,7 +18,7 @@ export default [
         }
     },
     {
-        files: ["packages/**/*.svelte", "packages/**/*.svelte", "packages/**/*.svelte.ts"],
+        files: ["*.svelte", "**/*.svelte", "**/*.svelte.ts"],
         languageOptions: {
             parser: parserSvelte,
             parserOptions: {
