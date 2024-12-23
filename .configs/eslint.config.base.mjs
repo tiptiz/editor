@@ -1,9 +1,9 @@
 import pluginImportSort from "eslint-plugin-import-sort"
 import pluginJavaScript from "eslint-plugin-javascript"
 import pluginReact from "eslint-plugin-react"
+import pluginReactHooks from "eslint-plugin-react-hooks"
 import pluginStylistic from "eslint-plugin-stylistic"
 import pluginTypeScript from "eslint-plugin-typescript"
-
 /**
  * @typedef {import('eslint').Linter.Config} ESLintConfig
  * */
@@ -26,6 +26,7 @@ export const configShared = [
     {
         plugins: {
             "react": pluginReact.configs.flat.recommended.plugins.react,
+            "react-hooks": pluginReactHooks,
             "@stylistic": pluginStylistic,
             "@typescript-eslint": pluginTypeScript.plugin,
             "simple-import-sort": pluginImportSort
