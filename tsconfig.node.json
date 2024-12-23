@@ -5,6 +5,7 @@
         "skipLibCheck": true,
         "module": "ESNext",
         "moduleResolution": "Bundler",
+        "types": ["node"],
         "strict": true,
         "noEmit": true,
         "noUncheckedSideEffectImports": true
@@ -12,6 +13,7 @@
     "include": [
         "example/dev-server.mjs",
         "example/vite.config.ts",
+        "docs/vite.config.ts",
         ".configs/*.mjs",
         "eslint.config.mjs",
         "docs/eslint.config.mjs",

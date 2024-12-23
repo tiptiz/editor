@@ -1,32 +1,20 @@
-import parserSvelte from "eslint-parser-svelte"
-import pluginTypeScript from "eslint-plugin-typescript"
-
-import configCommon from "./.configs/eslint.config.common.mjs"
-import configExample from "./.configs/eslint.config.example.mjs"
+import configBase, { combine, configShared } from "./.configs/eslint.config.base.mjs"
+import configDevFiles, { devFiles } from "./.configs/eslint.config.dev.mjs"
+import configPackages, { packagesFiles } from "./.configs/eslint.config.packages.mjs"
 import configStylistic from "./.configs/eslint.config.stylistic.mjs"
 
+// packages
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-    {
-        files: ["**/*.{js,mjs,ts,mts,tsx}"],
-        languageOptions: {
-            parser: pluginTypeScript.parser,
-            sourceType: "module",
-            parserOptions: {
-                extraFileExtensions: [".svelte"]
-            }
-        }
-    },
-    {
-        files: ["packages/**/*.svelte", "packages/**/*.svelte", "packages/**/*.svelte.ts"],
-        languageOptions: {
-            parser: parserSvelte,
-            parserOptions: {
-                parser: pluginTypeScript.parser
-            }
-        }
-    },
-    ...configCommon,
-    ...configExample,
-    ...configStylistic
+    ...configShared,
+    ...combine(devFiles)(
+        configBase,
+        configStylistic,
+        configDevFiles
+    ),
+    ...combine(packagesFiles)(
+        configBase,
+        configStylistic,
+        configPackages
+    )
 ]
