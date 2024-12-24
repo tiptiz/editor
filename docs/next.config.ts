@@ -1,7 +1,17 @@
 import type { NextConfig } from "next"
 
+import nextra from "nextra"
+
 const nextConfig: NextConfig = {
-    output: "export"
+    i18n: {
+        locales: ["en", "zh"],
+        defaultLocale: "zh"
+    }
 }
 
-export default nextConfig
+const withNextra = nextra({
+    theme: "nextra-theme-docs",
+    themeConfig: "./theme.config.js"
+})
+
+export default withNextra(nextConfig)

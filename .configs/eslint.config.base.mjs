@@ -55,6 +55,7 @@ export default [
             ...pluginTypeScript.configs.recommended
                 .find(c => c.name === "typescript-eslint/recommended")
                 ?.rules,
+            "import/no-anonymous-default-export": "off",
             "@typescript-eslint/no-explicit-any": "off",
             "@typescript-eslint/no-namespace": "off",
             "@typescript-eslint/consistent-type-imports": [

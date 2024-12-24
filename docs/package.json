@@ -14,6 +14,8 @@
         "@mui/material": "^6.3.0",
         "@mui/material-nextjs": "^6.3.0",
         "next": "15.1.2",
+        "nextra": "3.0.0-alpha.42",
+        "nextra-theme-docs": "3.0.0-alpha.42",
         "react": "^19.0.0",
         "react-dom": "^19.0.0"
     },
