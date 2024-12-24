@@ -2,21 +2,22 @@
     "compilerOptions": {
         "composite": true,
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-        "skipLibCheck": true,
         "module": "ESNext",
         "moduleResolution": "Bundler",
-        "types": ["node"],
         "strict": true,
         "noEmit": true,
+        "skipLibCheck": true,
         "noUncheckedSideEffectImports": true
     },
     "include": [
+        "eslint.config.mjs",
+        ".configs/*.mjs",
+
+        "docs/next.config.ts",
+        "docs/eslint.config.mjs",
+
         "example/dev-server.mjs",
         "example/vite.config.ts",
-        "docs/vite.config.ts",
-        ".configs/*.mjs",
-        "eslint.config.mjs",
-        "docs/eslint.config.mjs",
         "example/eslint.config.mjs"
     ]
 }

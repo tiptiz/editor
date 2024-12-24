@@ -1,85 +1,58 @@
-import globals from "globals"
 import { builtinModules } from "module"
+import { dirname } from "path"
+import { fileURLToPath } from "url"
 
-import pluginReactJsxA11y from "eslint-plugin-jsx-a11y"
-import pluginReact from "eslint-plugin-react"
-import pluginReactHooks from "eslint-plugin-react-hooks"
-import pluginTypeScript from "eslint-plugin-typescript"
-
-import configBase, { combine, configShared } from "../.configs/eslint.config.base.mjs"
+import configBase, { configShared } from "../.configs/eslint.config.base.mjs"
 import configStylistic from "../.configs/eslint.config.stylistic.mjs"
 
-const files = ["app/**/*.{js,mjs,ts,mts,tsx}"]
+import { FlatCompat } from "@eslint/eslintrc"
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-    ...configShared,
-    ...combine(files)(
-        configBase,
-        configStylistic,
-        {
-            languageOptions: {
-                globals: { ...globals.browser, ...globals.node },
-                parser: pluginTypeScript.parser,
-                sourceType: "module"
-            }
-        },
-        pluginReactJsxA11y.flatConfigs.recommended,
-        { rules: pluginReact.configs.flat["jsx-runtime"].rules },
-        { rules: pluginReact.configs.recommended.rules },
-        { rules: pluginReactHooks.configs.recommended.rules },
-        {
-            ignores: ["!**/.server", "!**/.client"],
-            settings: {
-                "react": {
-                    version: "detect"
-                },
-                "formComponents": ["Form"],
-                "linkComponents": [
-                    { name: "Link", linkAttribute: "to" },
-                    { name: "NavLink", linkAttribute: "to" }
-                ],
-                "import/resolver": {
-                    node: {
-                        extensions: [".ts", ".tsx"]
-                    },
-                    typescript: {
-                        alwaysTryTypes: true
-                    }
-                },
-                "import/internal-regex": "^@/"
-            }
-        },
-        {
-            rules: {
-                "react/react-in-jsx-scope": "off",
-                "simple-import-sort/imports": [
-                    "error",
-                    {
-                        groups: [
-                            // Side effect imports.
-                            ["^\\u0000"],
-                            // Node.js builtins prefixed with `node:`.
-                            [
-                                "globals",
-                                `node:`,
-                                `^(${builtinModules.join("|")})(/|$)`
-                            ],
-                            // remix infrastructure and envs
-                            ["^@remix", "^remix", "^i18n", "i18next$"],
-                            // Packages.
-                            // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-                            ["^@?\\w"],
-                            // Absolute imports and other imports such as Vue-style `@/foo`.
-                            // Anything not matched in another group.
-                            ["^"],
-                            // Relative imports.
-                            // Anything that starts with a dot.
-                            ["^\\."]
-                        ]
-                    }
-                ]
-            }
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const compat = new FlatCompat({
+    baseDirectory: __dirname
+})
+
+const eslintConfig = [
+    ...compat.extends("next/core-web-vitals"),
+    {
+        plugins: {
+            "@stylistic": configShared[0].plugins["@stylistic"],
+            "simple-import-sort": configShared[0].plugins["simple-import-sort"]
         }
-    )
+    },
+    ...configBase,
+    ...configStylistic,
+    {
+        rules: {
+            "simple-import-sort/imports": [
+                "error",
+                {
+                    groups: [
+                        [
+                            "globals",
+                            `node:`,
+                            `^(${builtinModules.join("|")})(/|$)`
+                        ],
+                        // style less,scss,css
+                        ["^.+\\.(l|s)?css$"],
+                        // Side effect imports.
+                        ["^\\u0000"],
+                        ["^@?\\w.*\\u0000$", "^[^.].*\\u0000$", "^\\..*\\u0000$"],
+                        // Parent imports. Put `..` last.
+                        ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                        // Other relative imports. Put same-folder imports and `.` last.
+                        ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+                    ]
+                }
+            ]
+
+        }
+    },
+    {
+        ignores: ["\\.next"]
+    }
 ]
+
+export default eslintConfig

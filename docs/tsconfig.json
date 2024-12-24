@@ -1,23 +1,27 @@
 {
     "extends": "../.configs/tsconfig.base.json",
     "compilerOptions": {
-        "types": ["@remix-run/node", "vite/client"],
-        "jsx": "react-jsx",
         "strict": true,
-        "allowJs": true,
-        "forceConsistentCasingInFileNames": true,
-        "baseUrl": ".",
+        "lib": ["DOM.Iterable", "DOM", "ESNext"],
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "plugins": [
+            {"name": "next"}
+        ],
         "paths": {
-            "@/*": ["./app/*"],
+            "@/*": ["./src/*"]
         },
         "noEmit": true
     },
     "include": [
+        "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        "**/.server/**/*.ts",
-        "**/.server/**/*.tsx",
-        "**/.client/**/*.ts",
-        "**/.client/**/*.tsx"
+        ".next/types/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

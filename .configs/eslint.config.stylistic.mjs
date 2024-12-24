@@ -15,6 +15,7 @@ export default [
                 commaDangle: "never",
                 jsx: true
             }).rules,
+            "@stylistic/jsx-one-expression-per-line": "off",
             "@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: true }],
             "@stylistic/indent": ["error", 4, { offsetTernaryExpressions: false }]
         }
