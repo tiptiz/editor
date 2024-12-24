@@ -23,5 +23,5 @@
             "@/*": ["./src/*"]
         }
     },
-    "include": ["src/**/*.{js,ts}", "src/**/*.svelte"]
+    "include": ["src/**/*.{js,ts}", "src/**/*.svelte", "src/vite-env.d.ts"]
 }
