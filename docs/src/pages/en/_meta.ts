@@ -1,10 +1,8 @@
 export default {
-    index: {
-        type: "page",
-        title: "Nextra Index en page"
+    "*": {
+        type: "page"
     },
-    about: {
-        type: "page",
-        title: "About en page"
-    }
+    "index": "Home",
+    "about": "About",
+    "docs": "Documents"
 }

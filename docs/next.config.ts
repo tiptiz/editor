@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
 
 const withNextra = nextra({
     theme: "nextra-theme-docs",
-    themeConfig: "./theme.config.js"
+    themeConfig: "./theme.config.tsx"
 })
 
 export default withNextra(nextConfig)

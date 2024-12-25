@@ -1,6 +1,7 @@
 export default {
-    "docs-example": {
-        type: "page",
-        title: "docs example"
-    }
+    "*": {
+        type: "page"
+    },
+    "index": "Docs",
+    "docs-example": "Docs example"
 }

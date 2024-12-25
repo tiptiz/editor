@@ -7,13 +7,6 @@ export default {
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
     ],
     darkMode: "class",
-    theme: {
-        extend: {
-            colors: {
-                background: "var(--background)",
-                foreground: "var(--foreground)"
-            }
-        }
-    },
+    theme: {},
     plugins: []
 } satisfies Config
