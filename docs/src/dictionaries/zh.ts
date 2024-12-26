@@ -1,16 +1,13 @@
 import type { Dictionary } from "@/utils/i18n"
 
 export default {
-    dark: "Темный",
-    light: "Светлый",
-    system: "Системный",
-    backToTop: "Перейти наверх",
-    lastUpdated: "Последнее обновление",
+    backToTop: "回到顶部",
+    lastUpdated: "上次编辑",
     logo: {
-        title: "React хуки для выборки данных"
+        title: ""
     },
     // notFound: 'Эта страница не может быть найдена',
-    poweredBy: "Работает на",
+    poweredBy: "poweredBy",
     link: {
         vercel: "https://vercel.com/?utm_source=swr_ru"
     },

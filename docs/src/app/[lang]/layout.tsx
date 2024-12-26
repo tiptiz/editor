@@ -1,8 +1,7 @@
 /* eslint-env node */
 
 import "nextra-theme-docs/style.css"
-
-import "tailwindcss"
+import "@/styles/tailwind.css"
 
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
@@ -38,13 +37,13 @@ export default async function RootLayout({ children, params }: Props) {
 
     const navbar = (
         <Navbar
-            logo={(<>Tiptiz</>)}
+            logo={(<h1 className="font-bold">Tiptiz Editor</h1>)}
             projectLink="https://github.com/tiptiz/editor"
         >
-            <div>
+            <>
                 <LocaleSwitch />
                 <ThemeSwitch />
-            </div>
+            </>
         </Navbar>
     )
     const footer = (

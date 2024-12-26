@@ -1,0 +1,12 @@
+{
+    "name": "@tiptiz/editor-icons",
+    "version": "0.0.1",
+    "license": "MIT",
+    "repository": "https://github.com/tiptiz/editor.git",
+    "author": "aolyang <aolyang@foxmail.com>",
+    "exports": {
+        ".": {
+            "import": "./src/index.ts"
+        }
+    }
+}

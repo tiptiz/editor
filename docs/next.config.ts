@@ -18,7 +18,8 @@ const nextConfig: NextConfig = {
 
 const withNextra = nextra({
     latex: true,
-    contentDirBasePath: "/"
+    contentDirBasePath: "/",
+    defaultShowCopyCode: true
 })
 
 export default withNextra(nextConfig)

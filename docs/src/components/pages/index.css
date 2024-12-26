@@ -1,0 +1,17 @@
+.home-headline {
+    font-size: min(4.375rem, max(8vw, 2.5rem));
+    font-weight: 700;
+    font-feature-settings: initial;
+    letter-spacing: -0.12rem;
+    margin-left: -0.2rem;
+    margin-top: 3.4rem;
+    line-height: 1.1;
+    background-image: linear-gradient(166deg, #000, #757a7d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark .home-headline {
+    background-image: linear-gradient(206deg, #fff, #757a7d);
+}
