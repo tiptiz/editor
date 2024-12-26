@@ -1,5 +1,4 @@
 "use client"
-
 import type { ReactNode } from "react"
 
 import theme from "@/utils/theme"

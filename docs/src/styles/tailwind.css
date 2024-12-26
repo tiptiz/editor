@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {}
 /*:root {*/
 /*    --background: #ffffff;*/
 /*    --foreground: #171717;*/
