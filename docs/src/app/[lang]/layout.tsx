@@ -1,11 +1,15 @@
 /* eslint-env node */
-// import "@/styles/tailwind.css"
-import "@/styles/global.css"
+
+import "nextra-theme-docs/style.css"
+
+import "tailwindcss"
 
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 
+import ClientThemeProvider from "@/components/ClientThemeProvider"
 import { i18n } from "@/utils/i18n"
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter"
 import { Head } from "nextra/components"
 import { getPageMap } from "nextra/page-map"
 import { Footer, LastUpdated, Layout, LocaleSwitch, Navbar, ThemeSwitch } from "nextra-theme-docs"
@@ -59,30 +63,34 @@ export default async function RootLayout({ children, params }: Props) {
         <html lang={lang} suppressHydrationWarning>
             <Head />
             <body>
-                <Layout
-                    navbar={navbar}
-                    footer={footer}
-                    docsRepositoryBase="https://github.com/shuding/nextra/blob/main/examples/swr-site"
-                    i18n={[
-                        { locale: "en", name: "English" },
-                        { locale: "zh", name: "简体中文" }
-                    ]}
-                    sidebar={{
-                        defaultMenuCollapseLevel: 1,
-                        autoCollapse: true
-                    }}
-                    toc={{
-                        backToTop: dictionary.backToTop,
-                        extraContent: (
-                            // eslint-disable-next-line @next/next/no-img-element -- we can't use with external urls
-                            <img alt="placeholder cat" src="https://placecats.com/300/200" />
-                        )
-                    }}
-                    pageMap={pageMap}
-                    lastUpdated={<LastUpdated>{dictionary.lastUpdated}</LastUpdated>}
-                >
-                    {children}
-                </Layout>
+                <AppRouterCacheProvider>
+                    <ClientThemeProvider>
+                        <Layout
+                            navbar={navbar}
+                            footer={footer}
+                            docsRepositoryBase="https://github.com/shuding/nextra/blob/main/examples/swr-site"
+                            i18n={[
+                                { locale: "en", name: "English" },
+                                { locale: "zh", name: "简体中文" }
+                            ]}
+                            sidebar={{
+                                defaultMenuCollapseLevel: 1,
+                                autoCollapse: true
+                            }}
+                            toc={{
+                                backToTop: dictionary.backToTop,
+                                extraContent: (
+                                    // eslint-disable-next-line @next/next/no-img-element -- we can't use with external urls
+                                    <img alt="placeholder cat" src="https://placecats.com/300/200" />
+                                )
+                            }}
+                            pageMap={pageMap}
+                            lastUpdated={<LastUpdated>{dictionary.lastUpdated}</LastUpdated>}
+                        >
+                            {children}
+                        </Layout>
+                    </ClientThemeProvider>
+                </AppRouterCacheProvider>
             </body>
         </html>
     )
