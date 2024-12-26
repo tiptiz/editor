@@ -20,3 +20,4 @@ export type MarginTarget = typeof marginTargets[number]
 export const horizontalTypes: HorizontalType[] = [
     ...builtinTypes
 ]
+

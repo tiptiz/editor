@@ -5,6 +5,9 @@ import tsconfigPaths from "vite-plugin-tsconfig-paths"
 // https://vite.dev/config/
 export default defineConfig({
     base: "https://tiptiz.github.io/editor",
+    resolve: {
+        conditions: ["browser"]
+    },
     plugins: [
         svelte(),
         tsconfigPaths()

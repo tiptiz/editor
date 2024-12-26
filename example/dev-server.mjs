@@ -46,6 +46,7 @@ content.put("/content", (req, res) => {
     stream.once("finish", () => res.status(200).send("done"))
 })
 
+process.env.NODE_ENV = "development"
 const viteDevServer = await import("vite").then(vite =>
     vite.createServer({
         server: {
