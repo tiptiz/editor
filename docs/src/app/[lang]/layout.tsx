@@ -37,13 +37,13 @@ export default async function RootLayout({ children, params }: Props) {
 
     const navbar = (
         <Navbar
-            logo={(<h1 className="font-bold">Tiptiz Editor</h1>)}
+            logo={(<h1 className="font-bold">Tiptiz suits</h1>)}
             projectLink="https://github.com/tiptiz/editor"
         >
-            <>
+            <div className="hidden sm:flex">
                 <LocaleSwitch />
                 <ThemeSwitch />
-            </>
+            </div>
         </Navbar>
     )
     const footer = (

@@ -1,0 +1,23 @@
+.home-headline {
+    font-size: min(4rem, max(8vw, 2rem));
+    font-weight: 700;
+    font-feature-settings: initial;
+    letter-spacing: -0.12rem;
+    margin-left: -0.2rem;
+    margin-top: 3.4rem;
+    line-height: 1.1;
+    color: transparent;
+    background-image: linear-gradient(166deg, #003b76, #07c160);
+    background-clip: text;
+}
+
+.dark .home-headline {
+    background-image: linear-gradient(166deg, #2694ff, #00d164);
+}
+
+.home-headline::selection {
+    color: #444444;
+}
+.dark .home-headline::selection {
+    color: #dcdcdc;
+}
