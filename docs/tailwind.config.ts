@@ -6,7 +6,8 @@ export default {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
     ],
-    darkMode: "class",
-    theme: {},
-    plugins: []
+    darkMode: ["variant", [
+        "@media (prefers-color-scheme: dark) { &:not(.light *) }",
+        "&:is(.dark *)"
+    ]]
 } satisfies Config

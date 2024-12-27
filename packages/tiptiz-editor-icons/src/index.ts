@@ -1,8 +1,9 @@
-import { mdiArrowULeftTop, mdiArrowURightTop } from "@mdi/js"
+import { mdiArrowULeftTop, mdiArrowURightTop, mdiBrushVariant, mdiEraser } from "@mdi/js"
 
 export const ediUndo = mdiArrowULeftTop
 export const ediRedo = mdiArrowURightTop
-
+export const ediEraser = mdiEraser
+export const ediBrush = mdiBrushVariant
 import {
     mdiFormatHeader1,
     mdiFormatHeader2,
