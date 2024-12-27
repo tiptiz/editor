@@ -11,14 +11,22 @@
     "dependencies": {
         "@emotion/cache": "^11.14.0",
         "@emotion/styled": "^11.14.0",
+        "@mdi/react": "^1.6.1",
         "@mui/material": "^6.3.0",
         "@mui/material-nextjs": "^6.3.0",
+        "@tiptap/pm": "^2.10.3",
+        "@tiptap/react": "^2.10.4",
+        "@tiptiz/editor-icons": "workspace:*",
         "next": "15.1.2",
         "nextra": "4.0.0-app-router.42",
         "nextra-theme-docs": "4.0.0-app-router.42",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "@tiptiz/editor-icons": "workspace:*"
+        "emoji-picker-element": "^1.26.0",
+        "@tiptiz/rich-suits": "workspace:*",
+        "@tiptap/extension-document": "^2.10.3",
+        "@tiptap/extension-history": "^2.10.3",
+        "@tiptap/extension-dropcursor": "^2.10.3"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
