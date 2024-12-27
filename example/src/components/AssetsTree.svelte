@@ -18,7 +18,8 @@
         "first-page.html": () => import("../assets/first-page.html?raw").then(m => m.default),
         "wikis/explain.html": () => import("../assets/wikis/explain.html?raw").then(m => m.default),
         "dev-logs/progress-2024-12-15.html": () => import("../assets/dev-logs/progress-2024-12-15.html?raw").then(m => m.default),
-        "dev-logs/progress-2024-12-20.html": () => import("../assets/dev-logs/progress-2024-12-20.html?raw").then(m => m.default)
+        "dev-logs/progress-2024-12-20.html": () => import("../assets/dev-logs/progress-2024-12-20.html?raw").then(m => m.default),
+        "dev-use/test.html": () => import("../assets/dev-use/test.html?raw").then(m => m.default)
     } as const
 
     const createAsset = (name: string, path = name): TreeItem => ({
