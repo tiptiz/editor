@@ -8,5 +8,11 @@
         ".": {
             "import": "./src/index.ts"
         }
+    },
+    "devDependencies": {
+        "@mdi/js": "^7.4.47"
+    },
+    "peerDependencies": {
+        "@mdi/js": "^7.4.47"
     }
 }
