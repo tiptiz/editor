@@ -1,6 +1,7 @@
 "use client"
 import cn from "clsx"
 
+import FontFamily from "@/components/editor-toolbars/FontFamily"
 import Hr from "@/components/Hr"
 
 import FormatBrush from "../editor-toolbars/FormatBrush"
@@ -15,7 +16,7 @@ export default function ToolbarRich() {
             <h1 className="text-[3rem] font-bold">With Rich Toolbars</h1>
             <div
                 className={cn(
-                    "h-[62px] flex items-center justify-center absolute left-0 right-0",
+                    "h-[62px] flex items-center justify-center",
                     "border-t border-b border-neutral-100 dark:border-neutral-500/60",
                     "bg-neutral-100 dark:bg-neutral-800"
                 )}
@@ -26,7 +27,10 @@ export default function ToolbarRich() {
                     <FormatClear />
                     <FormatBrush />
                 </div>
-                <Hr className="h-[80%]" />
+                <Hr className="h-[80%] mr-3" />
+                <div>
+                    <FontFamily />
+                </div>
             </div>
             <div className="h-[62px]" />
         </>
