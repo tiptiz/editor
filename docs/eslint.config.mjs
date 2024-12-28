@@ -2,10 +2,10 @@ import { builtinModules } from "module"
 import { dirname } from "path"
 import { fileURLToPath } from "url"
 
+import { FlatCompat } from "@eslint/eslintrc"
+
 import configBase, { configShared } from "../.configs/eslint.config.base.mjs"
 import configStylistic from "../.configs/eslint.config.stylistic.mjs"
-
-import { FlatCompat } from "@eslint/eslintrc"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -30,20 +30,19 @@ const eslintConfig = [
                 "error",
                 {
                     groups: [
+                        // style less,scss,css
+                        ["^.+\\.(l|s)?css$"],
+                        // Side effect imports.
+                        ["^\\u0000"],
+                        ["\\u0000$"],
                         [
                             "globals",
                             `node:`,
                             `^(${builtinModules.join("|")})(/|$)`
                         ],
-                        // style less,scss,css
-                        ["^.+\\.(l|s)?css$"],
-                        // Side effect imports.
-                        ["^\\u0000"],
-                        ["^@?\\w.*\\u0000$", "^[^.].*\\u0000$", "^\\..*\\u0000$"],
-                        // Parent imports. Put `..` last.
-                        ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-                        // Other relative imports. Put same-folder imports and `.` last.
-                        ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+                        ["^@?\\w"],
+                        ["^"],
+                        ["^\\."]
                     ]
                 }
             ]

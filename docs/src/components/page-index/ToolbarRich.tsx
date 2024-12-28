@@ -1,9 +1,12 @@
 "use client"
-import FormatBrush from "@/components/editor-toolbars/FormatBrush"
-import FormatClear from "@/components/editor-toolbars/FormatClear"
-import Redo from "@/components/editor-toolbars/Redo"
-import Undo from "@/components/editor-toolbars/Undo"
 import cn from "clsx"
+
+import Hr from "@/components/Hr"
+
+import FormatBrush from "../editor-toolbars/FormatBrush"
+import FormatClear from "../editor-toolbars/FormatClear"
+import Redo from "../editor-toolbars/Redo"
+import Undo from "../editor-toolbars/Undo"
 
 // TODO fix tailwindcss dark mode
 export default function ToolbarRich() {
@@ -12,7 +15,7 @@ export default function ToolbarRich() {
             <h1 className="text-[3rem] font-bold">With Rich Toolbars</h1>
             <div
                 className={cn(
-                    "flex",
+                    "h-[62px] flex items-center justify-center absolute left-0 right-0",
                     "border-t border-b border-neutral-100 dark:border-neutral-500/60",
                     "bg-neutral-100 dark:bg-neutral-800"
                 )}
@@ -23,7 +26,9 @@ export default function ToolbarRich() {
                     <FormatClear />
                     <FormatBrush />
                 </div>
+                <Hr className="h-[80%]" />
             </div>
+            <div className="h-[62px]" />
         </>
     )
 }

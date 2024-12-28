@@ -1,7 +1,7 @@
-import type { IconButtonProps } from "@mui/material"
 import type { AriaAttributes, CSSProperties, RefObject } from "react"
 
 import { Icon } from "@mdi/react"
+import type { IconButtonProps } from "@mui/material"
 import { IconButton, Tooltip } from "@mui/material"
 
 export interface HTMLProps extends AriaAttributes {
