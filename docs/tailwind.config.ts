@@ -6,8 +6,5 @@ export default {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
     ],
-    darkMode: ["variant", [
-        "@media (prefers-color-scheme: dark) { &:not(.light *) }",
-        "&:is(.dark *)"
-    ]]
+    darkMode: ["variant", "dark (&:where(.dark *))"]
 } satisfies Config
