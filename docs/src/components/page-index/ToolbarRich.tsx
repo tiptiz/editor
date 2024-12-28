@@ -1,15 +1,17 @@
 "use client"
+import "@/styles/toolbars.css"
+
 import cn from "clsx"
 
-import FontFamily from "@/components/editor-toolbars/FontFamily"
 import Hr from "@/components/Hr"
 
+import FontFamily from "../editor-toolbars/FontFamily"
+import FontSize from "../editor-toolbars/FontSize"
 import FormatBrush from "../editor-toolbars/FormatBrush"
 import FormatClear from "../editor-toolbars/FormatClear"
 import Redo from "../editor-toolbars/Redo"
 import Undo from "../editor-toolbars/Undo"
 
-// TODO fix tailwindcss dark mode
 export default function ToolbarRich() {
     return (
         <>
@@ -30,6 +32,7 @@ export default function ToolbarRich() {
                 <Hr className="h-[80%] mr-3" />
                 <div>
                     <FontFamily />
+                    <FontSize />
                 </div>
             </div>
             <div className="h-[62px]" />

@@ -11,6 +11,7 @@
     "dependencies": {
         "@emotion/cache": "^11.14.0",
         "@emotion/styled": "^11.14.0",
+        "@mdi/js": "^7.4.47",
         "@mdi/react": "^1.6.1",
         "@mui/material": "^6.3.0",
         "@mui/material-nextjs": "^6.3.0",

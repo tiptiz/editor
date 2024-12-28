@@ -1,0 +1,7 @@
+button.bar-menu-selector {
+    text-transform: initial;
+    justify-content: space-between;
+}
+.bar-menu-selector > svg {
+    transition: 0.4s transform;
+}

@@ -99,6 +99,9 @@ importers:
       '@emotion/styled':
         specifier: ^11.14.0
         version: 11.14.0(@emotion/react@11.14.0(@types/react@19.0.2)(react@19.0.0))(@types/react@19.0.2)(react@19.0.0)
+      '@mdi/js':
+        specifier: ^7.4.47
+        version: 7.4.47
       '@mdi/react':
         specifier: ^1.6.1
         version: 1.6.1
