@@ -1,6 +1,8 @@
 "use client"
 import "@/styles/toolbars.css"
 
+import ColorFill from "@/components/editor-toolbars/ColorFill"
+import ColorText from "@/components/editor-toolbars/ColorText"
 import FontBold from "@/components/editor-toolbars/FontBold"
 import FontItalic from "@/components/editor-toolbars/FontItalic"
 import FontStrike from "@/components/editor-toolbars/FontStrike"
@@ -50,8 +52,10 @@ export default function ToolbarRich() {
                     <FontItalic />
                     <FontStrike />
                     <FontUnderline />
-                    <FontSubscript />
                     <FontSuperscript />
+                    <FontSubscript />
+                    <ColorText />
+                    <ColorFill />
                 </div>
             </div>
             <div className="h-[62px]" />

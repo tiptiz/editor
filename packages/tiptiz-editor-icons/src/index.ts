@@ -49,3 +49,9 @@ export const ediUnderline = mdiFormatUnderline
 export const ediStrike = mdiFormatStrikethroughVariant
 export const ediSuperscript = mdiFormatSuperscript
 export const ediSubscript = mdiFormatSubscript
+
+import { mdiColorHelper, mdiFormatColorFill, mdiFormatColorText } from "@mdi/js"
+
+export const ediColorHelper = mdiColorHelper
+export const ediColorText = mdiFormatColorText
+export const ediColorFill = mdiFormatColorFill
