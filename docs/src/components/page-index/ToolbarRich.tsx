@@ -1,6 +1,8 @@
 "use client"
 import "@/styles/toolbars.css"
 
+import TextIndentDec from "@/components/editor-toolbars/TextIndentDec"
+import TextIndentInc from "@/components/editor-toolbars/TextIndentInc"
 import Hr from "@/components/Hr"
 import cn from "clsx"
 
@@ -48,13 +50,14 @@ export default function ToolbarRich() {
                     <FormatBrush />
                 </div>
                 {Splitter}
-                <div className="w-[388px] flex flex-wrap justify-around">
+                <div className="w-[430px] flex flex-wrap justify-around">
                     <FontFamily />
                     <FontSize />
                     <HeadingLevel />
                     <FontSizePus />
                     <FontSizeMinus />
                     <LineHeight />
+                    <Margin />
                     <FontBold />
                     <FontItalic />
                     <FontStrike />
@@ -67,7 +70,8 @@ export default function ToolbarRich() {
                     <TextAlignCenter />
                     <TextAlignRight />
                     <TextAlignJustify />
-                    <Margin />
+                    <TextIndentInc />
+                    <TextIndentDec />
                 </div>
                 {Splitter}
             </div>
