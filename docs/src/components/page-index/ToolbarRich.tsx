@@ -3,6 +3,7 @@ import "@/styles/toolbars.css"
 
 import cn from "clsx"
 
+import HeadingLevel from "@/components/editor-toolbars/HeadingLevel"
 import Hr from "@/components/Hr"
 
 import FontFamily from "../editor-toolbars/FontFamily"
@@ -33,6 +34,7 @@ export default function ToolbarRich() {
                 <div>
                     <FontFamily />
                     <FontSize />
+                    <HeadingLevel />
                 </div>
             </div>
             <div className="h-[62px]" />

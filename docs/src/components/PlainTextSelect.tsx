@@ -1,3 +1,5 @@
+import type { ReactNode } from "react"
+
 import { mdiMenuDown } from "@mdi/js"
 import { Icon } from "@mdi/react"
 import { ButtonBase, ClickAwayListener, Menu, MenuItem, MenuList } from "@mui/material"
@@ -9,7 +11,7 @@ import useMenuTrigger from "@/hooks/useMenuTrigger"
 interface PlainTextSelectProps<T> {
     className?: string
     items: T[]
-    renderLabel: (value: T | null) => string
+    renderLabel: (value: T | null) => ReactNode
     children: (value: T) => React.ReactNode
 }
 
