@@ -16,7 +16,7 @@ export default function HeadingLevel() {
         <PlainTextSelect
             items={headings}
             renderLabel={item => (
-                <Icon path={item?.Icon || headings[0]!.Icon} size={0.7} />
+                <Icon path={item?.Icon || headings[0]!.Icon} size={0.8} />
             )}
         >
             {item => <Icon path={item.Icon} size={0.8} />}

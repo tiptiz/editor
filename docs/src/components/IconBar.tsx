@@ -35,7 +35,13 @@ export interface IconBarProps extends ButtonProps {
 export default function IconBar({ tooltip, iconProps, path, ...btnProps }: IconBarProps) {
     return (
         <Tooltip title={tooltip}>
-            <Button className="size-7 min-w-7 p-0 rounded-[2px]" variant="text" color="inherit" size="small" {...btnProps}>
+            <Button
+                className="size-7 min-w-7 p-0 rounded-[2px]"
+                variant="text"
+                size="small"
+                color="inherit"
+                {...btnProps}
+            >
                 <Icon size={0.8} path={path} {...iconProps} />
             </Button>
         </Tooltip>
