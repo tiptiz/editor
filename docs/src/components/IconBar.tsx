@@ -1,7 +1,7 @@
 import type { ButtonProps } from "@mui/material"
 import type { AriaAttributes, CSSProperties, RefObject } from "react"
 
-import { Icon } from "@mdi/react"
+import { Icon, Stack } from "@mdi/react"
 import { Button, Tooltip } from "@mui/material"
 
 export interface HTMLProps extends AriaAttributes {
@@ -25,7 +25,7 @@ export interface IconProps extends HTMLProps {
 }
 
 export interface IconBarProps extends ButtonProps {
-    path: string
+    path: string | string[]
     tooltip?: string
     disabled?: boolean
     onClick?: () => void
@@ -42,7 +42,15 @@ export default function IconBar({ tooltip, iconProps, path, ...btnProps }: IconB
                 color="inherit"
                 {...btnProps}
             >
-                <Icon size={0.8} path={path} {...iconProps} />
+                {typeof path === "string"
+                    ? <Icon size={0.8} path={path} {...iconProps} />
+                    : (
+                        <Stack size={0.8}>
+                            {path.map((p, i) => (
+                                <Icon key={i} path={p} {...iconProps} />
+                            ))}
+                        </Stack>
+                    )}
             </Button>
         </Tooltip>
     )

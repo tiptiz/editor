@@ -20,12 +20,15 @@ import FormatBrush from "../editor-toolbars/FormatBrush"
 import FormatClear from "../editor-toolbars/FormatClear"
 import HeadingLevel from "../editor-toolbars/HeadingLevel"
 import LineHeight from "../editor-toolbars/LineHeight"
+import Margin from "../editor-toolbars/Margin"
 import Redo from "../editor-toolbars/Redo"
 import TextAlignCenter from "../editor-toolbars/TextAlignCenter"
 import TextAlignJustify from "../editor-toolbars/TextAlignJustify"
 import TextAlignLeft from "../editor-toolbars/TextAlignLeft"
 import TextAlignRight from "../editor-toolbars/TextAlignRight"
 import Undo from "../editor-toolbars/Undo"
+
+const Splitter = <Hr className="h-[80%] mx-2" />
 
 export default function ToolbarRich() {
     return (
@@ -44,8 +47,8 @@ export default function ToolbarRich() {
                     <FormatClear />
                     <FormatBrush />
                 </div>
-                <Hr className="h-[80%] mx-2" />
-                <div className="w-95">
+                {Splitter}
+                <div className="w-[388px] flex flex-wrap justify-around">
                     <FontFamily />
                     <FontSize />
                     <HeadingLevel />
@@ -64,7 +67,9 @@ export default function ToolbarRich() {
                     <TextAlignCenter />
                     <TextAlignRight />
                     <TextAlignJustify />
+                    <Margin />
                 </div>
+                {Splitter}
             </div>
             <div className="h-[62px]" />
         </>

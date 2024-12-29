@@ -61,3 +61,10 @@ export const ediAlignLeft = mdiFormatAlignLeft
 export const ediAlignCenter = mdiFormatAlignCenter
 export const ediAlignRight = mdiFormatAlignRight
 export const ediAlignJustify = mdiFormatAlignJustify
+
+import { mdiBorderNoneVariant, mdiSquareMedium } from "@mdi/js"
+
+export const ediMarginContent = mdiSquareMedium
+export const ediBorderNoneVariant = mdiBorderNoneVariant
+
+export const ediMarginStack = [ediMarginContent, ediBorderNoneVariant]
