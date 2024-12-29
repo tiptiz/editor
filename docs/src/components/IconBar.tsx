@@ -1,8 +1,8 @@
+import type { ButtonProps } from "@mui/material"
 import type { AriaAttributes, CSSProperties, RefObject } from "react"
 
 import { Icon } from "@mdi/react"
-import type { IconButtonProps } from "@mui/material"
-import { IconButton, Tooltip } from "@mui/material"
+import { Button, Tooltip } from "@mui/material"
 
 export interface HTMLProps extends AriaAttributes {
     className?: string
@@ -23,7 +23,8 @@ export interface IconProps extends HTMLProps {
     style?: CSSProperties
     inStack?: boolean
 }
-export interface IconBarProps extends IconButtonProps {
+
+export interface IconBarProps extends ButtonProps {
     path: string
     tooltip?: string
     disabled?: boolean
@@ -34,9 +35,9 @@ export interface IconBarProps extends IconButtonProps {
 export default function IconBar({ tooltip, iconProps, path, ...btnProps }: IconBarProps) {
     return (
         <Tooltip title={tooltip}>
-            <IconButton size="small" {...btnProps}>
+            <Button className="size-7 min-w-7 p-0 rounded-[2px]" variant="text" color="inherit" size="small" {...btnProps}>
                 <Icon size={0.8} path={path} {...iconProps} />
-            </IconButton>
+            </Button>
         </Tooltip>
     )
 }

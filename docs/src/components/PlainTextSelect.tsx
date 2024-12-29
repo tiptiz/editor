@@ -1,12 +1,11 @@
 import type { ReactNode } from "react"
 
+import useMenuTrigger from "@/hooks/useMenuTrigger"
 import { mdiMenuDown } from "@mdi/js"
 import { Icon } from "@mdi/react"
 import { ButtonBase, ClickAwayListener, Menu, MenuItem, MenuList } from "@mui/material"
 import cn from "clsx"
 import React, { useState } from "react"
-
-import useMenuTrigger from "@/hooks/useMenuTrigger"
 
 interface PlainTextSelectProps<T> {
     className?: string
@@ -27,7 +26,7 @@ export default function PlainTextSelect<T>(
     return (
         <>
             <ButtonBase
-                className={cn("bar-menu-selector px-1", className)}
+                className={cn("bar-menu-selector px-1 rounded-[2px]", className)}
                 onClick={handleClick}
             >
                 {renderLabel(value)}

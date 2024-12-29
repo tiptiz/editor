@@ -1,9 +1,8 @@
 "use client"
 import "@/styles/toolbars.css"
 
-import cn from "clsx"
-
 import Hr from "@/components/Hr"
+import cn from "clsx"
 
 import FontFamily from "../editor-toolbars/FontFamily"
 import FontSize from "../editor-toolbars/FontSize"
@@ -26,13 +25,13 @@ export default function ToolbarRich() {
                     "bg-neutral-100 dark:bg-neutral-800"
                 )}
             >
-                <div className="w-15">
+                <div className="w-14">
                     <Undo />
                     <Redo />
                     <FormatClear />
                     <FormatBrush />
                 </div>
-                <Hr className="h-[80%] mr-3" />
+                <Hr className="h-[80%] mx-2" />
                 <div>
                     <FontFamily />
                     <FontSize />

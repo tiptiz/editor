@@ -1,7 +1,6 @@
+import PlainTextSelect from "@/components/PlainTextSelect"
 import { Icon } from "@mdi/react"
 import { ediHeading1, ediHeading2, ediHeading3, ediHeading4, ediHeading5, ediHeading6 } from "@tiptiz/editor-icons"
-
-import PlainTextSelect from "@/components/PlainTextSelect"
 
 const headings = [
     { tag: "h1", Icon: ediHeading1 },

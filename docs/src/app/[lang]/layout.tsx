@@ -5,13 +5,12 @@ import "@/styles/tailwind.css"
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
 
+import ClientThemeProvider from "@/components/ClientThemeProvider"
+import { i18n } from "@/utils/i18n"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter"
 import { Head } from "nextra/components"
 import { getPageMap } from "nextra/page-map"
 import { Footer, LastUpdated, Layout, LocaleSwitch, Navbar, ThemeSwitch } from "nextra-theme-docs"
-
-import ClientThemeProvider from "@/components/ClientThemeProvider"
-import { i18n } from "@/utils/i18n"
 
 export const { viewport } = Head
 
