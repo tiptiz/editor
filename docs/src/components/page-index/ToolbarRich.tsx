@@ -3,13 +3,15 @@ import "@/styles/toolbars.css"
 
 import cn from "clsx"
 
-import HeadingLevel from "@/components/editor-toolbars/HeadingLevel"
 import Hr from "@/components/Hr"
 
 import FontFamily from "../editor-toolbars/FontFamily"
 import FontSize from "../editor-toolbars/FontSize"
+import FontSizeMinus from "../editor-toolbars/FontSizeMinus"
+import FontSizePus from "../editor-toolbars/FontSizePus"
 import FormatBrush from "../editor-toolbars/FormatBrush"
 import FormatClear from "../editor-toolbars/FormatClear"
+import HeadingLevel from "../editor-toolbars/HeadingLevel"
 import Redo from "../editor-toolbars/Redo"
 import Undo from "../editor-toolbars/Undo"
 
@@ -35,6 +37,8 @@ export default function ToolbarRich() {
                     <FontFamily />
                     <FontSize />
                     <HeadingLevel />
+                    <FontSizePus />
+                    <FontSizeMinus />
                 </div>
             </div>
             <div className="h-[62px]" />
