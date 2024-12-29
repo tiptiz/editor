@@ -15,7 +15,7 @@ export default function ColorFill({ color }: ColorTextProps) {
                 size="small"
                 color="inherit"
             >
-                <Stack size={0.8}>
+                <Stack size={0.7}>
                     <Icon path={ediColorFill} />
                     <Icon path={ediColorHelper} color={color} />
                 </Stack>

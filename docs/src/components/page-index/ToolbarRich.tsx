@@ -1,26 +1,30 @@
 "use client"
 import "@/styles/toolbars.css"
 
-import ColorFill from "@/components/editor-toolbars/ColorFill"
-import ColorText from "@/components/editor-toolbars/ColorText"
-import FontBold from "@/components/editor-toolbars/FontBold"
-import FontItalic from "@/components/editor-toolbars/FontItalic"
-import FontStrike from "@/components/editor-toolbars/FontStrike"
-import FontSubscript from "@/components/editor-toolbars/FontSubscript"
-import FontSuperscript from "@/components/editor-toolbars/FontSuperscript"
-import FontUnderline from "@/components/editor-toolbars/FontUnderline"
 import Hr from "@/components/Hr"
 import cn from "clsx"
 
+import ColorFill from "../editor-toolbars/ColorFill"
+import ColorText from "../editor-toolbars/ColorText"
+import FontBold from "../editor-toolbars/FontBold"
 import FontFamily from "../editor-toolbars/FontFamily"
+import FontItalic from "../editor-toolbars/FontItalic"
 import FontSize from "../editor-toolbars/FontSize"
 import FontSizeMinus from "../editor-toolbars/FontSizeMinus"
 import FontSizePus from "../editor-toolbars/FontSizePus"
+import FontStrike from "../editor-toolbars/FontStrike"
+import FontSubscript from "../editor-toolbars/FontSubscript"
+import FontSuperscript from "../editor-toolbars/FontSuperscript"
+import FontUnderline from "../editor-toolbars/FontUnderline"
 import FormatBrush from "../editor-toolbars/FormatBrush"
 import FormatClear from "../editor-toolbars/FormatClear"
 import HeadingLevel from "../editor-toolbars/HeadingLevel"
 import LineHeight from "../editor-toolbars/LineHeight"
 import Redo from "../editor-toolbars/Redo"
+import TextAlignCenter from "../editor-toolbars/TextAlignCenter"
+import TextAlignJustify from "../editor-toolbars/TextAlignJustify"
+import TextAlignLeft from "../editor-toolbars/TextAlignLeft"
+import TextAlignRight from "../editor-toolbars/TextAlignRight"
 import Undo from "../editor-toolbars/Undo"
 
 export default function ToolbarRich() {
@@ -56,6 +60,10 @@ export default function ToolbarRich() {
                     <FontSubscript />
                     <ColorText />
                     <ColorFill />
+                    <TextAlignLeft />
+                    <TextAlignCenter />
+                    <TextAlignRight />
+                    <TextAlignJustify />
                 </div>
             </div>
             <div className="h-[62px]" />
