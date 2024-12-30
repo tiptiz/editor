@@ -50,7 +50,7 @@ export default function ToolbarRich() {
                     <FormatBrush />
                 </div>
                 {Splitter}
-                <div className="w-[430px] flex flex-wrap justify-around">
+                <div className="w-[432px] flex flex-wrap justify-around">
                     <FontFamily />
                     <FontSize />
                     <HeadingLevel />
