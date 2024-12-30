@@ -2,7 +2,7 @@ import "@tiptap/extension-text-style"
 
 import { type Command, Extension } from "@tiptap/core"
 
-type FontSizeOptions = {
+export type FontSizeOptions = {
     types: string[]
 }
 declare module "@tiptap/core" {
