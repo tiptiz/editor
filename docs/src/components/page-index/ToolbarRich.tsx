@@ -1,11 +1,11 @@
 "use client"
 import "@/styles/toolbars.css"
 
-import TextIndentDec from "@/components/editor-toolbars/TextIndentDec"
-import TextIndentInc from "@/components/editor-toolbars/TextIndentInc"
+import CheckList from "@/components/editor-toolbars/CheckList"
 import Hr from "@/components/Hr"
 import cn from "clsx"
 
+import BulletList from "../editor-toolbars/BulletList"
 import ColorFill from "../editor-toolbars/ColorFill"
 import ColorText from "../editor-toolbars/ColorText"
 import FontBold from "../editor-toolbars/FontBold"
@@ -28,6 +28,8 @@ import TextAlignCenter from "../editor-toolbars/TextAlignCenter"
 import TextAlignJustify from "../editor-toolbars/TextAlignJustify"
 import TextAlignLeft from "../editor-toolbars/TextAlignLeft"
 import TextAlignRight from "../editor-toolbars/TextAlignRight"
+import TextIndentDec from "../editor-toolbars/TextIndentDec"
+import TextIndentInc from "../editor-toolbars/TextIndentInc"
 import Undo from "../editor-toolbars/Undo"
 
 const Splitter = <Hr className="h-[80%] mx-2" />
@@ -74,6 +76,10 @@ export default function ToolbarRich() {
                     <TextIndentDec />
                 </div>
                 {Splitter}
+                <div>
+                    <BulletList />
+                    <CheckList />
+                </div>
             </div>
             <div className="h-[62px]" />
         </>
