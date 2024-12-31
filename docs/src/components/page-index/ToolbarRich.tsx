@@ -40,11 +40,12 @@ export default function ToolbarRich() {
             <h1 className="text-[3rem] font-bold">With Rich Toolbars</h1>
             <div
                 className={cn(
-                    "h-[62px] flex items-center justify-center",
+                    "h-[62px] flex items-center justify-center relative",
                     "border-t border-b border-neutral-100 dark:border-neutral-500/60",
                     "bg-neutral-100 dark:bg-neutral-800"
                 )}
             >
+
                 <div className="w-14">
                     <Undo />
                     <Redo />

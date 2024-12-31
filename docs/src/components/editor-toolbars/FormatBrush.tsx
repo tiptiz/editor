@@ -2,5 +2,5 @@ import IconBar from "@/components/IconBar"
 import { ediBrush } from "@tiptiz/editor-icons"
 
 export default function FormatBrush() {
-    return <IconBar tooltip="Format Clear" path={ediBrush} iconProps={{ rotate: 180 }} />
+    return <IconBar tooltip="Format Clear" path={ediBrush} />
 }
