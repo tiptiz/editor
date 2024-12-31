@@ -5,7 +5,7 @@ import { Checkbox, FormControlLabel } from "@mui/material"
 import { ediBrush, ediEraser, ediRedo, ediUndo } from "@tiptiz/editor-icons"
 import { ediFontSizeMinus, ediFontSizePlus } from "@tiptiz/editor-icons"
 import { ediHeading1, ediHeading2, ediHeading3, ediHeading4, ediHeading5, ediHeading6 } from "@tiptiz/editor-icons"
-import { ediHeadingDec, ediHeadingInc, ediHeadingPound } from "@tiptiz/editor-icons"
+import { ediHeadingDec, ediHeadingHash, ediHeadingInc } from "@tiptiz/editor-icons"
 import { ediBold, ediItalic, ediStrike, ediSubscript, ediSuperscript, ediUnderline } from "@tiptiz/editor-icons"
 import { ediColorFill, ediColorHelper, ediColorText } from "@tiptiz/editor-icons"
 import { ediAlignCenter, ediAlignJustify, ediAlignLeft, ediAlignRight } from "@tiptiz/editor-icons"
@@ -37,7 +37,7 @@ const allIcons = [
     ["ediHeading6", ediHeading6],
     ["ediHeadingInc", ediHeadingInc],
     ["ediHeadingDec", ediHeadingDec],
-    ["ediHeadingPound", ediHeadingPound],
+    ["ediHeadingPound", ediHeadingHash],
     ["ediBold", ediBold],
     ["ediItalic", ediItalic],
     ["ediUnderline", ediUnderline],
