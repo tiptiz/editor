@@ -11,6 +11,8 @@ import { ediColorFill, ediColorHelper, ediColorText } from "@tiptiz/editor-icons
 import { ediAlignCenter, ediAlignJustify, ediAlignLeft, ediAlignRight } from "@tiptiz/editor-icons"
 import { ediIndentDec, ediIndentInc } from "@tiptiz/editor-icons"
 import { ediBulletList, ediCheckList, ediListCircle, ediListDisc, ediListSquare } from "@tiptiz/editor-icons"
+import { ediLiftList, ediSinkList } from "@tiptiz/editor-icons"
+import { ediBlockquote, ediEmoji, ediHorizontalRule, ediImage } from "@tiptiz/editor-icons"
 import { useEffect, useState } from "react"
 
 const SparkLines = ({ visible }: { visible: boolean }) => visible
@@ -56,7 +58,13 @@ const allIcons = [
     ["ediIndentInc", ediIndentInc],
     ["ediIndentDec", ediIndentDec],
     ["ediBulletList", ediBulletList],
+    ["ediSinkList", ediSinkList],
+    ["ediLiftList", ediLiftList],
     ["ediCheckList", ediCheckList],
+    ["ediHorizontalRule", ediHorizontalRule],
+    ["ediBlockquote", ediBlockquote],
+    ["ediEmoji", ediEmoji],
+    ["ediImage", ediImage],
     ["ediListCircle", ediListCircle],
     ["ediListDisc", ediListDisc],
     ["ediListSquare", ediListSquare]
