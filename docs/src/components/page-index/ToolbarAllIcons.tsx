@@ -12,7 +12,16 @@ import { ediAlignCenter, ediAlignJustify, ediAlignLeft, ediAlignRight } from "@t
 import { ediIndentDec, ediIndentInc } from "@tiptiz/editor-icons"
 import { ediBulletList, ediCheckList, ediListCircle, ediListDisc, ediListSquare } from "@tiptiz/editor-icons"
 import { ediLiftList, ediSinkList } from "@tiptiz/editor-icons"
-import { ediBlockquote, ediEmoji, ediHorizontalRule, ediImage } from "@tiptiz/editor-icons"
+import { ediBlockquote, ediCodeBlock, ediEmoji, ediHorizontalRule, ediImage } from "@tiptiz/editor-icons"
+import {
+    ediTableAddColAfter,
+    ediTableAddColBefore,
+    ediTableAddRowAfter,
+    ediTableAddRowBefore
+} from "@tiptiz/editor-icons"
+import { ediTableNew, ediTableRefresh, ediTableRemove } from "@tiptiz/editor-icons"
+import { ediTableColumnRemove, ediTableMergeCell, ediTableRowRemove, ediTableSplitCell } from "@tiptiz/editor-icons"
+import { ediToggleTableCell, ediToggleTableHeaderLeft, ediToggleTableHeaderTop } from "@tiptiz/editor-icons"
 import { useEffect, useState } from "react"
 
 const SparkLines = ({ visible }: { visible: boolean }) => visible
@@ -39,16 +48,16 @@ const allIcons = [
     ["ediHeading6", ediHeading6],
     ["ediHeadingInc", ediHeadingInc],
     ["ediHeadingDec", ediHeadingDec],
-    ["ediHeadingPound", ediHeadingHash],
+    ["ediHeadingHash", ediHeadingHash],
     ["ediBold", ediBold],
     ["ediItalic", ediItalic],
     ["ediUnderline", ediUnderline],
     ["ediStrike", ediStrike],
     ["ediSuperscript", ediSuperscript],
     ["ediSubscript", ediSubscript],
-    ["ediColorFill", ediColorFill],
-    ["ediColorText", ediColorText],
-    ["ediColorHelper", ediColorHelper],
+    // ["ediColorFill", ediColorFill],
+    // ["ediColorText", ediColorText],
+    // ["ediColorHelper", ediColorHelper],
     ["ediColorTextWithHelper", [ediColorText, ediColorHelper]],
     ["ediColorFillWithHelper", [ediColorFill, ediColorHelper]],
     ["ediAlignLeft", ediAlignLeft],
@@ -64,7 +73,22 @@ const allIcons = [
     ["ediHorizontalRule", ediHorizontalRule],
     ["ediBlockquote", ediBlockquote],
     ["ediEmoji", ediEmoji],
+    ["ediCodeBlock", ediCodeBlock],
     ["ediImage", ediImage],
+    ["ediTableNew", ediTableNew],
+    ["ediTableRefresh", ediTableRefresh],
+    ["ediTableRemove", ediTableRemove],
+    ["EdiTableAddColBefore", ediTableAddColBefore],
+    ["ediTableAddColAfter", ediTableAddColAfter],
+    ["ediTableAddRowBefore", ediTableAddRowBefore],
+    ["ediTableAddRowAfter", ediTableAddRowAfter],
+    ["ediTableColumnRemove", ediTableColumnRemove],
+    ["ediTableRowRemove", ediTableRowRemove],
+    ["ediTableMergeCell", ediTableMergeCell],
+    ["ediTableSplitCell", ediTableSplitCell],
+    ["ediToggleTableHeaderTop", ediToggleTableHeaderTop],
+    ["ediToggleTableHeaderLeft", ediToggleTableHeaderLeft],
+    ["ediToggleTableCell", ediToggleTableCell],
     ["ediListCircle", ediListCircle],
     ["ediListDisc", ediListDisc],
     ["ediListSquare", ediListSquare]
@@ -92,9 +116,9 @@ export default function ToolbarAllIcons() {
             />
             <div className="flex flex-wrap relative">
                 {allIcons.map(([key, path]) => (
-                    <div key={key} className="relative">
+                    <div key={key} className="relative px-1">
                         <SparkLines visible={visible} />
-                        <IconBar path={path} tooltip={key} />
+                        <IconBar path={path} tooltip={key} iconProps={{ size: 0.8 }} />
                     </div>
                 ))}
             </div>
