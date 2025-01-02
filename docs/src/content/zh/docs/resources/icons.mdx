@@ -1,11 +1,20 @@
-# icons
-
 import ToolbarAllIcons from "@/components/page-index/ToolbarAllIcons"
 
-## Toolbar All Icons
+# icons
+
+<ToolbarAllIcons />
+
+## Usage
 
 ```bash
 pnpm i @tiptiz/icons
 ```
 
-<ToolbarAllIcons />
+```js
+import { ediUndo, ediRedo } from "@tiptiz/editor-icons"
+import { Icon } from "@mdi/react"
+
+<Icon path={ediUndo} size={1} />
+<Icon path={ediRedo} size={1} />
+```
+
