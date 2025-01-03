@@ -16,44 +16,31 @@ import FontUnderline from "../editor-toolbars/FontUnderline"
 import FormatClear from "../editor-toolbars/FormatClear"
 import HeadingLevel from "../editor-toolbars/HeadingLevel"
 import InsertImage from "../editor-toolbars/InsertImage"
-import LiftList from "../editor-toolbars/LiftList"
 import Redo from "../editor-toolbars/Redo"
-import SinkList from "../editor-toolbars/SinkList"
-import TableAddColAfter from "../editor-toolbars/TableAddColAfter"
-import TableAddColBefore from "../editor-toolbars/TableAddColBefore"
-import TableAddRowAfter from "../editor-toolbars/TableAddRowAfter"
-import TableAddRowBefore from "../editor-toolbars/TableAddRowBefore"
-import TableColRemove from "../editor-toolbars/TableColRemove"
 import TableNew from "../editor-toolbars/TableNew"
-import TableRefresh from "../editor-toolbars/TableRefresh"
 import TableRemoveAll from "../editor-toolbars/TableRemoveAll"
-import TableRowRemove from "../editor-toolbars/TableRowRemove"
-import TableToggleHeaderTop from "../editor-toolbars/TableToggleHeaderTop"
 import Undo from "../editor-toolbars/Undo"
 
-const Splitter = <Hr className="h-[70%] mx-2" />
+const Splitter = <Hr className="h-[70%] mx-1 sm:mx-2" />
 
-export default function ToolbarMarkdown() {
+export default function ToolbarReallySmall() {
     return (
         <>
             {/* <h1 className="text-[3rem] font-bold">With Rich Toolbars</h1> */}
             <div
                 className={cn(
-                    "hidden sm:flex",
-                    "h-[31px] mt-4 flex items-center justify-center -mx-12",
+                    "h-[31px] mt-4 flex items-center justify-center -mx-6 md:-mx-12",
                     "border-t border-b border-neutral-100 dark:border-neutral-500/60",
                     "bg-neutral-100 dark:bg-neutral-800 text-gray-600 dark:text-gray-200"
                 )}
             >
 
-                <div className="w-21">
+                <div>
                     <Undo />
                     <Redo />
-                    <FormatClear />
                 </div>
                 {Splitter}
                 <div>
-                    <HeadingLevel />
                     <FontBold />
                     <FontItalic />
                     <FontStrike />
@@ -63,25 +50,11 @@ export default function ToolbarMarkdown() {
                 <div>
                     <BulletList />
                     <CheckList />
-                    <LiftList />
-                    <SinkList />
                     <Blockquote />
                     <CodeBlock />
-                    <Emoji />
                     <InsertImage />
-                </div>
-                {Splitter}
-                <div>
                     <TableNew />
-                    <TableRefresh />
                     <TableRemoveAll />
-                    <TableToggleHeaderTop />
-                    <TableAddColBefore />
-                    <TableAddColAfter />
-                    <TableAddRowBefore />
-                    <TableAddRowAfter />
-                    <TableColRemove />
-                    <TableRowRemove />
                 </div>
             </div>
         </>

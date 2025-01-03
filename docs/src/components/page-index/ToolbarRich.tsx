@@ -61,7 +61,8 @@ export default function ToolbarRich() {
             {/* <h1 className="text-[3rem] font-bold">With Rich Toolbars</h1> */}
             <div
                 className={cn(
-                    "h-[62px] mt-4 flex items-center justify-center relative -mx-[100px]",
+                    "hidden lg:flex",
+                    "h-[62px] mt-4 flex items-center justify-center -mx-12",
                     "border-t border-b border-neutral-100 dark:border-neutral-500/60",
                     "bg-neutral-100 dark:bg-neutral-800 text-gray-600 dark:text-gray-200"
                 )}
@@ -128,7 +129,7 @@ export default function ToolbarRich() {
                     <TableToggleHeaderCell />
                 </div>
             </div>
-            <div className="h-[62px]" />
+            {/* <div className="h-[62px]" /> */}
         </>
     )
 }
