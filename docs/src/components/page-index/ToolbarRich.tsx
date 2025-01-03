@@ -1,13 +1,17 @@
 "use client"
 import "@/styles/toolbars.css"
 
-import CheckList from "@/components/editor-toolbars/CheckList"
+import PageBreak from "@/components/editor-toolbars/PageBreak"
 import Hr from "@/components/Hr"
 import cn from "clsx"
 
+import Blockquote from "../editor-toolbars/Blockquote"
 import BulletList from "../editor-toolbars/BulletList"
+import CheckList from "../editor-toolbars/CheckList"
+import CodeBlock from "../editor-toolbars/CodeBlock"
 import ColorFill from "../editor-toolbars/ColorFill"
 import ColorText from "../editor-toolbars/ColorText"
+import Emoji from "../editor-toolbars/Emoji"
 import FontBold from "../editor-toolbars/FontBold"
 import FontFamily from "../editor-toolbars/FontFamily"
 import FontItalic from "../editor-toolbars/FontItalic"
@@ -21,9 +25,12 @@ import FontUnderline from "../editor-toolbars/FontUnderline"
 import FormatBrush from "../editor-toolbars/FormatBrush"
 import FormatClear from "../editor-toolbars/FormatClear"
 import HeadingLevel from "../editor-toolbars/HeadingLevel"
+import InsertImage from "../editor-toolbars/InsertImage"
+import LiftList from "../editor-toolbars/LiftList"
 import LineHeight from "../editor-toolbars/LineHeight"
 import Margin from "../editor-toolbars/Margin"
 import Redo from "../editor-toolbars/Redo"
+import SinkList from "../editor-toolbars/SinkList"
 import TextAlignCenter from "../editor-toolbars/TextAlignCenter"
 import TextAlignJustify from "../editor-toolbars/TextAlignJustify"
 import TextAlignLeft from "../editor-toolbars/TextAlignLeft"
@@ -37,7 +44,7 @@ const Splitter = <Hr className="h-[80%] mx-2" />
 export default function ToolbarRich() {
     return (
         <>
-            <h1 className="text-[3rem] font-bold">With Rich Toolbars</h1>
+            {/* <h1 className="text-[3rem] font-bold">With Rich Toolbars</h1> */}
             <div
                 className={cn(
                     "h-[62px] flex items-center justify-center relative",
@@ -77,10 +84,19 @@ export default function ToolbarRich() {
                     <TextIndentDec />
                 </div>
                 {Splitter}
-                <div>
+                <div className="w-[140px] flex flex-wrap">
                     <BulletList />
+                    <div className="mr-1"></div>
                     <CheckList />
+                    <LiftList />
+                    <SinkList />
+                    <Blockquote />
+                    <CodeBlock />
+                    <Emoji />
+                    <InsertImage />
+                    <PageBreak />
                 </div>
+                {Splitter}
             </div>
             <div className="h-[62px]" />
         </>

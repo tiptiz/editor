@@ -22,6 +22,7 @@ import {
 import { ediTableNew, ediTableRefresh, ediTableRemove } from "@tiptiz/editor-icons"
 import { ediTableColumnRemove, ediTableMergeCell, ediTableRowRemove, ediTableSplitCell } from "@tiptiz/editor-icons"
 import { ediToggleTableCell, ediToggleTableHeaderLeft, ediToggleTableHeaderTop } from "@tiptiz/editor-icons"
+import { ediPageBreak } from "@tiptiz/editor-icons"
 import { useEffect, useState } from "react"
 
 const SparkLines = ({ visible }: { visible: boolean }) => visible
@@ -75,6 +76,7 @@ const allIcons = [
     ["ediEmoji", ediEmoji],
     ["ediCodeBlock", ediCodeBlock],
     ["ediImage", ediImage],
+    ["ediPageBreak", ediPageBreak],
     ["ediTableNew", ediTableNew],
     ["ediTableRefresh", ediTableRefresh],
     ["ediTableRemove", ediTableRemove],
