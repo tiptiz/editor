@@ -20,8 +20,8 @@ import {
     ediTableAddRowBefore
 } from "@tiptiz/editor-icons"
 import { ediTableNew, ediTableRefresh, ediTableRemove } from "@tiptiz/editor-icons"
-import { ediTableColumnRemove, ediTableMergeCell, ediTableRowRemove, ediTableSplitCell } from "@tiptiz/editor-icons"
-import { ediToggleTableCell, ediToggleTableHeaderLeft, ediToggleTableHeaderTop } from "@tiptiz/editor-icons"
+import { ediTableColumnRemove, ediTableMergeCells, ediTableRowRemove, ediTableSplitCell } from "@tiptiz/editor-icons"
+import { ediToggleTableHeaderCell, ediToggleTableHeaderLeft, ediToggleTableHeaderTop } from "@tiptiz/editor-icons"
 import { ediPageBreak } from "@tiptiz/editor-icons"
 import { useEffect, useState } from "react"
 
@@ -86,11 +86,11 @@ const allIcons = [
     ["ediTableAddRowAfter", ediTableAddRowAfter],
     ["ediTableColumnRemove", ediTableColumnRemove],
     ["ediTableRowRemove", ediTableRowRemove],
-    ["ediTableMergeCell", ediTableMergeCell],
+    ["ediTableMergeCell", ediTableMergeCells],
     ["ediTableSplitCell", ediTableSplitCell],
     ["ediToggleTableHeaderTop", ediToggleTableHeaderTop],
     ["ediToggleTableHeaderLeft", ediToggleTableHeaderLeft],
-    ["ediToggleTableCell", ediToggleTableCell],
+    ["ediToggleTableCell", ediToggleTableHeaderCell],
     ["ediListCircle", ediListCircle],
     ["ediListDisc", ediListDisc],
     ["ediListSquare", ediListSquare]
