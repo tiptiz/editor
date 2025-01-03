@@ -1,4 +1,3 @@
-@import "nextra-theme-docs/style.css";
 @import "tailwindcss";
 
 @config "../../tailwind.config.ts"

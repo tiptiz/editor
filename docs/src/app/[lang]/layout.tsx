@@ -1,5 +1,5 @@
 /* eslint-env node */
-
+import "nextra-theme-docs/style.css"
 import "@/styles/tailwind.css"
 
 import type { Metadata } from "next"
