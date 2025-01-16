@@ -4,12 +4,15 @@
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
         "module": "ESNext",
         "moduleResolution": "Bundler",
+        "target": "ESNext",
         "strict": true,
         "noEmit": true,
         "skipLibCheck": true,
         "noUncheckedSideEffectImports": true
     },
     "include": [
+        "scripts",
+
         "eslint.config.mjs",
         ".configs/*.mjs",
 

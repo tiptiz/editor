@@ -3,14 +3,11 @@
     "compilerOptions": {
         "module": "ESNext",
         "target": "ESNext",
-        "allowJs": true,
-        "checkJs": true,
-        "verbatimModuleSyntax": true
+        "allowJs": false,
+        "checkJs": false,
+        "plugins": [
+            { "name": "ts-lit-plugin" }
+        ]
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.js",
-        "src/**/*.svelte",
-        "./src/svelte.d.ts"
-    ]
+    "include": ["src/**/*.ts"]
 }

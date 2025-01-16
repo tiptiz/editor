@@ -3,12 +3,12 @@ import type { CodeBlockOptions } from "@tiptap/extension-code-block"
 import type { EditorState } from "@tiptap/pm/state"
 import type { PluginShikiOptions } from "./proseMirrorPluginShiki"
 
-import { ShikiPluginView } from "./codeBlockShikiView"
-import { proseMirrorPluginShiki } from "./proseMirrorPluginShiki"
-
 import { findParentNode } from "@tiptap/core"
 import CodeBlock from "@tiptap/extension-code-block"
 import { TextSelection } from "@tiptap/pm/state"
+
+import { ShikiPluginView } from "./codeBlockShikiView"
+import { proseMirrorPluginShiki } from "./proseMirrorPluginShiki"
 
 export type CodeBlockShikiOptions = CodeBlockOptions & Omit<PluginShikiOptions, "name"> & {
     showLineNumbers: boolean

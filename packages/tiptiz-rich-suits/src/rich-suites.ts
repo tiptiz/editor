@@ -1,5 +1,4 @@
-import { Extension, Mark, Node } from "@tiptap/core"
-
+import { Extension, type Mark, type Node } from "@tiptap/core"
 import Blockquote, { type BlockquoteOptions } from "@tiptap/extension-blockquote"
 import Bold, { type BoldOptions } from "@tiptap/extension-bold"
 import Code, { type CodeOptions } from "@tiptap/extension-code"
@@ -26,7 +25,7 @@ import TextAlign, { type TextAlignOptions } from "@tiptap/extension-text-align"
 import TextStyle, { type TextStyleOptions } from "@tiptap/extension-text-style"
 import Underline, { type UnderlineOptions } from "@tiptap/extension-underline"
 import BulletList, { type BulletListOptions } from "tiptap-extension-bullet-list"
-// import CodeBlockShiki, { type CodeBlockShikiOptions } from "tiptap-extension-code-block-shiki"
+import CodeBlockShiki, { type CodeBlockShikiOptions } from "tiptap-extension-code-block-shiki"
 import FontSize, { type FontSizeOptions } from "tiptap-extension-font-size"
 import HardBreak from "tiptap-extension-hard-break"
 import Heading, { type HeadingOptions } from "tiptap-extension-heading"
@@ -36,9 +35,7 @@ import LineHeight from "tiptap-extension-line-height"
 import Margin from "tiptap-extension-margin"
 import TrailingNode, { type TrailingNodeOptions } from "tiptap-extension-trailing-node"
 
-
 type SuiteOption<T> = false | Partial<T> | ((presets?: Partial<T>) => Partial<T>)
-
 
 function withPreConfigure<T, S>(mark: Mark<T, S>, presets: Partial<T>, options?: SuiteOption<T>): Mark<T, S> | null
 function withPreConfigure<T, S>(node: Node<T, S>, presets: Partial<T>, options?: SuiteOption<T>): Node<T, S> | null
@@ -82,7 +79,7 @@ export interface RichSuitesOptions {
     TextStyle?: SuiteOption<TextStyleOptions>
     Underline?: SuiteOption<UnderlineOptions>
     BulletList?: SuiteOption<BulletListOptions>
-    // CodeBlockShiki?: SuiteOption<CodeBlockShikiOptions>
+    CodeBlockShiki?: SuiteOption<CodeBlockShikiOptions>
     FontSize?: SuiteOption<FontSizeOptions>
     HardBreak?: SuiteOption<{}>
     Heading?: SuiteOption<HeadingOptions>
@@ -156,19 +153,19 @@ export const RichSuites = Extension.create<RichSuitesOptions>({
             withPreConfigure(TextStyle, {}, this.options.TextStyle),
             withPreConfigure(Underline, {}, this.options.Underline),
             withPreConfigure(BulletList, {}, this.options.BulletList),
-            // withPreConfigure(CodeBlockShiki, {}, this.options.CodeBlockShiki),
+            withPreConfigure(CodeBlockShiki, {}, this.options.CodeBlockShiki),
             withPreConfigure(FontSize, {}, this.options.FontSize),
             withPreConfigure(HardBreak, {}, this.options.HardBreak),
             withPreConfigure(Heading, {
                 HTMLAttributes: {
-                    all: { style: `margin: 5px 0;` }
+                    all: { style: "margin: 5px 0;" }
                 }
             }, this.options.Heading),
             withPreConfigure(HorizontalRules, {}, this.options.HorizontalRules),
             withPreConfigure(Indent, {}, this.options.Indent),
             withPreConfigure(LineHeight, {}, this.options.LineHeight),
             withPreConfigure(Margin, {}, this.options.Margin),
-            withPreConfigure(TrailingNode, {}, this.options.TrailingNode),
+            withPreConfigure(TrailingNode, {}, this.options.TrailingNode)
         ]
     }
 })

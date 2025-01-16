@@ -1,9 +1,9 @@
 import type { BundledLanguage, BundledTheme } from "shiki"
 
-import { getDecorations } from "./getDecorations"
-
 import { findChildren } from "@tiptap/core"
 import { Plugin, PluginKey } from "@tiptap/pm/state"
+
+import { getDecorations } from "./getDecorations"
 
 export interface PluginShikiOptions {
     name: string

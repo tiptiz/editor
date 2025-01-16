@@ -1,10 +1,10 @@
 import type { Node as ProseMirrorNode } from "prosemirror-model"
 import type { PluginShikiOptions } from "./proseMirrorPluginShiki"
 
-import { getShiki } from "./highlighter"
-
 import { findChildren } from "@tiptap/core"
 import { Decoration, DecorationSet } from "@tiptap/pm/view"
+
+import { getShiki } from "./highlighter"
 
 type DecorationsOptions = PluginShikiOptions & {
     doc: ProseMirrorNode

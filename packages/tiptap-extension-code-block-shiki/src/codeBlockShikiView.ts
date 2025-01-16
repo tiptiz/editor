@@ -1,12 +1,9 @@
 import type { NodeView, ViewMutationRecord } from "@tiptap/pm/view"
 import type { BundledLanguage, BundledTheme } from "shiki"
 
-import { toolbarsState } from "./components/Toolbars.state.svelte"
-import Toolbars from "./components/Toolbars.svelte"
-import { initHighlighter, loadLanguage, loadTheme } from "./highlighter"
-
 import { findChildren, type NodeViewRendererProps } from "@tiptap/core"
-import { mount, unmount } from "svelte"
+
+import { initHighlighter, loadLanguage, loadTheme } from "./highlighter"
 
 export interface ShiKiViewOptions {
     name: string
@@ -23,12 +20,12 @@ class ShikiPluginView implements NodeView {
     dom: HTMLElement = document.createElement("pre")
     contentDOM: HTMLElement = document.createElement("code")
 
-    svelteRoot = mount(Toolbars, {
-        target: this.dom,
-        props: {
-            copyContent: this.handleCopyContent.bind(this)
-        }
-    })
+    // svelteRoot = mount(Toolbars, {
+    //     target: this.dom,
+    //     props: {
+    //         copyContent: this.handleCopyContent.bind(this)
+    //     }
+    // })
 
     private get options() {
         return {
@@ -68,10 +65,10 @@ class ShikiPluginView implements NodeView {
     // TODO figure out the behavior of NodeView destroy
     private handleHovering() {
         this.dom.addEventListener("mouseover", () => {
-            toolbarsState.isHovering = true
+            // toolbarsState.isHovering = true
         })
         this.dom.addEventListener("mouseleave", () => {
-            toolbarsState.isHovering = false
+            // toolbarsState.isHovering = false
         })
         this.dom.addEventListener("copy", this.handleCopyContent.bind(this))
     }
@@ -124,7 +121,7 @@ class ShikiPluginView implements NodeView {
     }
 
     destroy() {
-        unmount(this.svelteRoot)
+        // unmount(this.svelteRoot)
     }
 
     // Initialize shiki async, and then highlight initial document
