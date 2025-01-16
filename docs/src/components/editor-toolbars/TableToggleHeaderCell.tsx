@@ -1,4 +1,4 @@
-import { ediToggleTableHeaderCell } from "@tiptiz/editor-icons"
+import { ediToggleTableHeaderCell } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

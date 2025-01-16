@@ -1,5 +1,5 @@
 import { Icon } from "@mdi/react"
-import { ediLineHeight } from "@tiptiz/editor-icons"
+import { ediLineHeight } from "@tiptiz/icons"
 
 import PlainTextDropdown from "../PlainTextDropdown"
 

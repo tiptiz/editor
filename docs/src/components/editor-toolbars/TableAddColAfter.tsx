@@ -1,4 +1,4 @@
-import { ediTableAddColAfter } from "@tiptiz/editor-icons"
+import { ediTableAddColAfter } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

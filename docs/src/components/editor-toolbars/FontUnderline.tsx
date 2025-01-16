@@ -1,4 +1,4 @@
-import { ediUnderline } from "@tiptiz/editor-icons"
+import { ediUnderline } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

@@ -1,4 +1,4 @@
-import { ediTableSplitCell } from "@tiptiz/editor-icons"
+import { ediTableSplitCell } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

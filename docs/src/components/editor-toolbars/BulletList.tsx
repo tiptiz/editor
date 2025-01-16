@@ -1,5 +1,5 @@
 import { Icon } from "@mdi/react"
-import { ediBulletList, ediListCircle, ediListDisc, ediListSquare } from "@tiptiz/editor-icons"
+import { ediBulletList, ediListCircle, ediListDisc, ediListSquare } from "@tiptiz/icons"
 
 import PlainTextSelect from "@/components/PlainTextSelect"
 

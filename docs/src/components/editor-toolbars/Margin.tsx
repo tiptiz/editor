@@ -1,5 +1,5 @@
 import { Icon } from "@mdi/react"
-import { ediMargin } from "@tiptiz/editor-icons"
+import { ediMargin } from "@tiptiz/icons"
 
 import PlainTextDropdown from "@/components/PlainTextDropdown"
 

@@ -1,4 +1,4 @@
-import { ediTableColumnRemove } from "@tiptiz/editor-icons"
+import { ediTableColumnRemove } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

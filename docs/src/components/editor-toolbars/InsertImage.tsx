@@ -1,4 +1,4 @@
-import { ediImage } from "@tiptiz/editor-icons"
+import { ediImage } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

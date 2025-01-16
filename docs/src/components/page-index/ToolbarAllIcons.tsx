@@ -1,27 +1,27 @@
 "use client"
 
 import { Checkbox, FormControlLabel } from "@mui/material"
-import { ediBrush, ediEraser, ediRedo, ediUndo } from "@tiptiz/editor-icons"
-import { ediFontSizeMinus, ediFontSizePlus } from "@tiptiz/editor-icons"
-import { ediHeading1, ediHeading2, ediHeading3, ediHeading4, ediHeading5, ediHeading6 } from "@tiptiz/editor-icons"
-import { ediHeadingDec, ediHeadingHash, ediHeadingInc } from "@tiptiz/editor-icons"
-import { ediBold, ediItalic, ediStrike, ediSubscript, ediSuperscript, ediUnderline } from "@tiptiz/editor-icons"
-import { ediColorFill, ediColorHelper, ediColorText } from "@tiptiz/editor-icons"
-import { ediAlignCenter, ediAlignJustify, ediAlignLeft, ediAlignRight } from "@tiptiz/editor-icons"
-import { ediIndentDec, ediIndentInc } from "@tiptiz/editor-icons"
-import { ediBulletList, ediCheckList, ediListCircle, ediListDisc, ediListSquare } from "@tiptiz/editor-icons"
-import { ediLiftList, ediSinkList } from "@tiptiz/editor-icons"
-import { ediBlockquote, ediCodeBlock, ediEmoji, ediHorizontalRule, ediImage } from "@tiptiz/editor-icons"
+import { ediBrush, ediEraser, ediRedo, ediUndo } from "@tiptiz/icons"
+import { ediFontSizeMinus, ediFontSizePlus } from "@tiptiz/icons"
+import { ediHeading1, ediHeading2, ediHeading3, ediHeading4, ediHeading5, ediHeading6 } from "@tiptiz/icons"
+import { ediHeadingDec, ediHeadingHash, ediHeadingInc } from "@tiptiz/icons"
+import { ediBold, ediItalic, ediStrike, ediSubscript, ediSuperscript, ediUnderline } from "@tiptiz/icons"
+import { ediColorFill, ediColorHelper, ediColorText } from "@tiptiz/icons"
+import { ediAlignCenter, ediAlignJustify, ediAlignLeft, ediAlignRight } from "@tiptiz/icons"
+import { ediIndentDec, ediIndentInc } from "@tiptiz/icons"
+import { ediBulletList, ediCheckList, ediListCircle, ediListDisc, ediListSquare } from "@tiptiz/icons"
+import { ediLiftList, ediSinkList } from "@tiptiz/icons"
+import { ediBlockquote, ediCodeBlock, ediEmoji, ediHorizontalRule, ediImage } from "@tiptiz/icons"
 import {
     ediTableAddColAfter,
     ediTableAddColBefore,
     ediTableAddRowAfter,
     ediTableAddRowBefore
-} from "@tiptiz/editor-icons"
-import { ediTableNew, ediTableRefresh, ediTableRemove } from "@tiptiz/editor-icons"
-import { ediTableColumnRemove, ediTableMergeCells, ediTableRowRemove, ediTableSplitCell } from "@tiptiz/editor-icons"
-import { ediToggleTableHeaderCell, ediToggleTableHeaderLeft, ediToggleTableHeaderTop } from "@tiptiz/editor-icons"
-import { ediPageBreak } from "@tiptiz/editor-icons"
+} from "@tiptiz/icons"
+import { ediTableNew, ediTableRefresh, ediTableRemove } from "@tiptiz/icons"
+import { ediTableColumnRemove, ediTableMergeCells, ediTableRowRemove, ediTableSplitCell } from "@tiptiz/icons"
+import { ediToggleTableHeaderCell, ediToggleTableHeaderLeft, ediToggleTableHeaderTop } from "@tiptiz/icons"
+import { ediPageBreak } from "@tiptiz/icons"
 import { useEffect, useState } from "react"
 
 import IconBar from "@/components/IconBar"

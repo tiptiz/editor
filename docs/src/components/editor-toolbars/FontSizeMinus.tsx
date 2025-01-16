@@ -1,4 +1,4 @@
-import { ediFontSizeMinus } from "@tiptiz/editor-icons"
+import { ediFontSizeMinus } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

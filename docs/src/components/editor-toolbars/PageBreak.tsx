@@ -1,4 +1,4 @@
-import { ediPageBreak } from "@tiptiz/editor-icons"
+import { ediPageBreak } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

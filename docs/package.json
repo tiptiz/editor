@@ -20,7 +20,7 @@
         "@tiptap/extension-history": "^2.10.3",
         "@tiptap/pm": "^2.10.3",
         "@tiptap/react": "^2.10.4",
-        "@tiptiz/editor-icons": "workspace:*",
+        "@tiptiz/icons": "workspace:*",
         "@tiptiz/rich-suits": "workspace:*",
         "clsx": "^2.1.1",
         "emoji-picker-element": "^1.26.0",

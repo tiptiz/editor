@@ -1,4 +1,4 @@
-import { ediLiftList } from "@tiptiz/editor-icons"
+import { ediLiftList } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

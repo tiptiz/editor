@@ -1,4 +1,4 @@
-import { ediCodeBlock } from "@tiptiz/editor-icons"
+import { ediCodeBlock } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

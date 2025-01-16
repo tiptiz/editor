@@ -1,4 +1,4 @@
-import { ediSuperscript } from "@tiptiz/editor-icons"
+import { ediSuperscript } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

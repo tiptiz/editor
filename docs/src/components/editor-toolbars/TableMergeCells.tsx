@@ -1,4 +1,4 @@
-import { ediTableMergeCells } from "@tiptiz/editor-icons"
+import { ediTableMergeCells } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

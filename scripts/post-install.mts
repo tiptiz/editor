@@ -2,7 +2,8 @@ import $ from "shelljs"
 
 // should publish
 const libs = [
-    "packages/tiptap-extension-code-block-shiki"
+    "packages/tiptap-extension-code-block-shiki",
+    "packages/tiptiz-editor-icons"
 ]
 
 Promise.all(libs.map(dir =>

@@ -1,6 +1,6 @@
 import { Icon, Stack } from "@mdi/react"
 import { Button, Tooltip } from "@mui/material"
-import { ediColorHelper, ediColorText } from "@tiptiz/editor-icons"
+import { ediColorHelper, ediColorText } from "@tiptiz/icons"
 
 interface ColorTextProps {
     color?: string

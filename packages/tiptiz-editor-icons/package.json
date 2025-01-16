@@ -1,18 +1,19 @@
 {
-    "name": "@tiptiz/editor-icons",
+    "name": "@tiptiz/icons",
     "version": "0.0.1",
     "license": "MIT",
+    "type": "module",
     "repository": "https://github.com/tiptiz/editor.git",
     "author": "aolyang <aolyang@foxmail.com>",
     "exports": {
         ".": {
-            "import": "./src/index.ts"
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
         }
     },
-    "devDependencies": {
-        "@mdi/js": "^7.4.47"
-    },
-    "peerDependencies": {
-        "@mdi/js": "^7.4.47"
+    "files": ["dist", "README.md"],
+    "scripts": {
+        "build": "tsup src/index.ts --format esm,cjs --sourcemap && tsup src/index.ts --format esm --dts-only"
     }
 }

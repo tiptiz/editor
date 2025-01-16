@@ -1,4 +1,4 @@
-import { ediTableRefresh } from "@tiptiz/editor-icons"
+import { ediTableRefresh } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

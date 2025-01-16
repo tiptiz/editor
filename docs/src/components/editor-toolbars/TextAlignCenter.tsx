@@ -1,4 +1,4 @@
-import { ediAlignCenter } from "@tiptiz/editor-icons"
+import { ediAlignCenter } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

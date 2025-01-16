@@ -1,4 +1,4 @@
-import { ediItalic } from "@tiptiz/editor-icons"
+import { ediItalic } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

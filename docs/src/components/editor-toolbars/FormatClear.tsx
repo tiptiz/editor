@@ -1,4 +1,4 @@
-import { ediEraser } from "@tiptiz/editor-icons"
+import { ediEraser } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 

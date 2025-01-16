@@ -1,4 +1,4 @@
-import { ediRedo } from "@tiptiz/editor-icons"
+import { ediRedo } from "@tiptiz/icons"
 
 import IconBar from "@/components/IconBar"
 
