@@ -13,18 +13,18 @@
     const handleInsert = (target: TableInsertTarget) => {
         const chain = ctx.editor.chain().focus()
         switch (target) {
-        case "col before":
-            chain.addColumnBefore().run()
-            break
-        case "col after":
-            chain.addColumnAfter().run()
-            break
-        case "row above":
-            chain.addRowBefore().run()
-            break
-        case "row below":
-            chain.addRowAfter().run()
-            break
+            case "col before":
+                chain.addColumnBefore().run()
+                break
+            case "col after":
+                chain.addColumnAfter().run()
+                break
+            case "row above":
+                chain.addRowBefore().run()
+                break
+            case "row below":
+                chain.addRowAfter().run()
+                break
         }
     }
 </script>
@@ -32,7 +32,7 @@
 {#snippet tableInsert(target: TableInsertTarget)}
     <Tooltip label={$t(`Insert a ${target}`)}>
         <ToolbarButton disabled={!ctx.isTable} onclick={() => handleInsert(target)}>
-            <SvgTableInsert target={target}/>
+            <SvgTableInsert target={target} />
         </ToolbarButton>
     </Tooltip>
 {/snippet}

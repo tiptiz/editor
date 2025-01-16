@@ -2,7 +2,6 @@ import "server-only"
 
 import type EnglishLocale from "../dictionaries/en"
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const i18nConfig = {
     defaultLocale: "zh",
     locales: ["en", "zh"]

@@ -1,7 +1,6 @@
 "use client"
 import "@/styles/toolbars.css"
 
-import Hr from "@/components/Hr"
 import cn from "clsx"
 
 import Blockquote from "../editor-toolbars/Blockquote"
@@ -52,6 +51,7 @@ import TextAlignRight from "../editor-toolbars/TextAlignRight"
 import TextIndentDec from "../editor-toolbars/TextIndentDec"
 import TextIndentInc from "../editor-toolbars/TextIndentInc"
 import Undo from "../editor-toolbars/Undo"
+import Hr from "@/components/Hr"
 
 const Splitter = <Hr className="h-[80%] mx-2" />
 

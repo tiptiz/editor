@@ -1,6 +1,7 @@
-import PlainTextSelect from "@/components/PlainTextSelect"
 import { Icon } from "@mdi/react"
 import { ediBulletList, ediListCircle, ediListDisc, ediListSquare } from "@tiptiz/editor-icons"
+
+import PlainTextSelect from "@/components/PlainTextSelect"
 
 interface ListStyle {
     icon?: string

@@ -1,11 +1,12 @@
 import { builtinModules } from "module"
-import { dirname } from "path"
-import { fileURLToPath } from "url"
+import { dirname }        from "path"
+import { fileURLToPath }  from "url"
 
-import { FlatCompat } from "@eslint/eslintrc"
-
-import configBase, { configShared } from "../.configs/eslint.config.base.mjs"
-import configStylistic from "../.configs/eslint.config.stylistic.mjs"
+import { FlatCompat }       from "@eslint/eslintrc"
+import { combine, ignores } from "@aolyang/eslint-config"
+import importExport from "@aolyang/eslint-config/import-export"
+import stylistic    from "@aolyang/eslint-config/stylistic"
+import typescript   from "@aolyang/eslint-config/typescript"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -14,44 +15,25 @@ const compat = new FlatCompat({
     baseDirectory: __dirname
 })
 
-const eslintConfig = [
-    ...compat.extends("next/core-web-vitals"),
-    {
-        plugins: {
-            "@stylistic": configShared[0].plugins["@stylistic"],
-            "simple-import-sort": configShared[0].plugins["simple-import-sort"]
-        }
-    },
-    ...configBase,
-    ...configStylistic,
-    {
+export default combine(
+    compat.extends("next/core-web-vitals"),
+    stylistic(),
+    typescript(),
+    importExport(),
+    importExport({
+        files: ["eslint.config.mjs"],
         rules: {
             "simple-import-sort/imports": [
                 "error",
                 {
                     groups: [
-                        // style less,scss,css
-                        ["^.+\\.(l|s)?css$"],
-                        // Side effect imports.
-                        ["^\\u0000"],
-                        ["\\u0000$"],
-                        [
-                            "globals",
-                            `node:`,
-                            `^(${builtinModules.join("|")})(/|$)`
-                        ],
-                        ["^@?\\w.*\\u0000$", "^[^.].*\\u0000$", "^\\..*\\u0000$"],
-                        ["^"],
-                        ["^\\."]
+                        ["globals", "module", "node:", `^(${builtinModules.join("|")})(/|$)`],
+                        ["^@eslint", "^eslint-*", "^@?\\w"],
+                        ["^"]
                     ]
                 }
             ]
-
         }
-    },
-    {
-        ignores: ["\\.next"]
-    }
-]
-
-export default eslintConfig
+    }),
+    { ignores: ignores.concat(["**/_meta.ts"]) }
+)

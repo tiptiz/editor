@@ -24,7 +24,7 @@
 
 <DropdownMenu>
     <DropdownMenuTrigger>
-        <div class={`pl-1.5 flex items-center toolbar-icon-trigger`} class:active={ctx.isHeading}>
+        <div class={"pl-1.5 flex items-center toolbar-icon-trigger"} class:active={ctx.isHeading}>
             <SvgHeading level={level || 1}/>
             <SvgArrowDown/>
         </div>

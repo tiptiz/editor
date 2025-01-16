@@ -80,7 +80,7 @@
 {#snippet tree(docs: TreeItem[], level = 0)}
     <div class="my-2" style={`padding-left: ${level * 6}px`}>
         {#each docs as doc}
-            <div class={`flex items-center gap-2 border-l-4`} class:pl-2={level}
+            <div class={"flex items-center gap-2 border-l-4"} class:pl-2={level}
                  style={`border-color: ${doc.path === currentPath ? "hsl(var(--primary))" : "#ffffff00"}`}>
                 <div class="w-5 flex justify-center">
                     {#if doc.children}

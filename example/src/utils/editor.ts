@@ -4,8 +4,8 @@ import { horizontalTypes, lowContrastBg, lowContrastGray } from "@/utils/editor-
 
 import { Editor } from "@tiptap/core"
 import Document from "@tiptap/extension-document"
-import History from "@tiptap/extension-history"
 import DropCursor from "@tiptap/extension-dropcursor"
+import History from "@tiptap/extension-history"
 import TiptizSuites from "@tiptiz/rich-suits"
 import { attrs, css } from "tiptap-utils-shared"
 
@@ -82,7 +82,7 @@ export const extensions: Extensions = [
                 background-color: ${lowContrastBg};
                 border: 1px solid ${lowContrastGray}
             `
-        }),
+        })
     })
 ]
 

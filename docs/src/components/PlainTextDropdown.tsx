@@ -1,11 +1,12 @@
 import type { ForwardedRef, ReactNode } from "react"
 
-import useMenuTrigger from "@/hooks/useMenuTrigger"
 import { mdiMenuDown } from "@mdi/js"
 import { Icon } from "@mdi/react"
 import { ButtonBase, ClickAwayListener, Menu, MenuList, Tooltip } from "@mui/material"
 import cn from "clsx"
 import { forwardRef, useImperativeHandle } from "react"
+
+import useMenuTrigger from "@/hooks/useMenuTrigger"
 
 interface PlainTextSelectProps {
     className?: string

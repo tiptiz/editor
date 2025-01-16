@@ -1,6 +1,7 @@
-import PlainTextDropdown from "@/components/PlainTextDropdown"
 import { Icon } from "@mdi/react"
 import { ediMargin } from "@tiptiz/editor-icons"
+
+import PlainTextDropdown from "@/components/PlainTextDropdown"
 
 export default function Margin() {
     return (

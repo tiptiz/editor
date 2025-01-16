@@ -1,6 +1,5 @@
 "use client"
 
-import IconBar from "@/components/IconBar"
 import { Checkbox, FormControlLabel } from "@mui/material"
 import { ediBrush, ediEraser, ediRedo, ediUndo } from "@tiptiz/editor-icons"
 import { ediFontSizeMinus, ediFontSizePlus } from "@tiptiz/editor-icons"
@@ -24,6 +23,8 @@ import { ediTableColumnRemove, ediTableMergeCells, ediTableRowRemove, ediTableSp
 import { ediToggleTableHeaderCell, ediToggleTableHeaderLeft, ediToggleTableHeaderTop } from "@tiptiz/editor-icons"
 import { ediPageBreak } from "@tiptiz/editor-icons"
 import { useEffect, useState } from "react"
+
+import IconBar from "@/components/IconBar"
 
 const SparkLines = ({ visible }: { visible: boolean }) => visible
     ? (
