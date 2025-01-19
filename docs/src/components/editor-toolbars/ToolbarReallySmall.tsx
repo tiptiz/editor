@@ -3,47 +3,41 @@ import "@/styles/toolbars.css"
 
 import cn from "clsx"
 
-import Blockquote from "../editor-toolbars/Blockquote"
-import BulletList from "../editor-toolbars/BulletList"
-import CheckList from "../editor-toolbars/CheckList"
-import CodeBlock from "../editor-toolbars/CodeBlock"
-import Emoji from "../editor-toolbars/Emoji"
-import FontBold from "../editor-toolbars/FontBold"
-import FontItalic from "../editor-toolbars/FontItalic"
-import FontStrike from "../editor-toolbars/FontStrike"
-import FontUnderline from "../editor-toolbars/FontUnderline"
-import FormatClear from "../editor-toolbars/FormatClear"
-import HeadingLevel from "../editor-toolbars/HeadingLevel"
-import InsertImage from "../editor-toolbars/InsertImage"
-import Redo from "../editor-toolbars/Redo"
-import TableNew from "../editor-toolbars/TableNew"
-import TableRemoveAll from "../editor-toolbars/TableRemoveAll"
-import Undo from "../editor-toolbars/Undo"
+import Blockquote from "./Blockquote"
+import BulletList from "./BulletList"
+import CheckList from "./CheckList"
+import CodeBlock from "./CodeBlock"
+import FontBold from "./FontBold"
+import FontItalic from "./FontItalic"
+import FontStrike from "./FontStrike"
+import FontUnderline from "./FontUnderline"
+import InsertImage from "./InsertImage"
+import Redo from "./Redo"
+import TableNew from "./TableNew"
+import TableRemoveAll from "./TableRemoveAll"
+import Undo from "./Undo"
 import Hr from "@/components/Hr"
 
-const Splitter = <Hr className="h-[70%] mx-2" />
+const Splitter = <Hr className="h-[70%] mx-1 sm:mx-2" />
 
-export default function ToolbarLite() {
+export default function ToolbarReallySmall() {
     return (
         <>
             {/* <h1 className="text-[3rem] font-bold">With Rich Toolbars</h1> */}
             <div
                 className={cn(
-                    "hidden sm:flex",
                     "h-[31px] mt-4 flex items-center justify-center -mx-6 md:-mx-12",
                     "border-t border-b border-neutral-100 dark:border-neutral-500/60",
                     "bg-neutral-100 dark:bg-neutral-800 text-gray-600 dark:text-gray-200"
                 )}
             >
 
-                <div className="w-21">
+                <div>
                     <Undo />
                     <Redo />
-                    <FormatClear />
                 </div>
                 {Splitter}
                 <div>
-                    <HeadingLevel />
                     <FontBold />
                     <FontItalic />
                     <FontStrike />
@@ -55,7 +49,6 @@ export default function ToolbarLite() {
                     <CheckList />
                     <Blockquote />
                     <CodeBlock />
-                    <Emoji />
                     <InsertImage />
                     <TableNew />
                     <TableRemoveAll />

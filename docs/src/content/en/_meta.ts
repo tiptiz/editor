@@ -3,6 +3,7 @@ export default {
     "index": {
         display: "hidden"
     },
-    "docs": "Documents",
-    "about": "About"
+    "docs": "documents",
+    "playground": "playground",
+    "about": "about"
 }

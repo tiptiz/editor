@@ -1,0 +1,26 @@
+@import "code-block";
+
+.tiptap {
+    color: rgba(0, 0, 0, .85);
+    outline: none;
+}
+
+.dark .tiptap {
+    color: #dedede;
+}
+
+// placeholder
+.tiptap p.is-empty::before {
+    opacity: 0.2;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
+.tiptap h1.is-empty::before {
+    opacity: 0.2;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
