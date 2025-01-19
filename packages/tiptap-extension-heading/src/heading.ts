@@ -21,11 +21,11 @@ export const Heading = TipTapHeading.Heading.extend<HeadingOptions>({
     renderHTML({ node, HTMLAttributes }) {
         const hasLevel = this.options.levels.includes(node.attrs.level)
 
-        const level = hasLevel
+        const level: TipTapHeading.Level = hasLevel
             ? node.attrs.level
             : this.options.levels[0]
 
-        const tag = `h${level}`
+        const tag = `h${level}` as const
         const commandAttrs = this.options.HTMLAttributes.all
         const currentAttrs = this.options.HTMLAttributes[tag]
 

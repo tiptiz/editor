@@ -52,6 +52,7 @@ export const TrailingNode = Extension.create<TrailingNodeOptions>({
                 state: {
                     init: (_, state) => {
                         const lastNode = state.tr.doc.lastChild
+                        if (!lastNode) return false
 
                         return !nodeEqualsType({ node: lastNode, types: disabledNodes })
                     },
@@ -61,6 +62,7 @@ export const TrailingNode = Extension.create<TrailingNodeOptions>({
                         }
 
                         const lastNode = tr.doc.lastChild
+                        if (!lastNode) return false
 
                         return !nodeEqualsType({ node: lastNode, types: disabledNodes })
                     }
