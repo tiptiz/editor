@@ -1,7 +1,7 @@
 import { Icon } from "@mdi/react"
 import { ediLineHeight } from "@tiptiz/icons"
 
-import PlainTextDropdown from "../PlainTextDropdown"
+import PlainTextDropdown from "../../PlainTextDropdown"
 
 export default function LineHeight() {
     return (
