@@ -19,7 +19,7 @@
         "prosemirror-view": "^1.37.0"
     },
     "devDependencies": {
-        "@aolyang/eslint-config": "0.0.0-beta.15",
+        "@aolyang/eslint-config": "0.0.0-beta.17",
         "@types/shelljs": "^0.8.15",
         "autoprefixer": "^10.4.19",
         "eslint": "^9.15.0",
