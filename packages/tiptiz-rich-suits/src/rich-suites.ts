@@ -36,13 +36,11 @@ import Margin from "tiptap-extension-margin"
 import TrailingNode, { type TrailingNodeOptions } from "tiptap-extension-trailing-node"
 
 type SuiteOption<T> = false | Partial<T> | ((presets?: Partial<T>) => Partial<T>)
+type AnyExtension<T = any, S = any> = Mark<T, S> | Node<T, S> | Extension<T, S>
 
-function withPreConfigure<T, S>(mark: Mark<T, S>, presets: Partial<T>, options?: SuiteOption<T>): Mark<T, S> | null
-function withPreConfigure<T, S>(node: Node<T, S>, presets: Partial<T>, options?: SuiteOption<T>): Node<T, S> | null
-function withPreConfigure<T, S>(extension: Extension<T, S>, presets: Partial<T>, options?: SuiteOption<T>): Extension<T, S> | null
-function withPreConfigure<T extends {
-    configure: (this: T, ...args: any[]) => T
-}>(extension: T, presets?: any, options?: any): T | null {
+function withPreConfigure<T, S, E extends { configure: (this: E, options: Partial<T>) => E } = AnyExtension<T, S>>(
+    extension: E, options: SuiteOption<T> = {}, presets?: Partial<T>
+): E | null {
     if (options === false) return null
     else if (typeof options === "function")
         return extension.configure(options(presets))
@@ -120,52 +118,52 @@ export const RichSuites = Extension.create<RichSuitesOptions>({
         })
 
         return [
-            withPreConfigure(Blockquote, {}, this.options.Blockquote),
-            withPreConfigure(_Bold, {}, this.options.Bold),
-            withPreConfigure(Code, {
+            withPreConfigure(Blockquote, this.options.Blockquote),
+            withPreConfigure(_Bold, this.options.Bold),
+            withPreConfigure(Code, this.options.Code, {
                 HTMLAttributes: { class: "inline-code" }
-            }, this.options.Code),
-            withPreConfigure(Color, {}, this.options.Color),
-            withPreConfigure(FontFamily, {}, this.options.FontFamily),
-            withPreConfigure(Highlight, {
+            }),
+            withPreConfigure(Color, this.options.Color),
+            withPreConfigure(FontFamily, this.options.FontFamily),
+            withPreConfigure(Highlight, this.options.Highlight, {
                 multicolor: true
-            }, this.options.Highlight),
-            withPreConfigure(Image, {}, this.options.Image),
-            withPreConfigure(_Italic, {}, this.options.Italic),
-            withPreConfigure(Link, {}, this.options.Link),
-            withPreConfigure(ListItem, {}, this.options.ListItem),
-            withPreConfigure(Paragraph, {}, this.options.Paragraph),
-            withPreConfigure(Placeholder, {}, this.options.Placeholder),
-            withPreConfigure(_Strike, {}, this.options.Strike),
-            withPreConfigure(Sub, {}, this.options.Sub),
-            withPreConfigure(Sup, {}, this.options.Sup),
-            withPreConfigure(Table, {
+            }),
+            withPreConfigure(Image, this.options.Image),
+            withPreConfigure(_Italic, this.options.Italic),
+            withPreConfigure(Link, this.options.Link),
+            withPreConfigure(ListItem, this.options.ListItem),
+            withPreConfigure(Paragraph, this.options.Paragraph),
+            withPreConfigure(Placeholder, this.options.Placeholder),
+            withPreConfigure(_Strike, this.options.Strike),
+            withPreConfigure(Sub, this.options.Sub),
+            withPreConfigure(Sup, this.options.Sup),
+            withPreConfigure(Table, this.options.Table, {
                 resizable: true,
                 allowTableNodeSelection: true
-            }, this.options.Table),
-            withPreConfigure(TableCell, {}, this.options.TableCell),
-            withPreConfigure(TableHeader, {}, this.options.TableHeader),
-            withPreConfigure(TableRow, {}, this.options.TableRow),
-            withPreConfigure(TaskListItem, { nested: true }, this.options.TaskListItem),
-            withPreConfigure(TaskList, {}, this.options.TaskList),
-            withPreConfigure(Text, {}, this.options.Text),
-            withPreConfigure(TextAlign, {}, this.options.TextAlign),
-            withPreConfigure(TextStyle, {}, this.options.TextStyle),
-            withPreConfigure(Underline, {}, this.options.Underline),
-            withPreConfigure(BulletList, {}, this.options.BulletList),
-            withPreConfigure(CodeBlockShiki, {}, this.options.CodeBlockShiki),
-            withPreConfigure(FontSize, {}, this.options.FontSize),
-            withPreConfigure(HardBreak, {}, this.options.HardBreak),
-            withPreConfigure(Heading, {
+            }),
+            withPreConfigure(TableCell, this.options.TableCell),
+            withPreConfigure(TableHeader, this.options.TableHeader),
+            withPreConfigure(TableRow, this.options.TableRow),
+            withPreConfigure(TaskListItem, this.options.TaskListItem, { nested: true }),
+            withPreConfigure(TaskList, this.options.TaskList),
+            withPreConfigure(Text, this.options.Text),
+            withPreConfigure(TextAlign, this.options.TextAlign),
+            withPreConfigure(TextStyle, this.options.TextStyle),
+            withPreConfigure(Underline, this.options.Underline),
+            withPreConfigure(BulletList, this.options.BulletList),
+            withPreConfigure(CodeBlockShiki, this.options.CodeBlockShiki),
+            withPreConfigure(FontSize, this.options.FontSize),
+            withPreConfigure(HardBreak, this.options.HardBreak),
+            withPreConfigure(Heading, this.options.Heading, {
                 HTMLAttributes: {
                     all: { style: "margin: 5px 0;" }
                 }
-            }, this.options.Heading),
-            withPreConfigure(HorizontalRules, {}, this.options.HorizontalRules),
-            withPreConfigure(Indent, {}, this.options.Indent),
-            withPreConfigure(LineHeight, {}, this.options.LineHeight),
-            withPreConfigure(Margin, {}, this.options.Margin),
-            withPreConfigure(TrailingNode, {}, this.options.TrailingNode)
-        ]
+            }),
+            withPreConfigure(HorizontalRules, this.options.HorizontalRules),
+            withPreConfigure(Indent, this.options.Indent),
+            withPreConfigure(LineHeight, this.options.LineHeight),
+            withPreConfigure(Margin, this.options.Margin),
+            withPreConfigure(TrailingNode, this.options.TrailingNode)
+        ] as AnyExtension[]
     }
 })
