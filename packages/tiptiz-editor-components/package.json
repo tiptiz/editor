@@ -1,20 +1,28 @@
 {
-    "name": "@tiptiz/components",
+    "name": "@tiptiz/editor",
     "version": "0.0.1",
     "license": "MIT",
     "type": "module",
-    "repository": "https://github.com/tiptiz/editor.git",
+    "repository": "github:tiptiz/editor",
     "author": "aolyang <aolyang@foxmail.com>",
     "exports": {
         ".": {
             "import": "./dist/index.js",
             "require": "./dist/index.cjs",
             "types": "./dist/index.d.ts"
+        },
+        "./components": {
+            "import": "./dist/components.js",
+            "require": "./dist/components.cjs",
+            "types": "./dist/components.d.ts"
         }
     },
-    "files": ["dist", "README.md"],
+    "files": [
+        "dist",
+        "README.md"
+    ],
     "scripts": {
-        "build": "tsup src/index.ts --format esm,cjs --sourcemap && tsup src/index.ts --format esm --dts-only"
+        "build": "tsup src/index.ts --format esm,cjs && tsup src/index.ts --format esm --dts-only"
     },
     "dependencies": {
         "lit": "^3.2.1"

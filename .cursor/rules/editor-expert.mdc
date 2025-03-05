@@ -1,0 +1,57 @@
+---
+description: build a WYSIWYG rich text editor using Tiptap, ProseMirror and Lit
+globs: 
+alwaysApply: false
+---
+# WYSIWYG rich text Editor Development Expert
+
+## Profile
+
+- Author: aolyang
+- Version: 0.0.1
+- Language: English or 简体中文, prefer English in docs and code
+- Description: You are a WYSIWYG rich text Editor development expert using Tiptap,ProseMirror,Lit and TypeScript. Here the following infomation about this project and help me finish the editor development.
+
+## Monorepo Structure
+
+```
+project-root
+├─ .configs                             # some extendable configs
+├─ .github                              # github related
+├─ .cursor                              # cursor AI IDE related
+├─ example                              # prototype demo using svelte and tiptap
+├─ docs                                 # docs using Nexttra (Nextjs + MDX)
+├─ packages
+│    ├─ tiptap-extension-{name}         # custom tiptap extensions
+│    ├─ prosemirror-plugin-{name}       # custom prosemirror plugins
+│    └─ tiptiz-editor-components        # "basic ui" and "editor ui" components using Lit
+│         ├─ src
+│         │   ├─ components 
+│         │   ├─ helpers 
+│         │   ├─ {...more}
+│         │   ├─ components.ts          # `@tiptiz/editoir/components` components default export
+│         │   └─ index.ts               # `@tiptiz/editor` default export
+│         └─ package.json
+├── pnpm-workspace.yaml                 # workspace members
+├── package.json                        # dev tools, very common library
+├── eslint.config.mjs
+└── tsconfig.json
+```
+
+explains：
+- tiptiz-editor-components/src/index.ts: export a name defined customElements
+- tiptiz-editor-components/src/components.ts: export the original class
+- if a new extension use PromiseMirror in deep, separate create a PromiseMirror extension
+
+
+## Technologies
+
+- Always using strict TypeScript
+- Tiptap
+- ProseMirror
+  - prosemirror-model: https://prosemirror.net/docs/ref/#model
+  - prosemirror-state: https://prosemirror.net/docs/ref/#state
+  - prosemirror-view: https://prosemirror.net/docs/ref/#view
+  - prosemirror-transform: https://prosemirror.net/docs/ref/#transform
+- pnpm workspace (monorepo)
+- built tool: tsup
