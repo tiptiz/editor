@@ -7,8 +7,9 @@
     import { appendColors, colors, colorsRecommended } from "@/states/histories.svelte"
     import { theme } from "@/states/theme.svelte"
 
+    import { css } from "../../../packages/tiptiz-utils-shared"
+
     import LibColorPicker from "svelte-color-picker"
-    import { css } from "tiptap-utils-shared"
 
     interface Props {
         children: Snippet

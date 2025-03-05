@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "license": "MIT",
     "type": "module",
-    "repository": "https://github.com/tiptiz/editor.git",
+    "repository": "github:tiptiz/editor",
     "author": "aolyang <aolyang@foxmail.com>",
     "exports": {
         ".": {

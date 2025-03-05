@@ -193,12 +193,12 @@ importers:
       emoji-picker-element:
         specifier: ^1.26.0
         version: 1.26.0
-      tiptap-extension-horizontal-rules:
+      tiptiz-extension-horizontal-rules:
         specifier: workspace:*
-        version: link:../packages/tiptap-extension-horizontal-rules
-      tiptap-utils-shared:
+        version: link:../packages/tiptiz-extension-horizontal-rules
+      tiptiz-utils-shared:
         specifier: workspace:*
-        version: link:../packages/tiptap-utils-shared
+        version: link:../packages/tiptiz-utils-shared
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^4.0.1
@@ -251,113 +251,6 @@ importers:
       tslib:
         specifier: ^2.8.0
         version: 2.8.1
-
-  packages/tiptap-extension-bullet-list:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-bullet-list':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-
-  packages/tiptap-extension-code-block-shiki:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-code-block':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap/pm':
-        specifier: ^2.11.5
-        version: 2.11.5
-      lit:
-        specifier: ^3.2.1
-        version: 3.2.1
-      shiki:
-        specifier: ^1.24.0
-        version: 1.24.4
-
-  packages/tiptap-extension-font-size:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-text-style':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-
-  packages/tiptap-extension-hard-break:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-hard-break':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-text-style':
-        specifier: ^2.10.2
-        version: 2.10.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-
-  packages/tiptap-extension-heading:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-heading':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-
-  packages/tiptap-extension-horizontal-rules:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-horizontal-rule':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap/pm':
-        specifier: ^2.11.5
-        version: 2.11.5
-
-  packages/tiptap-extension-indent:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/pm':
-        specifier: ^2.11.5
-        version: 2.11.5
-
-  packages/tiptap-extension-line-height:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-text-style':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-
-  packages/tiptap-extension-margin:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-text-style':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-
-  packages/tiptap-extension-trailing-node:
-    dependencies:
-      '@tiptap/core':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/pm':
-        specifier: ^2.11.5
-        version: 2.11.5
-
-  packages/tiptap-utils-shared: {}
 
   packages/tiptiz-editor-components:
     dependencies:
@@ -448,164 +341,145 @@ importers:
       lit:
         specifier: ^3.2.1
         version: 3.2.1
-      tiptap-extension-bullet-list:
+      tiptiz-extension-bullet-list:
         specifier: workspace:*
-        version: link:../tiptap-extension-bullet-list
-      tiptap-extension-code-block-shiki:
+        version: link:../tiptiz-extension-bullet-list
+      tiptiz-extension-code-block-shiki:
         specifier: workspace:*
-        version: link:../tiptap-extension-code-block-shiki
-      tiptap-extension-font-size:
+        version: link:../tiptiz-extension-code-block-shiki
+      tiptiz-extension-font-size:
         specifier: workspace:*
-        version: link:../tiptap-extension-font-size
-      tiptap-extension-hard-break:
+        version: link:../tiptiz-extension-font-size
+      tiptiz-extension-hard-break:
         specifier: workspace:*
-        version: link:../tiptap-extension-hard-break
-      tiptap-extension-heading:
+        version: link:../tiptiz-extension-hard-break
+      tiptiz-extension-heading:
         specifier: workspace:*
-        version: link:../tiptap-extension-heading
-      tiptap-extension-horizontal-rules:
+        version: link:../tiptiz-extension-heading
+      tiptiz-extension-horizontal-rules:
         specifier: workspace:*
-        version: link:../tiptap-extension-horizontal-rules
-      tiptap-extension-indent:
+        version: link:../tiptiz-extension-horizontal-rules
+      tiptiz-extension-indent:
         specifier: workspace:*
-        version: link:../tiptap-extension-indent
-      tiptap-extension-line-height:
+        version: link:../tiptiz-extension-indent
+      tiptiz-extension-line-height:
         specifier: workspace:*
-        version: link:../tiptap-extension-line-height
-      tiptap-extension-margin:
+        version: link:../tiptiz-extension-line-height
+      tiptiz-extension-margin:
         specifier: workspace:*
-        version: link:../tiptap-extension-margin
-      tiptap-extension-trailing-node:
+        version: link:../tiptiz-extension-margin
+      tiptiz-extension-trailing-node:
         specifier: workspace:*
-        version: link:../tiptap-extension-trailing-node
+        version: link:../tiptiz-extension-trailing-node
 
   packages/tiptiz-editor-icons: {}
 
-  packages/tiptiz-markdown-suits: {}
-
-  packages/tiptiz-rich-suits:
+  packages/tiptiz-extension-bullet-list:
     dependencies:
-      '@tiptap/extension-document':
-        specifier: ^2.10.3
-        version: 2.10.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-    devDependencies:
       '@tiptap/core':
         specifier: ^2.11.5
         version: 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/extension-blockquote':
+      '@tiptap/extension-bullet-list':
         specifier: ^2.11.5
         version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-bold':
+
+  packages/tiptiz-extension-code-block-shiki:
+    dependencies:
+      '@tiptap/core':
         specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-bubble-menu':
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-code-block':
         specifier: ^2.11.5
         version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap/extension-code':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-color':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/extension-text-style@2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5)))
-      '@tiptap/extension-font-family':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/extension-text-style@2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5)))
-      '@tiptap/extension-highlight':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-history':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap/extension-image':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-italic':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-link':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap/extension-list-item':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-paragraph':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-placeholder':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap/extension-strike':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-subscript':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-superscript':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-table':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap/extension-table-cell':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-table-header':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-table-row':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-task-item':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap/extension-task-list':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-text':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-text-align':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-text-style':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
-      '@tiptap/extension-underline':
-        specifier: ^2.11.5
-        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
       '@tiptap/pm':
         specifier: ^2.11.5
         version: 2.11.5
-      tiptap-extension-bullet-list:
-        specifier: workspace:*
-        version: link:../tiptap-extension-bullet-list
-      tiptap-extension-code-block-shiki:
-        specifier: workspace:*
-        version: link:../tiptap-extension-code-block-shiki
-      tiptap-extension-font-size:
-        specifier: workspace:*
-        version: link:../tiptap-extension-font-size
-      tiptap-extension-hard-break:
-        specifier: workspace:*
-        version: link:../tiptap-extension-hard-break
-      tiptap-extension-heading:
-        specifier: workspace:*
-        version: link:../tiptap-extension-heading
-      tiptap-extension-horizontal-rules:
-        specifier: workspace:*
-        version: link:../tiptap-extension-horizontal-rules
-      tiptap-extension-indent:
-        specifier: workspace:*
-        version: link:../tiptap-extension-indent
-      tiptap-extension-line-height:
-        specifier: workspace:*
-        version: link:../tiptap-extension-line-height
-      tiptap-extension-margin:
-        specifier: workspace:*
-        version: link:../tiptap-extension-margin
-      tiptap-extension-trailing-node:
-        specifier: workspace:*
-        version: link:../tiptap-extension-trailing-node
+      lit:
+        specifier: ^3.2.1
+        version: 3.2.1
+      shiki:
+        specifier: ^1.24.0
+        version: 1.24.4
+
+  packages/tiptiz-extension-font-size:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-text-style':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+
+  packages/tiptiz-extension-hard-break:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-hard-break':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+      '@tiptap/extension-text-style':
+        specifier: ^2.10.2
+        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+
+  packages/tiptiz-extension-heading:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-heading':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+
+  packages/tiptiz-extension-horizontal-rules:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-horizontal-rule':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
+      '@tiptap/pm':
+        specifier: ^2.11.5
+        version: 2.11.5
+
+  packages/tiptiz-extension-indent:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/pm':
+        specifier: ^2.11.5
+        version: 2.11.5
+
+  packages/tiptiz-extension-line-height:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-text-style':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+
+  packages/tiptiz-extension-margin:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-text-style':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+
+  packages/tiptiz-extension-trailing-node:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.11.5
+        version: 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/pm':
+        specifier: ^2.11.5
+        version: 2.11.5
+
+  packages/tiptiz-utils-shared: {}
 
 packages:
 
@@ -2071,11 +1945,6 @@ packages:
       '@tiptap/core': ^2.7.0
       '@tiptap/extension-text-style': ^2.7.0
 
-  '@tiptap/extension-document@2.10.4':
-    resolution: {integrity: sha512-1Pqrl6Rr9bVEHJ3zO2dM7UUA0Qn/r70JQ9YLlestjW1sbMaMuY3Ifvu2uSyUE7SAGV3gvxwNVQCrv8f0VlVEaA==}
-    peerDependencies:
-      '@tiptap/core': ^2.7.0
-
   '@tiptap/extension-document@2.11.5':
     resolution: {integrity: sha512-7I4BRTpIux2a0O2qS3BDmyZ5LGp3pszKbix32CmeVh7lN9dV7W5reDqtJJ9FCZEEF+pZ6e1/DQA362dflwZw2g==}
     peerDependencies:
@@ -2207,11 +2076,6 @@ packages:
 
   '@tiptap/extension-text-align@2.11.5':
     resolution: {integrity: sha512-Ei0zDpH5N9EV59ogydK4HTKa4lCPicCsQllM5n/Nf2tUJPir3aiYxzJ73FzhComD4Hpo1ANYnmssBhy8QeoPZA==}
-    peerDependencies:
-      '@tiptap/core': ^2.7.0
-
-  '@tiptap/extension-text-style@2.10.4':
-    resolution: {integrity: sha512-ibq7avkcwHyUSG53Hf+P31rrwsKVbbiqbWZM4kXC7M2X3iUwFrtvaa+SWzyWQfE1jl2cCrD1+rfSkj/alcOKGg==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
 
@@ -7429,10 +7293,6 @@ snapshots:
       '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
       '@tiptap/extension-text-style': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
 
-  '@tiptap/extension-document@2.10.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))':
-    dependencies:
-      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
-
   '@tiptap/extension-document@2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))':
     dependencies:
       '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
@@ -7541,10 +7401,6 @@ snapshots:
       '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
 
   '@tiptap/extension-text-align@2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))':
-    dependencies:
-      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
-
-  '@tiptap/extension-text-style@2.10.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))':
     dependencies:
       '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
 

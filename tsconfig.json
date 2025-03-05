@@ -4,6 +4,6 @@
         { "path": "./tsconfig.node.json" },
         { "path": "./example/tsconfig.json" },
         { "path": "./docs/tsconfig.json" },
-        { "path": "./packages/tiptap-extension-code-block-shiki/tsconfig.json" }
+        { "path": "./packages/tiptiz-extension-code-block-shiki/tsconfig.json"}
     ]
 }

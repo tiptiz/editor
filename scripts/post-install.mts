@@ -1,13 +1,16 @@
 import $ from "shelljs"
+import concurrently from "concurrently"
 
-// should publish
-const libs = [
-    "packages/tiptap-extension-code-block-shiki",
-    "packages/tiptiz-editor-icons",
-    "packages/tiptiz-editor-components"
-]
+const libs = $.ls("packages").filter(dir => dir.startsWith("tiptiz-extension"))
 
-Promise.all(libs.map(dir =>
-    $.exec(`pnpm --filter ./${dir} run build`)
-))
-    .then(() => console.log("internal libs build success"))
+const checked = libs.filter(dir => !$.test("-d", `packages/${dir}/dist`))
+
+const force = process.argv.some(arg => arg === "--force" || arg === "-F")
+
+concurrently((force ? libs : checked).map(dir => ({
+    name: dir,
+    command: `pnpm --filter ./packages/${dir} build`,
+})), {
+    prefix: "build extension",
+    prefixColors: "green"
+})

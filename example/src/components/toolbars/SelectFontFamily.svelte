@@ -6,7 +6,7 @@
     import { getEditorContext } from "@/states/toolbar"
     import { t } from "@/utils/i18n"
 
-    import { css } from "tiptap-utils-shared"
+    import { css } from "../../../../packages/tiptiz-utils-shared"
 
     const fonts = ["Inter", "Roboto", "sans-serif", "serif", "monospace", "cursive", "Arial", "Helvetica", "fantasy"]
     const items: SelectOption[] = fonts.map((font) => {

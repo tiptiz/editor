@@ -13,7 +13,7 @@
 
     import SvgHr from "@/icons/toolbars/SvgHr.svelte"
 
-    import { css } from "tiptap-utils-shared"
+    import { css } from "../../../../packages/tiptiz-utils-shared"
 
     const ctx = getEditorContext()
 

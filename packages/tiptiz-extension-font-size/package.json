@@ -1,0 +1,30 @@
+{
+    "name": "tiptiz-extension-font-size",
+    "version": "0.0.1",
+    "repository": "github:tiptiz/editor",
+    "author": "aolyang <aolyang@foxmail.com>",
+    "license": "MIT",
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "files": [
+        "dist",
+        "src",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsup --format esm,cjs && tsup --format esm --dts-only",
+        "dev": "npm run build --watch"
+    },
+    "dependencies": {
+        "@tiptap/core": "^2.11.5",
+        "@tiptap/extension-text-style": "^2.11.5"
+    }
+}

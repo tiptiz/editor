@@ -1,0 +1,31 @@
+{
+    "name": "tiptiz-extension-horizontal-rules",
+    "version": "0.0.1",
+    "license": "MIT",
+    "repository": "github:tiptiz/editor",
+    "author": "aolyang <aolyang@foxmail.com>",
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src",
+        "README.md"
+    ],
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "scripts": {
+        "build": "tsup --format esm,cjs && tsup --format esm --dts-only",
+        "dev": "npm run build --watch"
+    },
+    "dependencies": {
+        "@tiptap/core": "^2.11.5",
+        "@tiptap/extension-horizontal-rule": "^2.11.5",
+        "@tiptap/pm": "^2.11.5"
+    }
+}

@@ -54,15 +54,15 @@
         "@tiptap/pm": "^2.11.5",
         "@tiptiz/icons": "^0.0.1",
         "lit": "^3.2.1",
-        "tiptap-extension-bullet-list": "workspace:*",
-        "tiptap-extension-code-block-shiki": "workspace:*",
-        "tiptap-extension-font-size": "workspace:*",
-        "tiptap-extension-hard-break": "workspace:*",
-        "tiptap-extension-heading": "workspace:*",
-        "tiptap-extension-horizontal-rules": "workspace:*",
-        "tiptap-extension-indent": "workspace:*",
-        "tiptap-extension-line-height": "workspace:*",
-        "tiptap-extension-margin": "workspace:*",
-        "tiptap-extension-trailing-node": "workspace:*"
+        "tiptiz-extension-bullet-list": "workspace:*",
+        "tiptiz-extension-code-block-shiki": "workspace:*",
+        "tiptiz-extension-font-size": "workspace:*",
+        "tiptiz-extension-hard-break": "workspace:*",
+        "tiptiz-extension-heading": "workspace:*",
+        "tiptiz-extension-horizontal-rules": "workspace:*",
+        "tiptiz-extension-indent": "workspace:*",
+        "tiptiz-extension-line-height": "workspace:*",
+        "tiptiz-extension-margin": "workspace:*",
+        "tiptiz-extension-trailing-node": "workspace:*"
     }
 }

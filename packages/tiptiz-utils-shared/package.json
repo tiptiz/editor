@@ -1,0 +1,12 @@
+{
+    "name": "tiptiz-utils-shared",
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "github:tiptiz/editor",
+    "author": "aolyang <aolyang@foxmail.com>",
+    "exports": {
+        ".": {
+            "import": "./src/index.ts"
+        }
+    }
+}

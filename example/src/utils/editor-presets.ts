@@ -1,6 +1,6 @@
-import type { HorizontalType } from "tiptap-extension-horizontal-rules"
+import type { HorizontalType } from "tiptiz-extension-horizontal-rules"
 
-import { builtinTypes } from "tiptap-extension-horizontal-rules"
+import { builtinTypes } from "tiptiz-extension-horizontal-rules"
 
 export const lowContrastBg = "#afafaf33"
 export const lowContrastGray = "rgba(169,169,169,0.33)"

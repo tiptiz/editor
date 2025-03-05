@@ -16,8 +16,8 @@
         "@tiptap/extension-history": "^2.11.5",
         "@tiptiz/editor": "workspace:*",
         "emoji-picker-element": "^1.26.0",
-        "tiptap-extension-horizontal-rules": "workspace:*",
-        "tiptap-utils-shared": "workspace:*"
+        "tiptiz-extension-horizontal-rules": "workspace:*",
+        "tiptiz-utils-shared": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",
