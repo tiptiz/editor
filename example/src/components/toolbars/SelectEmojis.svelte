@@ -10,7 +10,7 @@
 
     import SvgEmoji from "@/icons/toolbars/SvgEmoji.svelte"
 
-    import { css } from "../../../../packages/tiptiz-utils-shared"
+    import { css } from "../tiptiz-utils-shared"
 
     import { Picker } from "emoji-picker-element"
     import en from "emoji-picker-element/i18n/en"

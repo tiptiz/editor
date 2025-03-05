@@ -2,13 +2,12 @@ import type { EditorOptions, Extensions } from "@tiptap/core"
 
 import { horizontalTypes, lowContrastBg, lowContrastGray } from "@/utils/editor-presets"
 
-import { attrs, css } from "../../../packages/tiptiz-utils-shared"
-
 import { Editor } from "@tiptap/core"
 import Document from "@tiptap/extension-document"
 import DropCursor from "@tiptap/extension-dropcursor"
 import History from "@tiptap/extension-history"
 import { FullKit } from "@tiptiz/editor"
+import { attrs, css } from "tiptiz-utils-shared"
 
 export const extensions: Extensions = [
     Document,
