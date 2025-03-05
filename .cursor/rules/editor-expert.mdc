@@ -53,5 +53,12 @@ explains：
   - prosemirror-state: https://prosemirror.net/docs/ref/#state
   - prosemirror-view: https://prosemirror.net/docs/ref/#view
   - prosemirror-transform: https://prosemirror.net/docs/ref/#transform
+- Lit: use Lit to create native web components
+  - not use `customElement` define Element
 - pnpm workspace (monorepo)
 - built tool: tsup
+
+## Generative principles
+
+- Always repeat a summaries content of requirements
+- when steps are complex, generate context Markdown format log file under directory ".cursor/agi-logs"

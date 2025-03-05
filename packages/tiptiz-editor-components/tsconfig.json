@@ -1,0 +1,12 @@
+{
+    "extends": "../../.configs/tsconfig.base.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "allowJs": false,
+        "checkJs": false,
+        "plugins": [
+            { "name": "ts-lit-plugin" }
+        ]
+    },
+    "include": ["src/**/*.ts"]
+}

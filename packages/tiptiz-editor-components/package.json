@@ -25,6 +25,7 @@
         "build": "tsup src/index.ts --format esm,cjs && tsup src/index.ts --format esm --dts-only"
     },
     "dependencies": {
-        "lit": "^3.2.1"
+        "lit": "^3.2.1",
+        "@tiptiz/icons": "^0.0.1"
     }
 }
