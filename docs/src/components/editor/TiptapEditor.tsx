@@ -7,7 +7,7 @@ import Document from "@tiptap/extension-document"
 import DropCursor from "@tiptap/extension-dropcursor"
 import History from "@tiptap/extension-history"
 import { EditorConsumer, EditorContent, EditorContext, useEditor } from "@tiptap/react"
-import TiptizSuites from "@tiptiz/rich-suits"
+import { FullKit } from "@tiptiz/editor"
 
 const code = `<h1>Heading Title</h1>
 <pre data-show-line-numbers="true" data-highlight-lines="1,2,3,6,7"><code class="language-javascript">for (var i=1; i <= 20; i++) {
@@ -28,7 +28,7 @@ const extensions = [
     }),
     DropCursor,
     History,
-    TiptizSuites.configure({
+    FullKit.configure({
         Placeholder: {
             placeholder: ({ node }) => {
                 if (node.type.name === "heading") {

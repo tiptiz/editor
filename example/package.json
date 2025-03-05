@@ -11,13 +11,13 @@
         "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "dependencies": {
-        "@tiptap/extension-document": "^2.10.3",
-        "@tiptap/extension-history": "^2.10.3",
-        "@tiptap/extension-dropcursor": "^2.10.3",
+        "@tiptap/extension-document": "^2.11.5",
+        "@tiptap/extension-dropcursor": "^2.11.5",
+        "@tiptap/extension-history": "^2.11.5",
+        "@tiptiz/editor": "workspace:*",
         "emoji-picker-element": "^1.26.0",
-        "tiptap-utils-shared": "workspace:*",
         "tiptap-extension-horizontal-rules": "workspace:*",
-        "@tiptiz/rich-suits": "workspace:*"
+        "tiptap-utils-shared": "workspace:*"
     },
     "devDependencies": {
         "@sveltejs/vite-plugin-svelte": "^4.0.1",

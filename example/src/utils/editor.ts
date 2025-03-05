@@ -6,14 +6,14 @@ import { Editor } from "@tiptap/core"
 import Document from "@tiptap/extension-document"
 import DropCursor from "@tiptap/extension-dropcursor"
 import History from "@tiptap/extension-history"
-import TiptizSuites from "@tiptiz/rich-suits"
+import { FullKit } from "@tiptiz/editor"
 import { attrs, css } from "tiptap-utils-shared"
 
 export const extensions: Extensions = [
     Document,
     History,
     DropCursor,
-    TiptizSuites.configure({
+    FullKit.configure({
         Placeholder: { placeholder: "Write down your imagination …" },
         TextAlign: { types: ["heading", "paragraph"] },
         Heading: attrs({ all: { style: css`margin: 5px 0` } }),

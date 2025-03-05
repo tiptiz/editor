@@ -22,6 +22,7 @@
         "@aolyang/eslint-config": "0.0.0-beta.17",
         "@types/shelljs": "^0.8.15",
         "autoprefixer": "^10.4.20",
+        "concurrently": "^9.1.2",
         "eslint": "^9.20.1",
         "globals": "^15.15.0",
         "lit": "^3.2.1",

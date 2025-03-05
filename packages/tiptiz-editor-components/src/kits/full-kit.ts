@@ -1,4 +1,5 @@
-import { Extension, type Mark, type Node } from "@tiptap/core"
+import {  Extension } from "@tiptap/core"
+// extensions
 import Blockquote, { type BlockquoteOptions } from "@tiptap/extension-blockquote"
 import Bold, { type BoldOptions } from "@tiptap/extension-bold"
 import Code, { type CodeOptions } from "@tiptap/extension-code"
@@ -35,73 +36,62 @@ import LineHeight from "tiptap-extension-line-height"
 import Margin from "tiptap-extension-margin"
 import TrailingNode, { type TrailingNodeOptions } from "tiptap-extension-trailing-node"
 
-type SuiteOption<T> = false | Partial<T> | ((presets?: Partial<T>) => Partial<T>)
-type AnyExtension<T = any, S = any> = Mark<T, S> | Node<T, S> | Extension<T, S>
+import { type AnyExtension, type PreConfigOption, withPreConfigure } from "../utils/extension"
 
-function withPreConfigure<T, S, E extends { configure: (this: E, options: Partial<T>) => E } = AnyExtension<T, S>>(
-    extension: E, options: SuiteOption<T> = {}, presets?: Partial<T>
-): E | null {
-    if (options === false) return null
-    else if (typeof options === "function")
-        return extension.configure(options(presets))
-    else if (options)
-        return extension.configure(options)
-    else
-        return extension.configure(presets)
-}
-
-export interface RichSuitesOptions {
-    Blockquote?: SuiteOption<BlockquoteOptions>
-    Bold?: SuiteOption<BoldOptions>
-    Code?: SuiteOption<CodeOptions>
-    Color?: SuiteOption<ColorOptions>
-    FontFamily?: SuiteOption<FontFamilyOptions>
-    Highlight?: SuiteOption<HighlightOptions>
-    Image?: SuiteOption<ImageOptions>
-    Italic?: SuiteOption<ItalicOptions>
-    Link?: SuiteOption<LinkOptions>
-    ListItem?: SuiteOption<ListItemOptions>
-    Paragraph?: SuiteOption<ParagraphOptions>
-    Placeholder?: SuiteOption<PlaceholderOptions>
-    Strike?: SuiteOption<StrikeOptions>
-    Sub?: SuiteOption<SubscriptExtensionOptions>
-    Sup?: SuiteOption<SuperscriptExtensionOptions>
-    Table?: SuiteOption<TableOptions>
-    TableCell?: SuiteOption<TableCellOptions>
-    TableHeader?: SuiteOption<TableHeaderOptions>
-    TableRow?: SuiteOption<TableRowOptions>
-    TaskListItem?: SuiteOption<TaskItemOptions>
-    TaskList?: SuiteOption<TaskListOptions>
-    Text?: SuiteOption<{}>
-    TextAlign?: SuiteOption<TextAlignOptions>
-    TextStyle?: SuiteOption<TextStyleOptions>
-    Underline?: SuiteOption<UnderlineOptions>
-    BulletList?: SuiteOption<BulletListOptions>
-    CodeBlockShiki?: SuiteOption<CodeBlockShikiOptions>
-    FontSize?: SuiteOption<FontSizeOptions>
-    HardBreak?: SuiteOption<{}>
-    Heading?: SuiteOption<HeadingOptions>
-    HorizontalRules?: SuiteOption<HorizontalOptions>
-    Indent?: SuiteOption<{}>
-    LineHeight?: SuiteOption<{}>
-    Margin?: SuiteOption<{}>
-    TrailingNode?: SuiteOption<TrailingNodeOptions>
+export interface FullKitOptions {
+    Blockquote?: PreConfigOption<BlockquoteOptions>
+    Bold?: PreConfigOption<BoldOptions>
+    Code?: PreConfigOption<CodeOptions>
+    Color?: PreConfigOption<ColorOptions>
+    FontFamily?: PreConfigOption<FontFamilyOptions>
+    Highlight?: PreConfigOption<HighlightOptions>
+    Image?: PreConfigOption<ImageOptions>
+    Italic?: PreConfigOption<ItalicOptions>
+    Link?: PreConfigOption<LinkOptions>
+    ListItem?: PreConfigOption<ListItemOptions>
+    Paragraph?: PreConfigOption<ParagraphOptions>
+    Placeholder?: PreConfigOption<PlaceholderOptions>
+    Strike?: PreConfigOption<StrikeOptions>
+    Sub?: PreConfigOption<SubscriptExtensionOptions>
+    Sup?: PreConfigOption<SuperscriptExtensionOptions>
+    Table?: PreConfigOption<TableOptions>
+    TableCell?: PreConfigOption<TableCellOptions>
+    TableHeader?: PreConfigOption<TableHeaderOptions>
+    TableRow?: PreConfigOption<TableRowOptions>
+    TaskListItem?: PreConfigOption<TaskItemOptions>
+    TaskList?: PreConfigOption<TaskListOptions>
+    Text?: PreConfigOption<{}>
+    TextAlign?: PreConfigOption<TextAlignOptions>
+    TextStyle?: PreConfigOption<TextStyleOptions>
+    Underline?: PreConfigOption<UnderlineOptions>
+    BulletList?: PreConfigOption<BulletListOptions>
+    CodeBlockShiki?: PreConfigOption<CodeBlockShikiOptions>
+    FontSize?: PreConfigOption<FontSizeOptions>
+    HardBreak?: PreConfigOption<{}>
+    Heading?: PreConfigOption<HeadingOptions>
+    HorizontalRules?: PreConfigOption<HorizontalOptions>
+    Indent?: PreConfigOption<{}>
+    LineHeight?: PreConfigOption<{}>
+    Margin?: PreConfigOption<{}>
+    TrailingNode?: PreConfigOption<TrailingNodeOptions>
 }
 
 /**
+ * Full-featured rich text editor kit with all available extensions
+ *
  * @example
  * import Document from "@tiptap/extension-document"
- * import TiptizSuites from "@tiptiz/rich-suites"
+ * import { FullKit } from "@tiptiz/editor"
  *
  * const editor = new Editor({
  *     extensions: [
  *         Document,
- *         TiptizSuites
+ *         FullKit
  *     ]
  * })
- * */
-export const RichSuites = Extension.create<RichSuitesOptions>({
-    name: "tiptiz-rich-suites",
+ */
+export const FullKit = Extension.create<FullKitOptions>({
+    name: "tiptiz-full-kit",
     addExtensions() {
         const _Bold = Bold.extend({
             renderHTML: ({ HTMLAttributes }) => ["b", HTMLAttributes, 0]
