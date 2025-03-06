@@ -7,9 +7,10 @@ import { PackageUpdate } from "./package-version.mjs"
 /**
  * Update and publish packages
  * @param packagesToUpdate Array of package updates to process
+ * @param npmMeta Object containing auth token and registry URL
  * @returns Promise<void>
  */
-const updateAndPublishPackages = async (packagesToUpdate: PackageUpdate[]): Promise<void> => {
+const updateAndPublishPackages = async (packagesToUpdate: PackageUpdate[], npmMeta: { authToken: string; registryUrl: string }): Promise<void> => {
     for (const update of packagesToUpdate) {
         try {
             const pkg = update.package
@@ -35,7 +36,7 @@ const updateAndPublishPackages = async (packagesToUpdate: PackageUpdate[]): Prom
             }
 
             console.log(`Publishing ${pkg.name}@${newVersion}...`)
-            if ($.exec(`npm publish --access public${versionType.includes("pre") ? " --tag next" : ""}`).code !== 0) {
+            if ($.exec(`npm publish --access public${versionType.includes("pre") ? " --tag next" : ""} --registry ${npmMeta.registryUrl}`).code !== 0) {
                 console.error(`Failed to publish ${pkg.name}`)
             }
         } catch (error) {

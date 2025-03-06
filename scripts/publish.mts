@@ -6,7 +6,18 @@ import selectPackages, { r } from "./utils/package-info.mjs"
 import updateAndPublishPackages from "./utils/package-publish.mjs"
 import { collectVersionInfo, PackageUpdate } from "./utils/package-version.mjs"
 
-const authToken = loadEnv("npm", r(), "NPM").NPM_PUBLISH_TOKEN
+const authToken = loadEnv("npm", r("scripts"), "NPM").NPM_PUBLISH_TOKEN
+const registryUrl = loadEnv("npm", r("scripts"), "NPM").NPM_PUBLISH_REGISTRY
+
+if (!authToken || !registryUrl) {
+    console.log("No auth token or registry URL found. Exiting.")
+    process.exit(0)
+}
+
+const npmMeta = {
+    authToken,
+    registryUrl
+}
 
 /**
  * Format package updates for display
@@ -50,15 +61,10 @@ async function main() {
     console.log("\n📋 Summary of updates to be applied:")
     console.log(formatPackageUpdates(packagesToUpdate))
 
-    if (authToken) {
-        $.exec(`npm set //registry.npmjs.org/:_authToken=${authToken}`)
-    } else {
-        console.log("No auth token found. Exiting.")
-        process.exit(0)
-    }
+    $.exec(`npm set //registry.npmjs.org/:_authToken=${authToken}`)
 
     console.log("\n🚀 Starting update and publish process...\n")
-    await updateAndPublishPackages(packagesToUpdate)
+    await updateAndPublishPackages(packagesToUpdate, npmMeta)
     console.log("\n✅ All packages processed successfully!")
 }
 
