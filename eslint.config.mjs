@@ -8,7 +8,8 @@ import { typescript, typescriptRules }     from "@aolyang/eslint-config/typescri
 
 const devFiles = [
     "eslint.config.mjs",
-    ".configs/*.mjs"
+    ".configs/*.mjs",
+    "scripts/**/*.{ts,mjs,js,mts}"
 ]
 
 const packagesTsFiles = [

@@ -11,8 +11,6 @@
         "noUncheckedSideEffectImports": true
     },
     "include": [
-        "scripts",
-
         "eslint.config.mjs",
         ".configs/*.mjs",
 
