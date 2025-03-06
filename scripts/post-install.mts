@@ -1,16 +1,32 @@
 import concurrently from "concurrently"
 import $ from "shelljs"
 
-const libs = $.ls("packages").filter(dir => dir.startsWith("tiptiz-extension"))
-
-const checked = libs.filter(dir => !$.test("-d", `packages/${dir}/dist`))
+const filter = (dirs: string[]) => dirs.filter(dir => !$.test("-d", `packages/${dir}/dist`))
 
 const force = process.argv.some(arg => arg === "--force" || arg === "-F")
 
-concurrently((force ? libs : checked).map(dir => ({
-    name: dir,
-    command: `pnpm --filter ./packages/${dir} build`
-})), {
-    prefix: "build extension",
-    prefixColors: "green"
-})
+const build = async (dirs: string[], color = "green") => {
+    return Promise
+        .resolve(force ? dirs : filter(dirs))
+        .then((dirs) => {
+            return dirs.map(dir => ({
+                name: dir,
+                command: `pnpm --filter ./packages/${dir} build`
+            }))
+        })
+        .then((tasks) => {
+            if (!tasks.length) {
+                console.log("Nothing need to build")
+                return
+            }
+            return concurrently(tasks, {
+                prefix: "build",
+                prefixColors: color
+            }).result
+        })
+}
+
+const libs = $.ls("packages").filter(dir => dir.startsWith("tiptiz-extension"))
+
+await build(libs)
+await build(["tiptiz-editor-icons", "tiptiz-editor-components"])

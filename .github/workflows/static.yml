@@ -45,7 +45,7 @@ jobs:
           npm install pnpm --global
           pnpm -v
           pnpm i
-          pnpm run tsx ./scripts/post-install.mts -F
+          pnpm tsx ./scripts/post-install.mts -F
           pnpm example build
           cp example/public/* example/dist -r
       - name: Upload artifact
