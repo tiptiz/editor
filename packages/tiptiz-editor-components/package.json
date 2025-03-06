@@ -7,14 +7,14 @@
     "author": "aolyang <aolyang@foxmail.com>",
     "exports": {
         ".": {
+            "types": "./dist/index.d.ts",
             "import": "./dist/index.js",
-            "require": "./dist/index.cjs",
-            "types": "./dist/index.d.ts"
+            "require": "./dist/index.cjs"
         },
         "./components": {
+            "types": "./dist/components.d.ts",
             "import": "./dist/components.js",
-            "require": "./dist/components.cjs",
-            "types": "./dist/components.d.ts"
+            "require": "./dist/components.cjs"
         }
     },
     "files": [
