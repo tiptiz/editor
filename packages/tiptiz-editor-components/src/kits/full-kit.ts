@@ -28,7 +28,7 @@ import BulletList, { type BulletListOptions } from "tiptiz-extension-bullet-list
 import CodeBlockShiki, { type CodeBlockShikiOptions } from "tiptiz-extension-code-block-shiki"
 import FontSize, { type FontSizeOptions } from "tiptiz-extension-font-size"
 import HardBreak from "tiptiz-extension-hard-break"
-import Heading, { type HeadingOptions } from "tiptiz-extension-heading"
+import Heading, { type HeadingOptions } from "tiptiz-extension-headings"
 import HorizontalRules, { type HorizontalOptions } from "tiptiz-extension-horizontal-rules"
 import Indent from "tiptiz-extension-indent"
 import LineHeight from "tiptiz-extension-line-height"

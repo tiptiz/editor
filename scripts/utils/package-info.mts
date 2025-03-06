@@ -13,6 +13,8 @@ export interface Package {
     version: string
 }
 
+const publicPackages = ["tiptiz-extension", "tiptiz-editor"]
+
 /**
  * Get all tiptiz-extension packages with their current versions
  * @returns Promise<Package[]> Array of package information
@@ -20,7 +22,7 @@ export interface Package {
 export const getPackages = async (): Promise<Package[]> => {
     const packagesDir = r("packages")
     const packageDirs = fs.readdirSync(packagesDir)
-        .filter(dir => dir.startsWith("tiptiz-extension-"))
+        .filter(dir => publicPackages.some(prefix => dir.startsWith(prefix)))
 
     const packages: Package[] = []
 

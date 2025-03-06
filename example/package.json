@@ -14,9 +14,9 @@
         "@tiptap/extension-document": "^2.11.5",
         "@tiptap/extension-dropcursor": "^2.11.5",
         "@tiptap/extension-history": "^2.11.5",
-        "@tiptiz/editor": "workspace:*",
+        "@tiptiz/editor": "0.0.2-alpha.0",
+        "tiptiz-extension-horizontal-rules": "0.0.2-beta.0",
         "emoji-picker-element": "^1.26.0",
-        "tiptiz-extension-horizontal-rules": "workspace:*",
         "tiptiz-utils-shared": "workspace:*"
     },
     "devDependencies": {

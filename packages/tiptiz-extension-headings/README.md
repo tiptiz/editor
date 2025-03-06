@@ -7,7 +7,7 @@ provide style initialize for heading node.
 ## Usage
 
 ```typescript
-import Heading from "tiptiz-extension-heading"
+import Heading from "tiptiz-extension-headings"
 
 const editor = new Editor({
     element,
