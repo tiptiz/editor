@@ -354,41 +354,41 @@ importers:
         specifier: ^2.11.5
         version: 2.11.5
       '@tiptiz/icons':
-        specifier: ^0.0.1
+        specifier: 0.0.1
         version: 0.0.1
       lit:
         specifier: ^3.2.1
         version: 3.2.1
       tiptiz-extension-bullet-list:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-bullet-list
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0(@tiptap/pm@2.11.5)
       tiptiz-extension-code-block-shiki:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-code-block-shiki
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0
       tiptiz-extension-font-size:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-font-size
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0(@tiptap/pm@2.11.5)
       tiptiz-extension-hard-break:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-hard-break
-      tiptiz-extension-heading:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-heading
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0(@tiptap/pm@2.11.5)
+      tiptiz-extension-headings:
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0(@tiptap/pm@2.11.5)
       tiptiz-extension-horizontal-rules:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-horizontal-rules
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0
       tiptiz-extension-indent:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-indent
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0
       tiptiz-extension-line-height:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-line-height
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0(@tiptap/pm@2.11.5)
       tiptiz-extension-margin:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-margin
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0(@tiptap/pm@2.11.5)
       tiptiz-extension-trailing-node:
-        specifier: workspace:*
-        version: link:../tiptiz-extension-trailing-node
+        specifier: 0.0.2-beta.0
+        version: 0.0.2-beta.0
 
   packages/tiptiz-editor-icons: {}
 
@@ -437,7 +437,7 @@ importers:
         specifier: ^2.11.5
         version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
 
-  packages/tiptiz-extension-heading:
+  packages/tiptiz-extension-headings:
     dependencies:
       '@tiptap/core':
         specifier: ^2.11.5
@@ -5620,6 +5620,36 @@ packages:
 
   tippy.js@6.3.7:
     resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==}
+
+  tiptiz-extension-bullet-list@0.0.2-beta.0:
+    resolution: {integrity: sha512-mJ1HRvhK0Ld0UrnKaJmVRNZX4E4g5Abll0J+tgQNYjMYL9qmfJ9/4Jk6YMQsb1cU0zuKascAIK+bTD9M4bXlxw==}
+
+  tiptiz-extension-code-block-shiki@0.0.2-beta.0:
+    resolution: {integrity: sha512-oUYrY0qeCED5YdIrjPROVOerwSp4n/3hr6b8DP0yUqY3BeIMEPlFq5rMKQdMAJrcvjKXvWAdGf+zzAmF9LEiTA==}
+
+  tiptiz-extension-font-size@0.0.2-beta.0:
+    resolution: {integrity: sha512-HaGoNv0cSz6w0fph1KUvW0lWu0/hp5qDPCpW7QC1oOr8chDqX2STbwS9i2m5BwRuQi+YMcaRVokRonse7o9kHw==}
+
+  tiptiz-extension-hard-break@0.0.2-beta.0:
+    resolution: {integrity: sha512-tAtHxZa+ezkLqJ/GzxVxRRamdT1HClW0tOZlAolR9AT+nbCwhP8q6SQyqVSf6rl1+Ky5/WmdyV9mKnrZTCBJng==}
+
+  tiptiz-extension-headings@0.0.2-beta.0:
+    resolution: {integrity: sha512-yKr19LxHAJyxYtFpUtRp6vQu6dqq0Lug0Q/5IHwDHBXF2oXNdicspap+ST1TgVcJe89uUai35TJ8BMoVCmiu7A==, tarball: https://registry.npmjs.org/tiptiz-extension-headings/-/tiptiz-extension-headings-0.0.2-beta.0.tgz}
+
+  tiptiz-extension-horizontal-rules@0.0.2-beta.0:
+    resolution: {integrity: sha512-xLJmtIoDs7FdnYy2fXHO219SjuunQ5jOsEQ+IyXiCq9ShfzDOd5c1y2RzISU+oMqGUKA5bpeaAKfDz9oA1Jclw==}
+
+  tiptiz-extension-indent@0.0.2-beta.0:
+    resolution: {integrity: sha512-TR1ufKP4bJyUBsm3RLM+PsDFM23zSiYh+onTyrE7vu0itfoxM+UvbxzF2ZViV6kwoHEq4h6A82jNoZl4DPdP9g==}
+
+  tiptiz-extension-line-height@0.0.2-beta.0:
+    resolution: {integrity: sha512-CQISeuRUK+U8CfPYdNmzJZK4LXDorWzwwP0P6k4pYzx8PaBtpA7D6TVLmoK7Yijc9WW3/xen/UEK2wIeP0IUYQ==}
+
+  tiptiz-extension-margin@0.0.2-beta.0:
+    resolution: {integrity: sha512-KG8iuj2S3RsX8ucn3tdHlr4vN/RwMtzk+65O/gQaGScpvskeCBeV4hZyp9WKXtLXf6ALI110apQEpJO6DFeSkw==}
+
+  tiptiz-extension-trailing-node@0.0.2-beta.0:
+    resolution: {integrity: sha512-yBStBr/OrUmZMWhca6fHCUP5GhVORnbXC7gYF6W63tvLOGJ01SlbNm7hOiucf6iAph/+YBnXGo/LaeISWjP6Yg==}
 
   title@4.0.1:
     resolution: {integrity: sha512-xRnPkJx9nvE5MF6LkB5e8QJjE2FW8269wTu/LQdf7zZqBgPly0QJPf/CWAo7srj5so4yXfoLEdCFgurlpi47zg==}
@@ -12218,6 +12248,72 @@ snapshots:
   tippy.js@6.3.7:
     dependencies:
       '@popperjs/core': 2.11.8
+
+  tiptiz-extension-bullet-list@0.0.2-beta.0(@tiptap/pm@2.11.5):
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-bullet-list': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptiz-extension-code-block-shiki@0.0.2-beta.0:
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-code-block': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
+      '@tiptap/pm': 2.11.5
+      lit: 3.2.1
+      shiki: 1.24.4
+
+  tiptiz-extension-font-size@0.0.2-beta.0(@tiptap/pm@2.11.5):
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-text-style': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptiz-extension-hard-break@0.0.2-beta.0(@tiptap/pm@2.11.5):
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-hard-break': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptiz-extension-headings@0.0.2-beta.0(@tiptap/pm@2.11.5):
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-heading': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptiz-extension-horizontal-rules@0.0.2-beta.0:
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-horizontal-rule': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
+      '@tiptap/pm': 2.11.5
+
+  tiptiz-extension-indent@0.0.2-beta.0:
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/pm': 2.11.5
+
+  tiptiz-extension-line-height@0.0.2-beta.0(@tiptap/pm@2.11.5):
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-text-style': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptiz-extension-margin@0.0.2-beta.0(@tiptap/pm@2.11.5):
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/extension-text-style': 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))
+    transitivePeerDependencies:
+      - '@tiptap/pm'
+
+  tiptiz-extension-trailing-node@0.0.2-beta.0:
+    dependencies:
+      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
+      '@tiptap/pm': 2.11.5
 
   title@4.0.1:
     dependencies:

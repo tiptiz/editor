@@ -7,7 +7,9 @@
     "scripts": {
         "example": "pnpm --filter example",
         "docs": "pnpm --filter docs",
-        "pi": "pnpm i && tsx scripts/post-install.mts"
+        "pi": "pnpm i && tsx scripts/post-install.mts",
+        "pif": "pnpm pi -F",
+        "pil": "pnpm pi && tsx scripts/link.mts"
     },
     "dependencies": {
         "@tiptap/core": "^2.11.5",

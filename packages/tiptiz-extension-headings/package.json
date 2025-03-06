@@ -1,6 +1,6 @@
 {
-    "name": "tiptiz-extension-heading",
-    "version": "1.0.1-beta.0",
+    "name": "tiptiz-extension-headings",
+    "version": "0.0.2-beta.0",
     "repository": "github:tiptiz/editor",
     "author": "aolyang <aolyang@foxmail.com>",
     "license": "MIT",

@@ -52,17 +52,17 @@
         "@tiptap/extension-text-style": "^2.11.5",
         "@tiptap/extension-underline": "^2.11.5",
         "@tiptap/pm": "^2.11.5",
-        "@tiptiz/icons": "^0.0.1",
+        "@tiptiz/icons": "0.0.1",
         "lit": "^3.2.1",
-        "tiptiz-extension-bullet-list": "workspace:*",
-        "tiptiz-extension-code-block-shiki": "workspace:*",
-        "tiptiz-extension-font-size": "workspace:*",
-        "tiptiz-extension-hard-break": "workspace:*",
-        "tiptiz-extension-heading": "workspace:*",
-        "tiptiz-extension-horizontal-rules": "workspace:*",
-        "tiptiz-extension-indent": "workspace:*",
-        "tiptiz-extension-line-height": "workspace:*",
-        "tiptiz-extension-margin": "workspace:*",
-        "tiptiz-extension-trailing-node": "workspace:*"
+        "tiptiz-extension-bullet-list": "0.0.2-beta.0",
+        "tiptiz-extension-code-block-shiki": "0.0.2-beta.0",
+        "tiptiz-extension-font-size": "0.0.2-beta.0",
+        "tiptiz-extension-hard-break": "0.0.2-beta.0",
+        "tiptiz-extension-headings": "0.0.2-beta.0",
+        "tiptiz-extension-horizontal-rules": "0.0.2-beta.0",
+        "tiptiz-extension-indent": "0.0.2-beta.0",
+        "tiptiz-extension-line-height": "0.0.2-beta.0",
+        "tiptiz-extension-margin": "0.0.2-beta.0",
+        "tiptiz-extension-trailing-node": "0.0.2-beta.0"
     }
 }
