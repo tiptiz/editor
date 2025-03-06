@@ -10,11 +10,10 @@
 
     import SvgEmoji from "@/icons/toolbars/SvgEmoji.svelte"
 
-    import { css } from "../tiptiz-utils-shared"
-
     import { Picker } from "emoji-picker-element"
     import en from "emoji-picker-element/i18n/en"
     import zh from "emoji-picker-element/i18n/zh_CN"
+    import { css } from "tiptiz-utils-shared"
 
     const ctx = getEditorContext()
 

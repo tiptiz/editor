@@ -4,7 +4,7 @@
     import { getEditorContext } from "@/states/toolbar"
     import { t } from "@/utils/i18n"
 
-    import { css } from "../tiptiz-utils-shared"
+    import { css } from "tiptiz-utils-shared"
 
     const ctx = getEditorContext()
     const sizes = [12, 14, 15, 16, 17, 18, 20, 22, 24, 26]
