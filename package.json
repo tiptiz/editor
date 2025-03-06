@@ -8,8 +8,10 @@
         "example": "pnpm --filter example",
         "docs": "pnpm --filter docs",
         "pi": "pnpm i && tsx scripts/post-install.mts",
+        "build:libs": "tsx scripts/post-install.mts",
         "pif": "pnpm pi -F",
-        "pil": "pnpm pi && tsx scripts/link.mts"
+        "pil": "pnpm pi && tsx scripts/link.mts",
+        "pl": "tsx scripts/link.mts"
     },
     "dependencies": {
         "@tiptap/core": "^2.11.5",

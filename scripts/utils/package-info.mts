@@ -1,8 +1,6 @@
-import fs from "node:fs"
-import path from "node:path"
-
 import PackageJson from "@npmcli/package-json"
 import prompts from "prompts"
+import $ from "shelljs"
 
 import { r } from "./paths.mjs"
 
@@ -13,26 +11,27 @@ export interface Package {
     version: string
 }
 
-const publicPackages = ["tiptiz-extension", "tiptiz-editor"]
+export const publicPackages = ["packages/tiptiz-extension", "packages/tiptiz-editor"]
+export const workspaceApps = ["example", "docs"]
 
 /**
  * Get all tiptiz-extension packages with their current versions
+ * @param dirs Optional array of directory patterns to filter packages (defaults to publicPackages)
  * @returns Promise<Package[]> Array of package information
  */
-export const getPackages = async (): Promise<Package[]> => {
-    const packagesDir = r("packages")
-    const packageDirs = fs.readdirSync(packagesDir)
-        .filter(dir => publicPackages.some(prefix => dir.startsWith(prefix)))
-
+export const getPackages = async (dirs: string[] = publicPackages): Promise<Package[]> => {
     const packages: Package[] = []
 
+    const packageDirs = $.ls("-d", ...dirs.map(dir => dir + "*"))
     for (const dir of packageDirs) {
-        const pkgPath = path.join(packagesDir, dir)
+        const pkgPath = r(dir)
         try {
             const pkgJson = await PackageJson.load(pkgPath)
             const version = pkgJson.content.version as string
+            const packageName = pkgJson.content.name as string
+
             packages.push({
-                name: dir,
+                name: packageName,
                 path: pkgPath,
                 version
             })

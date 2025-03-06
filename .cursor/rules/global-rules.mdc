@@ -1,0 +1,6 @@
+---
+description: global rules
+globs: 
+alwaysApply: true
+---
+no matter what language I use, always use English in code, docs and comments
