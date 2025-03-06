@@ -1,13 +1,10 @@
 import fs from "node:fs"
 import path from "node:path"
-import { fileURLToPath } from "node:url"
 
 import PackageJson from "@npmcli/package-json"
 import prompts from "prompts"
 
-// Helper function to resolve paths relative to the project root
-export const r = (dir = "") =>
-    path.join(path.dirname(fileURLToPath(import.meta.url)), "../../", dir)
+import { r } from "./paths.mjs"
 
 // Define package type
 export interface Package {

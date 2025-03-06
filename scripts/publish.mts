@@ -2,9 +2,10 @@ import prompts from "prompts"
 import $ from "shelljs"
 import { loadEnv } from "vite"
 
-import selectPackages, { r } from "./utils/package-info.mjs"
+import selectPackages from "./utils/package-info.mjs"
 import updateAndPublishPackages from "./utils/package-publish.mjs"
 import { collectVersionInfo, PackageUpdate } from "./utils/package-version.mjs"
+import { r } from "./utils/paths.mjs"
 
 const authToken = loadEnv("npm", r("scripts"), "NPM").NPM_PUBLISH_TOKEN
 const registryUrl = loadEnv("npm", r("scripts"), "NPM").NPM_PUBLISH_REGISTRY

@@ -1,8 +1,8 @@
-#!/usr/bin/env node
 import { execSync } from "node:child_process"
 import fs from "node:fs"
 
-import { getPackages, r } from "./utils/package-info.mjs"
+import { getPackages } from "./utils/package-info.mjs"
+import { r } from "./utils/paths.mjs"
 
 /**
  * Creates symbolic links for all tiptiz-extension packages
