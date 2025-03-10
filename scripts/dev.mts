@@ -1,11 +1,9 @@
 // 1. select workspaceApps
 // 2. select packages to run dev command
 // 3. build selected packages concurrently
-// 4. link selected packages to global
-// 5. link selected packages to tiptiz-editor if needed
-// 6. link selected packages to workspaceApps
-// 7. run dev command concurrently (each selected package)
-// 8. run dev command concurrently (each selected workspaceApp)
+// 4. link selected packages to tiptiz-editor
+// 5. run dev command concurrently (each selected package)
+// 6. run dev command concurrently (each selected workspaceApp)
 
 // all dev command need keep running until user stop
 
@@ -17,23 +15,18 @@ import { cliSelectPackages, getPackages, Package, workspaceApps } from "./utils/
 import { r } from "./utils/paths.mjs"
 import { createFilteredOutputStream } from "./utils/terminal-display.mjs"
 
-// Create filtered output stream for cleaner logs
 const filteredOutput = createFilteredOutputStream()
 
 // Helper function to ensure tiptiz-editor is included and properly linked
 async function ensureTiptizEditor(selectedPackages: Package[]): Promise<Package[]> {
-    // If no packages selected, return empty array
     if (selectedPackages.length === 0) return []
 
-    // Check if any package is selected except tiptiz-editor
     const hasPublicPackages = selectedPackages.some(pkg => !pkg.name.includes("@tiptiz/editor"))
     if (!hasPublicPackages) return selectedPackages
 
-    // Check if tiptiz-editor is already selected
     const hasTiptizEditor = selectedPackages.some(pkg => pkg.name.includes("@tiptiz/editor"))
 
     if (!hasTiptizEditor) {
-        // Get all packages to find tiptiz-editor
         const allPackages = await getPackages()
         const tiptizEditor = allPackages.find(pkg => pkg.name.includes("@tiptiz/editor"))
 
@@ -116,40 +109,7 @@ async function buildSelectedPackages(selectedPackages: Package[]) {
     }).result
 }
 
-// 4. Link selected packages to global
-async function linkPackagesToGlobal(selectedPackages: Package[]) {
-    console.log("Linking selected packages to global...")
-
-    for (const pkg of selectedPackages) {
-        console.log(`Linking ${pkg.name}...`)
-        $.cd(pkg.path)
-        $.exec("pnpm link --global")
-        $.cd(r())
-    }
-}
-
-// 5. Link selected packages to workspaceApps
-async function linkPackagesToApps(selectedPackages: Package[], selectedApps: string[]) {
-    if (selectedApps.length === 0 || selectedPackages.length === 0) {
-        return
-    }
-
-    console.log("Linking selected packages to workspace apps...")
-
-    for (const app of selectedApps) {
-        const appPath = r(app)
-        $.cd(appPath)
-
-        for (const pkg of selectedPackages) {
-            console.log(`Linking ${pkg.name} to ${app}...`)
-            $.exec(`pnpm link ${pkg.name}`)
-        }
-
-        $.cd(r())
-    }
-}
-
-// 6. Run dev command concurrently for each selected package
+// 4. Run dev command concurrently for each selected package
 async function runDevForPackages(selectedPackages: Package[]) {
     console.log("Starting dev mode for selected packages...")
 
@@ -163,8 +123,6 @@ async function runDevForPackages(selectedPackages: Package[]) {
         return
     }
 
-    // Return the concurrently instance but don't await it
-    // so it keeps running in the background
     return concurrently(devTasks, {
         prefix: "dev",
         prefixColors: "blue",
@@ -172,7 +130,7 @@ async function runDevForPackages(selectedPackages: Package[]) {
     })
 }
 
-// 7. Run dev command concurrently for each selected workspaceApp
+// 5. Run dev command concurrently for each selected workspaceApp
 async function runDevForApps(selectedApps: string[]) {
     if (selectedApps.length === 0) {
         return
@@ -185,8 +143,6 @@ async function runDevForApps(selectedApps: string[]) {
         command: `pnpm --filter ./${app} dev`
     }))
 
-    // Return the concurrently instance but don't await it
-    // so it keeps running in the background
     return concurrently(devTasks, {
         prefix: "app",
         prefixColors: "magenta",
@@ -208,7 +164,6 @@ async function main() {
         // 2. Select packages to run dev command
         let selectedPackages = await selectPackagesToDev()
 
-        // Ensure tiptiz-editor is included if needed
         selectedPackages = await ensureTiptizEditor(selectedPackages)
         let packagesDevProcess: any = null
 
@@ -216,26 +171,18 @@ async function main() {
             // 3. Build selected packages
             await buildSelectedPackages(selectedPackages)
 
-            // 4. Link selected packages to global
-            await linkPackagesToGlobal(selectedPackages)
-
-            // 5. Link selected packages to tiptiz-editor if needed
+            // 4. Link selected packages to tiptiz-editor
             await linkPackagesToTiptizEditor(selectedPackages)
 
-            // 6. Link selected packages to workspaceApps
-            await linkPackagesToApps(selectedPackages, selectedApps)
-
-            // 7. Run dev command for selected packages
+            // 5. Run dev command for selected packages
             packagesDevProcess = await runDevForPackages(selectedPackages)
         }
 
-        // 8. Run dev command for selected workspaceApps
+        // 6. Run dev command for selected workspaceApps
         const appsDevProcess = await runDevForApps(selectedApps)
 
-        // Keep the script running until user interrupts
         console.log("\nDev processes are running. Press Ctrl+C to stop all processes.\n")
 
-        // Handle process termination
         process.on("SIGINT", () => {
             console.log("\nStopping all dev processes...")
             if (packagesDevProcess) {
