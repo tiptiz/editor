@@ -8,8 +8,14 @@ import DropCursor from "@tiptap/extension-dropcursor"
 import History from "@tiptap/extension-history"
 import { EditorConsumer, EditorContent, EditorContext, useEditor } from "@tiptap/react"
 import { FullKit } from "@tiptiz/editor"
+import { useEffect } from "react"
 
-const code = `<h1>Heading Title</h1>
+const code = `<h1>Heading Title123</h1>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
 <pre data-show-line-numbers="true" data-highlight-lines="1,2,3,6,7"><code class="language-javascript">for (var i=1; i <= 20; i++) {
   if (i % 15 == 0)
     console.log("FizzBuzz");
@@ -44,12 +50,27 @@ const extensions = [
         }
     })
 ]
+
+console.log("Editor HMR refresh")
+
 export default function TiptapEditor({ children }: { children: ReactNode }) {
     const editor = useEditor({
         extensions,
         immediatelyRender: false,
         content: code
-    })
+    }, [extensions])
+
+    // 处理热更新时的清理
+    useEffect(() => {
+        // 返回清理函数
+        return () => {
+            if (editor) {
+                console.log("Destroying editor due to HMR update")
+                editor.destroy()
+            }
+        }
+    }, [editor])
+
     return (
         <EditorContext.Provider value={{ editor }}>
             {children}

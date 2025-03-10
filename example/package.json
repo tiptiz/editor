@@ -4,8 +4,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "server": "node dev-server.mjs",
+        "dev": "node dev-server.mjs",
         "build": "vite build",
         "preview": "vite preview",
         "check": "svelte-check --tsconfig ./tsconfig.json"
@@ -14,9 +13,9 @@
         "@tiptap/extension-document": "^2.11.5",
         "@tiptap/extension-dropcursor": "^2.11.5",
         "@tiptap/extension-history": "^2.11.5",
-        "@tiptiz/editor": "0.0.2-alpha.0",
-        "tiptiz-extension-horizontal-rules": "0.0.2-beta.0",
+        "@tiptiz/editor": "workspace:*",
         "emoji-picker-element": "^1.26.0",
+        "tiptiz-extension-horizontal-rules": "0.0.2-beta.0",
         "tiptiz-utils-shared": "workspace:*"
     },
     "devDependencies": {
@@ -35,7 +34,6 @@
         "svelte-check": "^4.0.5",
         "svelte-color-picker": "npm:svelte-awesome-color-picker@^3.1.4",
         "tailwind-merge": "^2.5.4",
-        "tailwind-variants": "^0.3.0",
-        "tslib": "^2.8.0"
+        "tailwind-variants": "^0.3.0"
     }
 }

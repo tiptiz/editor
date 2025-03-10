@@ -21,7 +21,7 @@
     ],
     "scripts": {
         "build": "tsup --format esm,cjs && tsup --format esm --dts-only",
-        "dev": "npm run build --watch"
+        "dev": "tsup --format esm,cjs --watch && tsup --format esm --dts-only --watch"
     },
     "dependencies": {
         "@tiptap/core": "^2.11.5",

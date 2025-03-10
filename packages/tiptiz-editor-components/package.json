@@ -22,7 +22,8 @@
         "README.md"
     ],
     "scripts": {
-        "build": "tsup src/index.ts --format esm,cjs && tsup src/index.ts --format esm --dts-only"
+        "build": "tsup --format esm,cjs && tsup --format esm --dts-only",
+        "dev": "tsup --format esm,cjs --watch && tsup --format esm --dts-only --watch"
     },
     "dependencies": {
         "@tiptap/core": "^2.11.5",
@@ -54,11 +55,11 @@
         "@tiptap/pm": "^2.11.5",
         "@tiptiz/icons": "0.0.1",
         "lit": "^3.2.1",
-        "tiptiz-extension-bullet-list": "0.0.2-beta.0",
+        "tiptiz-extension-bullet-list": "^0.0.2-beta.0",
         "tiptiz-extension-code-block-shiki": "0.0.2-beta.0",
         "tiptiz-extension-font-size": "0.0.2-beta.0",
         "tiptiz-extension-hard-break": "0.0.2-beta.0",
-        "tiptiz-extension-headings": "0.0.2-beta.0",
+        "tiptiz-extension-headings": "^0.0.2-beta.0",
         "tiptiz-extension-horizontal-rules": "0.0.2-beta.0",
         "tiptiz-extension-indent": "0.0.2-beta.0",
         "tiptiz-extension-line-height": "0.0.2-beta.0",
