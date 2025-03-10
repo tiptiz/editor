@@ -64,15 +64,10 @@ export const cliSelectPackages = async (packages: Package[]): Promise<Package[]>
     const packageResponse = await prompts({
         type: "multiselect",
         name: "value",
-        message: "Select packages to publish (use space to select, enter to confirm):",
+        message: "Select packages (use space to select, enter to confirm):",
         choices: packageChoices,
         hint: "- Space to select. Enter to submit"
     })
-
-    if (!packageResponse.value || packageResponse.value.length === 0) {
-        console.log("No packages selected. Exiting.")
-        process.exit(0)
-    }
 
     return packageResponse.value as Package[]
 }

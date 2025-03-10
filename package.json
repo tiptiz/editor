@@ -5,13 +5,11 @@
     "author": "aolyang <aolyang@foxmail.com>",
     "license": "MIT",
     "scripts": {
-        "example": "pnpm --filter example",
-        "docs": "pnpm --filter docs",
-        "pi": "pnpm i && tsx scripts/post-install.mts",
-        "build:libs": "tsx scripts/post-install.mts",
-        "pif": "pnpm pi -F",
-        "pil": "pnpm pi && tsx scripts/link.mts",
-        "pl": "tsx scripts/link.mts"
+        "b": "tsx scripts/build.mts",
+        "bf": "pnpm b -F",
+        "ib": "pnpm i && tsx scripts/build.mts",
+        "ibf": "pnpm i && pnpm bf",
+        "dev": "tsx scripts/dev.mts"
     },
     "dependencies": {
         "@tiptap/core": "^2.11.5",
@@ -43,7 +41,7 @@
         "tsup": "^8.3.6",
         "tsx": "^4.19.3",
         "typescript": "^5.7.3",
-        "vite": "^6.1.1",
+        "vite": "^6.2.1",
         "vite-plugin-tsconfig-paths": "npm:vite-tsconfig-paths@^5.1.4"
     }
 }

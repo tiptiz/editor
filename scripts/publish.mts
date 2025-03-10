@@ -36,6 +36,10 @@ async function main() {
     console.log("🔍 Scanning for packages...\n")
 
     const selectedPackages = await selectPackages()
+    if (selectedPackages.length === 0) {
+        console.log("No packages selected. Exiting.")
+        process.exit(0)
+    }
 
     console.log(`\n📦 Selected ${selectedPackages.length} packages for update\n`)
 
